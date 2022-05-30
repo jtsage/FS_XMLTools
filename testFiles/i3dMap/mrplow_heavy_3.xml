@@ -1,0 +1,1011 @@
+<?xml version='1.0' encoding='utf-8'?>
+<vehicle xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="cultivator" xsi:noNamespaceSchemaLocation="https://validation.gdn.giants-software.com//xml/fs22/vehicle.xsd">
+    <annotation>Copyright (C) GIANTS Software GmbH, All Rights Reserved.</annotation>
+    <storeData>
+        <name>$l10n_shopConfig_heavy3</name>
+        <specs>
+            <neededPower>400</neededPower>
+            <workingWidth>9.2</workingWidth>
+        </specs>
+        <functions>
+            <function>$l10n_function_cultivator</function>
+        </functions>
+        <image>store_mrplow_heavy_3.dds</image>
+        <price>86000</price>
+        <lifetime>600</lifetime>
+        <rotation>0</rotation>
+        <brand>Lizard</brand>
+        <category>cultivators</category>
+        <shopTranslationOffset>0 0 0.5</shopTranslationOffset>
+    </storeData>
+    <base>
+        <typeDesc>$l10n_typeDesc_cultivator</typeDesc>
+        <filename>mrplow.i3d</filename>
+        <size width="6" length="9.5" height="4.8" lengthOffset="0" />
+        <speedLimit value="12" />
+        <components numComponents="4">
+            <component centerOfMass="0 0 0" solverIterationCount="200" mass="8000" />
+            <component centerOfMass="0 0 0" solverIterationCount="200" mass="2000" />
+            <component centerOfMass="0 0 0" solverIterationCount="10" mass="2000" />
+            <component centerOfMass="0 0 0" solverIterationCount="10" mass="2000" />
+            <joint component1="1" component2="2" node="jointHitchToBody" rotLimit="1 0 0" transLimit="0 0 0" />
+            <joint component1="1" component2="3" node="jointLeftWingInner" rotLimit="0 0 0" transLimit="0 0 0" />
+            <joint component1="1" component2="4" node="jointRightWingInner" rotLimit="0 0 0" transLimit="0 0 0" />
+        </components>
+        <schemaOverlay attacherJointPosition="0 0" name="IMPLEMENT" />
+        <objectChanges>
+            <objectChange node="decals_right_inside" visibilityActive="true" />
+            <objectChange node="decals_left_inside" visibilityActive="true" />
+            <objectChange node="rcFrontBladesFF_hvy" visibilityActive="true" />
+            <objectChange node="rcFrontBladesBF_hvy" visibilityActive="true" />
+            <objectChange node="lcFrontBladesFF_hvy" visibilityActive="true" />
+            <objectChange node="lcFrontBladesBF_hvy" visibilityActive="true" />
+            <objectChange node="liFrontBladesFF_hvy" visibilityActive="true" />
+            <objectChange node="liFrontBladesBF_hvy" visibilityActive="true" />
+            <objectChange node="riFrontBladesFF_hvy" visibilityActive="true" />
+            <objectChange node="riFrontBladesBF_hvy" visibilityActive="true" />
+            <objectChange node="rcFrontBladesFF" visibilityActive="false" />
+            <objectChange node="rcFrontBladesBF" visibilityActive="false" />
+            <objectChange node="lcFrontBladesFF" visibilityActive="false" />
+            <objectChange node="lcFrontBladesBF" visibilityActive="false" />
+            <objectChange node="liFrontBladesFF" visibilityActive="false" />
+            <objectChange node="liFrontBladesBF" visibilityActive="false" />
+            <objectChange node="riFrontBladesFF" visibilityActive="false" />
+            <objectChange node="riFrontBladesBF" visibilityActive="false" />
+            <objectChange node="loFrame_option" visibilityActive="false" />
+            <objectChange node="roFrame_option" visibilityActive="false" />
+            <objectChange node="hoses_5Section" visibilityActive="false" />
+            <objectChange node="hydOut3_det" visibilityActive="false" />
+            <objectChange node="hydIn3_det" visibilityActive="false" />
+        </objectChanges>
+    </base>
+    <wheels>
+        <wheelConfigurations>
+            <wheelConfiguration isDefault="true" name="$l10n_configuration_valueDefault" price="0" brand="TRELLEBORG" saveId="TRELLEBORG_DEFAULT">
+                <wheels autoRotateBackSpeed="2.0">
+                    <wheel filename="$data/shared/wheels/tires/trelleborg/T421/280_60R15_5.xml" isLeft="false" hasTireTracks="true" hasParticles="true">
+                        <physics restLoad="0.2" repr="lwInsideWheel_att" forcePointRatio="0.3" initialCompression="10" suspTravel="0.05" spring="100" damper="50" />
+                    </wheel>
+                    <wheel filename="$data/shared/wheels/tires/trelleborg/T421/280_60R15_5.xml" isLeft="true" hasTireTracks="true" hasParticles="true">
+                        <physics restLoad="0.2" repr="lwOutsideWheel_att" forcePointRatio="0.3" initialCompression="10" suspTravel="0.05" spring="100" damper="50" />
+                    </wheel>
+                    <wheel filename="$data/shared/wheels/tires/trelleborg/T421/280_60R15_5.xml" isLeft="false" hasTireTracks="true" hasParticles="true">
+                        <physics restLoad="0.2" repr="rwOutsideWheel_att" forcePointRatio="0.3" initialCompression="10" suspTravel="0.05" spring="100" damper="50" />
+                    </wheel>
+                    <wheel filename="$data/shared/wheels/tires/trelleborg/T421/280_60R15_5.xml" isLeft="true" hasTireTracks="true" hasParticles="true">
+                        <physics restLoad="0.2" repr="rwInsideWheel_att" forcePointRatio="0.3" initialCompression="10" suspTravel="0.05" spring="100" damper="50" />
+                    </wheel>
+                    <wheel filename="$data/shared/wheels/tires/trelleborg/T421/280_60R15_5.xml" isLeft="false" hasTireTracks="true" hasParticles="true">
+                        <physics restLoad="0.5" repr="liwInsideWheel_phy" forcePointRatio="0.3" initialCompression="20" suspTravel="0.05" spring="20" damper="20" brakeFactor="0" />
+                    </wheel>
+                    <wheel filename="$data/shared/wheels/tires/trelleborg/T421/280_60R15_5.xml" isLeft="true" hasTireTracks="true" hasParticles="true">
+                        <physics restLoad="0.5" repr="liwOutsideWheel_phy" forcePointRatio="0.3" initialCompression="20" suspTravel="0.05" spring="20" damper="20" brakeFactor="0" />
+                    </wheel>
+                    <wheel filename="$data/shared/wheels/tires/trelleborg/T421/280_60R15_5.xml" isLeft="false" hasTireTracks="true" hasParticles="true">
+                        <physics restLoad="0.2" repr="riwOutsideWheel_phy" forcePointRatio="0.3" initialCompression="20" suspTravel="0.05" spring="20" damper="20" brakeFactor="0" />
+                    </wheel>
+                    <wheel filename="$data/shared/wheels/tires/trelleborg/T421/280_60R15_5.xml" isLeft="true" hasTireTracks="true" hasParticles="true">
+                        <physics restLoad="0.2" repr="riwInsideWheel_phy" forcePointRatio="0.3" initialCompression="20" suspTravel="0.05" spring="20" damper="20" brakeFactor="0" />
+                    </wheel>
+                </wheels>
+            </wheelConfiguration>
+            <wheelConfiguration name="$l10n_configuration_valueDefault" brand="BKT" price="1000">
+                <wheels baseConfig="TRELLEBORG_DEFAULT">
+                    <wheel filename="$data/shared/wheels/tires/bkt/AS504/10_0__80__12.xml" />
+                    <wheel filename="$data/shared/wheels/tires/bkt/AS504/10_0__80__12.xml" />
+                    <wheel filename="$data/shared/wheels/tires/bkt/AS504/10_0__80__12.xml" />
+                    <wheel filename="$data/shared/wheels/tires/bkt/AS504/10_0__80__12.xml" />
+                    <wheel filename="$data/shared/wheels/tires/bkt/AS504/10_0__80__12.xml" />
+                    <wheel filename="$data/shared/wheels/tires/bkt/AS504/10_0__80__12.xml" />
+                    <wheel filename="$data/shared/wheels/tires/bkt/AS504/10_0__80__12.xml" />
+                    <wheel filename="$data/shared/wheels/tires/bkt/AS504/10_0__80__12.xml" />
+                </wheels>
+            </wheelConfiguration>
+            <wheelConfiguration name="$l10n_configuration_valueDefault" brand="CONTINENTAL" price="1000">
+                <wheels baseConfig="TRELLEBORG_DEFAULT">
+                    <wheel filename="$data/shared/wheels/tires/continental/terrainContactHT/225_60R17.xml" />
+                    <wheel filename="$data/shared/wheels/tires/continental/terrainContactHT/225_60R17.xml" />
+                    <wheel filename="$data/shared/wheels/tires/continental/terrainContactHT/225_60R17.xml" />
+                    <wheel filename="$data/shared/wheels/tires/continental/terrainContactHT/225_60R17.xml" />
+                    <wheel filename="$data/shared/wheels/tires/continental/terrainContactHT/225_60R17.xml" />
+                    <wheel filename="$data/shared/wheels/tires/continental/terrainContactHT/225_60R17.xml" />
+                    <wheel filename="$data/shared/wheels/tires/continental/terrainContactHT/225_60R17.xml" />
+                    <wheel filename="$data/shared/wheels/tires/continental/terrainContactHT/225_60R17.xml" />
+                </wheels>
+            </wheelConfiguration>
+        </wheelConfigurations>
+        <hubs>
+            <color0>SHARED_BLACK2</color0>
+            <hub linkNode="lwInsideWheel_att" filename="$data/shared/wheels/hubs/hub_n5_1.xml" isLeft="true" scale="0.165 0.165 0.165" />
+            <hub linkNode="lwOutsideWheel_att" filename="$data/shared/wheels/hubs/hub_n5_1.xml" isLeft="false" scale="0.165 0.165 0.165" />
+            <hub linkNode="rwOutsideWheel_att" filename="$data/shared/wheels/hubs/hub_n5_1.xml" isLeft="false" scale="0.165 0.165 0.165" />
+            <hub linkNode="rwInsideWheel_att" filename="$data/shared/wheels/hubs/hub_n5_1.xml" isLeft="true" scale="0.165 0.165 0.165" />
+            <hub linkNode="liwInsideWheel_phy" filename="$data/shared/wheels/hubs/hub_n5_1.xml" isLeft="false" scale="0.165 0.165 0.165" />
+            <hub linkNode="liwOutsideWheel_phy" filename="$data/shared/wheels/hubs/hub_n5_1.xml" isLeft="true" scale="0.165 0.165 0.165" />
+            <hub linkNode="riwOutsideWheel_phy" filename="$data/shared/wheels/hubs/hub_n5_1.xml" isLeft="false" scale="0.165 0.165 0.165" />
+            <hub linkNode="riwInsideWheel_phy" filename="$data/shared/wheels/hubs/hub_n5_1.xml" isLeft="true" scale="0.165 0.165 0.165" />
+        </hubs>
+    </wheels>
+    <speedRotatingParts>
+        <speedRotatingPart onlyActiveWhenLowered="true" shaderNode="rcRearBladesFF" radius="0.34" foldMinLimit="0" foldMaxLimit="0.1" />
+        <speedRotatingPart onlyActiveWhenLowered="true" shaderNode="rcRearBladesBF" radius="0.34" foldMinLimit="0" foldMaxLimit="0.1" />
+        <speedRotatingPart onlyActiveWhenLowered="true" shaderNode="rcFrontBladesFF_hvy" radius="-0.34" foldMinLimit="0" foldMaxLimit="0.1" />
+        <speedRotatingPart onlyActiveWhenLowered="true" shaderNode="rcFrontBladesBF_hvy" radius="-0.34" foldMinLimit="0" foldMaxLimit="0.1" />
+        <speedRotatingPart onlyActiveWhenLowered="true" shaderNode="lcRearBladesFF" radius="-0.34" foldMinLimit="0" foldMaxLimit="0.1" />
+        <speedRotatingPart onlyActiveWhenLowered="true" shaderNode="lcRearBladesBF" radius="-0.34" foldMinLimit="0" foldMaxLimit="0.1" />
+        <speedRotatingPart onlyActiveWhenLowered="true" shaderNode="lcFrontBladesFF_hvy" radius="0.34" foldMinLimit="0" foldMaxLimit="0.1" />
+        <speedRotatingPart onlyActiveWhenLowered="true" shaderNode="lcFrontBladesBF_hvy" radius="0.34" foldMinLimit="0" foldMaxLimit="0.1" />
+        <speedRotatingPart onlyActiveWhenLowered="true" shaderNode="liRearBladesFF" radius="-0.34" foldMinLimit="0" foldMaxLimit="0.1" />
+        <speedRotatingPart onlyActiveWhenLowered="true" shaderNode="liRearBladesBF" radius="-0.34" foldMinLimit="0" foldMaxLimit="0.1" />
+        <speedRotatingPart onlyActiveWhenLowered="true" shaderNode="liFrontBladesFF_hvy" radius="0.34" foldMinLimit="0" foldMaxLimit="0.1" />
+        <speedRotatingPart onlyActiveWhenLowered="true" shaderNode="liFrontBladesBF_hvy" radius="0.34" foldMinLimit="0" foldMaxLimit="0.1" />
+        <speedRotatingPart onlyActiveWhenLowered="true" shaderNode="riRearBladesFF" radius="0.34" foldMinLimit="0" foldMaxLimit="0.1" />
+        <speedRotatingPart onlyActiveWhenLowered="true" shaderNode="riRearBladesBF" radius="0.34" foldMinLimit="0" foldMaxLimit="0.1" />
+        <speedRotatingPart onlyActiveWhenLowered="true" shaderNode="riFrontBladesFF_hvy" radius="-0.34" foldMinLimit="0" foldMaxLimit="0.1" />
+        <speedRotatingPart onlyActiveWhenLowered="true" shaderNode="riFrontBladesBF_hvy" radius="-0.34" foldMinLimit="0" foldMaxLimit="0.1" />
+        <speedRotatingPart onlyActiveWhenLowered="true" node="cw_crumble_roller" radius="0.30" foldMinLimit="0" foldMaxLimit="0.1" />
+        <speedRotatingPart onlyActiveWhenLowered="true" node="liw_crumble_roller" radius="0.30" foldMinLimit="0" foldMaxLimit="0.1" />
+        <speedRotatingPart onlyActiveWhenLowered="true" node="riw_crumble_roller" radius="0.30" foldMinLimit="0" foldMaxLimit="0.1" />
+    </speedRotatingParts>
+    <attachable>
+        <inputAttacherJoints>
+            <inputAttacherJoint node="inputAttacherJoint" jointType="trailerLow" attacherHeight="0.65" />
+        </inputAttacherJoints>
+        <support animationName="moveSupport" />
+        <brakeForce force="2.2" loweredForce="0.05" />
+    </attachable>
+    <powerConsumer forceNode="mrplow_component1" maxForce="70" ptoRpm="540" neededMaxPtoPower="40" />
+    <lights>
+        <sharedLight linkNode="rearLightAnchorLeft" filename="$data/shared/assets/lights/lizard/rearLight33_left.xml" />
+        <sharedLight linkNode="rearLightAnchorRight" filename="$data/shared/assets/lights/lizard/rearLight33_right.xml" />
+        <sharedLight linkNode="wingWorklightLeftFront" filename="$data/shared/assets/lights/lizard/workingLight10.xml" lightTypes="1" />
+        <sharedLight linkNode="wingWorklightRightFront" filename="$data/shared/assets/lights/lizard/workingLight10.xml" lightTypes="1" />
+        <sharedLight linkNode="wingWorklightLeftRear" filename="$data/shared/assets/lights/lizard/workingLight10.xml" lightTypes="1" />
+        <sharedLight linkNode="wingWorklightRightRear" filename="$data/shared/assets/lights/lizard/workingLight10.xml" lightTypes="1" />
+        <realLights>
+            <high>
+                <light node="brakeLightLeft" lightTypes="0" />
+                <light node="brakeLightRight" lightTypes="0" />
+                <light node="realWorklightLeftFront" lightTypes="1" />
+                <light node="realWorklightRightFront" lightTypes="1" />
+                <light node="realWorklightLeftRear" lightTypes="1" />
+                <light node="realWorklightRightRear" lightTypes="1" />
+                <turnLightLeft node="turnLightLeft" />
+                <turnLightRight node="turnLightRight" />
+                <brakeLight node="brakeLightLeft" />
+                <brakeLight node="brakeLightRight" />
+                <reverseLight node="backupLightLeft" />
+                <reverseLight node="backupLightRight" />
+            </high>
+        </realLights>
+        <beaconLights>
+            <beaconLight node="beacon" filename="$data/shared/assets/beaconLights/lizard/beaconLight03.xml" />
+        </beaconLights>
+    </lights>
+    <connectionHoses>
+        <hose inputAttacherJointIndices="1" type="hydraulicIn" node="hydIn1" length="0.6" diameter="0.02" straighteningFactor="2">
+            <objectChange node="hydIn1_det" visibilityActive="false" visibilityInactive="true" />
+        </hose>
+        <hose inputAttacherJointIndices="1" type="hydraulicOut" node="hydOut1" length="0.6" diameter="0.02" straighteningFactor="2">
+            <objectChange node="hydOut1_det" visibilityActive="false" visibilityInactive="true" />
+        </hose>
+        <hose inputAttacherJointIndices="1" type="hydraulicIn" node="hydIn2" length="0.6" diameter="0.02" straighteningFactor="2">
+            <objectChange node="hydIn2_det" visibilityActive="false" visibilityInactive="true" />
+        </hose>
+        <hose inputAttacherJointIndices="1" type="hydraulicOut" node="hydOut2" length="0.6" diameter="0.02" straighteningFactor="2">
+            <objectChange node="hydOut2_det" visibilityActive="false" visibilityInactive="true" />
+        </hose>
+        <hose inputAttacherJointIndices="1" type="electric" node="eplug_ref" length="0" diameter="0.015">
+            <objectChange node="eplug_conn_ref" visibilityActive="true" visibilityInactive="false" />
+        </hose>
+    </connectionHoses>
+    <dynamicallyLoadedParts>
+        <dynamicallyLoadedPart node="2|0" linkNode="esocket_ref" filename="$data/shared/connectionHoses/connectors.i3d" />
+        <dynamicallyLoadedPart node="1|1" linkNode="eplug_conn_ref" filename="$data/shared/connectionHoses/connectors.i3d" />
+        <dynamicallyLoadedPart node="1|0" linkNode="hydIn1_noz" filename="$data/shared/connectionHoses/connectors.i3d" />
+        <dynamicallyLoadedPart node="1|0" linkNode="hydOut1_noz" filename="$data/shared/connectionHoses/connectors.i3d" />
+        <dynamicallyLoadedPart node="1|0" linkNode="hydIn2_noz" filename="$data/shared/connectionHoses/connectors.i3d" />
+        <dynamicallyLoadedPart node="1|0" linkNode="hydOut2_noz" filename="$data/shared/connectionHoses/connectors.i3d" />
+        <dynamicallyLoadedPart node="0" linkNode="triangleAnchor" filename="$data/shared/assets/reflectors/lizard/bigTriangle.i3d" rotation="180 0 0" />
+    </dynamicallyLoadedParts>
+    <groundReferenceNodes>
+        <groundReferenceNode node="groundRefNode" threshold="0.1" depthNode="groundRefDepth" />
+    </groundReferenceNodes>
+    <workAreas>
+        <workAreaConfigurations>
+            <workAreaConfiguration>
+                <workArea type="cultivator" functionName="processCultivatorArea">
+                    <area startNode="workAreaStart_backLeft" widthNode="workAreaWidth_backLeft3" heightNode="workAreaHeight_backLeft" />
+                    <groundReferenceNode index="1" />
+                    <folding minLimit="0" maxLimit="0.2" />
+                    <onlyActiveWhenLowered value="true" />
+                </workArea>
+                <workArea type="cultivator" functionName="processCultivatorArea">
+                    <area startNode="workAreaStart_backRight" widthNode="workAreaWidth_backRight3" heightNode="workAreaHeight_backRight" />
+                    <groundReferenceNode index="1" />
+                    <folding minLimit="0" maxLimit="0.2" />
+                    <onlyActiveWhenLowered value="true" />
+                </workArea>
+                <workArea type="cultivator" functionName="processCultivatorArea">
+                    <area startNode="workAreaStart_frontLeft" widthNode="workAreaWidth_frontLeft3" heightNode="workAreaHeight_frontLeft" />
+                    <groundReferenceNode index="1" />
+                    <folding minLimit="0" maxLimit="0.2" />
+                    <onlyActiveWhenLowered value="true" />
+                </workArea>
+                <workArea type="cultivator" functionName="processCultivatorArea">
+                    <area startNode="workAreaStart_frontRight" widthNode="workAreaWidth_frontRight3" heightNode="workAreaHeight_frontRight" />
+                    <groundReferenceNode index="1" />
+                    <folding minLimit="0" maxLimit="0.2" />
+                    <onlyActiveWhenLowered value="true" />
+                </workArea>
+            </workAreaConfiguration>
+        </workAreaConfigurations>
+    </workAreas>
+    <workParticles>
+        <effect workAreaIndex="1">
+            <effectNode effectClass="TypedMotionPathEffect" effectType="CULTIVATOR" linkNode="lcwFrontSoil_ref">
+                <motionPathEffect textureFilename="$data/vehicles/caseIH/speedtiller465/rollerEffect01Array.dds" numRows="20" rowLength="18" minFade="0.07" densityScale="0.35" />
+            </effectNode>
+            <effectNode effectClass="TypedMotionPathEffect" effectType="CULTIVATOR" linkNode="rcwFrontSoil_ref">
+                <motionPathEffect textureFilename="$data/vehicles/caseIH/speedtiller465/rollerEffect01Array.dds" numRows="20" rowLength="18" minFade="0.07" densityScale="0.35" />
+            </effectNode>
+            <effectNode effectClass="TypedMotionPathEffect" effectType="CULTIVATOR" linkNode="lcwRearSoil_ref">
+                <motionPathEffect textureFilename="$data/vehicles/caseIH/speedtiller465/rollerEffect01Array.dds" numRows="20" rowLength="18" minFade="0.07" densityScale="0.35" />
+            </effectNode>
+            <effectNode effectClass="TypedMotionPathEffect" effectType="CULTIVATOR" linkNode="rcwRearSoil_ref">
+                <motionPathEffect textureFilename="$data/vehicles/caseIH/speedtiller465/rollerEffect01Array.dds" numRows="20" rowLength="18" minFade="0.07" densityScale="0.35" />
+            </effectNode>
+            <effectNode effectClass="TypedMotionPathEffect" effectType="CULTIVATOR" linkNode="liwFrontSoil_ref">
+                <motionPathEffect textureFilename="$data/vehicles/caseIH/speedtiller465/rollerEffect01Array.dds" numRows="20" rowLength="18" minFade="0.07" densityScale="0.35" />
+            </effectNode>
+            <effectNode effectClass="TypedMotionPathEffect" effectType="CULTIVATOR" linkNode="liwRearSoil_ref">
+                <motionPathEffect textureFilename="$data/vehicles/caseIH/speedtiller465/rollerEffect01Array.dds" numRows="20" rowLength="18" minFade="0.07" densityScale="0.35" />
+            </effectNode>
+            <effectNode effectClass="TypedMotionPathEffect" effectType="CULTIVATOR" linkNode="riwFrontSoil_ref">
+                <motionPathEffect textureFilename="$data/vehicles/caseIH/speedtiller465/rollerEffect01Array.dds" numRows="20" rowLength="18" minFade="0.07" densityScale="0.35" />
+            </effectNode>
+            <effectNode effectClass="TypedMotionPathEffect" effectType="CULTIVATOR" linkNode="riwRearSoil_ref">
+                <motionPathEffect textureFilename="$data/vehicles/caseIH/speedtiller465/rollerEffect01Array.dds" numRows="20" rowLength="18" minFade="0.07" densityScale="0.35" />
+            </effectNode>
+            <effectNode effectClass="CultivatorMotionPathEffect" effectType="CULTIVATOR" linkNode="cw_crumble_ref">
+                <motionPathEffect textureFilename="$data/vehicles/caseIH/speedtiller465/rollerEffect01Array.dds" numRows="20" rowLength="18" minFade="0.07" densityScale="0.15" />
+            </effectNode>
+            <effectNode effectClass="CultivatorMotionPathEffect" effectType="CULTIVATOR" linkNode="riw_crumble_ref">
+                <motionPathEffect textureFilename="$data/vehicles/caseIH/speedtiller465/rollerEffect01Array.dds" numRows="20" rowLength="18" minFade="0.07" densityScale="0.15" />
+            </effectNode>
+            <effectNode effectClass="CultivatorMotionPathEffect" effectType="CULTIVATOR" linkNode="liw_crumble_ref">
+                <motionPathEffect textureFilename="$data/vehicles/caseIH/speedtiller465/rollerEffect01Array.dds" numRows="20" rowLength="18" minFade="0.07" densityScale="0.15" />
+            </effectNode>
+        </effect>
+        <particle>
+            <node node="cwSmokeEmitter" refNodeIndex="1" particleType="SOIL_SMOKE" emitCountScale="1" />
+            <node node="riwSmokeEmitter" refNodeIndex="1" particleType="SOIL_SMOKE" emitCountScale="1" />
+            <node node="liwSmokeEmitter" refNodeIndex="1" particleType="SOIL_SMOKE" emitCountScale="1" />
+        </particle>
+    </workParticles>
+    <foldable>
+        <foldingConfigurations>
+            <foldingConfiguration>
+                <foldingParts startMoveDirection="1" foldMiddleAnimTime="0.2" turnOnFoldMinLimit="0.0" turnOnFoldMaxLimit="0.125">
+                    <foldingPart animationName="folding3" speedScale="0.6" />
+                </foldingParts>
+            </foldingConfiguration>
+        </foldingConfigurations>
+    </foldable>
+    <animations>
+        <animation name="folding3">
+            <part node="jointLeftWingInner" startTime="1" endTime="5" startRot="0 0 0" endRot="0 0 89" />
+            <part node="wing_left_vis" startTime="1" endTime="5" startRot="0 0 0" endRot="0 0 89" />
+            <part node="jointRightWingInner" startTime="1" endTime="5" startRot="0 0 0" endRot="0 0 -89" />
+            <part node="wing_right_vis" startTime="1" endTime="5" startRot="0 0 0" endRot="0 0 -89" />
+            <part node="liftKnuckleConn" startTime="0" endTime="1" startRot="5 0 0" endRot="0 0 0" />
+            <part node="liftCylinderAnchor" startTime="0" endTime="1" startTrans="0.005 1.558 1.050" endTrans="0.005 1.542 1.016" />
+            <part node="drivePivotAxle" startTime="0" endTime="1" startRot="38 0 0" endRot="0 0 0" />
+            <part node="lwWheelTruck" startTime="0" endTime="1" startRot="-38 0 0" endRot="0 0 0" />
+            <part node="rwWheelTruck" startTime="0" endTime="1" startRot="-38 0 0" endRot="0 0 0" />
+            <part node="liwPivot" startTime="0" endTime="1" startRot="-38 0 0" endRot="-2 0 0" />
+            <part node="liwWheelTruck" startTime="0" endTime="1" startRot="38 0 0" endRot="2 0 0" />
+            <part node="liwArmAxis" startTime="0" endTime="1" startRot="-38 0 0" endRot="-2 0 0" />
+            <part node="liwWheelAxis" startTime="0" endTime="1" startRot="38 0 0" endRot="2 0 0" />
+            <part node="liwPivot" startTime="2" endTime="4" startRot="-2 0 0" endRot="-30 0 0" />
+            <part node="liwWheelTruck" startTime="2" endTime="4" startRot="2 0 0" endRot="30 0 0" />
+            <part node="liwArmAxis" startTime="2" endTime="4" startRot="-2 0 0" endRot="-30 0 0" />
+            <part node="liwWheelAxis" startTime="2" endTime="4" startRot="2 0 0" endRot="30 0 0" />
+            <part node="riwPivot" startTime="0" endTime="1" startRot="-38 0 0" endRot="-2 0 0" />
+            <part node="riwWheelTruck" startTime="0" endTime="1" startRot="38 0 0" endRot="2 0 0" />
+            <part node="riwArmAxis" startTime="0" endTime="1" startRot="-38 0 0" endRot="-2 0 0" />
+            <part node="riwWheelAxis" startTime="0" endTime="1" startRot="38 0 0" endRot="2 0 0" />
+            <part node="riwPivot" startTime="2" endTime="4" startRot="-2 0 0" endRot="-30 0 0" />
+            <part node="riwWheelTruck" startTime="2" endTime="4" startRot="2 0 0" endRot="30 0 0" />
+            <part node="riwArmAxis" startTime="2" endTime="4" startRot="-2 0 0" endRot="-30 0 0" />
+            <part node="riwWheelAxis" startTime="2" endTime="4" startRot="2 0 0" endRot="30 0 0" />
+            <sound template="hydraulicLayerTone" startTime="2" endTime="4" volumeScale="0.8" pitchScale="1" />
+            <sound template="hydraulicLayerTone" startTime="1" endTime="5" volumeScale="1" pitchScale="0.6" />
+            <sound template="foldStopMed01" startTime="4.99" direction="-1" volumeScale="1.3" pitchScale="0.7" />
+            <sound template="foldStopMed01" startTime="1.01" direction="1" volumeScale="1.3" pitchScale="0.7" />
+            <sound template="metalLowVar2" startTime="4.99" direction="1" volumeScale="2" pitchScale="0.7" />
+            <sound template="metalLowVar2" startTime="1.01" direction="-1" volumeScale="2" pitchScale="0.7" />
+            <sound template="hydraulicLayerTone" startTime="0" endTime="1" volumeScale="0.8" pitchScale="1" />
+        </animation>
+        <animation name="moveSupport">
+            <part node="jackStandHandle" startTime="0" endTime="0.5" startRot="0 -180 0" endRot="0 0 0" />
+            <part node="jackStandFoot" startTime="0" endTime="0.5" startTrans="0.180 -0.481 -0.001" endTrans="0.180 -0.693 -0.001" />
+            <part node="jackStandBody" startTime="0" endTime="0.5" startRot="90 0 0" endRot="0 0 0" />
+            <sound template="clackVar6" startTime="0.01" direction="-1" volumeScale="1" pitchScale="1" linkNode="inputAttacherJoint" />
+            <sound template="clackVar3" startTime="0.5" direction="1" volumeScale="1" pitchScale="1" linkNode="inputAttacherJoint" />
+            <sound template="defaultHydraulicSmall" startTime="0.01" endTime="0.49" volumeScale="1" pitchScale="1" linkNode="inputAttacherJoint" />
+            <sound template="loopLayer1Small" startTime="0.01" endTime="0.49" volumeScale="1" pitchScale="1" linkNode="inputAttacherJoint" />
+        </animation>
+    </animations>
+    <cylindered>
+        <movingTools>
+            <movingTool node="liwWheelAxis" wheelIndices="5 6" />
+            <movingTool node="riwWheelAxis" wheelIndices="7 8" />
+            <movingTool node="wing_left_vis" playSound="true">
+                <componentJoint index="2" anchorActor="0" />
+                <dependentPart node="frontLeftCylinder" />
+                <dependentPart node="backLeftCylinder" />
+            </movingTool>
+            <movingTool node="wing_right_vis" playSound="true">
+                <componentJoint index="3" anchorActor="0" />
+                <dependentPart node="frontRightCylinder" />
+                <dependentPart node="backRightCylinder" />
+            </movingTool>
+            <movingTool node="jointHitchToBody" playSound="true">
+                <componentJoint index="1" anchorActor="0" />
+            </movingTool>
+            <movingTool node="drivePivotAxle" wheelIndices="1 2 3 4">
+                <dependentPart node="lwWheelTruck" />
+                <dependentPart node="rwWheelTruck" />
+                <dependentPart node="liftCylinderAnchor" />
+                <dependentPart node="lwCylinder" />
+                <dependentPart node="rwCylinder" />
+            </movingTool>
+            <movingTool node="liwPivot">
+                <dependentPart node="liwWheelTruck" />
+                <dependentPart node="liwCylinder" />
+            </movingTool>
+            <movingTool node="riwPivot">
+                <dependentPart node="riwWheelTruck" />
+                <dependentPart node="riwCylinder" />
+            </movingTool>
+        </movingTools>
+        <movingParts>
+            <movingPart node="frontRightCylinder" referencePoint="riPistonRcvrFront" referenceFrame="0>">
+                <translatingPart node="frontRightPiston" />
+            </movingPart>
+            <movingPart node="backRightCylinder" referencePoint="riPistonRcvrRear" referenceFrame="0>">
+                <translatingPart node="backRightPiston" />
+            </movingPart>
+            <movingPart node="frontLeftCylinder" referencePoint="liPistonRcvrFront" referenceFrame="0>">
+                <translatingPart node="frontLeftPiston" />
+            </movingPart>
+            <movingPart node="backLeftCylinder" referencePoint="liPistonRcvrRear" referenceFrame="0>">
+                <translatingPart node="backLeftPiston" />
+            </movingPart>
+            <movingPart node="liftCylinderAnchor" referencePoint="wheelAxelPiston_ref" referenceFrame="wheelAxelPiston_ref">
+                <dependentPart node="liftCylinder" />
+            </movingPart>
+            <movingPart node="liftCylinder" referencePoint="wheelAxelPiston_ref" referenceFrame="wheelAxelPiston_ref">
+                <translatingPart node="liftPiston" />
+            </movingPart>
+            <movingPart node="lwCylinder" referencePoint="lwBotPiston_ref" referenceFrame="0>">
+                <translatingPart node="lwBotPiston" />
+            </movingPart>
+            <movingPart node="rwCylinder" referencePoint="rwBotPiston_ref" referenceFrame="0>">
+                <translatingPart node="rwBotPiston" />
+            </movingPart>
+            <movingPart node="liwCylinder" referencePoint="liwPiston_ref" referenceFrame="mrplow_component3">
+                <translatingPart node="liwBotPiston" />
+            </movingPart>
+            <movingPart node="riwCylinder" referencePoint="riwPiston_ref" referenceFrame="mrplow_component4">
+                <translatingPart node="riwBotPiston" />
+            </movingPart>
+        </movingParts>
+        <sounds>
+            <hydraulic template="defaultHydraulicSound" linkNode="mrplow_component1" />
+        </sounds>
+    </cylindered>
+    <cultivator isSubsoiler="true" useDeepMode="true">
+        <sounds>
+            <work template="DEFAULT_CULTIVATOR_WORK" linkNode="mrplow_component1" />
+        </sounds>
+        <directionNode node="mrplow_component1" />
+        <onlyActiveWhenLowered value="true" />
+    </cultivator>
+    <washable dirtDuration="100" washDuration="1" workMultiplier="5" fieldMultiplier="5" />
+    <wearable wearDuration="1000" workMultiplier="3" fieldMultiplier="2" />
+    <ai>
+        <needsLowering value="true" />
+        <areaMarkers leftNode="aiMarkerLeft3" rightNode="aiMarkerRight3" backNode="aiMarkerBack" />
+        <collisionTrigger node="aiCollisionTrigger" width="15.2" height="2.5" />
+        <allowTurnBackward value="false" />
+        <turningRadiusLimitation rotationJointNode="inputAttacherJoint" wheelIndices="2 3" />
+        <toolReverserDirectionNode node="aiMarkerBack" />
+    </ai>
+    <foliageBending>
+        <bendingNode minX="-1.8" maxX="1.8" minZ="-2.7" maxZ="2.3" yOffset="0.4" />
+        <bendingNode minX="0" maxX="3" minZ="-3" maxZ="2.4" yOffset="-0.6" node="wing_left_vis" />
+        <bendingNode minX="-3" maxX="0" minZ="-3" maxZ="2.4" yOffset="-0.6" node="wing_right_vis" />
+    </foliageBending>
+    <baseMaterial>
+        <material name="RealBaseMat" baseNode="mrplow_vis">
+            <shaderParameter name="colorMat1" value="JOHNDEERE_GREEN1" material="0" />
+            <shaderParameter name="colorMat0" value="SHARED_BLACK1" material="0" />
+        </material>
+        <material name="ExtraPartsMat" baseNode="cw_crumble_roller">
+            <shaderParameter name="colorMat1" value="JOHNDEERE_GREEN1" material="0" />
+            <shaderParameter name="colorMat0" value="SHARED_BLACK1" material="0" />
+        </material>
+    </baseMaterial>
+    <baseMaterialConfigurations useDefaultColors="true">
+        <material name="RealBaseMat" shaderParameter="colorMat1" />
+        <material name="ExtraPartsMat" shaderParameter="colorMat1" />
+        <baseMaterialConfiguration name="$l10n_colorConfigJTS_dark_red_painted" color="JTS_RED_DARK" material="32" price="200" />
+        <baseMaterialConfiguration name="$l10n_colorConfigJTS_dark_green_painted" color="JTS_GREEN_DARK" material="32" price="200" />
+        <baseMaterialConfiguration name="$l10n_colorConfigJTS_dark_blue_painted" color="JTS_BLUE_DARK" material="32" price="200" />
+        <baseMaterialConfiguration name="$l10n_colorConfigJTS_dark_yellow_painted" color="JTS_YELLOW_DARK" material="32" price="200" />
+        <baseMaterialConfiguration name="$l10n_colorConfigJTS_dark_orange_painted" color="JTS_ORANGE_DARK" material="32" price="200" />
+        <baseMaterialConfiguration name="$l10n_colorConfigJTS_dark_purple_painted" color="JTS_PURPLE_DARK" material="32" price="200" />
+        <baseMaterialConfiguration name="$l10n_colorConfigJTS_dark_grey_painted" color="JTS_GREY_DARK" material="32" price="200" />
+        <baseMaterialConfiguration name="$l10n_colorConfigJTS_dark_brown_painted" color="JTS_BROWN_DARK" material="32" price="200" />
+        <baseMaterialConfiguration name="$l10n_colorConfigJTS_dark_red_metallic" color="JTS_RED_DARK" material="3" price="0" isDefault="true" />
+        <baseMaterialConfiguration name="$l10n_colorConfigJTS_dark_green_metallic" color="JTS_GREEN_DARK" material="3" price="300" />
+        <baseMaterialConfiguration name="$l10n_colorConfigJTS_dark_blue_metallic" color="JTS_BLUE_DARK" material="3" price="300" />
+        <baseMaterialConfiguration name="$l10n_colorConfigJTS_dark_yellow_metallic" color="JTS_YELLOW_DARK" material="3" price="300" />
+        <baseMaterialConfiguration name="$l10n_colorConfigJTS_dark_orange_metallic" color="JTS_ORANGE_DARK" material="3" price="300" />
+        <baseMaterialConfiguration name="$l10n_colorConfigJTS_dark_purple_metallic" color="JTS_PURPLE_DARK" material="3" price="300" />
+        <baseMaterialConfiguration name="$l10n_colorConfigJTS_dark_grey_metallic" color="JTS_GREY_DARK" material="3" price="300" />
+        <baseMaterialConfiguration name="$l10n_colorConfigJTS_dark_brown_metallic" color="JTS_BROWN_DARK" material="3" price="300" />
+        <baseMaterialConfiguration name="$l10n_colorConfigJTS_dark_red_chrome" color="JTS_RED_DARK" material="2" price="250" />
+        <baseMaterialConfiguration name="$l10n_colorConfigJTS_dark_green_chrome" color="JTS_GREEN_DARK" material="2" price="250" />
+        <baseMaterialConfiguration name="$l10n_colorConfigJTS_dark_blue_chrome" color="JTS_BLUE_DARK" material="2" price="250" />
+        <baseMaterialConfiguration name="$l10n_colorConfigJTS_dark_yellow_chrome" color="JTS_YELLOW_DARK" material="2" price="250" />
+        <baseMaterialConfiguration name="$l10n_colorConfigJTS_dark_orange_chrome" color="JTS_ORANGE_DARK" material="2" price="250" />
+        <baseMaterialConfiguration name="$l10n_colorConfigJTS_dark_purple_chrome" color="JTS_PURPLE_DARK" material="2" price="250" />
+        <baseMaterialConfiguration name="$l10n_colorConfigJTS_dark_grey_chrome" color="JTS_GREY_DARK" material="2" price="250" />
+        <baseMaterialConfiguration name="$l10n_colorConfigJTS_dark_brown_chrome" color="JTS_BROWN_DARK" material="2" price="250" />
+        <baseMaterialConfiguration name="$l10n_colorConfigJTS_bright_red_painted" color="JTS_RED_BRIGHT" material="32" price="200" />
+        <baseMaterialConfiguration name="$l10n_colorConfigJTS_bright_green_painted" color="JTS_GREEN_BRIGHT" material="32" price="200" />
+        <baseMaterialConfiguration name="$l10n_colorConfigJTS_bright_blue_painted" color="JTS_BLUE_BRIGHT" material="32" price="200" />
+        <baseMaterialConfiguration name="$l10n_colorConfigJTS_bright_yellow_painted" color="JTS_YELLOW_BRIGHT" material="32" price="200" />
+        <baseMaterialConfiguration name="$l10n_colorConfigJTS_bright_orange_painted" color="JTS_ORANGE_BRIGHT" material="32" price="200" />
+        <baseMaterialConfiguration name="$l10n_colorConfigJTS_pink_painted" color="JTS_PINK" material="32" price="200" />
+        <baseMaterialConfiguration name="$l10n_colorConfigJTS_bright_grey_painted" color="JTS_GREY_BRIGHT" material="32" price="200" />
+        <baseMaterialConfiguration name="$l10n_colorConfigJTS_bright_brown_painted" color="JTS_BROWN_BRIGHT" material="32" price="200" />
+        <baseMaterialConfiguration name="$l10n_colorConfigJTS_bright_red_metallic" color="JTS_RED_BRIGHT" material="3" price="300" />
+        <baseMaterialConfiguration name="$l10n_colorConfigJTS_bright_green_metallic" color="JTS_GREEN_BRIGHT" material="3" price="300" />
+        <baseMaterialConfiguration name="$l10n_colorConfigJTS_bright_blue_metallic" color="JTS_BLUE_BRIGHT" material="3" price="300" />
+        <baseMaterialConfiguration name="$l10n_colorConfigJTS_bright_yellow_metallic" color="JTS_YELLOW_BRIGHT" material="3" price="300" />
+        <baseMaterialConfiguration name="$l10n_colorConfigJTS_bright_orange_metallic" color="JTS_ORANGE_BRIGHT" material="3" price="300" />
+        <baseMaterialConfiguration name="$l10n_colorConfigJTS_pink_metallic" color="JTS_PINK" material="3" price="300" />
+        <baseMaterialConfiguration name="$l10n_colorConfigJTS_bright_grey_metallic" color="JTS_GREY_BRIGHT" material="3" price="300" />
+        <baseMaterialConfiguration name="$l10n_colorConfigJTS_bright_brown_metallic" color="JTS_BROWN_BRIGHT" material="3" price="300" />
+        <baseMaterialConfiguration name="$l10n_colorConfigJTS_bright_red_chrome" color="JTS_RED_BRIGHT" material="2" price="250" />
+        <baseMaterialConfiguration name="$l10n_colorConfigJTS_bright_green_chrome" color="JTS_GREEN_BRIGHT" material="2" price="250" />
+        <baseMaterialConfiguration name="$l10n_colorConfigJTS_bright_blue_chrome" color="JTS_BLUE_BRIGHT" material="2" price="250" />
+        <baseMaterialConfiguration name="$l10n_colorConfigJTS_bright_yellow_chrome" color="JTS_YELLOW_BRIGHT" material="2" price="250" />
+        <baseMaterialConfiguration name="$l10n_colorConfigJTS_bright_orange_chrome" color="JTS_ORANGE_BRIGHT" material="2" price="250" />
+        <baseMaterialConfiguration name="$l10n_colorConfigJTS_pink_chrome" color="JTS_PINK" material="2" price="250" />
+        <baseMaterialConfiguration name="$l10n_colorConfigJTS_bright_grey_chrome" color="JTS_GREY_BRIGHT" material="2" price="250" />
+        <baseMaterialConfiguration name="$l10n_colorConfigJTS_bright_brown_chrome" color="JTS_BROWN_BRIGHT" material="2" price="250" />
+        <baseMaterialConfiguration name="$l10n_colorConfigJTS_black_painted" color="JTS_BLACK" material="32" price="200" />
+        <baseMaterialConfiguration name="$l10n_colorConfigJTS_black_metallic" color="JTS_BLACK" material="3" price="300" />
+        <baseMaterialConfiguration name="$l10n_colorConfigJTS_black_chrome" color="JTS_BLACK" material="2" price="250" />
+        <baseMaterialConfiguration name="$l10n_colorConfigJTS_gold" color="JTS_GOLD" material="3" price="250" />
+        <baseMaterialConfiguration name="$l10n_colorConfigJTS_copper" color="JTS_COPPER" material="3" price="250" />
+    </baseMaterialConfigurations>
+    <designMaterialConfigurations useDefaultColors="true">
+        <material name="RealBaseMat" shaderParameter="colorMat0" />
+        <material name="ExtraPartsMat" shaderParameter="colorMat0" />
+        <designMaterialConfiguration name="$l10n_colorConfigJTS_dark_red_painted" color="JTS_RED_DARK" material="32" price="200" />
+        <designMaterialConfiguration name="$l10n_colorConfigJTS_dark_green_painted" color="JTS_GREEN_DARK" material="32" price="200" />
+        <designMaterialConfiguration name="$l10n_colorConfigJTS_dark_blue_painted" color="JTS_BLUE_DARK" material="32" price="200" />
+        <designMaterialConfiguration name="$l10n_colorConfigJTS_dark_yellow_painted" color="JTS_YELLOW_DARK" material="32" price="200" />
+        <designMaterialConfiguration name="$l10n_colorConfigJTS_dark_orange_painted" color="JTS_ORANGE_DARK" material="32" price="200" />
+        <designMaterialConfiguration name="$l10n_colorConfigJTS_dark_purple_painted" color="JTS_PURPLE_DARK" material="32" price="200" />
+        <designMaterialConfiguration name="$l10n_colorConfigJTS_dark_grey_painted" color="JTS_GREY_DARK" material="32" price="200" />
+        <designMaterialConfiguration name="$l10n_colorConfigJTS_dark_brown_painted" color="JTS_BROWN_DARK" material="32" price="200" />
+        <designMaterialConfiguration name="$l10n_colorConfigJTS_dark_red_metallic" color="JTS_RED_DARK" material="3" price="200" />
+        <designMaterialConfiguration name="$l10n_colorConfigJTS_dark_green_metallic" color="JTS_GREEN_DARK" material="3" price="300" />
+        <designMaterialConfiguration name="$l10n_colorConfigJTS_dark_blue_metallic" color="JTS_BLUE_DARK" material="3" price="300" />
+        <designMaterialConfiguration name="$l10n_colorConfigJTS_dark_yellow_metallic" color="JTS_YELLOW_DARK" material="3" price="300" />
+        <designMaterialConfiguration name="$l10n_colorConfigJTS_dark_orange_metallic" color="JTS_ORANGE_DARK" material="3" price="300" />
+        <designMaterialConfiguration name="$l10n_colorConfigJTS_dark_purple_metallic" color="JTS_PURPLE_DARK" material="3" price="300" />
+        <designMaterialConfiguration name="$l10n_colorConfigJTS_dark_grey_metallic" color="JTS_GREY_DARK" material="3" price="300" />
+        <designMaterialConfiguration name="$l10n_colorConfigJTS_dark_brown_metallic" color="JTS_BROWN_DARK" material="3" price="300" />
+        <designMaterialConfiguration name="$l10n_colorConfigJTS_dark_red_chrome" color="JTS_RED_DARK" material="2" price="250" />
+        <designMaterialConfiguration name="$l10n_colorConfigJTS_dark_green_chrome" color="JTS_GREEN_DARK" material="2" price="250" />
+        <designMaterialConfiguration name="$l10n_colorConfigJTS_dark_blue_chrome" color="JTS_BLUE_DARK" material="2" price="250" />
+        <designMaterialConfiguration name="$l10n_colorConfigJTS_dark_yellow_chrome" color="JTS_YELLOW_DARK" material="2" price="250" />
+        <designMaterialConfiguration name="$l10n_colorConfigJTS_dark_orange_chrome" color="JTS_ORANGE_DARK" material="2" price="250" />
+        <designMaterialConfiguration name="$l10n_colorConfigJTS_dark_purple_chrome" color="JTS_PURPLE_DARK" material="2" price="250" />
+        <designMaterialConfiguration name="$l10n_colorConfigJTS_dark_grey_chrome" color="JTS_GREY_DARK" material="2" price="250" />
+        <designMaterialConfiguration name="$l10n_colorConfigJTS_dark_brown_chrome" color="JTS_BROWN_DARK" material="2" price="250" />
+        <designMaterialConfiguration name="$l10n_colorConfigJTS_bright_red_painted" color="JTS_RED_BRIGHT" material="32" price="200" />
+        <designMaterialConfiguration name="$l10n_colorConfigJTS_bright_green_painted" color="JTS_GREEN_BRIGHT" material="32" price="200" />
+        <designMaterialConfiguration name="$l10n_colorConfigJTS_bright_blue_painted" color="JTS_BLUE_BRIGHT" material="32" price="200" />
+        <designMaterialConfiguration name="$l10n_colorConfigJTS_bright_yellow_painted" color="JTS_YELLOW_BRIGHT" material="32" price="200" />
+        <designMaterialConfiguration name="$l10n_colorConfigJTS_bright_orange_painted" color="JTS_ORANGE_BRIGHT" material="32" price="200" />
+        <designMaterialConfiguration name="$l10n_colorConfigJTS_pink_painted" color="JTS_PINK" material="32" price="200" />
+        <designMaterialConfiguration name="$l10n_colorConfigJTS_bright_grey_painted" color="JTS_GREY_BRIGHT" material="32" price="200" />
+        <designMaterialConfiguration name="$l10n_colorConfigJTS_bright_brown_painted" color="JTS_BROWN_BRIGHT" material="32" price="200" />
+        <designMaterialConfiguration name="$l10n_colorConfigJTS_bright_red_metallic" color="JTS_RED_BRIGHT" material="3" price="300" />
+        <designMaterialConfiguration name="$l10n_colorConfigJTS_bright_green_metallic" color="JTS_GREEN_BRIGHT" material="3" price="300" />
+        <designMaterialConfiguration name="$l10n_colorConfigJTS_bright_blue_metallic" color="JTS_BLUE_BRIGHT" material="3" price="300" />
+        <designMaterialConfiguration name="$l10n_colorConfigJTS_bright_yellow_metallic" color="JTS_YELLOW_BRIGHT" material="3" price="300" />
+        <designMaterialConfiguration name="$l10n_colorConfigJTS_bright_orange_metallic" color="JTS_ORANGE_BRIGHT" material="3" price="300" />
+        <designMaterialConfiguration name="$l10n_colorConfigJTS_pink_metallic" color="JTS_PINK" material="3" price="300" />
+        <designMaterialConfiguration name="$l10n_colorConfigJTS_bright_grey_metallic" color="JTS_GREY_BRIGHT" material="3" price="300" />
+        <designMaterialConfiguration name="$l10n_colorConfigJTS_bright_brown_metallic" color="JTS_BROWN_BRIGHT" material="3" price="300" />
+        <designMaterialConfiguration name="$l10n_colorConfigJTS_bright_red_chrome" color="JTS_RED_BRIGHT" material="2" price="250" />
+        <designMaterialConfiguration name="$l10n_colorConfigJTS_bright_green_chrome" color="JTS_GREEN_BRIGHT" material="2" price="250" />
+        <designMaterialConfiguration name="$l10n_colorConfigJTS_bright_blue_chrome" color="JTS_BLUE_BRIGHT" material="2" price="250" />
+        <designMaterialConfiguration name="$l10n_colorConfigJTS_bright_yellow_chrome" color="JTS_YELLOW_BRIGHT" material="2" price="250" />
+        <designMaterialConfiguration name="$l10n_colorConfigJTS_bright_orange_chrome" color="JTS_ORANGE_BRIGHT" material="2" price="250" />
+        <designMaterialConfiguration name="$l10n_colorConfigJTS_pink_chrome" color="JTS_PINK" material="2" price="250" />
+        <designMaterialConfiguration name="$l10n_colorConfigJTS_bright_grey_chrome" color="JTS_GREY_BRIGHT" material="2" price="250" />
+        <designMaterialConfiguration name="$l10n_colorConfigJTS_bright_brown_chrome" color="JTS_BROWN_BRIGHT" material="2" price="250" />
+        <designMaterialConfiguration name="$l10n_colorConfigJTS_black_painted" color="JTS_BLACK" material="32" price="200" />
+        <designMaterialConfiguration name="$l10n_colorConfigJTS_black_metallic" color="JTS_BLACK" material="3" price="0"  isDefault="true" />
+        <designMaterialConfiguration name="$l10n_colorConfigJTS_black_chrome" color="JTS_BLACK" material="2" price="250" />
+        <designMaterialConfiguration name="$l10n_colorConfigJTS_gold" color="JTS_GOLD" material="3" price="250" />
+        <designMaterialConfiguration name="$l10n_colorConfigJTS_copper" color="JTS_COPPER" material="3" price="250" />
+    </designMaterialConfigurations>
+    <rimColorConfigurations useDefaultColors="true">
+        <rimColorConfiguration name="$l10n_colorConfigJTS_dark_red_painted" color="JTS_RED_DARK" material="32" price="100" />
+        <rimColorConfiguration name="$l10n_colorConfigJTS_dark_green_painted" color="JTS_GREEN_DARK" material="32" price="100" />
+        <rimColorConfiguration name="$l10n_colorConfigJTS_dark_blue_painted" color="JTS_BLUE_DARK" material="32" price="100" />
+        <rimColorConfiguration name="$l10n_colorConfigJTS_dark_yellow_painted" color="JTS_YELLOW_DARK" material="32" price="100" />
+        <rimColorConfiguration name="$l10n_colorConfigJTS_dark_orange_painted" color="JTS_ORANGE_DARK" material="32" price="100" />
+        <rimColorConfiguration name="$l10n_colorConfigJTS_dark_purple_painted" color="JTS_PURPLE_DARK" material="32" price="100" />
+        <rimColorConfiguration name="$l10n_colorConfigJTS_dark_grey_painted" color="JTS_GREY_DARK" material="32" price="100" />
+        <rimColorConfiguration name="$l10n_colorConfigJTS_dark_brown_painted" color="JTS_BROWN_DARK" material="32" price="100" />
+        <rimColorConfiguration name="$l10n_colorConfigJTS_dark_red_metallic" color="JTS_RED_DARK" material="3" price="100" />
+        <rimColorConfiguration name="$l10n_colorConfigJTS_dark_green_metallic" color="JTS_GREEN_DARK" material="3" price="100" />
+        <rimColorConfiguration name="$l10n_colorConfigJTS_dark_blue_metallic" color="JTS_BLUE_DARK" material="3" price="100" />
+        <rimColorConfiguration name="$l10n_colorConfigJTS_dark_yellow_metallic" color="JTS_YELLOW_DARK" material="3" price="100" />
+        <rimColorConfiguration name="$l10n_colorConfigJTS_dark_orange_metallic" color="JTS_ORANGE_DARK" material="3" price="100" />
+        <rimColorConfiguration name="$l10n_colorConfigJTS_dark_purple_metallic" color="JTS_PURPLE_DARK" material="3" price="100" />
+        <rimColorConfiguration name="$l10n_colorConfigJTS_dark_grey_metallic" color="JTS_GREY_DARK" material="3" price="100" />
+        <rimColorConfiguration name="$l10n_colorConfigJTS_dark_brown_metallic" color="JTS_BROWN_DARK" material="3" price="100" />
+        <rimColorConfiguration name="$l10n_colorConfigJTS_dark_red_chrome" color="JTS_RED_DARK" material="2" price="100" />
+        <rimColorConfiguration name="$l10n_colorConfigJTS_dark_green_chrome" color="JTS_GREEN_DARK" material="2" price="100" />
+        <rimColorConfiguration name="$l10n_colorConfigJTS_dark_blue_chrome" color="JTS_BLUE_DARK" material="2" price="100" />
+        <rimColorConfiguration name="$l10n_colorConfigJTS_dark_yellow_chrome" color="JTS_YELLOW_DARK" material="2" price="100" />
+        <rimColorConfiguration name="$l10n_colorConfigJTS_dark_orange_chrome" color="JTS_ORANGE_DARK" material="2" price="100" />
+        <rimColorConfiguration name="$l10n_colorConfigJTS_dark_purple_chrome" color="JTS_PURPLE_DARK" material="2" price="100" />
+        <rimColorConfiguration name="$l10n_colorConfigJTS_dark_grey_chrome" color="JTS_GREY_DARK" material="2" price="100" />
+        <rimColorConfiguration name="$l10n_colorConfigJTS_dark_brown_chrome" color="JTS_BROWN_DARK" material="2" price="100" />
+        <rimColorConfiguration name="$l10n_colorConfigJTS_bright_red_painted" color="JTS_RED_BRIGHT" material="32" price="100" />
+        <rimColorConfiguration name="$l10n_colorConfigJTS_bright_green_painted" color="JTS_GREEN_BRIGHT" material="32" price="100" />
+        <rimColorConfiguration name="$l10n_colorConfigJTS_bright_blue_painted" color="JTS_BLUE_BRIGHT" material="32" price="100" />
+        <rimColorConfiguration name="$l10n_colorConfigJTS_bright_yellow_painted" color="JTS_YELLOW_BRIGHT" material="32" price="100" />
+        <rimColorConfiguration name="$l10n_colorConfigJTS_bright_orange_painted" color="JTS_ORANGE_BRIGHT" material="32" price="100" />
+        <rimColorConfiguration name="$l10n_colorConfigJTS_pink_painted" color="JTS_PINK" material="32" price="100" />
+        <rimColorConfiguration name="$l10n_colorConfigJTS_bright_grey_painted" color="JTS_GREY_BRIGHT" material="32" price="100" />
+        <rimColorConfiguration name="$l10n_colorConfigJTS_bright_brown_painted" color="JTS_BROWN_BRIGHT" material="32" price="100" />
+        <rimColorConfiguration name="$l10n_colorConfigJTS_bright_red_metallic" color="JTS_RED_BRIGHT" material="3" price="100" />
+        <rimColorConfiguration name="$l10n_colorConfigJTS_bright_green_metallic" color="JTS_GREEN_BRIGHT" material="3" price="100" />
+        <rimColorConfiguration name="$l10n_colorConfigJTS_bright_blue_metallic" color="JTS_BLUE_BRIGHT" material="3" price="100" />
+        <rimColorConfiguration name="$l10n_colorConfigJTS_bright_yellow_metallic" color="JTS_YELLOW_BRIGHT" material="3" price="100" />
+        <rimColorConfiguration name="$l10n_colorConfigJTS_bright_orange_metallic" color="JTS_ORANGE_BRIGHT" material="3" price="100" />
+        <rimColorConfiguration name="$l10n_colorConfigJTS_pink_metallic" color="JTS_PINK" material="3" price="100" />
+        <rimColorConfiguration name="$l10n_colorConfigJTS_bright_grey_metallic" color="JTS_GREY_BRIGHT" material="3" price="100" />
+        <rimColorConfiguration name="$l10n_colorConfigJTS_bright_brown_metallic" color="JTS_BROWN_BRIGHT" material="3" price="100" />
+        <rimColorConfiguration name="$l10n_colorConfigJTS_bright_red_chrome" color="JTS_RED_BRIGHT" material="2" price="100" />
+        <rimColorConfiguration name="$l10n_colorConfigJTS_bright_green_chrome" color="JTS_GREEN_BRIGHT" material="2" price="100" />
+        <rimColorConfiguration name="$l10n_colorConfigJTS_bright_blue_chrome" color="JTS_BLUE_BRIGHT" material="2" price="100" />
+        <rimColorConfiguration name="$l10n_colorConfigJTS_bright_yellow_chrome" color="JTS_YELLOW_BRIGHT" material="2" price="100" />
+        <rimColorConfiguration name="$l10n_colorConfigJTS_bright_orange_chrome" color="JTS_ORANGE_BRIGHT" material="2" price="100" />
+        <rimColorConfiguration name="$l10n_colorConfigJTS_pink_chrome" color="JTS_PINK" material="2" price="100" />
+        <rimColorConfiguration name="$l10n_colorConfigJTS_bright_grey_chrome" color="JTS_GREY_BRIGHT" material="2" price="100" />
+        <rimColorConfiguration name="$l10n_colorConfigJTS_bright_brown_chrome" color="JTS_BROWN_BRIGHT" material="2" price="100" />
+        <rimColorConfiguration name="$l10n_colorConfigJTS_black_painted" color="JTS_BLACK" material="32" price="100" />
+        <rimColorConfiguration name="$l10n_colorConfigJTS_black_metallic" color="JTS_BLACK" material="3" price="0"  isDefault="true" />
+        <rimColorConfiguration name="$l10n_colorConfigJTS_black_chrome" color="JTS_BLACK" material="2" price="100" />
+        <rimColorConfiguration name="$l10n_colorConfigJTS_gold" color="JTS_GOLD" material="3" price="100" />
+        <rimColorConfiguration name="$l10n_colorConfigJTS_copper" color="JTS_COPPER" material="3" price="100" />
+    </rimColorConfigurations>
+    <designConfigurations title="$l10n_ui_brands">
+        <designConfiguration name="None" price="0" />
+        <designConfiguration name="Amazone" price="0">
+            <objectChange node="decalAmazone_01" visibilityActive="true" visibilityInactive="false" />
+            <objectChange node="decalAmazone_02" visibilityActive="true" visibilityInactive="false" />
+            <objectChange node="decalAmazone_03" visibilityActive="true" visibilityInactive="false" />
+            <objectChange node="decalAmazone_04" visibilityActive="true" visibilityInactive="false" />
+        </designConfiguration>
+        <designConfiguration name="CaseIH" price="0">
+            <objectChange node="decalCaseIH_01" visibilityActive="true" visibilityInactive="false" />
+            <objectChange node="decalCaseIH_02" visibilityActive="true" visibilityInactive="false" />
+            <objectChange node="decalCaseIH_03" visibilityActive="true" visibilityInactive="false" />
+            <objectChange node="decalCaseIH_04" visibilityActive="true" visibilityInactive="false" />
+        </designConfiguration>
+        <designConfiguration name="Deutz-Fahr" price="0">
+            <objectChange node="decalDeutzFahr_01" visibilityActive="true" visibilityInactive="false" />
+            <objectChange node="decalDeutzFahr_02" visibilityActive="true" visibilityInactive="false" />
+            <objectChange node="decalDeutzFahr_03" visibilityActive="true" visibilityInactive="false" />
+            <objectChange node="decalDeutzFahr_04" visibilityActive="true" visibilityInactive="false" />
+        </designConfiguration>
+        <designConfiguration name="Fendt" price="0">
+            <objectChange node="decalFendt_01" visibilityActive="true" visibilityInactive="false" />
+            <objectChange node="decalFendt_02" visibilityActive="true" visibilityInactive="false" />
+            <objectChange node="decalFendt_03" visibilityActive="true" visibilityInactive="false" />
+            <objectChange node="decalFendt_04" visibilityActive="true" visibilityInactive="false" />
+        </designConfiguration>
+        <designConfiguration name="Horsch" price="0">
+            <objectChange node="decalHorsch_01" visibilityActive="true" visibilityInactive="false" />
+            <objectChange node="decalHorsch_02" visibilityActive="true" visibilityInactive="false" />
+            <objectChange node="decalHorsch_03" visibilityActive="true" visibilityInactive="false" />
+            <objectChange node="decalHorsch_04" visibilityActive="true" visibilityInactive="false" />
+        </designConfiguration>
+        <designConfiguration name="John Deere" price="0">
+            <objectChange node="decalDeere_01" visibilityActive="true" visibilityInactive="false" />
+            <objectChange node="decalDeere_02" visibilityActive="true" visibilityInactive="false" />
+            <objectChange node="decalDeere_03" visibilityActive="true" visibilityInactive="false" />
+            <objectChange node="decalDeere_04" visibilityActive="true" visibilityInactive="false" />
+        </designConfiguration>
+        <designConfiguration name="Lemken" price="0">
+            <objectChange node="decalLemken_01" visibilityActive="true" visibilityInactive="false" />
+            <objectChange node="decalLemken_02" visibilityActive="true" visibilityInactive="false" />
+            <objectChange node="decalLemken_03" visibilityActive="true" visibilityInactive="false" />
+            <objectChange node="decalLemken_04" visibilityActive="true" visibilityInactive="false" />
+        </designConfiguration>
+        <designConfiguration name="Lizard" price="0">
+            <objectChange node="decalLizard_01" visibilityActive="true" visibilityInactive="false" />
+            <objectChange node="decalLizard_02" visibilityActive="true" visibilityInactive="false" />
+            <objectChange node="decalLizard_03" visibilityActive="true" visibilityInactive="false" />
+            <objectChange node="decalLizard_04" visibilityActive="true" visibilityInactive="false" />
+        </designConfiguration>
+        <designConfiguration name="Massey Ferguson" price="0">
+            <objectChange node="decalMassey_01" visibilityActive="true" visibilityInactive="false" />
+            <objectChange node="decalMassey_02" visibilityActive="true" visibilityInactive="false" />
+            <objectChange node="decalMassey_03" visibilityActive="true" visibilityInactive="false" />
+            <objectChange node="decalMassey_04" visibilityActive="true" visibilityInactive="false" />
+        </designConfiguration>
+        <designConfiguration name="New Holland" price="0">
+            <objectChange node="decalNewHolland_01" visibilityActive="true" visibilityInactive="false" />
+            <objectChange node="decalNewHolland_02" visibilityActive="true" visibilityInactive="false" />
+            <objectChange node="decalNewHolland_03" visibilityActive="true" visibilityInactive="false" />
+            <objectChange node="decalNewHolland_04" visibilityActive="true" visibilityInactive="false" />
+        </designConfiguration>
+        <designConfiguration name="Vaderstad" price="0">
+            <objectChange node="decalVaderstad_01" visibilityActive="true" visibilityInactive="false" />
+            <objectChange node="decalVaderstad_02" visibilityActive="true" visibilityInactive="false" />
+            <objectChange node="decalVaderstad_03" visibilityActive="true" visibilityInactive="false" />
+            <objectChange node="decalVaderstad_04" visibilityActive="true" visibilityInactive="false" />
+        </designConfiguration>
+    </designConfigurations>
+    <attacherJoints>
+        <attacherJointConfigurations title="$l10n_shopConfig_rear">
+            <attacherJointConfiguration name="$l10n_configuration_valueNone">
+            </attacherJointConfiguration>
+            <attacherJointConfiguration name="$l10n_shopConfig_crumble" price="15000" isDefault="true">
+                <objectChange node="cw_crumbler" visibilityActive="true" visibilityInactive="false" />
+                <objectChange node="riw_crumbler" visibilityActive="true" visibilityInactive="false" />
+                <objectChange node="liw_crumbler" visibilityActive="true" visibilityInactive="false" />
+            </attacherJointConfiguration>
+            <attacherJointConfiguration name="$l10n_shopConfig_spike" price="8000">
+                <objectChange node="cw_spikeTooth" visibilityActive="true" visibilityInactive="false" />
+                <objectChange node="riw_spikeTooth" visibilityActive="true" visibilityInactive="false" />
+                <objectChange node="liw_spikeTooth" visibilityActive="true" visibilityInactive="false" />
+            </attacherJointConfiguration>
+            <attacherJointConfiguration name="$l10n_configuration_trailerAttacherBack" price="3000">
+                <objectChange node="rearHitch" visibilityActive="true" visibilityInactive="false" />
+                <attacherJoint node="rearHitch_att_trailer" jointType="trailer" lowerRotLimit="10 80 80" upperRotationOffset="0" allowsJointLimitMovement="false">
+                    <schema position="1 0" rotation="0" invertX="false" />
+                </attacherJoint>
+                <attacherJoint node="rearHitch_att_trailerLow" jointType="trailerLow" lowerRotLimit="10 80 80" upperRotationOffset="0" allowsJointLimitMovement="false">
+                    <schema position="1 0" rotation="0" invertX="false" />
+                </attacherJoint>
+            </attacherJointConfiguration>
+        </attacherJointConfigurations>
+    </attacherJoints>
+    <licensePlates>
+        <licensePlate node="licensePlateHolder" position="BACK" preferedType="SQUARISH" placementArea="0.06 0.3 0.3 0.3" />
+    </licensePlates>
+    <i3dMappings>
+        <i3dMapping id="mrplow_component1" node="0>" />
+        <i3dMapping id="mrplow_vis" node="0>40" />
+        <i3dMapping id="aiCollisionTrigger" node="0>0|0|0" />
+        <i3dMapping id="aiMarkerBack" node="0>0|0|1" />
+        <i3dMapping id="aiMarkerLeft3" node="0>0|0|2" />
+        <i3dMapping id="aiMarkerLeft5" node="0>0|0|3" />
+        <i3dMapping id="aiMarkerRight3" node="0>0|0|4" />
+        <i3dMapping id="aiMarkerRight5" node="0>0|0|5" />
+        <i3dMapping id="cw_crumbler" node="0>0|1" />
+        <i3dMapping id="cw_crumble_ref" node="0>0|1|1" />
+        <i3dMapping id="cw_crumble_roller" node="0>0|1|2" />
+        <i3dMapping id="cw_spikeTooth" node="0>0|2" />
+        <i3dMapping id="hoses_5Section" node="0>0|5" />
+        <i3dMapping id="jointHitchToBody" node="0>0|7|0" />
+        <i3dMapping id="jointLeftWingInner" node="0>0|7|1" />
+        <i3dMapping id="jointRightWingInner" node="0>0|7|2" />
+        <i3dMapping id="backupLightLeft" node="0>0|8|0" />
+        <i3dMapping id="backupLightRight" node="0>0|8|1" />
+        <i3dMapping id="beacon" node="0>0|8|2" />
+        <i3dMapping id="brakeLightLeft" node="0>0|8|3" />
+        <i3dMapping id="brakeLightRight" node="0>0|8|4" />
+        <i3dMapping id="rearLightAnchorLeft" node="0>0|8|5" />
+        <i3dMapping id="rearLightAnchorRight" node="0>0|8|6" />
+        <i3dMapping id="turnLightLeft" node="0>0|8|7" />
+        <i3dMapping id="turnLightRight" node="0>0|8|8" />
+        <i3dMapping id="wingWorklightLeftFront" node="0>0|8|9" />
+        <i3dMapping id="realWorklightLeftFront" node="0>0|8|9|0" />
+        <i3dMapping id="wingWorklightLeftRear" node="0>0|8|10" />
+        <i3dMapping id="realWorklightLeftRear" node="0>0|8|10|0" />
+        <i3dMapping id="wingWorklightRightFront" node="0>0|8|11" />
+        <i3dMapping id="realWorklightRightFront" node="0>0|8|11|0" />
+        <i3dMapping id="wingWorklightRightRear" node="0>0|8|12" />
+        <i3dMapping id="realWorklightRightRear" node="0>0|8|12|0" />
+        <i3dMapping id="lcFrontBladesBF" node="0>0|9|0|0" />
+        <i3dMapping id="lcFrontBladesBF_hvy" node="0>0|9|0|1" />
+        <i3dMapping id="lcFrontBladesFF" node="0>0|9|0|2" />
+        <i3dMapping id="lcFrontBladesFF_hvy" node="0>0|9|0|3" />
+        <i3dMapping id="lcRearBladesBF" node="0>0|9|0|5" />
+        <i3dMapping id="lcRearBladesFF" node="0>0|9|0|6" />
+        <i3dMapping id="rcFrontBladesBF" node="0>0|9|0|8" />
+        <i3dMapping id="rcFrontBladesBF_hvy" node="0>0|9|0|9" />
+        <i3dMapping id="rcFrontBladesFF" node="0>0|9|0|10" />
+        <i3dMapping id="rcFrontBladesFF_hvy" node="0>0|9|0|11" />
+        <i3dMapping id="rcRearBladesBF" node="0>0|9|0|13" />
+        <i3dMapping id="rcRearBladesFF" node="0>0|9|0|14" />
+        <i3dMapping id="cwSmokeEmitter" node="0>0|9|1|0" />
+        <i3dMapping id="lcwFrontSoil_ref" node="0>0|9|1|1" />
+        <i3dMapping id="lcwRearSoil_ref" node="0>0|9|1|2" />
+        <i3dMapping id="rcwFrontSoil_ref" node="0>0|9|1|3" />
+        <i3dMapping id="rcwRearSoil_ref" node="0>0|9|1|4" />
+        <i3dMapping id="drivePivotAxle" node="0>0|9|2|0" />
+        <i3dMapping id="lwPivot" node="0>0|9|2|0|0" />
+        <i3dMapping id="lwBotPiston_ref" node="0>0|9|2|0|0|0" />
+        <i3dMapping id="lwWheelTruck" node="0>0|9|2|0|0|1" />
+        <i3dMapping id="lwInsideWheel_att" node="0>0|9|2|0|0|1|0" />
+        <i3dMapping id="lwOutsideWheel_att" node="0>0|9|2|0|0|1|1" />
+        <i3dMapping id="rwPivot" node="0>0|9|2|0|1" />
+        <i3dMapping id="rwBotPiston_ref" node="0>0|9|2|0|1|0" />
+        <i3dMapping id="rwWheelTruck" node="0>0|9|2|0|1|1" />
+        <i3dMapping id="rwInsideWheel_att" node="0>0|9|2|0|1|1|0" />
+        <i3dMapping id="rwOutsideWheel_att" node="0>0|9|2|0|1|1|1" />
+        <i3dMapping id="wheelAxelPiston_ref" node="0>0|9|2|0|2" />
+        <i3dMapping id="lwCylinder" node="0>0|9|2|1" />
+        <i3dMapping id="lwBotPiston" node="0>0|9|2|1|0" />
+        <i3dMapping id="rwCylinder" node="0>0|9|2|2" />
+        <i3dMapping id="rwBotPiston" node="0>0|9|2|2|1" />
+        <i3dMapping id="backLeftCylinder" node="0>0|9|3|0" />
+        <i3dMapping id="backLeftPiston" node="0>0|9|3|0|0" />
+        <i3dMapping id="backRightCylinder" node="0>0|9|3|1" />
+        <i3dMapping id="backRightPiston" node="0>0|9|3|1|0" />
+        <i3dMapping id="frontLeftCylinder" node="0>0|9|3|2" />
+        <i3dMapping id="frontLeftPiston" node="0>0|9|3|2|1" />
+        <i3dMapping id="frontRightCylinder" node="0>0|9|3|3" />
+        <i3dMapping id="frontRightPiston" node="0>0|9|3|3|1" />
+        <i3dMapping id="licensePlateHolder" node="0>0|9|4" />
+        <i3dMapping id="liftCylinderAnchor" node="0>0|9|5|0" />
+        <i3dMapping id="liftCylinder" node="0>0|9|5|0|0" />
+        <i3dMapping id="liftPiston" node="0>0|9|5|0|0|2" />
+        <i3dMapping id="liftKnuckleConn" node="0>0|9|5|1" />
+        <i3dMapping id="triangleAnchor" node="0>0|9|6|0|0" />
+        <i3dMapping id="rearHitch" node="0>0|10" />
+        <i3dMapping id="rearHitch_att_trailer" node="0>0|10|0" />
+        <i3dMapping id="rearHitch_att_trailerLow" node="0>0|10|1" />
+        <i3dMapping id="wing_left_vis" node="0>0|11" />
+        <i3dMapping id="decals_left_inside" node="0>0|11|0" />
+        <i3dMapping id="decalAmazone_02" node="0>0|11|0|0" />
+        <i3dMapping id="decalCaseIH_02" node="0>0|11|0|1" />
+        <i3dMapping id="decalDeere_02" node="0>0|11|0|2" />
+        <i3dMapping id="decalDeutzFahr_02" node="0>0|11|0|3" />
+        <i3dMapping id="decalFendt_02" node="0>0|11|0|4" />
+        <i3dMapping id="decalHorsch_02" node="0>0|11|0|5" />
+        <i3dMapping id="decalLemken_02" node="0>0|11|0|6" />
+        <i3dMapping id="decalLizard_02" node="0>0|11|0|7" />
+        <i3dMapping id="decalMassey_02" node="0>0|11|0|8" />
+        <i3dMapping id="decalNewHolland_02" node="0>0|11|0|9" />
+        <i3dMapping id="decalVaderstad_02" node="0>0|11|0|10" />
+        <i3dMapping id="liw_crumbler" node="0>0|11|3" />
+        <i3dMapping id="liw_crumble_ref" node="0>0|11|3|1" />
+        <i3dMapping id="liw_crumble_roller" node="0>0|11|3|2" />
+        <i3dMapping id="liw_spikeTooth" node="0>0|11|4" />
+        <i3dMapping id="loFrame_option" node="0>0|11|5" />
+        <i3dMapping id="jointLeftWingOuter" node="0>0|11|5|0" />
+        <i3dMapping id="liFrame_hingeAttach" node="0>0|11|5|1" />
+        <i3dMapping id="liWingHinge" node="0>0|11|5|2" />
+        <i3dMapping id="leftInsideOutHingeBody" node="0>0|11|5|2|0" />
+        <i3dMapping id="leftInsideOutHingeLink" node="0>0|11|5|2|0|0" />
+        <i3dMapping id="liHydFrontPistonAnchor" node="0>0|11|5|2|0|1" />
+        <i3dMapping id="liHydRearPistonAnchor" node="0>0|11|5|2|0|2" />
+        <i3dMapping id="liHydFrontAnchor" node="0>0|11|5|2|1" />
+        <i3dMapping id="liHydCylinderFront" node="0>0|11|5|2|1|0" />
+        <i3dMapping id="liHydRamFront" node="0>0|11|5|2|1|0|1" />
+        <i3dMapping id="liHydRearAnchor" node="0>0|11|5|2|2" />
+        <i3dMapping id="liHydCylinderRear" node="0>0|11|5|2|2|0" />
+        <i3dMapping id="liHydRamRear" node="0>0|11|5|2|2|0|0" />
+        <i3dMapping id="wing_left_outside_vis" node="0>0|11|5|3" />
+        <i3dMapping id="decals_left_outside" node="0>0|11|5|3|0" />
+        <i3dMapping id="decalAmazone_01" node="0>0|11|5|3|0|0" />
+        <i3dMapping id="decalCaseIH_01" node="0>0|11|5|3|0|1" />
+        <i3dMapping id="decalDeere_01" node="0>0|11|5|3|0|2" />
+        <i3dMapping id="decalDeutzFahr_01" node="0>0|11|5|3|0|3" />
+        <i3dMapping id="decalFendt_01" node="0>0|11|5|3|0|4" />
+        <i3dMapping id="decalHorsch_01" node="0>0|11|5|3|0|5" />
+        <i3dMapping id="decalLemken_01" node="0>0|11|5|3|0|6" />
+        <i3dMapping id="decalLizard_01" node="0>0|11|5|3|0|7" />
+        <i3dMapping id="decalMassey_01" node="0>0|11|5|3|0|8" />
+        <i3dMapping id="decalNewHolland_01" node="0>0|11|5|3|0|9" />
+        <i3dMapping id="decalVaderstad_01" node="0>0|11|5|3|0|10" />
+        <i3dMapping id="lowFrontSoil_ref" node="0>0|11|5|3|2|0" />
+        <i3dMapping id="lowRearSoil_ref" node="0>0|11|5|3|2|1" />
+        <i3dMapping id="lowSmokeEmitter" node="0>0|11|5|3|2|2" />
+        <i3dMapping id="loFrontBladesBF" node="0>0|11|5|3|3|0" />
+        <i3dMapping id="loFrontBladesBF_hvy" node="0>0|11|5|3|3|1" />
+        <i3dMapping id="loFrontBladesFF" node="0>0|11|5|3|3|2" />
+        <i3dMapping id="loFrontBladesFF_hvy" node="0>0|11|5|3|3|3" />
+        <i3dMapping id="loRearBladesBF" node="0>0|11|5|3|3|5" />
+        <i3dMapping id="loRearBladesFF" node="0>0|11|5|3|3|6" />
+        <i3dMapping id="lowCylinder" node="0>0|11|5|3|4|0" />
+        <i3dMapping id="lowBotPiston" node="0>0|11|5|3|4|0|1" />
+        <i3dMapping id="lowPivot" node="0>0|11|5|3|4|1" />
+        <i3dMapping id="lowPiston_ref" node="0>0|11|5|3|4|1|0" />
+        <i3dMapping id="lowWheelTruck" node="0>0|11|5|3|4|1|1" />
+        <i3dMapping id="lowInsideWheelAttach" node="0>0|11|5|3|4|1|1|0" />
+        <i3dMapping id="lowOutsideWheelAttach" node="0>0|11|5|3|4|1|1|1" />
+        <i3dMapping id="low_crumbler" node="0>0|11|5|3|5" />
+        <i3dMapping id="low_crumble_ref" node="0>0|11|5|3|5|1" />
+        <i3dMapping id="low_crumble_roller" node="0>0|11|5|3|5|2" />
+        <i3dMapping id="low_spikeTooth" node="0>0|11|5|3|6" />
+        <i3dMapping id="liwFrontSoil_ref" node="0>0|11|6|0|0" />
+        <i3dMapping id="liwRearSoil_ref" node="0>0|11|6|0|1" />
+        <i3dMapping id="liwSmokeEmitter" node="0>0|11|6|0|2" />
+        <i3dMapping id="liFrontBladesBF" node="0>0|11|6|1|0" />
+        <i3dMapping id="liFrontBladesBF_hvy" node="0>0|11|6|1|1" />
+        <i3dMapping id="liFrontBladesFF" node="0>0|11|6|1|2" />
+        <i3dMapping id="liFrontBladesFF_hvy" node="0>0|11|6|1|3" />
+        <i3dMapping id="liRearBladesBF" node="0>0|11|6|1|5" />
+        <i3dMapping id="liRearBladesFF" node="0>0|11|6|1|6" />
+        <i3dMapping id="liPistonRcvrFront" node="0>0|11|6|2" />
+        <i3dMapping id="liPistonRcvrRear" node="0>0|11|6|3" />
+        <i3dMapping id="liwCylinder" node="0>0|11|6|4|0" />
+        <i3dMapping id="liwBotPiston" node="0>0|11|6|4|0|1" />
+        <i3dMapping id="liwPivot" node="0>0|11|6|4|1" />
+        <i3dMapping id="liwPiston_ref" node="0>0|11|6|4|1|0" />
+        <i3dMapping id="liwWheelTruck" node="0>0|11|6|4|1|1" />
+        <i3dMapping id="liwInsideWheel_att" node="0>0|11|6|4|1|1|0" />
+        <i3dMapping id="liwOutsideWheel_att" node="0>0|11|6|4|1|1|1" />
+        <i3dMapping id="wing_right_vis" node="0>0|12" />
+        <i3dMapping id="decals_right_inside" node="0>0|12|0" />
+        <i3dMapping id="decalAmazone_03" node="0>0|12|0|0" />
+        <i3dMapping id="decalCaseIH_03" node="0>0|12|0|1" />
+        <i3dMapping id="decalDeere_03" node="0>0|12|0|2" />
+        <i3dMapping id="decalDeutzFahr_03" node="0>0|12|0|3" />
+        <i3dMapping id="decalFendt_03" node="0>0|12|0|4" />
+        <i3dMapping id="decalHorsch_03" node="0>0|12|0|5" />
+        <i3dMapping id="decalLemken_03" node="0>0|12|0|6" />
+        <i3dMapping id="decalLizard_03" node="0>0|12|0|7" />
+        <i3dMapping id="decalMassey_03" node="0>0|12|0|8" />
+        <i3dMapping id="decalNewHolland_03" node="0>0|12|0|9" />
+        <i3dMapping id="decalVaderstad_03" node="0>0|12|0|10" />
+        <i3dMapping id="riwFrontSoil_ref" node="0>0|12|3|0|0" />
+        <i3dMapping id="riwRearSoil_ref" node="0>0|12|3|0|1" />
+        <i3dMapping id="riwSmokeEmitter" node="0>0|12|3|0|2" />
+        <i3dMapping id="riFrontBladesBF" node="0>0|12|3|1|0" />
+        <i3dMapping id="riFrontBladesBF_hvy" node="0>0|12|3|1|1" />
+        <i3dMapping id="riFrontBladesFF" node="0>0|12|3|1|2" />
+        <i3dMapping id="riFrontBladesFF_hvy" node="0>0|12|3|1|3" />
+        <i3dMapping id="riRearBladesBF" node="0>0|12|3|1|5" />
+        <i3dMapping id="riRearBladesFF" node="0>0|12|3|1|6" />
+        <i3dMapping id="riwCylinder" node="0>0|12|3|2|0" />
+        <i3dMapping id="riwBotPiston" node="0>0|12|3|2|0|1" />
+        <i3dMapping id="riwPivot" node="0>0|12|3|2|1" />
+        <i3dMapping id="riwPiston_ref" node="0>0|12|3|2|1|0" />
+        <i3dMapping id="riwWheelTruck" node="0>0|12|3|2|1|1" />
+        <i3dMapping id="riwInsideWheel_att" node="0>0|12|3|2|1|1|0" />
+        <i3dMapping id="riwOutsideWheel_att" node="0>0|12|3|2|1|1|1" />
+        <i3dMapping id="riw_crumbler" node="0>0|12|4" />
+        <i3dMapping id="riw_crumble_ref" node="0>0|12|4|1" />
+        <i3dMapping id="riw_crumble_roller" node="0>0|12|4|2" />
+        <i3dMapping id="riw_spikeTooth" node="0>0|12|5" />
+        <i3dMapping id="roFrame_option" node="0>0|12|6" />
+        <i3dMapping id="jointRightWingOuter" node="0>0|12|6|0" />
+        <i3dMapping id="riFrame_hingeAttach" node="0>0|12|6|1" />
+        <i3dMapping id="riPistonRcvrFront" node="0>0|12|6|2" />
+        <i3dMapping id="riPistonRcvrRear" node="0>0|12|6|3" />
+        <i3dMapping id="riWingHinge" node="0>0|12|6|4" />
+        <i3dMapping id="riHydFrontAnchor" node="0>0|12|6|4|0" />
+        <i3dMapping id="riHydCylinderFront" node="0>0|12|6|4|0|0" />
+        <i3dMapping id="riHydRamFront" node="0>0|12|6|4|0|0|1" />
+        <i3dMapping id="riHydRearAnchor" node="0>0|12|6|4|1" />
+        <i3dMapping id="riHydCylinderRear" node="0>0|12|6|4|1|0" />
+        <i3dMapping id="riHydRamRear" node="0>0|12|6|4|1|0|0" />
+        <i3dMapping id="rightInsideOutHingeBody" node="0>0|12|6|4|2" />
+        <i3dMapping id="riHydFrontPistonAnchor" node="0>0|12|6|4|2|0" />
+        <i3dMapping id="riHydRearPistonAnchor" node="0>0|12|6|4|2|1" />
+        <i3dMapping id="rightInsideOutHingeLink" node="0>0|12|6|4|2|2" />
+        <i3dMapping id="wing_right_outside_vis" node="0>0|12|6|5" />
+        <i3dMapping id="decals_right_outside" node="0>0|12|6|5|0" />
+        <i3dMapping id="decalAmazone_04" node="0>0|12|6|5|0|0" />
+        <i3dMapping id="decalCaseIH_04" node="0>0|12|6|5|0|1" />
+        <i3dMapping id="decalDeere_04" node="0>0|12|6|5|0|2" />
+        <i3dMapping id="decalDeutzFahr_04" node="0>0|12|6|5|0|3" />
+        <i3dMapping id="decalFendt_04" node="0>0|12|6|5|0|4" />
+        <i3dMapping id="decalHorsch_04" node="0>0|12|6|5|0|5" />
+        <i3dMapping id="decalLemken_04" node="0>0|12|6|5|0|6" />
+        <i3dMapping id="decalLizard_04" node="0>0|12|6|5|0|7" />
+        <i3dMapping id="decalMassey_04" node="0>0|12|6|5|0|8" />
+        <i3dMapping id="decalNewHolland_04" node="0>0|12|6|5|0|9" />
+        <i3dMapping id="decalVaderstad_04" node="0>0|12|6|5|0|10" />
+        <i3dMapping id="rowFrontSoil_ref" node="0>0|12|6|5|2|0" />
+        <i3dMapping id="rowRearSoil_ref" node="0>0|12|6|5|2|1" />
+        <i3dMapping id="rowSmokeEmitter" node="0>0|12|6|5|2|2" />
+        <i3dMapping id="roFrontBladesBF" node="0>0|12|6|5|3|0" />
+        <i3dMapping id="roFrontBladesBF_hvy" node="0>0|12|6|5|3|1" />
+        <i3dMapping id="roFrontBladesFF" node="0>0|12|6|5|3|2" />
+        <i3dMapping id="roFrontBladesFF_hvy" node="0>0|12|6|5|3|3" />
+        <i3dMapping id="roRearBladesBF" node="0>0|12|6|5|3|5" />
+        <i3dMapping id="roRearBladesFF" node="0>0|12|6|5|3|6" />
+        <i3dMapping id="rowCylinder" node="0>0|12|6|5|4|0" />
+        <i3dMapping id="rowBotPiston" node="0>0|12|6|5|4|0|1" />
+        <i3dMapping id="rowPivot" node="0>0|12|6|5|4|1" />
+        <i3dMapping id="rowPiston_ref" node="0>0|12|6|5|4|1|0" />
+        <i3dMapping id="rowWheelTruck" node="0>0|12|6|5|4|1|1" />
+        <i3dMapping id="rowInsideWheelAttach" node="0>0|12|6|5|4|1|1|0" />
+        <i3dMapping id="rowOutsideWheelAttach" node="0>0|12|6|5|4|1|1|1" />
+        <i3dMapping id="row_crumbler" node="0>0|12|6|5|5" />
+        <i3dMapping id="row_crumble_ref" node="0>0|12|6|5|5|1" />
+        <i3dMapping id="row_crumble_roller" node="0>0|12|6|5|5|2" />
+        <i3dMapping id="row_spikeTooth" node="0>0|12|6|5|6" />
+        <i3dMapping id="groundRefDepth" node="0>0|13|0" />
+        <i3dMapping id="groundRefNode" node="0>0|13|1" />
+        <i3dMapping id="workAreaHeight_backLeft" node="0>0|13|2" />
+        <i3dMapping id="workAreaHeight_backRight" node="0>0|13|3" />
+        <i3dMapping id="workAreaHeight_frontLeft" node="0>0|13|4" />
+        <i3dMapping id="workAreaHeight_frontRight" node="0>0|13|5" />
+        <i3dMapping id="workAreaStart_backLeft" node="0>0|13|6" />
+        <i3dMapping id="workAreaStart_backRight" node="0>0|13|7" />
+        <i3dMapping id="workAreaStart_frontLeft" node="0>0|13|8" />
+        <i3dMapping id="workAreaStart_frontRight" node="0>0|13|9" />
+        <i3dMapping id="workAreaWidth_backLeft3" node="0>0|13|10" />
+        <i3dMapping id="workAreaWidth_backLeft5" node="0>0|13|11" />
+        <i3dMapping id="workAreaWidth_backRight3" node="0>0|13|12" />
+        <i3dMapping id="workAreaWidth_backRight5" node="0>0|13|13" />
+        <i3dMapping id="workAreaWidth_frontLeft3" node="0>0|13|14" />
+        <i3dMapping id="workAreaWidth_frontLeft5" node="0>0|13|15" />
+        <i3dMapping id="workAreaWidth_frontRight3" node="0>0|13|16" />
+        <i3dMapping id="workAreaWidth_frontRight5" node="0>0|13|17" />
+        <i3dMapping id="mrplow_component2" node="1>" />
+        <i3dMapping id="eplug_conn_ref" node="1>0|0" />
+        <i3dMapping id="eplug_ref" node="1>0|1" />
+        <i3dMapping id="esocket_ref" node="1>0|2" />
+        <i3dMapping id="hydIn1" node="1>2|0" />
+        <i3dMapping id="hydIn1_det" node="1>2|0|0" />
+        <i3dMapping id="hydIn1_noz" node="1>2|0|0|0" />
+        <i3dMapping id="hydIn2" node="1>2|1" />
+        <i3dMapping id="hydIn2_det" node="1>2|1|0" />
+        <i3dMapping id="hydIn2_noz" node="1>2|1|0|0" />
+        <i3dMapping id="hydIn3" node="1>2|2" />
+        <i3dMapping id="hydIn3_det" node="1>2|2|0" />
+        <i3dMapping id="hydIn3_noz" node="1>2|2|0|0" />
+        <i3dMapping id="hydOut1" node="1>2|3" />
+        <i3dMapping id="hydOut1_det" node="1>2|3|0" />
+        <i3dMapping id="hydOut1_noz" node="1>2|3|0|0" />
+        <i3dMapping id="hydOut2" node="1>2|4" />
+        <i3dMapping id="hydOut2_det" node="1>2|4|0" />
+        <i3dMapping id="hydOut2_noz" node="1>2|4|0|0" />
+        <i3dMapping id="hydOut3" node="1>2|5" />
+        <i3dMapping id="hydOut3_det" node="1>2|5|0" />
+        <i3dMapping id="hydOut3_noz" node="1>2|5|0|0" />
+        <i3dMapping id="inputAttacherJoint" node="1>5" />
+        <i3dMapping id="jackStandBody" node="1>6" />
+        <i3dMapping id="jackStandFoot" node="1>6|0" />
+        <i3dMapping id="jackStand_col" node="1>6|0|0" />
+        <i3dMapping id="jackStandHandle" node="1>6|1" />
+        <i3dMapping id="mrplow_component3" node="2>" />
+        <i3dMapping id="liwArmAxis" node="2>0" />
+        <i3dMapping id="liwWheelAxis" node="2>0|0" />
+        <i3dMapping id="liwInsideWheel_phy" node="2>0|0|0" />
+        <i3dMapping id="liwOutsideWheel_phy" node="2>0|0|1" />
+        <i3dMapping id="mrplow_component4" node="3>" />
+        <i3dMapping id="riwArmAxis" node="3>0" />
+        <i3dMapping id="riwWheelAxis" node="3>0|0" />
+        <i3dMapping id="riwInsideWheel_phy" node="3>0|0|0" />
+        <i3dMapping id="riwOutsideWheel_phy" node="3>0|0|1" />
+    </i3dMappings>
+</vehicle>
