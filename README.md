@@ -2,6 +2,8 @@
 
 This contains some quick python tools to make some aspects of modding a little easier
 
+To install just download the python script you want (or all of them).  They have no dependancies.
+
 ---
 
 ## compareTranslations.py
