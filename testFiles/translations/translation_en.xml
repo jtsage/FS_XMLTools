@@ -4,6 +4,7 @@
 
   <texts>
 	<text name="input_SimpleInspector_reload_config"     text="Reload configuration" />
+	<text name="input_SimpleInspector_reload_config"     text="Reload configuration" />
 	<text name="input_SimpleInspector_toggle_visible"    text="Toggle Display On/Off" />
 	<text name="input_SimpleInspector_toggle_allfarms"   text="Toggle Show All Farms On/Off" />
 	<text name="title_simpleInspector"                   text="Simple Inspector" />
