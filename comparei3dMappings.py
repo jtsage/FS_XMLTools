@@ -15,6 +15,7 @@ Version History:
 
 import argparse
 import os
+import sys
 import xml.etree.ElementTree as ET
 
 
@@ -133,4 +134,6 @@ else:
     print("\n".join(textDiff))
     print("\nThere are mismatched I3D Mappings")
 
-enter_key_exit()
+if sys.stdout.isatty():
+    # Don't pause on finish if we re-directed to a file.
+    enter_key_exit()

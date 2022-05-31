@@ -15,6 +15,7 @@ Version History:
 
 import argparse
 import os
+import sys
 import xml.etree.ElementTree as ET
 
 
@@ -115,4 +116,7 @@ for file in file_list:
         print("\nFile: " + thisName + " HAS detected missing translations\n")
 
 print("done.")
-enter_key_exit()
+
+if sys.stdout.isatty():
+    # Don't pause on finish if we re-directed to a file.
+    enter_key_exit()

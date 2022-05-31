@@ -3,7 +3,8 @@
 		"comparei",
 		"fromstring",
 		"frontloader",
-		"mrplow"
+		"mrplow",
+		"renderable"
 	],
 	"python.linting.mypyEnabled": false,
 	"python.linting.enabled": true,

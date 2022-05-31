@@ -4,7 +4,7 @@ This contains some quick python tools to make some aspects of modding a little e
 
 To install just download the python script you want (or all of them).  They have no dependencies.
 
-Included in the repo are some batch files that will allow drag-and-drop of files on top of them, so long as the python interpreter is in your path. (If you use a standard windows installer, it will be, but maybe only after the first time you reboot after installing python)
+If for some reason drag-and-drop to the python script doesn't work, make sure you have python files set to open with the python interpreter, if that doesn't work, repair your installation / re-install
 
 ---
 
@@ -45,7 +45,9 @@ If you have a file that uses the other format, you can use the `--giants_ekv` co
 
 ```text
 Files Found: 2
-Mismatch Found:
+WARNING: 'translation_en.xml' contains a duplicate entry for 'input_SimpleInspector_reload_config'
+Mismatch(es) Found:
+
   Text Name : input_SimpleInspector_reload_config
    Found In      : ['translation_en.xml']
    Not Found In  : ['translation_de.xml']
@@ -71,13 +73,17 @@ Requires at least 2 files.
 
 ```text
 Files Found: 4
-Mismatch Found (different):
-  ID Name : mrplow_vis
-   Mappings : [{'mrplow_heavy_3.xml': '0>40'}, {'mrplow_heavy_5.xml': '0>0'}, {'mrplow_light_3.xml': '0>0'}, {'mrplow_light_5.xml': '0>0'}]
-Mismatch Found (missing):
+
+Mismatch(es) Found (missing):
+
   Text Name : mrplow_component5
    Found In      : ['mrplow_heavy_5.xml', 'mrplow_light_5.xml']
-   Not Found In  : ['mrplow_heavy_3.xml', 'mrplow_light_3.xml']
+   Not Found In  : ['mrplow_light_3.xml', 'mrplow_heavy_3.xml']
+
+Mismatch(es) Found (different):
+
+  ID Name : mrplow_vis
+   Mappings : [{'mrplow_heavy_5.xml': '0>0'}, {'mrplow_light_3.xml': '0>0'}, {'mrplow_light_5.xml': '0>0'}, {'mrplow_heavy_3.xml': '0>40'}]
 
 There are mismatched I3D Mappings
 ```
@@ -130,4 +136,70 @@ Possible missed translation in tag: designConfiguration, current value is: CaseI
 File: mrplow_heavy_5.xml HAS detected missing translations
 
 done.
+```
+
+---
+
+## i3dChecker.py
+
+Check an i3d file for some common mistakes.  Looks at real lights, collisons, linked lights, and shadow maps.
+
+__Usage:__
+
+```shell
+$ python .\i3dChecker.py .\testFiles\i3d\mrplow.i3d
+```
+
+__Options:__
+
+* __--no-shadow-check__  Disable checking visible shapes for shadow maps
+* __--no-light-check__   Disable checking linked lights
+* __--no-light-info__    Disable output of light info
+* __--no-col-info__      Disable checking collision info
+
+
+### Sample Output - Shadow Maps
+
+```text
+hasShadowMap | castsShadowMap on renderable shapes:
+  Node Name: cw_crumble_hanger
+   Casts Shadow Map: no | Receives Shadow Map: no
+  Node Name: decalAmazone_02
+   Casts Shadow Map: no | Receives Shadow Map: yes
+```
+
+### Sample Output - Old Linked Lights
+
+```text
+Links to old lights in i3d:
+  Linked Light with fileId '5' is 'rearLightOvalWhite_01', should be 'rearLight26White'
+```
+
+### Sample Output - RealLights
+
+```text
+RealLights Information:
+  Node Name: frontLightLow
+   Type: spot, Color: #D8D8FF, Shadows: no, Range: 20 m, Cone Angle: 80 °, Drop Off: 3 m
+```
+
+### Sample Output - Unknown collisionMask
+
+```text
+Unknown, uncommon, or depreciated collisionMasks:
+  collisionMask for 'torion1914_main_component1' (1075851266)/(0x40203002) is unknown, and should be checked
+```
+
+### Sample Output - Unusual collisionMask
+
+```text
+Unknown, uncommon, or depreciated collisionMasks:
+  collisionMask for 'mixerWagonHUDTrigger' (3170304)/(0x306000) is unusual, but does exist in some giants files
+```
+
+### Sample Output - Depreciated collisionMask bit
+
+```text
+Unknown, uncommon, or depreciated collisionMasks:
+  collisionMask for 'torion1914_main_component1' (6303746)/(0x603002) uses depreciated bits and needs corrected
 ```

@@ -15,6 +15,7 @@ Version History:
 import argparse
 import glob
 import os
+import sys
 import xml.etree.ElementTree as ET
 
 
@@ -123,4 +124,6 @@ if not foundMismatch:
 else:
     print("\nThere are mismatched translations")
 
-enter_key_exit()
+if sys.stdout.isatty():
+    # Don't pause on finish if we re-directed to a file.
+    enter_key_exit()
