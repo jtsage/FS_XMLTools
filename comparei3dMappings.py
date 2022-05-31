@@ -18,10 +18,8 @@ def enter_key_exit() :
 	exit()
 
 parser = argparse.ArgumentParser(description='Compare i3d Mapping in xml files.', usage='%(prog)s [-h] file file [file ...]')
-
 parser.add_argument('file1', nargs=1, metavar='file', type=argparse.FileType('r', encoding='utf-8'))
 parser.add_argument('file2', nargs='+', metavar='file', type=argparse.FileType('r', encoding='utf-8'), help=argparse.SUPPRESS)
-
 
 try :
 	args = parser.parse_args()
@@ -41,8 +39,13 @@ nameList      = {}
 for file in file_list:
 	foundMap   = False
 	thisName   = os.path.basename(file.name)
-	thisXML    = ET.fromstring(file.read())
 	fileListShort.append(thisName)
+
+	try :
+		thisXML    = ET.fromstring(file.read())
+	except :
+		print("ERROR: Unable to read / parse file '" + thisName + "'")
+		enter_key_exit()
 
 	for texts in thisXML.findall('i3dMappings'):
 		foundMap = True

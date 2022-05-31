@@ -19,18 +19,16 @@ def enter_key_exit() :
 	exit()
 
 parser = argparse.ArgumentParser(description='Compare translation files.')
-
 parser.add_argument('files', metavar='files', nargs='*', type=argparse.FileType('r', encoding='utf-8'))
 parser.add_argument('--folder', dest='folder', nargs=1, default=False)
 parser.add_argument('--giants_ekv', help='Use Giants <e k="" v=""> mode', dest='ekvMode', default=False, action='store_true')
-args = parser.parse_args()
-
-ekvMode = args.ekvMode
 
 try :
 	args = parser.parse_args()
 except :
 	enter_key_exit()
+
+ekvMode = args.ekvMode
 
 
 if ( args.folder != False ) :
@@ -55,8 +53,13 @@ xmlAttrib    = ('name','k')[ekvMode]
 for file in file_list:	
 	foundText  = False
 	thisName   = os.path.basename(file.name)
-	thisXML    = ET.fromstring(file.read())
 	fileListShort.append(thisName)
+
+	try :
+		thisXML    = ET.fromstring(file.read())
+	except :
+		print("ERROR: Unable to read / parse file '" + thisName + "'")
+		enter_key_exit()
 
 	for texts in thisXML.findall(xmlContainer):
 		for child in texts:
