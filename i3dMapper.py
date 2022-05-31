@@ -9,7 +9,6 @@ Version History:
 """
 
 import argparse
-import os
 import xml.etree.ElementTree as ET
 
 parser = argparse.ArgumentParser(description='Export i3d Mapping')

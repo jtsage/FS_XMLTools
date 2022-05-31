@@ -2,7 +2,9 @@
 
 This contains some quick python tools to make some aspects of modding a little easier
 
-To install just download the python script you want (or all of them).  They have no dependancies.
+To install just download the python script you want (or all of them).  They have no dependencies.
+
+Included in the repo are some batch files that will allow drag-and-drop of files on top of them, so long as the python interpreter is in your path. (If you use a standard windows installer, it will be, but maybe only after the first time you reboot after installing python)
 
 ---
 
@@ -91,6 +93,7 @@ __Usage:__
 ```shell
 $ python .\i3dMapper.py .\testFiles\i3d\mrplow.i3d
 ```
+
 __Options:__
 
 * `--no_pretty_print` Do not line up the "node" entries on output.  Pretty print is on by default.
@@ -103,4 +106,28 @@ __Options:__
   <i3dMapping id="mrplow_vis"                 node="0>0" />
   <i3dMapping id="ai"                         node="0>0|0" />
 </i3dMappings>
+```
+
+---
+
+## checkLiterals.py
+
+Check string literals in vehicles / placable XML files to see if you missed any of the obvious $l10n translations
+
+__Usage:__
+
+```shell
+$ python .\checkLiterals.py .\testFiles\i3dMap\mrplow_light_5.xml .\testFiles\i3dMap\mrplow_heavy_5.xml
+```
+
+### Sample Output
+
+```text
+Files Found: 2
+Possible missed translation in tag: designConfiguration, current value is: Amazone
+Possible missed translation in tag: designConfiguration, current value is: CaseIH
+...
+File: mrplow_heavy_5.xml HAS detected missing translations
+
+done.
 ```
