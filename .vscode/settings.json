@@ -2,6 +2,13 @@
 	"cSpell.words": [
 		"comparei",
 		"fromstring",
+		"frontloader",
 		"mrplow"
-	]
+	],
+	"python.linting.mypyEnabled": false,
+	"python.linting.enabled": true,
+	"python.linting.pydocstyleEnabled": false,
+	"python.linting.flake8Enabled": false,
+	"python.linting.pylintEnabled": false,
+	"python.linting.pylamaEnabled": true
 }
