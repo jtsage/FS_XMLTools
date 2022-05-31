@@ -6,10 +6,10 @@
       /    /         \     / |/  |  /   ) /   /   /   /   /   /   ) /   )
 _(___/____/______(____/___/__/___|_(___/_(___/___(___/___/___/___/_(___/_
                                                                       /
-    i3dChecker.py - v0.0.9                                        (_ /
+    i3dChecker.py - v1.0.0                                        (_ /
 
 Version History:
- v0.0.9 - Initial Release
+ v1.0.0 - Initial Release
 """
 
 import argparse
