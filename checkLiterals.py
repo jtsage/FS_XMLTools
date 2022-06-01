@@ -98,7 +98,11 @@ for file in file_list:
 
     for tag_name in tag_to_check_text:
         for thisTag in thisXML.findall(".//" + tag_name):
-            if thisTag.text is not None:
+            if tag_name == "name":
+                if len(thisTag):
+                    cleanFile = False
+                    print_bad(thisTag.tag, 'translated with the "old" method')
+            if thisTag.text is not None and not thisTag.text.isspace():
                 if not thisTag.text.startswith('$l10n'):
                     cleanFile = False
                     print_bad(thisTag.tag, thisTag.text)
