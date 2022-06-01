@@ -19,7 +19,7 @@ import os
 import sys
 
 
-def enter_key_exit():
+def enter_to_exit():
     """ Exit when enter key pressed """
     print("Press ENTER to close terminal.")
     input()
@@ -71,7 +71,7 @@ def print_tag(thisMap):
 
     thisLine += " node=\"" + thisMap[1] + "\" />"
 
-    print(thisLine)
+    return thisLine
 
 
 parser = argparse.ArgumentParser(description='Export i3d Mapping')
@@ -141,12 +141,17 @@ for xml_entry, depth in depth_iter(thisScene):
         thisNode = nodeMaker(currentComponent, countDepth)
         add_tag(thisNodeName, thisNode)
 
+outputQueue = []
 
-print("<i3dMappings>")
+outputQueue.append("<i3dMappings>")
 for thisMap in printNames:
-    print_tag(thisMap)
-print("</i3dMappings>")
+    outputQueue.append(print_tag(thisMap))
+outputQueue.append("</i3dMappings>")
+
+
+print("\n".join(outputQueue))
+
 
 if sys.stdout.isatty():
     # Don't pause on finish if we re-directed to a file.
-    enter_key_exit()
+    enter_to_exit()
