@@ -1,0 +1,278 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<vehicle type="Polanin2_SM">
+	<annotation>Creative Commons 4.0 International Licence (CC BY-NC-ND 4.0) - Attribution/NonCommercial/NoDerivatives</annotation>
+    <author>Saty MODS</author>
+		
+    <storeData>
+        <name>S045/2 POLANIN II</name>
+        <specs>
+            <neededPower>62</neededPower>
+            <workingWidth>6.0</workingWidth>
+        </specs>
+        <functions>
+            <function>$l10n_function_sowingMachine</function>
+        </functions>
+        <image>IMG/store_1.dds</image>
+		<overrideImagePath>true</overrideImagePath>
+        <price>12000</price>
+        <dailyUpkeep>10</dailyUpkeep>
+        <lifetime>600</lifetime>
+        <rotation>270</rotation>
+        <brand>FMR</brand>
+        <category>sowingMachines</category>
+        <fieldJob sizeCategory="1" typeCategory="sowingMachine" />
+    </storeData>
+
+    <typeDesc>$l10n_typeDesc_sowingMachine</typeDesc>
+    <filename>polanin.i3d</filename>
+
+    <size width="9" length="4" />
+    <speedLimit value="12" />
+	
+    <wheels autoRotateBackSpeed="1">
+		<wheel rotSpeed="0" restLoad="0.6" repr="0>0"   forcePointRatio="0.2" filename="RES/kola_pracovni.xml"  isLeft="true"  initialCompression="20" suspTravel="0.05" spring="45" damper="50" brakeFactor="0.25" hasTireTracks="true" hasParticles="true" />
+		<wheel rotSpeed="0" restLoad="0.6" repr="0>1"   forcePointRatio="0.2" filename="RES/kola_pracovni.xml"  isLeft="false" initialCompression="20" suspTravel="0.05" spring="45" damper="50" brakeFactor="0.25" hasTireTracks="true" hasParticles="true" />
+		<wheel rotSpeed="0" restLoad="2.6" repr="0>2|0" forcePointRatio="0.3" filename="RES/kola_prepravni.xml" isLeft="true"  initialCompression="20" suspTravel="0.05" spring="45" damper="50" brakeFactor="0.25" hasTireTracks="true" hasParticles="true" useReprDirection="true" />
+		<wheel rotSpeed="0" restLoad="2.6" repr="0>2|1" forcePointRatio="0.3" filename="RES/kola_prepravni.xml" isLeft="false" initialCompression="20" suspTravel="0.05" spring="45" damper="50" brakeFactor="0.25" hasTireTracks="true" hasParticles="true" useReprDirection="true" />
+    </wheels>
+	
+    <inputAttacherJoints >
+        <inputAttacherJoint rootNode="1>" index="1>0" jointType="implement" lowerDistanceToGround="0.6"  upperDistanceToGround="0.6" upperTransLimitScale="0 0.2 0" lowerRotLimitScale="0 0 0" upperRotLimitScale="0 0 0" isDefaultLowered="false" allowsLowering="true" needsLowering="true" />
+        <inputAttacherJoint rootNode="2>" index="2>0" jointType="implement" lowerDistanceToGround="0.65" upperDistanceToGround="1"   upperTransLimitScale="0 0.2 0" lowerRotLimitScale="0 0 1" upperRotLimitScale="0 0 1" isDefaultLowered="false" allowsLowering="true" needsLowering="true" />
+    </inputAttacherJoints>
+	
+    <lowerAnimation name="lowerAnimation" speed="1" />
+    <cover animationName="toggleCover" openOnBuy="false" />
+	<support animationName="moveBrakeCol" />
+	
+	<PolaninSeeder>
+		<animations>
+			<transportAttacher name="transportAnimation" />
+			<workAttacher name="workAnimation" />
+			<transportWheel name="transportWheelAnimation" />
+			<support name="moveSupport" />
+		</animations>
+		<checkInRange>
+			<transportAttacher index="0>5" distance="3" />
+			<workAttacher index="0>4" distance="3" />
+			<cover index="0>8" distance="3" />
+		</checkInRange>
+	</PolaninSeeder>
+	
+    <needsActivation value="false" />
+ 
+    <fillLitersPerSecond>80</fillLitersPerSecond>
+    <seedFruitTypeCategories>sowingMachine</seedFruitTypeCategories>
+	
+	<fillUnits>
+        <fillUnit unit="$l10n_unit_literShort" fillTypes="seeds" capacity="2000" />
+    </fillUnits>
+	
+    <fillVolumes>
+        <volumes>
+            <volume index="0>15|0" maxDelta="0.2" maxAllowedHeapAngle="11" />
+        </volumes>
+        <unloadInfos>
+            <unloadInfo>
+                <node index="0>15|1" width="1.4" length="0.1" />
+            </unloadInfo>
+        </unloadInfos>
+        <loadInfos>
+            <loadInfo>
+                <node index="0>15|2" width="1.4" length="0.1" />
+            </loadInfo>
+        </loadInfos>
+    </fillVolumes>
+	
+    <fillRootNode index="0>" />
+    <exactFillRootNode index="0>16" />
+    <fillMassNode index="0>" />
+
+    <sowingSound file="$data/sounds/sowingSound.wav"      pitchOffset="1.0" volume="1.0" indoorVolumeFactor="0.55" />
+    <fillSound file="$data/maps/sounds/siloFillSound.wav" pitchOffset="1.0" volume="1.0" indoorVolumeFactor="0.55" volume3D="1.0" innerRadius="10" radius="40" linkNode="0>0"/>
+    <cylinderedHydraulicSound file="$data/sounds/cultivatorHydraulic.wav" pitchOffset="1.00" volume="1.00" indoorVolumeFactor="0.75" />
+	
+    <ai>
+		<forceTurnNoBackward value="true" />
+        <areaMarkers leftIndex="0>17|3" rightIndex="0>17|4" backIndex="0>17|5" />
+    </ai>
+	
+	<ridgeMarkers onlyActiveWhenLowered="false" foldDisableAttacher="2">
+        <ridgeMarker animName="leftArm" />
+        <ridgeMarker animName="rightArm" />
+    </ridgeMarkers>
+	
+    <groundReferenceNodes>
+		<groundReferenceNode index="0>14" threshold="0.1" depthNode="0>14" />
+		<groundReferenceNode index="0>12|2|6" threshold="0" depthNode="0>12|2|6" />
+		<groundReferenceNode index="0>13|2|6" threshold="0" depthNode="0>13|2|6" />
+    </groundReferenceNodes>
+       
+    <workAreas>
+        <workArea startIndex="0>17|0" widthIndex="0>17|1" heightIndex="0>17|2" refNodeIndex="0" animName="lowerAnimation" foldMinLimit="0" foldMaxLimit="0.03" type="sowingMachine" needsSetIsTurnedOn="false" />
+        <workArea startIndex="0>12|2|0" widthIndex="0>12|2|1" heightIndex="0>12|2|2" startIndexTest="0>12|2|3" widthIndexTest="0>12|2|4" heightIndexTest="0>12|2|5" animName="leftArm" foldMinLimit="0" foldMaxLimit="0.03" type="ridgemarker" refNodeIndex="1" needsSetIsTurnedOn="false" />
+        <workArea startIndex="0>13|2|0" widthIndex="0>13|2|1" heightIndex="0>13|2|2" startIndexTest="0>13|2|3" widthIndexTest="0>13|2|4" heightIndexTest="0>13|2|5" animName="rightArm" foldMinLimit="0" foldMaxLimit="0.03" type="ridgemarker" refNodeIndex="2" needsSetIsTurnedOn="false" />
+    </workAreas>
+	
+    <speedRotatingParts>
+        <speedRotatingPart index="0>12|1|0" radius="0.2"  refNodeIndex="1" />
+        <speedRotatingPart index="0>13|1|0" radius="-0.2" refNodeIndex="2" />
+    </speedRotatingParts>
+	
+    <groundParticleAnimations>
+        <groundParticleAnimation>
+            <node index="0>10|4" refNodeIndex="0" maxDepth="-0.05" materialType="SOIL" />
+            <node index="0>12|3" refNodeIndex="1" maxDepth="-0.05" materialType="SOIL" />
+            <node index="0>13|3" refNodeIndex="2" maxDepth="-0.05" materialType="SOIL" />
+        </groundParticleAnimation>
+		
+        <groundParticle>
+            <node index="0>18|0" refNodeIndex="0" particleType="SOIL_SMOKE"  />
+            <node index="0>18|1" refNodeIndex="0" particleType="SOIL_CHUNKS" worldSpace="false"/>
+        </groundParticle>
+    </groundParticleAnimations>
+	
+    <animations>
+		<animation name="lowerAnimation">
+            <part node="0>9" startTime="0" endTime="1.5" startRot="-20 0 0" endRot="0 0 0" />
+            <part node="0>10" startTime="0" endTime="1.5" startRot="10 0 0" endRot="0 0 0" />
+            <part node="0>11" startTime="0" endTime="1.5" startRot="8 0 0" endRot="0 0 0" />
+            <part node="0>14" startTime="0" endTime="0.5" startTrans="-2.7 2 0" endTrans="-2.7 -0.1 0" />
+        </animation>
+		
+        <animation name="moveSupport">
+			<part node="0>4|1" startTime="0" duration="0.5" startTrans="-0.112 0.25 1.246" endTrans="-0.112 -0.15 1.246" />
+        </animation>
+		
+        <animation name="moveBrakeCol">
+			<part node="0>3|3" startTime="0" duration="0.1" startTrans="3.155 0.7 0" endTrans="3.155 0.35 0" />
+        </animation>
+		
+        <animation name="workAnimation">
+            <part node="1>1" startTime="0" endTime="0.1" visibility="true" />
+            <part node="1>1" startTime="0.1" endTime="0.1." visibility="false" />
+            <part node="0>6" startTime="0" endTime="1.5" startRot="7.9 0 0" endRot="-73 0 0" />
+            <part node="0>4" startTime="1" endTime="2.5" startRot="0 0 0" endRot="-81 0 0" />
+        </animation>
+		
+        <animation name="transportAnimation">
+            <part node="2>1" startTime="0" endTime="0.1" visibility="true" />
+            <part node="2>1" startTime="0.1" endTime="0.1." visibility="false" />
+            <part node="0>7" startTime="0" endTime="1.5" startRot="0 0 0" endRot="0 0 101" />
+            <part node="0>5" startTime="1" endTime="2.5" startRot="0 0 0" endRot="0 0 79" />
+        </animation>
+				
+        <animation name="toggleCover">
+            <part node="0>8|3|0" startTime="0" endTime="2" startRot="-132 0 0" endRot="0 0 0" />
+            <part node="0>8|3" startTime="0" endTime="2" startRot="90 0 0" endRot="0 0 0" />
+            <part node="0>8|2|0" startTime="1.5" endTime="3.5" startRot="-132 0 0" endRot="0 0 0" />
+            <part node="0>8|2" startTime="1.5" endTime="3.5" startRot="90 0 0" endRot="0 0 0" />
+            <part node="0>8|1|0" startTime="3" endTime="5" startRot="-132 0 0" endRot="0 0 0" />
+            <part node="0>8|1" startTime="3" endTime="5" startRot="90 0 0" endRot="0 0 0" />
+            <part node="0>8|0|0" startTime="4.5" endTime="6.5" startRot="-132 0 0" endRot="0 0 0" />
+            <part node="0>8|0" startTime="4.5" endTime="6.5" startRot="90 0 0" endRot="0 0 0" />
+        </animation>
+		
+        <animation name="transportWheelAnimation">
+            <part node="0>2" startTime="0" endTime="2.5" startRot="0 90 0" endRot="0 90 90" />
+        </animation>
+		
+        <animation name="leftArm">
+        	<part node="0>12" startTime="0" endTime="2.5" startTrans="3.045 0.745 0.68" endTrans="4.7 0.745 0.68" />
+			<part node="0>12" startTime="0.5" endTime="3.5" startRot="-25 0 0" endRot="-125 0 0" />
+        </animation>       
+		
+        <animation name="rightArm">
+        	<part node="0>13" startTime="0" endTime="2.5" startTrans="-3.21 0.815 0.543" endTrans="-4.8 0.815 0.543" />
+			<part node="0>13" startTime="0.5" endTime="3.5" startRot="-50 0 0" endRot="-130 0 0" />
+        </animation>
+    </animations>
+	
+    <movingTools>
+        <movingTool index="0>9">
+            <dependentPart index="0>9|0" />
+            <dependentPart index="0>9|1" />
+        </movingTool>
+	
+        <movingTool index="0>10">
+            <dependentPart index="0>10|2" />
+            <dependentPart index="0>10|3" />
+        </movingTool>
+			
+        <movingTool index="0>4">
+			<componentJoint index="0" />
+        </movingTool>
+		
+        <movingTool index="0>5">
+			<componentJoint index="1" />
+        </movingTool>
+		
+        <movingTool index="0>2" wheelIndices="3 4">
+        	<dependentPart index="0>2|2" />
+        </movingTool>
+    </movingTools>
+
+    <movingParts>
+        <movingPart index="0>9|0" referencePoint="0>10|0" referenceFrame="0>10|0" scaleZ="true" />
+        <movingPart index="0>9|1" referencePoint="0>10|1" referenceFrame="0>10|1" scaleZ="true" />
+        <movingPart index="0>10|2" referencePoint="0>3|2" referenceFrame="0>3|2" scaleZ="true" />
+        <movingPart index="0>10|3" referencePoint="0>3|2" referenceFrame="0>3|2" scaleZ="true" />
+		
+        <movingPart index="0>2|2" referencePoint="0>3|1" referenceFrame="0>">
+        	<translatingPart index="0>2|2|0" />
+        </movingPart>
+    </movingParts>
+	
+    <washable dirtDuration="90" washDuration="1" workMultiplier="20" />
+	
+	<baseColorConfigurations>
+		<baseColorConfiguration color="0.0467 0.2832 0.8388 1" storeImage="IMG/store_1.dds" />
+		<baseColorConfiguration color="0.9975 0.2478 0.0217 1" storeImage="IMG/store_2.dds" />
+		<baseColorConfiguration color="0.1022 0.1946 0.0273 1" storeImage="IMG/store_3.dds" />
+		<baseColorConfiguration color="0.2705 0.3372 0.3613 1" storeImage="IMG/store_4.dds" />
+		
+		<colorNode node="0>2" />
+		<colorNode node="0>2|2|0" />
+		<colorNode node="0>3" />
+		<colorNode node="0>4" />
+		<colorNode node="0>4|1" />
+		<colorNode node="0>5" />
+		<colorNode node="0>6" />
+		<colorNode node="0>7" />
+		<colorNode node="0>8|0" />
+		<colorNode node="0>8|0|0" />
+		<colorNode node="0>8|1" />
+		<colorNode node="0>8|1|0" />
+		<colorNode node="0>8|2" />
+		<colorNode node="0>8|2|0" />
+		<colorNode node="0>8|3" />
+		<colorNode node="0>8|3|0" />
+		<colorNode node="0>9" />
+		<colorNode node="0>9|0" />
+		<colorNode node="0>9|1" />
+		<colorNode node="0>11" />
+		<colorNode node="0>12|0" />
+		<colorNode node="0>12|1|0" />
+		<colorNode node="0>13|0" />
+		<colorNode node="0>13|1|0" />
+	</baseColorConfigurations>
+	
+	<rimColorConfigurations icon="$dataS2/menu/hud/configurations/config_rimColor.png">
+        <rimColorConfiguration color="0.9301 0.7605 0.0232 1" />
+        <rimColorConfiguration color="0.8228 0.8388 0.7304 1" />
+        <rimColorConfiguration color="0.2541 0.2307 0.1500 1" />
+		
+        <colorNode node="0>0" />
+    </rimColorConfigurations>
+    
+    <components count="3">
+        <component1 centerOfMass="0.35 0 0.1" solverIterationCount="10" />
+        <component2 centerOfMass="0 0 0" 	  solverIterationCount="10" />
+        <component3 centerOfMass="0 0 0" 	  solverIterationCount="10" />
+		
+		<joint component1="0" component2="1" index="0>4|0" rotLimit="0 50 6" transLimit="0 0 0" />
+		<joint component1="0" component2="2" index="0>5|0" rotLimit="0 50 0"  transLimit="0 0 0" />
+    </components>
+
+    <schemaOverlay file="$dataS2/menu/schemas/implementSchema.png" fileSelected="$dataS2/menu/schemas/implementSchemaSelected.png" width="0.5" height="0.5" attacherJointPosition="0 0"/>
+</vehicle>

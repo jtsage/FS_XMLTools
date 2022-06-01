@@ -1,0 +1,1046 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<vehicle type="augerWagon">
+	<annotation>Copyright (C) GIANTS Software GmbH, All Rights Reserved.</annotation>
+
+	<storeData>
+		<name>Auger Master</name>
+		<specs>
+			<neededPower>280</neededPower>
+		</specs>
+		<functions>
+			<function>$l10n_function_augerWagon</function>
+		</functions>
+		<image>store_lizardAugerMaster.png</image>
+		<price>88000</price>
+		<lifetime>600</lifetime>
+		<rotation>0</rotation>
+		<brand>LIZARD</brand>
+		<category>augerWagons</category>
+		<vertexBufferMemoryUsage>1746864</vertexBufferMemoryUsage>
+		<indexBufferMemoryUsage>275952</indexBufferMemoryUsage>
+		<textureMemoryUsage>10485992</textureMemoryUsage>
+		<instanceVertexBufferMemoryUsage>0</instanceVertexBufferMemoryUsage>
+		<instanceIndexBufferMemoryUsage>0</instanceIndexBufferMemoryUsage>
+	</storeData>
+
+	<base>
+		<typeDesc>$l10n_typeDesc_augerWagon</typeDesc>
+		<filename>lizardAugerMaster.i3d</filename>
+		<size width="3.5" length="12"/>
+		<components>
+			<component centerOfMass="0 0.84 -1.81" solverIterationCount="20" mass="9000"/>
+			<component centerOfMass="0 0 0" solverIterationCount="100" mass="3000"/>
+			<joint component1="1" component2="2" node="comp2Attach" rotLimit="12 0 0" transLimit="0 0 0"/>
+		</components>
+		<schemaOverlay attacherJointPosition="0 0">
+			<default name="DEFAULT_IMPLEMENT"/>
+			<selected name="DEFAULT_IMPLEMENT_SELECTED"/>
+		</schemaOverlay>
+	</base>
+
+	<wheels>
+		<wheelConfigurations>
+			<wheelConfiguration name="CARGOXBIB" price="0" brand="MICHELIN">
+				<wheels>
+					<wheel filename="$data/shared/wheels/michelin/cargoXBib/750_60R30_5.xml" isLeft="true" hasParticles="true">
+						<physics tipOcclusionAreaGroupId="1" restLoad="3.13" repr="wheelFrontLeftAxis" driveNode="wheelFrontLeft" forcePointRatio="0.4" initialCompression="28" suspTravel="0.19" spring="37" damper="70" frictionScale="1"/>
+						<steeringAxle scale="0.3" rotMax="15" rotMin="-15"/>
+						<steering node="steeringBarFront" nodeMinTransX="0.125" nodeMaxTransX="-0.125"/>
+					</wheel>
+					<wheel filename="$data/shared/wheels/michelin/cargoXBib/750_60R30_5.xml" isLeft="false" hasParticles="true">
+						<physics tipOcclusionAreaGroupId="2" restLoad="3.13" repr="wheelFrontRightAxis" driveNode="wheelFrontRight" forcePointRatio="0.4" initialCompression="28" suspTravel="0.19" spring="37" damper="70" frictionScale="1"/>
+						<steeringAxle scale="0.3" rotMax="15" rotMin="-15"/>
+					</wheel>
+					<wheel filename="$data/shared/wheels/michelin/cargoXBib/750_60R30_5.xml" isLeft="true">
+						<physics tipOcclusionAreaGroupId="1" restLoad="2.19" repr="wheelMiddleLeft" forcePointRatio="0.4" initialCompression="24" suspTravel="0.19" spring="37" damper="70" frictionScale="1"/>
+					</wheel>
+					<wheel filename="$data/shared/wheels/michelin/cargoXBib/750_60R30_5.xml" isLeft="false">
+						<physics tipOcclusionAreaGroupId="2" restLoad="2.19" repr="wheelMiddleRight" forcePointRatio="0.4" initialCompression="24" suspTravel="0.19" spring="37" damper="70" frictionScale="1"/>
+					</wheel>
+					<wheel filename="$data/shared/wheels/michelin/cargoXBib/750_60R30_5.xml" isLeft="true" hasTireTracks="true" hasParticles="true">
+						<physics tipOcclusionAreaGroupId="1" restLoad="1.27" repr="wheelBackLeftAxis" driveNode="wheelBackLeft" forcePointRatio="0.4" initialCompression="20" suspTravel="0.19" spring="37" damper="70" frictionScale="3"/>
+						<steeringAxle scale="-0.7" rotMax="15" rotMin="-15"/>
+						<steering node="steeringBarBack" nodeMinTransX="0.125" nodeMaxTransX="-0.125"/>
+					</wheel>
+					<wheel filename="$data/shared/wheels/michelin/cargoXBib/750_60R30_5.xml" isLeft="false" hasTireTracks="true" hasParticles="true">
+						<physics tipOcclusionAreaGroupId="2" restLoad="1.27" repr="wheelBackRightAxis" driveNode="wheelBackRight" forcePointRatio="0.4" initialCompression="20" suspTravel="0.19" spring="37" damper="70" frictionScale="3"/>
+						<steeringAxle scale="-0.7" rotMax="15" rotMin="-15"/>
+					</wheel>
+				</wheels>
+			</wheelConfiguration>
+			<wheelConfiguration name="Twin Radial" price="0" brand="TRELLEBORG">
+				<wheels>
+					<wheel filename="$data/shared/wheels/trelleborg/TwinRadial/750_60R30_5.xml" isLeft="true" hasParticles="true">
+						<physics tipOcclusionAreaGroupId="1" restLoad="3.12" repr="wheelFrontLeftAxis" driveNode="wheelFrontLeft" forcePointRatio="0.4" initialCompression="28" suspTravel="0.19" spring="37" damper="70" frictionScale="3"/>
+						<steeringAxle scale="0.3" rotMax="15" rotMin="-15"/>
+						<steering node="steeringBarFront" nodeMinTransX="0.125" nodeMaxTransX="-0.125"/>
+					</wheel>
+					<wheel filename="$data/shared/wheels/trelleborg/TwinRadial/750_60R30_5.xml" isLeft="false" hasParticles="true">
+						<physics tipOcclusionAreaGroupId="2" restLoad="3.12" repr="wheelFrontRightAxis" driveNode="wheelFrontRight" forcePointRatio="0.4" initialCompression="28" suspTravel="0.19" spring="37" damper="70" frictionScale="3"/>
+						<steeringAxle scale="0.3" rotMax="15" rotMin="-15"/>
+					</wheel>
+					<wheel filename="$data/shared/wheels/trelleborg/TwinRadial/750_60R30_5.xml" isLeft="true">
+						<physics tipOcclusionAreaGroupId="1" restLoad="2.33" repr="wheelMiddleLeft" forcePointRatio="0.4" initialCompression="24" suspTravel="0.19" spring="37" damper="70" frictionScale="3"/>
+					</wheel>
+					<wheel filename="$data/shared/wheels/trelleborg/TwinRadial/750_60R30_5.xml" isLeft="false">
+						<physics tipOcclusionAreaGroupId="2" restLoad="2.33" repr="wheelMiddleRight" forcePointRatio="0.4" initialCompression="24" suspTravel="0.19" spring="37" damper="70" frictionScale="3"/>
+					</wheel>
+					<wheel filename="$data/shared/wheels/trelleborg/TwinRadial/750_60R30_5.xml" isLeft="true" hasTireTracks="true" hasParticles="true">
+						<physics tipOcclusionAreaGroupId="1" restLoad="1.28" repr="wheelBackLeftAxis" driveNode="wheelBackLeft" forcePointRatio="0.4" initialCompression="20" suspTravel="0.19" spring="37" damper="70" frictionScale="3"/>
+						<steeringAxle scale="-0.7" rotMax="15" rotMin="-15"/>
+						<steering node="steeringBarBack" nodeMinTransX="0.125" nodeMaxTransX="-0.125"/>
+					</wheel>
+					<wheel filename="$data/shared/wheels/trelleborg/TwinRadial/750_60R30_5.xml" isLeft="false" hasTireTracks="true" hasParticles="true">
+						<physics tipOcclusionAreaGroupId="2" restLoad="1.28" repr="wheelBackRightAxis" driveNode="wheelBackRight" forcePointRatio="0.4" initialCompression="20" suspTravel="0.19" spring="37" damper="70" frictionScale="3"/>
+						<steeringAxle scale="-0.7" rotMax="15" rotMin="-15"/>
+					</wheel>
+				</wheels>
+			</wheelConfiguration>
+			<wheelConfiguration name="$l10n_configuration_valueTwinWheelsNarrow" price="0" brand="TRELLEBORG">
+				<wheels>
+					<wheel filename="$data/shared/wheels/trelleborg/TM600/420_85R34.xml" isLeft="true" hasParticles="true">
+						<tire isCareWheel="true" />
+						<additionalWheel filename="$data/shared/wheels/trelleborg/TM600/420_85R34.xml" configId="dual" offset="0.2" hasTireTracks="true" hasParticles="true">
+							<connector filename="$data/shared/wheels/rims/dual002.i3d" node="0|1|0" useWidthAndDiam="true" width="25"/>
+						</additionalWheel>
+						<physics radius="0.83" tipOcclusionAreaGroupId="1" restLoad="3.12" repr="wheelFrontLeftAxis" driveNode="wheelFrontLeft" forcePointRatio="0.4" initialCompression="28" suspTravel="0.19" spring="37" damper="70" frictionScale="3"/>
+						<steeringAxle scale="0.3" rotMax="15" rotMin="-15"/>
+						<steering node="steeringBarFront" nodeMinTransX="0.125" nodeMaxTransX="-0.125"/>
+					</wheel>
+					<wheel filename="$data/shared/wheels/trelleborg/TM600/420_85R34.xml" isLeft="false" hasParticles="true">
+						<tire isCareWheel="true" />
+						<additionalWheel filename="$data/shared/wheels/trelleborg/TM600/420_85R34.xml" configId="dual" offset="0.2" hasTireTracks="true" hasParticles="true">
+							<connector filename="$data/shared/wheels/rims/dual002.i3d" node="0|1|0" useWidthAndDiam="true" width="25"/>
+						</additionalWheel>
+						<physics radius="0.83" tipOcclusionAreaGroupId="2" restLoad="3.12" repr="wheelFrontRightAxis" driveNode="wheelFrontRight" forcePointRatio="0.4" initialCompression="28" suspTravel="0.19" spring="37" damper="70" frictionScale="3"/>
+						<steeringAxle scale="0.3" rotMax="15" rotMin="-15"/>
+					</wheel>
+					<wheel filename="$data/shared/wheels/trelleborg/TM600/420_85R34.xml" isLeft="true">
+						<tire isCareWheel="true" />
+						<additionalWheel filename="$data/shared/wheels/trelleborg/TM600/420_85R34.xml" configId="dual" offset="0.2" hasTireTracks="true" hasParticles="true">
+							<connector filename="$data/shared/wheels/rims/dual002.i3d" node="0|1|0" useWidthAndDiam="true" width="25"/>
+						</additionalWheel>
+						<physics radius="0.83" tipOcclusionAreaGroupId="1" restLoad="2.33" repr="wheelMiddleLeft" forcePointRatio="0.4" initialCompression="24" suspTravel="0.19" spring="37" damper="70" frictionScale="3"/>
+					</wheel>
+					<wheel filename="$data/shared/wheels/trelleborg/TM600/420_85R34.xml" isLeft="false">
+						<tire isCareWheel="true" />
+						<additionalWheel filename="$data/shared/wheels/trelleborg/TM600/420_85R34.xml" configId="dual" offset="0.2" hasTireTracks="true" hasParticles="true">
+							<connector filename="$data/shared/wheels/rims/dual002.i3d" node="0|1|0" useWidthAndDiam="true" width="25"/>
+						</additionalWheel>
+						<physics radius="0.83" tipOcclusionAreaGroupId="2" restLoad="2.33" repr="wheelMiddleRight" forcePointRatio="0.4" initialCompression="24" suspTravel="0.19" spring="37" damper="70" frictionScale="3"/>
+					</wheel>
+					<wheel filename="$data/shared/wheels/trelleborg/TM600/420_85R34.xml" isLeft="true" hasTireTracks="true" hasParticles="true">
+						<tire isCareWheel="true" />
+						<additionalWheel filename="$data/shared/wheels/trelleborg/TM600/420_85R34.xml" configId="dual" offset="0.2" hasTireTracks="true" hasParticles="true">
+							<connector filename="$data/shared/wheels/rims/dual002.i3d" node="0|1|0" useWidthAndDiam="true" width="25"/>
+						</additionalWheel>
+						<physics radius="0.83" tipOcclusionAreaGroupId="1" restLoad="1.28" repr="wheelBackLeftAxis" driveNode="wheelBackLeft" forcePointRatio="0.4" initialCompression="20" suspTravel="0.19" spring="37" damper="70" frictionScale="3"/>
+						<steeringAxle scale="-0.7" rotMax="15" rotMin="-15"/>
+						<steering node="steeringBarBack" nodeMinTransX="0.125" nodeMaxTransX="-0.125"/>
+					</wheel>
+					<wheel filename="$data/shared/wheels/trelleborg/TM600/420_85R34.xml" isLeft="false" hasTireTracks="true" hasParticles="true">
+						<tire isCareWheel="true" />
+						<additionalWheel filename="$data/shared/wheels/trelleborg/TM600/420_85R34.xml" configId="dual" offset="0.2" hasTireTracks="true" hasParticles="true">
+							<connector filename="$data/shared/wheels/rims/dual002.i3d" node="0|1|0" useWidthAndDiam="true" width="25"/>
+						</additionalWheel>
+						<physics radius="0.83" tipOcclusionAreaGroupId="2" restLoad="1.28" repr="wheelBackRightAxis" driveNode="wheelBackRight" forcePointRatio="0.4" initialCompression="20" suspTravel="0.19" spring="37" damper="70" frictionScale="3"/>
+						<steeringAxle scale="-0.7" rotMax="15" rotMin="-15"/>
+					</wheel>
+				</wheels>
+					<objectChange node="wheelFrontLeft"  		translationActive="0.12 0.02 -0.14"		scaleActive="1.1 1.05 1.05"/>
+					<objectChange node="wheelFrontRight" 		translationActive="-0.12 0.02 -0.14"	scaleActive="1.1 1.05 1.05"/>
+					<objectChange node="wheelMiddleLeft"   	translationActive="0.84 0.85 -1.81"		scaleActive="1.1 1.05 1.05"/>
+					<objectChange node="wheelMiddleRight"  	translationActive="-0.84 0.85 -1.81"	scaleActive="1.1 1.05 1.05"/>
+					<objectChange node="wheelBackLeft"  		translationActive="0.12 0 -0.14"			scaleActive="1.1 1.05 1.05"/>
+					<objectChange node="wheelBackRight"  		translationActive="-0.12 0 -0.14"			scaleActive="1.1 1.05 1.05"/>
+					<objectChange node="wheelFrontLeftHub"  		translationActive="0.28 0 0"		scaleActive="1 1 1"/>
+					<objectChange node="wheelFrontRightHub" 		translationActive="-0.28 0 0"	scaleActive="1 1 1"/>
+					<objectChange node="wheelMiddleLeftHub"   	translationActive="0.28 0 0"		scaleActive="1 1 1"/>
+					<objectChange node="wheelMiddleRightHub"  	translationActive="-0.28 0 0"	scaleActive="1 1 1"/>
+					<objectChange node="wheelBackLeftHub"  		translationActive="0.28 0 0"			scaleActive="1 1 1"/>
+					<objectChange node="wheelBackRightHub"  		translationActive="-0.28 0 0"			scaleActive="1 1 1"/>
+			</wheelConfiguration>
+			<wheelConfiguration name="SuperFlexionTire" price="0" brand="MITAS">
+				<wheels>
+					<wheel filename="$data/shared/wheels/mitas/SFT/710_60R34.xml" isLeft="true" hasParticles="true">
+						<physics radius="0.83" tipOcclusionAreaGroupId="1" restLoad="3.03" repr="wheelFrontLeftAxis" driveNode="wheelFrontLeft" forcePointRatio="0.4" initialCompression="28" suspTravel="0.19" spring="37" damper="70" frictionScale="3"/>
+						<steeringAxle scale="0.3" rotMax="15" rotMin="-15"/>
+						<steering node="steeringBarFront" nodeMinTransX="0.125" nodeMaxTransX="-0.125"/>
+					</wheel>
+					<wheel filename="$data/shared/wheels/mitas/SFT/710_60R34.xml" isLeft="false" hasParticles="true">
+						<physics radius="0.83" tipOcclusionAreaGroupId="2" restLoad="3.03" repr="wheelFrontRightAxis" driveNode="wheelFrontRight" forcePointRatio="0.4" initialCompression="28" suspTravel="0.19" spring="37" damper="70" frictionScale="3"/>
+						<steeringAxle scale="0.3" rotMax="15" rotMin="-15"/>
+					</wheel>
+					<wheel filename="$data/shared/wheels/mitas/SFT/710_60R34.xml" isLeft="true">
+						<physics radius="0.83" tipOcclusionAreaGroupId="1" restLoad="2.2" repr="wheelMiddleLeft" forcePointRatio="0.4" initialCompression="24" suspTravel="0.19" spring="37" damper="70" frictionScale="3"/>
+					</wheel>
+					<wheel filename="$data/shared/wheels/mitas/SFT/710_60R34.xml" isLeft="false">
+						<physics radius="0.83" tipOcclusionAreaGroupId="2" restLoad="2.2" repr="wheelMiddleRight" forcePointRatio="0.4" initialCompression="24" suspTravel="0.19" spring="37" damper="70" frictionScale="3"/>
+					</wheel>
+					<wheel filename="$data/shared/wheels/mitas/SFT/710_60R34.xml" isLeft="true" hasTireTracks="true" hasParticles="true">
+						<physics radius="0.83" tipOcclusionAreaGroupId="1" restLoad="1.33" repr="wheelBackLeftAxis" driveNode="wheelBackLeft" forcePointRatio="0.4" initialCompression="20" suspTravel="0.19" spring="37" damper="70" frictionScale="3"/>
+						<steeringAxle scale="-0.7" rotMax="15" rotMin="-15"/>
+						<steering node="steeringBarBack" nodeMinTransX="0.125" nodeMaxTransX="-0.125"/>
+					</wheel>
+					<wheel filename="$data/shared/wheels/mitas/SFT/710_60R34.xml" isLeft="false" hasTireTracks="true" hasParticles="true">
+						<physics radius="0.83" tipOcclusionAreaGroupId="2" restLoad="1.33" repr="wheelBackRightAxis" driveNode="wheelBackRight" forcePointRatio="0.4" initialCompression="20" suspTravel="0.19" spring="37" damper="70" frictionScale="3"/>
+						<steeringAxle scale="-0.7" rotMax="15" rotMin="-15"/>
+					</wheel>
+				</wheels>
+				<objectChange node="wheelFrontLeftAxis" translationActive="-0.05 0 0" scaleActive="1.1 0.968 0.968"/>
+				<objectChange node="wheelFrontRightAxis" translationActive="0.05 0 0" scaleActive="1.1 0.968 0.968"/>
+				<objectChange node="wheelMiddleLeft" translationActive="1.038 0.847 -1.81195998" scaleActive="1.1 0.968 0.968"/>
+				<objectChange node="wheelMiddleRight" translationActive="-1.038 0.847 -1.81195998" scaleActive="1.1 0.968 0.968"/>
+				<objectChange node="wheelBackLeftAxis" translationActive="-0.05 0 0" scaleActive="1.1 0.968 0.968"/>
+				<objectChange node="wheelBackRightAxis" translationActive="0.05 0 0" scaleActive="1.1 0.968 0.968"/>
+			</wheelConfiguration>
+			<wheelConfiguration name="TRI-2" price="0" brand="NOKIAN">
+				<wheels>
+					<wheel filename="$data/shared/wheels/nokian/TRI2/650_65R38.xml" isLeft="true" hasParticles="true">
+						<physics radius="0.83" tipOcclusionAreaGroupId="1" restLoad="3.05" repr="wheelFrontLeftAxis" driveNode="wheelFrontLeft" forcePointRatio="0.4" initialCompression="28" suspTravel="0.19" spring="37" damper="70" frictionScale="3"/>
+						<steeringAxle scale="0.3" rotMax="15" rotMin="-15"/>
+						<steering node="steeringBarFront" nodeMinTransX="0.125" nodeMaxTransX="-0.125"/>
+					</wheel>
+					<wheel filename="$data/shared/wheels/nokian/TRI2/650_65R38.xml" isLeft="false" hasParticles="true">
+						<physics radius="0.83" tipOcclusionAreaGroupId="2" restLoad="3.05" repr="wheelFrontRightAxis" driveNode="wheelFrontRight" forcePointRatio="0.4" initialCompression="28" suspTravel="0.19" spring="37" damper="70" frictionScale="3"/>
+						<steeringAxle scale="0.3" rotMax="15" rotMin="-15"/>
+					</wheel>
+					<wheel filename="$data/shared/wheels/nokian/TRI2/650_65R38.xml" isLeft="true">
+						<physics radius="0.83" tipOcclusionAreaGroupId="1" restLoad="2.2" repr="wheelMiddleLeft" forcePointRatio="0.4" initialCompression="24" suspTravel="0.19" spring="37" damper="70" frictionScale="3"/>
+					</wheel>
+					<wheel filename="$data/shared/wheels/nokian/TRI2/650_65R38.xml" isLeft="false">
+						<physics radius="0.83" tipOcclusionAreaGroupId="2" restLoad="2.2" repr="wheelMiddleRight" forcePointRatio="0.4" initialCompression="24" suspTravel="0.19" spring="37" damper="70" frictionScale="3"/>
+					</wheel>
+					<wheel filename="$data/shared/wheels/nokian/TRI2/650_65R38.xml" isLeft="true" hasTireTracks="true" hasParticles="true">
+						<physics radius="0.83" tipOcclusionAreaGroupId="1" restLoad="1.33" repr="wheelBackLeftAxis" driveNode="wheelBackLeft" forcePointRatio="0.4" initialCompression="20" suspTravel="0.19" spring="37" damper="70" frictionScale="3"/>
+						<steeringAxle scale="-0.7" rotMax="15" rotMin="-15"/>
+						<steering node="steeringBarBack" nodeMinTransX="0.125" nodeMaxTransX="-0.125"/>
+					</wheel>
+					<wheel filename="$data/shared/wheels/nokian/TRI2/650_65R38.xml" isLeft="false" hasTireTracks="true" hasParticles="true">
+						<physics radius="0.83" tipOcclusionAreaGroupId="2" restLoad="1.33" repr="wheelBackRightAxis" driveNode="wheelBackRight" forcePointRatio="0.4" initialCompression="20" suspTravel="0.19" spring="37" damper="70" frictionScale="3"/>
+						<steeringAxle scale="-0.7" rotMax="15" rotMin="-15"/>
+					</wheel>
+				</wheels>
+				<objectChange node="wheelFrontLeftAxis" translationActive="-0.05 0 0" scaleActive="1.1 0.92 0.92"/>
+				<objectChange node="wheelFrontRightAxis" translationActive="0.05 0 0" scaleActive="1.1 0.92 0.92"/>
+				<objectChange node="wheelMiddleLeft" translationActive="1.038 0.847 -1.81195998" scaleActive="1.1 0.92 0.92"/>
+				<objectChange node="wheelMiddleRight" translationActive="-1.038 0.847 -1.81195998" scaleActive="1.1 0.92 0.92"/>
+				<objectChange node="wheelBackLeftAxis" translationActive="-0.05 0 0" scaleActive="1.1 0.92 0.92"/>
+				<objectChange node="wheelBackRightAxis" translationActive="0.05 0 0" scaleActive="1.1 0.92 0.92"/>
+			</wheelConfiguration>
+			<wheelConfiguration name="$l10n_configuration_valueTwinWheelsNarrow" price="0" brand="NOKIAN">
+				<wheels>
+					<wheel filename="$data/shared/wheels/nokian/TRI2/320_85R28.xml" isLeft="true" hasParticles="true">
+						<tire isCareWheel="true" />
+						<additionalWheel filename="$data/shared/wheels/nokian/TRI2/320_85R28.xml" offset="0.2" hasTireTracks="true" hasParticles="true">
+							<connector filename="$data/shared/wheels/rims/dual002.i3d" node="0|1|0" useWidthAndDiam="true" width="25"/>
+						</additionalWheel>
+						<physics radius="0.83" tipOcclusionAreaGroupId="1" restLoad="3.05" repr="wheelFrontLeftAxis" driveNode="wheelFrontLeft" forcePointRatio="0.4" initialCompression="28" suspTravel="0.19" spring="37" damper="70" frictionScale="3"/>
+						<steeringAxle scale="0.3" rotMax="15" rotMin="-15"/>
+						<steering node="steeringBarFront" nodeMinTransX="0.125" nodeMaxTransX="-0.125"/>
+					</wheel>
+					<wheel filename="$data/shared/wheels/nokian/TRI2/320_85R28.xml" isLeft="false" hasParticles="true">
+						<tire isCareWheel="true" />
+						<additionalWheel filename="$data/shared/wheels/nokian/TRI2/320_85R28.xml" offset="0.2" hasTireTracks="true" hasParticles="true">
+							<connector filename="$data/shared/wheels/rims/dual002.i3d" node="0|1|0" useWidthAndDiam="true" width="25"/>
+						</additionalWheel>
+						<physics radius="0.83" tipOcclusionAreaGroupId="2" restLoad="3.05" repr="wheelFrontRightAxis" driveNode="wheelFrontRight" forcePointRatio="0.4" initialCompression="28" suspTravel="0.19" spring="37" damper="70" frictionScale="3"/>
+						<steeringAxle scale="0.3" rotMax="15" rotMin="-15"/>
+					</wheel>
+					<wheel filename="$data/shared/wheels/nokian/TRI2/320_85R28.xml" isLeft="true">
+						<tire isCareWheel="true" />
+						<additionalWheel filename="$data/shared/wheels/nokian/TRI2/320_85R28.xml" offset="0.2" hasTireTracks="true" hasParticles="true">
+							<connector filename="$data/shared/wheels/rims/dual002.i3d" node="0|1|0" useWidthAndDiam="true" width="25"/>
+						</additionalWheel>
+						<physics radius="0.83" tipOcclusionAreaGroupId="1" restLoad="2.2" repr="wheelMiddleLeft" forcePointRatio="0.4" initialCompression="24" suspTravel="0.19" spring="37" damper="70" frictionScale="3"/>
+					</wheel>
+					<wheel filename="$data/shared/wheels/nokian/TRI2/320_85R28.xml" isLeft="false">
+						<tire isCareWheel="true" />
+						<additionalWheel filename="$data/shared/wheels/nokian/TRI2/320_85R28.xml" offset="0.2" hasTireTracks="true" hasParticles="true">
+							<connector filename="$data/shared/wheels/rims/dual002.i3d" node="0|1|0" useWidthAndDiam="true" width="25"/>
+						</additionalWheel>
+						<physics radius="0.83" tipOcclusionAreaGroupId="2" restLoad="2.2" repr="wheelMiddleRight" forcePointRatio="0.4" initialCompression="24" suspTravel="0.19" spring="37" damper="70" frictionScale="3"/>
+					</wheel>
+					<wheel filename="$data/shared/wheels/nokian/TRI2/320_85R28.xml" isLeft="true" hasTireTracks="true" hasParticles="true">
+						<tire isCareWheel="true" />
+						<additionalWheel filename="$data/shared/wheels/nokian/TRI2/320_85R28.xml" offset="0.2" hasTireTracks="true" hasParticles="true">
+							<connector filename="$data/shared/wheels/rims/dual002.i3d" node="0|1|0" useWidthAndDiam="true" width="25"/>
+						</additionalWheel>
+						<physics radius="0.83" tipOcclusionAreaGroupId="1" restLoad="1.33" repr="wheelBackLeftAxis" driveNode="wheelBackLeft" forcePointRatio="0.4" initialCompression="20" suspTravel="0.19" spring="37" damper="70" frictionScale="3"/>
+						<steeringAxle scale="-0.7" rotMax="15" rotMin="-15"/>
+						<steering node="steeringBarBack" nodeMinTransX="0.125" nodeMaxTransX="-0.125"/>
+					</wheel>
+					<wheel filename="$data/shared/wheels/nokian/TRI2/320_85R28.xml" isLeft="false" hasTireTracks="true" hasParticles="true">
+						<tire isCareWheel="true" />
+						<additionalWheel filename="$data/shared/wheels/nokian/TRI2/320_85R28.xml" offset="0.2" hasTireTracks="true" hasParticles="true">
+							<connector filename="$data/shared/wheels/rims/dual002.i3d" node="0|1|0" useWidthAndDiam="true" width="25"/>
+						</additionalWheel>
+						<physics radius="0.83" tipOcclusionAreaGroupId="2" restLoad="1.33" repr="wheelBackRightAxis" driveNode="wheelBackRight" forcePointRatio="0.4" initialCompression="20" suspTravel="0.19" spring="37" damper="70" frictionScale="3"/>
+						<steeringAxle scale="-0.7" rotMax="15" rotMin="-15"/>
+					</wheel>
+				</wheels>
+				<objectChange node="wheelFrontLeftAxis" translationActive="-0.25 0 0" scaleActive="1.1 1.317 1.317"/>
+				<objectChange node="wheelFrontRightAxis" translationActive="0.25 0 0" scaleActive="1.1 1.317 1.317"/>
+				<objectChange node="wheelMiddleLeft" translationActive="0.838 0.847 -1.81195998" scaleActive="1.1 1.317 1.317"/>
+				<objectChange node="wheelMiddleRight" translationActive="-0.838 0.847 -1.81195998" scaleActive="1.1 1.317 1.317"/>
+				<objectChange node="wheelBackLeftAxis" translationActive="-0.25 0 0" scaleActive="1.1 1.317 1.317"/>
+				<objectChange node="wheelBackRightAxis" translationActive="0.25 0 0" scaleActive="1.1 1.317 1.317"/>
+					<objectChange node="wheelFrontLeftHub"  		translationActive="0.45 0 0"		scaleActive="1 1 1"/>
+					<objectChange node="wheelFrontRightHub" 		translationActive="-0.45 0 0"	scaleActive="1 1 1"/>
+					<objectChange node="wheelMiddleLeftHub"   	translationActive="0.45 0 0"		scaleActive="1 1 1"/>
+					<objectChange node="wheelMiddleRightHub"  	translationActive="-0.45 0 0"	scaleActive="1 1 1"/>
+					<objectChange node="wheelBackLeftHub"  		translationActive="0.45 0 0"			scaleActive="1 1 1"/>
+					<objectChange node="wheelBackRightHub"  		translationActive="-0.45 0 0"			scaleActive="1 1 1"/>
+			</wheelConfiguration>
+			<wheelConfiguration name="Super All Traction" price="0" brand="LIZARD">
+				<wheels>
+					<wheel filename="$data/shared/wheels/lizard/superAllTraction/710_72R32.xml" isLeft="true" hasParticles="true">
+						<physics radius="0.83" tipOcclusionAreaGroupId="1" restLoad="3" repr="wheelFrontLeftAxis" driveNode="wheelFrontLeft" forcePointRatio="0.4" initialCompression="28" suspTravel="0.19" spring="37" damper="70" frictionScale="3"/>
+						<steeringAxle scale="0.3" rotMax="15" rotMin="-15"/>
+						<steering node="steeringBarFront" nodeMinTransX="0.125" nodeMaxTransX="-0.125"/>
+					</wheel>
+					<wheel filename="$data/shared/wheels/lizard/superAllTraction/710_72R32.xml" isLeft="false" hasParticles="true">
+						<physics radius="0.83" tipOcclusionAreaGroupId="2" restLoad="3" repr="wheelFrontRightAxis" driveNode="wheelFrontRight" forcePointRatio="0.4" initialCompression="28" suspTravel="0.19" spring="37" damper="70" frictionScale="3"/>
+						<steeringAxle scale="0.3" rotMax="15" rotMin="-15"/>
+					</wheel>
+
+					<wheel filename="$data/shared/wheels/lizard/superAllTraction/710_72R32.xml" isLeft="true">
+						<physics radius="0.83" tipOcclusionAreaGroupId="1" restLoad="2.22" repr="wheelMiddleLeft" forcePointRatio="0.4" initialCompression="24" suspTravel="0.19" spring="37" damper="70" frictionScale="3"/>
+					</wheel>
+					<wheel filename="$data/shared/wheels/lizard/superAllTraction/710_72R32.xml" isLeft="false">
+						<physics radius="0.83" tipOcclusionAreaGroupId="2" restLoad="2.22" repr="wheelMiddleRight" forcePointRatio="0.4" initialCompression="24" suspTravel="0.19" spring="37" damper="70" frictionScale="3"/>
+					</wheel>
+
+					<wheel filename="$data/shared/wheels/lizard/superAllTraction/710_72R32.xml" isLeft="true" hasTireTracks="true" hasParticles="true">
+						<physics radius="0.83" tipOcclusionAreaGroupId="1" restLoad="1.33" repr="wheelBackLeftAxis" driveNode="wheelBackLeft" forcePointRatio="0.4" initialCompression="20" suspTravel="0.19" spring="37" damper="70" frictionScale="3"/>
+						<steeringAxle scale="-0.7" rotMax="15" rotMin="-15"/>
+						<steering node="steeringBarBack" nodeMinTransX="0.125" nodeMaxTransX="-0.125"/>
+					</wheel>
+					<wheel filename="$data/shared/wheels/lizard/superAllTraction/710_72R32.xml" isLeft="false" hasTireTracks="true" hasParticles="true">
+						<physics radius="0.83" tipOcclusionAreaGroupId="2" restLoad="1.33" repr="wheelBackRightAxis" driveNode="wheelBackRight" forcePointRatio="0.4" initialCompression="20" suspTravel="0.19" spring="37" damper="70" frictionScale="3"/>
+						<steeringAxle scale="-0.7" rotMax="15" rotMin="-15"/>
+					</wheel>
+				</wheels>
+				<objectChange node="wheelFrontLeftAxis" translationActive="-0.05 0 0" scaleActive="1.1 0.92 0.92"/>
+				<objectChange node="wheelFrontRightAxis" translationActive="0.05 0 0" scaleActive="1.1 0.92 0.92"/>
+				<objectChange node="wheelMiddleLeft" translationActive="1.038 0.847 -1.81195998" scaleActive="1.1 0.92 0.92"/>
+				<objectChange node="wheelMiddleRight" translationActive="-1.038 0.847 -1.81195998" scaleActive="1.1 0.92 0.92"/>
+				<objectChange node="wheelBackLeftAxis" translationActive="-0.05 0 0" scaleActive="1.1 0.92 0.92"/>
+				<objectChange node="wheelBackRightAxis" translationActive="0.05 0 0" scaleActive="1.1 0.92 0.92"/>
+			</wheelConfiguration>
+		</wheelConfigurations>
+		<hubs>
+			<color0>SHARED_BLACK2</color0>
+			<color1>SHARED_BLACK2</color1>
+			<hub linkNode="wheelFrontLeftHub"		filename="$data/shared/wheels/hubs/hub_n10_5.xml" isLeft="true"  scale="0.335 0.335 0.335"/>
+			<hub linkNode="wheelFrontRightHub"	filename="$data/shared/wheels/hubs/hub_n10_5.xml" isLeft="false" scale="0.335 0.335 0.335"/>
+			<hub linkNode="wheelMiddleLeftHub"	filename="$data/shared/wheels/hubs/hub_n10_5.xml" isLeft="true"  scale="0.335 0.335 0.335"/>
+			<hub linkNode="wheelMiddleRightHub"	filename="$data/shared/wheels/hubs/hub_n10_5.xml" isLeft="false" scale="0.335 0.335 0.335"/>
+			<hub linkNode="wheelBackLeftHub"		filename="$data/shared/wheels/hubs/hub_n10_5.xml" isLeft="true"  scale="0.335 0.335 0.335"/>
+			<hub linkNode="wheelBackRightHub"		filename="$data/shared/wheels/hubs/hub_n10_5.xml" isLeft="false" scale="0.335 0.335 0.335"/>
+		</hubs>
+	</wheels>		
+
+	<attachable>
+		<inputAttacherJointConfigurations>
+			<inputAttacherJointConfiguration name="$l10n_config_attach_trailerLow" price="0">
+			<inputAttacherJoint node="attacherTrailerLow" jointType="trailerLow" attacherHeight="0.7" steeringBarRightNode="steeringBar" lowerRotLimitScale="1 0.75 1" />
+			<objectChange node="attacherRootTrailerLow" visibilityActive="true" visibilityInactive="false"/>
+			<objectChange node="attacherColTrailerLow" compoundChildActive="true" compoundChildInactive="false"/>
+			</inputAttacherJointConfiguration>
+
+
+			<inputAttacherJointConfiguration name="$l10n_config_attach_trailerHigh" price="0">
+			<inputAttacherJoint node="attacherTrailerHigh" rootNode="lizardAugerMaster_main_component2" jointType="trailer" attacherHeight="0.7" lowerRotLimitScale="0 1 1"/>
+			<objectChange node="lizardAugerMaster_main_component2" visibilityActive="true" visibilityInactive="false"/>
+			<objectChange node="trailerHighDrawbar.mount" visibilityActive="true" visibilityInactive="false"/>
+			<objectChange node="attacherColTrailerHigh" compoundChildActive="true" compoundChildInactive="false"/>
+			<objectChange node="trailerHighDrawbar" compoundChildActive="true" compoundChildInactive="false"/>
+			</inputAttacherJointConfiguration>
+
+			<inputAttacherJointConfiguration name="$l10n_config_attach_trailerSemi" price="11000">
+			<inputAttacherJoint node="attacherTrailerSemi" jointType="semitrailer" attacherHeight="0.75"/>
+			<objectChange node="attacherRootTrailerSemi" visibilityActive="true" visibilityInactive="false"/>
+			<objectChange node="attacherColTrailerSemi" compoundChildActive="true" compoundChildInactive="false"/>
+			<objectChange node="trailerArmHydraulicsPunches" translationActive="0 0.1116 0.011"/>
+			<objectChange node="bodyStretch" scaleActive="1 1 1.4" scaleInactive="1 1 1"/>
+			<objectChange node="colPart1.stretched" compoundChildActive="true" compoundChildInactive="false"/>
+			<objectChange node="colPart2.stretched" compoundChildActive="true" compoundChildInactive="false"/>
+			<objectChange node="colPart3.stretched" compoundChildActive="true" compoundChildInactive="false"/>
+			<objectChange node="colPart1" compoundChildActive="false" compoundChildInactive="true"/>
+			<objectChange node="colPart2" compoundChildActive="false" compoundChildInactive="true"/>
+			<objectChange node="colPart3" compoundChildActive="false" compoundChildInactive="true"/>
+			<objectChange node="turnLightSemiLeftFront" visibilityActive="true" visibilityInactive="false"/>
+			<objectChange node="turnLightSemiRightFront" visibilityActive="true" visibilityInactive="false"/>
+			</inputAttacherJointConfiguration>
+		</inputAttacherJointConfigurations>
+
+		<support animationName="moveSupport"/>
+		<brakeForce>2</brakeForce>
+		<steeringAxleAngleScale startSpeed="0" endSpeed="90" backwards="true"/>
+		<airConsumer usage="0.2"/>
+	</attachable>
+
+	<fillUnit>
+		<fillUnitConfigurations>
+			<fillUnitConfiguration>
+				<fillUnits>
+					<fillUnit unit="$l10n_unit_literShort" capacity="43000" fillTypeCategories="BULK">
+						<dashboard displayType="visibility"   valueType="fillLevelWarning" node="fillLightClear" warningThresholdMin="-1" warningThresholdMax="10"/>
+						<dashboard displayType="visibility"   valueType="fillLevelWarning" node="fillLightGreen" warningThresholdMin="9" warningThresholdMax="21500"/>
+						<dashboard displayType="visibility"   valueType="fillLevelWarning" node="fillLightYellow" warningThresholdMin="21499" warningThresholdMax="32250"/>
+						<dashboard displayType="visibility"   valueType="fillLevelWarning" node="fillLightOrange" warningThresholdMin="32249" warningThresholdMax="42000"/>
+						<dashboard displayType="visibility"   valueType="fillLevelWarning" node="fillLightRed" warningThresholdMin="41999" warningThresholdMax="43001"/>
+						<exactFillRootNode node="exactFillRootNodeNormal"/>
+					</fillUnit>
+				</fillUnits>
+			</fillUnitConfiguration>
+			<fillUnitConfiguration>
+				<fillUnits>
+					<fillUnit unit="$l10n_unit_literShort" capacity="60000" fillTypeCategories="BULK">
+						<dashboard displayType="visibility"   valueType="fillLevelWarning" node="fillLightClear" warningThresholdMin="-1" warningThresholdMax="10"/>
+						<dashboard displayType="visibility"   valueType="fillLevelWarning" node="fillLightGreen" warningThresholdMin="9" warningThresholdMax="30000"/>
+						<dashboard displayType="visibility"   valueType="fillLevelWarning" node="fillLightYellow" warningThresholdMin="29999" warningThresholdMax="45000"/>
+						<dashboard displayType="visibility"   valueType="fillLevelWarning" node="fillLightOrange" warningThresholdMin="44999" warningThresholdMax="59000"/>
+						<dashboard displayType="visibility"   valueType="fillLevelWarning" node="fillLightRed" warningThresholdMin="58999" warningThresholdMax="60001"/>
+						<exactFillRootNode node="exactFillRootNodeStretched"/>
+					</fillUnit>
+				</fillUnits>
+			</fillUnitConfiguration>
+		</fillUnitConfigurations>
+	</fillUnit>
+
+	<fillVolume>
+		<fillVolumeConfigurations>
+			<fillVolumeConfiguration>
+				<volumes>
+					<volume node="fillVolume" maxDelta="0.04" fillUnitIndex="1"/>
+				</volumes>
+			</fillVolumeConfiguration>
+		</fillVolumeConfigurations>
+		<unloadInfos>
+			<unloadInfo>
+				<node node="unloadInfoFront" width="2" length="5" minHeight="0.4" priority="2"/>
+				<node node="unloadInfoBack" width="2" length="5"/>
+			</unloadInfo>
+		</unloadInfos>
+		<dischargeInfos>
+			<dischargeInfo>
+				<node node="dischargeInfo" width="0.3" length="0.3" useRaycastHitPosition="true"/>
+			</dischargeInfo>
+		</dischargeInfos>
+	</fillVolume>
+
+	<dischargeable>
+		<dischargeNode node="raycastNode" emptySpeed="2000" fillUnitIndex="1" unloadInfoIndex="1" canDischargeToGround="true">
+			<raycast maxDistance="20"/>
+			<effects>
+				<effectNode effectClass="PipeEffect" effectNode="pipeEffect" materialType="pipe" materialTypeId="1"  delay="0" maxBending="1" extraDistance="5"/>
+			</effects>
+		</dischargeNode>
+	</dischargeable>
+
+	<pipe>
+		<unloadingTriggers>
+			<unloadingTrigger node="trailerTrigger"/>
+		</unloadingTriggers>
+		<animation name="pipeAnimation" speedScale="1"/>
+		<animationNodes>
+			<animationNode node="pipePartAuger" rotSpeed="-500" rotAxis="2" turnOnFadeTime="2" turnOffFadeTime="3"/>
+		</animationNodes>
+		<dischargeNode index="1"/>
+		<states num="2" unloading="2"/>
+	</pipe>
+
+	<designConfigurations title="$l10n_config_fillLights">
+		<designConfiguration name="$l10n_button_yes" price="0">
+			<objectChange node="fillLightSystem" visibilityActive="true"/>
+		</designConfiguration>
+		<designConfiguration name="$l10n_button_no" price="0">
+			<objectChange node="fillLightSystem" visibilityActive="false"/>
+		</designConfiguration>
+	</designConfigurations>
+
+	<connectionHoses>
+		<hose inputAttacherJointIndices="1" type="airDoubleRed"  node="airRedFrontRef"  length="0" diameter="0.02" straighteningFactor="1" minDeltaY="-0.3" color="0.9 0 0 1">
+			<objectChange node="airRedFrontConnector" visibilityActive="true" visibilityInactive="false"/>
+			<objectChange node="airRedFrontCab" rotationActive="14 0 0" rotationInactive="-95 0 0"/>
+		</hose>
+		<hose inputAttacherJointIndices="1" type="airDoubleYellow"  node="airYellowFrontRef"  length="0" diameter="0.02" straighteningFactor="1" minDeltaY="-0.3" color="0.7 0.7 0 1">
+			<objectChange node="airYellowFrontConnector" visibilityActive="true" visibilityInactive="false"/>
+			<objectChange node="airYellowFrontCab" rotationActive="14 0 0" rotationInactive="-95 0 0"/>
+		</hose>
+		<hose inputAttacherJointIndices="1" type="electric"  node="electricFrontRef"  length="0" diameter="0.015" straighteningFactor="1" minDeltaY="-0.3">
+			<objectChange node="electricFrontConnector" visibilityActive="true" visibilityInactive="false"/>
+			<objectChange node="electricFrontCab" rotationActive="0 0 0" rotationInactive="-90 0 0"/>
+		</hose>
+
+		<hose inputAttacherJointIndices="1" type="hydraulicIn"  node="hydraulicInFrontRef"  length="0" diameter="0.02" straighteningFactor="1" minDeltaY="-0.3"  isTwoPointHose="true">
+			<objectChange node="hydraulicInFrontConnector" visibilityActive="true" visibilityInactive="false"/>
+			<objectChange node="hydraulicInFrontCab" rotationActive="0 90 0" rotationInactive="0 0 0"/>
+		</hose>
+		<hose inputAttacherJointIndices="1" type="hydraulicOut"  node="hydraulicOutFrontRef"  length="0" diameter="0.02" straighteningFactor="1" minDeltaY="-0.3">
+			<objectChange node="hydraulicOutFrontConnector" visibilityActive="true" visibilityInactive="false"/>
+			<objectChange node="hydraulicOutFrontCab" rotationActive="0 90 0" rotationInactive="0 0 0"/>
+		</hose>
+	</connectionHoses>
+
+	<cover>
+		<coverConfigurations>
+			<coverConfiguration>
+				<cover openAnimation="toggleCover" openOnBuy="false" fillUnitIndices="1"/>
+			</coverConfiguration>
+		</coverConfigurations>
+	</cover>
+
+	<foliageBending>
+		<bendingNode minX="-1.45" maxX="1.45" minZ="-5.6" maxZ="0.9" yOffset="0.6"/>
+		<bendingNode minX="-1.0" maxX="1.0" minZ="0.9" maxZ="4.5" yOffset="0.6"/>
+		<bendingNode minX="-0.5" maxX="0.5" minZ="4.5" maxZ="5.7" yOffset="0.6"/>
+	</foliageBending>
+
+	<baseMaterial>
+		<material name="lizardAugerMaster_mat" baseNode="augerMaster_main_vis">
+			<shaderParameter name="colorMat0" value="SHARED_BLACK1"/>
+			<shaderParameter name="colorMat1" value="SHARED_BLACK1"/>
+		</material>
+		<material name="lizardAugerMasterCover_mat" baseNode="cover_open">
+			<shaderParameter name="colorMat0" value="SHARED_BLACK1"/>
+			<shaderParameter name="colorMat1" value="SHARED_BLACK1"/>
+			<shaderParameter name="colorMat2" value="SHARED_BLACK1"/>
+		</material>
+	</baseMaterial>
+
+	<baseMaterialConfigurations useDefaultColors="true" >
+		<material name="lizardAugerMaster_mat" shaderParameter="colorMat0"/>
+		<material name="lizardAugerMasterCover_mat" shaderParameter="colorMat0" material="5"/>
+		<baseMaterialConfiguration name="Metallic Blue" color="MANTRID_BLUE2" 		material="3" price="400"/>
+		<baseMaterialConfiguration name="Metallic Red" color="MANTRID_RED2" 					material="3" price="400"/>
+		<baseMaterialConfiguration name="Metallic White" color="MANTRID_WHITE2" 			material="3" price="400"/>
+		<baseMaterialConfiguration name="Metallic Black" color="MANTRID_BLACK2" 			material="3" price="400"/>
+		<baseMaterialConfiguration name="Metallic Green" color="MANTRID_GREEN2" 			material="3" price="400"/>
+		<baseMaterialConfiguration name="Metallic Yellow" color="MANTRID_YELLOW2" material="3" price="400"/>
+		<baseMaterialConfiguration name="Metallic Orange" color="MANTRID_ORANGE2" 			material="3" price="400"/>
+		<baseMaterialConfiguration name="Metallic Light Blue" color="MANTRID_LIGHTBLUE2" 	material="3" price="400"/>
+
+		<baseMaterialConfiguration name="Painted Blue" color="MANTRID_BLUE1" 		material="0" price="0" isDefault="true"/>
+		<baseMaterialConfiguration name="Painted Red" color="MANTRID_RED1" 					material="0" price="400"/>
+		<baseMaterialConfiguration name="Painted White" color="MANTRID_WHITE1" 			material="0" price="400"/>
+		<baseMaterialConfiguration name="Painted Black" color="MANTRID_BLACK1" 			material="0" price="400"/>
+		<baseMaterialConfiguration name="Painted Green" color="MANTRID_GREEN1" 			material="0" price="400"/>
+		<baseMaterialConfiguration name="Painted Yellow" color="MANTRID_YELLOW1" material="0" price="400"/>
+		<baseMaterialConfiguration name="Painted Orange" color="MANTRID_ORANGE1" 			material="0" price="400"/>
+		<baseMaterialConfiguration name="Painted Light Blue" color="MANTRID_LIGHTBLUE1" 	material="0" price="400"/>
+
+		<baseMaterialConfiguration name="Satin Blue" color="MANTRID_BLUE1" 		material="27" price="400"/>
+		<baseMaterialConfiguration name="Satin Red" color="MANTRID_RED1" 					material="27" price="400"/>
+		<baseMaterialConfiguration name="Satin White" color="MANTRID_WHITE1" 			material="27" price="400"/>
+		<baseMaterialConfiguration name="Satin Black" color="MANTRID_BLACK1" 			material="27" price="400"/>
+		<baseMaterialConfiguration name="Satin Green" color="MANTRID_GREEN1" 				material="27" price="400"/>
+		<baseMaterialConfiguration name="Satin Yellow" color="MANTRID_YELLOW1" 	material="27" price="400"/>
+		<baseMaterialConfiguration name="Satin Orange" color="MANTRID_ORANGE1" 			material="27" price="400"/>
+		<baseMaterialConfiguration name="Satin Light Blue" color="MANTRID_LIGHTBLUE1" 	material="27" price="400"/>
+
+		<baseMaterialConfiguration name="Metallic Pink" color="MANTRID_PINK2" 						material="3" price="400"/>
+		<baseMaterialConfiguration name="Metallic Purple" color="MANTRID_PURPLE2" 				material="3" price="400"/>
+		<baseMaterialConfiguration name="Metallic Cyan" color="MANTRID_AQUA2" 						material="3" price="400"/>
+		<baseMaterialConfiguration name="Metallic Sky Blue" color="MANTRID_SKYBLUE2" 		material="3" price="400"/>
+		<baseMaterialConfiguration name="Metallic Light Green" color="MANTRID_LIGHTGREEN2" 		material="3" price="100"/>
+		<baseMaterialConfiguration name="Metallic Grey" color="MANTRID_LIGHTGREY2" 						material="3" price="400"/>
+		<baseMaterialConfiguration name="Metallic Dark Grey" color="MANTRID_DARKGREY2" 	material="3" price="400"/>
+		<baseMaterialConfiguration name="Metallic Brown" color="MANTRID_BROWN2" 					material="3" price="400"/>
+
+		<baseMaterialConfiguration name="Painted Pink" color="MANTRID_PINK1" 						material="0" price="400"/>
+		<baseMaterialConfiguration name="Painted Purple" color="MANTRID_PURPLE1" 				material="0" price="400"/>
+		<baseMaterialConfiguration name="Painted Cyan" color="MANTRID_AQUA1" 						material="0" price="400"/>
+		<baseMaterialConfiguration name="Painted Sky Blue" color="MANTRID_SKYBLUE1"	 	material="0" price="400"/>
+		<baseMaterialConfiguration name="Painted Light Green" color="MANTRID_LIGHTGREEN1" 		material="0" price="400"/>
+		<baseMaterialConfiguration name="Painted Grey" color="MANTRID_LIGHTGREY1" 						material="0" price="400"/>
+		<baseMaterialConfiguration name="Painted Dark Grey" color="MANTRID_DARKGREY1" 	material="0" price="400"/>
+		<baseMaterialConfiguration name="Painted Brown" color="MANTRID_BROWN1" 					material="0" price="400"/>
+
+		<baseMaterialConfiguration name="Satin Pink" color="MANTRID_PINK1" 					material="27" price="400"/>
+		<baseMaterialConfiguration name="Satin Purple" color="MANTRID_PURPLE1" 			material="27" price="400"/>
+		<baseMaterialConfiguration name="Satin Cyan" color="MANTRID_AQUA1" 					material="27" price="400"/>
+		<baseMaterialConfiguration name="Satin Sky Blue" color="MANTRID_SKYBLUE1" 	material="27" price="400"/>
+		<baseMaterialConfiguration name="Satin Light Green" color="MANTRID_LIGHTGREEN1" 		material="27" price="400"/>
+		<baseMaterialConfiguration name="Satin Grey" color="MANTRID_LIGHTGREY1" 					material="27" price="400"/>
+		<baseMaterialConfiguration name="Satin Dark Grey" color="MANTRID_DARKGREY1" material="27" price="400"/>
+		<baseMaterialConfiguration name="Satin Brown" color="MANTRID_BROWN1" 				material="27" price="400"/>
+
+		<baseMaterialConfiguration name="Metallic Gold" color="MANTRID_GOLD" 				material="3" price="400"/>
+		<baseMaterialConfiguration name="Metallic Copper" color="MANTRID_COPPER" 				material="3" price="400"/>
+		<baseMaterialConfiguration name="Silver Steel" color="MANTRID_SILVERSTEEL"	material="8" price="400"/>
+		<baseMaterialConfiguration name="Galvanised Steel" color="MANTRID_GALV"		material="4" price="400"/>
+		<baseMaterialConfiguration name="Black Steel" color="MANTRID_BLACKSTEEL"						material="8" price="400"/>
+	</baseMaterialConfigurations>
+
+	<designMaterialConfigurations useDefaultColors="true">
+		<material name="lizardAugerMaster_mat" shaderParameter="colorMat1"/>
+		<material name="lizardAugerMasterCover_mat" shaderParameter="colorMat1" material="5"/>
+		<material name="lizardAugerMasterCover_mat" shaderParameter="colorMat2"/>
+		<designMaterialConfiguration name="Metallic Blue" color="MANTRID_BLUE2" 		material="3" price="400"/>
+		<designMaterialConfiguration name="Metallic Red" color="MANTRID_RED2" 					material="3" price="400"/>
+		<designMaterialConfiguration name="Metallic White" color="MANTRID_WHITE2" 			material="3" price="400"/>
+		<designMaterialConfiguration name="Metallic Black" color="MANTRID_BLACK2" 			material="3" price="400"/>
+		<designMaterialConfiguration name="Metallic Green" color="MANTRID_GREEN2" 			material="3" price="400"/>
+		<designMaterialConfiguration name="Metallic Yellow" color="MANTRID_YELLOW2" material="3" price="400"/>
+		<designMaterialConfiguration name="Metallic Orange" color="MANTRID_ORANGE2" 			material="3" price="400"/>
+		<designMaterialConfiguration name="Metallic Light Blue" color="MANTRID_LIGHTBLUE2" 	material="3" price="400"/>
+
+		<designMaterialConfiguration name="Painted Blue" color="MANTRID_BLUE1" 		material="0" price="400"/>
+		<designMaterialConfiguration name="Painted Red" color="MANTRID_RED1" 					material="0" price="400"/>
+		<designMaterialConfiguration name="Painted White" color="MANTRID_WHITE1" 			material="0" price="400"/>
+		<designMaterialConfiguration name="Painted Black" color="MANTRID_BLACK1" 			material="0" price="0" isDefault="true"/>
+		<designMaterialConfiguration name="Painted Green" color="MANTRID_GREEN1" 			material="0" price="400"/>
+		<designMaterialConfiguration name="Painted Yellow" color="MANTRID_YELLOW1" material="0" price="400"/>
+		<designMaterialConfiguration name="Painted Orange" color="MANTRID_ORANGE1" 			material="0" price="400"/>
+		<designMaterialConfiguration name="Painted Light Blue" color="MANTRID_LIGHTBLUE1" 	material="0" price="400"/>
+
+		<designMaterialConfiguration name="Satin Blue" color="MANTRID_BLUE1" 		material="27" price="400"/>
+		<designMaterialConfiguration name="Satin Red" color="MANTRID_RED1" 					material="27" price="400"/>
+		<designMaterialConfiguration name="Satin White" color="MANTRID_WHITE1" 			material="27" price="400"/>
+		<designMaterialConfiguration name="Satin Black" color="MANTRID_BLACK1" 			material="27" price="400"/>
+		<designMaterialConfiguration name="Satin Green" color="MANTRID_GREEN1" 				material="27" price="400"/>
+		<designMaterialConfiguration name="Satin Yellow" color="MANTRID_YELLOW1" 	material="27" price="400"/>
+		<designMaterialConfiguration name="Satin Orange" color="MANTRID_ORANGE1" 			material="27" price="400"/>
+		<designMaterialConfiguration name="Satin Light Blue" color="MANTRID_LIGHTBLUE1" 	material="27" price="400"/>
+
+		<designMaterialConfiguration name="Metallic Pink" color="MANTRID_PINK2" 						material="3" price="400"/>
+		<designMaterialConfiguration name="Metallic Purple" color="MANTRID_PURPLE2" 				material="3" price="400"/>
+		<designMaterialConfiguration name="Metallic Cyan" color="MANTRID_PURPLE2" 						material="3" price="400"/>
+		<designMaterialConfiguration name="Metallic Sky Blue" color="MANTRID_SKYBLUE2" 		material="3" price="400"/>
+		<designMaterialConfiguration name="Metallic Light Green" color="MANTRID_LIGHTGREEN2" 		material="3" price="400"/>
+		<designMaterialConfiguration name="Metallic Grey" color="MANTRID_LIGHTGREY2" 						material="3" price="400"/>
+		<designMaterialConfiguration name="Metallic Dark Grey" color="MANTRID_DARKGREY2" 	material="3" price="400"/>
+		<designMaterialConfiguration name="Metallic Brown" color="MANTRID_BROWN2" 					material="3" price="400"/>
+
+		<designMaterialConfiguration name="Painted Pink" color="MANTRID_PINK1" 						material="0" price="400"/>
+		<designMaterialConfiguration name="Painted Purple" color="MANTRID_PURPLE1" 				material="0" price="400"/>
+		<designMaterialConfiguration name="Painted Cyan" color="MANTRID_AQUA1" 						material="0" price="400"/>
+		<designMaterialConfiguration name="Painted Sky Blue" color="MANTRID_SKYBLUE1"	 	material="0" price="400"/>
+		<designMaterialConfiguration name="Painted Light Green" color="MANTRID_LIGHTGREEN1" 		material="0" price="400"/>
+		<designMaterialConfiguration name="Painted Grey" color="MANTRID_LIGHTGREY1" 						material="0" price="400"/>
+		<designMaterialConfiguration name="Painted Dark Grey" color="MANTRID_DARKGREY1" 	material="0" price="400"/>
+		<designMaterialConfiguration name="Painted Brown" color="MANTRID_BROWN1" 					material="0" price="400"/>
+
+		<designMaterialConfiguration name="Satin Pink" color="MANTRID_PINK1" 					material="27" price="400"/>
+		<designMaterialConfiguration name="Satin Purple" color="MANTRID_PURPLE1" 			material="27" price="400"/>
+		<designMaterialConfiguration name="Satin Cyan" color="MANTRID_AQUA1" 					material="27" price="400"/>
+		<designMaterialConfiguration name="Satin Sky Blue" color="MANTRID_SKYBLUE1" 	material="27" price="400"/>
+		<designMaterialConfiguration name="Satin Light Green" color="MANTRID_LIGHTGREEN1" 		material="27" price="400"/>
+		<designMaterialConfiguration name="Satin Grey" color="MANTRID_LIGHTGREY1" 					material="27" price="400"/>
+		<designMaterialConfiguration name="Satin Dark Grey" color="MANTRID_DARKGREY1" material="27" price="400"/>
+		<designMaterialConfiguration name="Satin Brown" color="MANTRID_BROWN1" 				material="27" price="400"/>
+
+		<designMaterialConfiguration name="Metallic Gold" color="MANTRID_GOLD" 				material="3" price="400"/>
+		<designMaterialConfiguration name="Metallic Copper" color="MANTRID_COPPER" 				material="3" price="400"/>
+		<designMaterialConfiguration name="Silver Steel" color="MANTRID_SILVERSTEEL"	material="8" price="400"/>
+		<designMaterialConfiguration name="Galvanised Steel" color="MANTRID_GALV"		material="4" price="400"/>
+		<designMaterialConfiguration name="Black Steel" color="MANTRID_BLACKSTEEL"						material="8" price="400"/>
+	</designMaterialConfigurations>
+
+	<rimColorConfigurations useDefaultColors="true">
+		<rimColorConfiguration name="Metallic Blue" color="MANTRID_BLUE2" 		material="3" price="100"/>
+		<rimColorConfiguration name="Metallic Red" color="MANTRID_RED2" 					material="3" price="100"/>
+		<rimColorConfiguration name="Metallic White" color="MANTRID_WHITE2" 			material="3" price="100"/>
+		<rimColorConfiguration name="Metallic Black" color="MANTRID_BLACK2" 			material="3" price="100"/>
+		<rimColorConfiguration name="Metallic Green" color="MANTRID_GREEN2" 			material="3" price="100"/>
+		<rimColorConfiguration name="Metallic Yellow" color="MANTRID_YELLOW2"	material="3" price="100"/>
+		<rimColorConfiguration name="Metallic Orange" color="MANTRID_ORANGE2" 			material="3" price="100"/>
+		<rimColorConfiguration name="Metallic Light Blue" color="MANTRID_LIGHTBLUE2" 	material="3" price="100"/>
+
+		<rimColorConfiguration name="Chrome Blue" color="MANTRID_BLUE2" 		material="2" price="100"/>
+		<rimColorConfiguration name="Chrome Red" color="MANTRID_RED2" 					material="2" price="100"/>
+		<rimColorConfiguration name="Chrome White" color="MANTRID_WHITE2" 			material="2" price="100"/>
+		<rimColorConfiguration name="Chrome Black" color="MANTRID_BLACK2" 			material="2" price="100"/>
+		<rimColorConfiguration name="Chrome Green" color="MANTRID_GREEN2" 			material="2" price="100"/>
+		<rimColorConfiguration name="Chrome Yellow" color="MANTRID_YELLOW2" material="2" price="100"/>
+		<rimColorConfiguration name="Chrome Orange" color="MANTRID_ORANGE2" 			material="2" price="100"/>
+		<rimColorConfiguration name="Chrome Light Blue" color="MANTRID_LIGHTBLUE2" 	material="2" price="100"/>
+
+		<rimColorConfiguration name="Satin Blue" color="MANTRID_BLUE1" 		material="27" price="100"/>
+		<rimColorConfiguration name="Satin Red" color="MANTRID_RED1" 					material="27" price="100"/>
+		<rimColorConfiguration name="Satin White" color="MANTRID_WHITE1" 			material="27" price="100"/>
+		<rimColorConfiguration name="Satin Black" color="MANTRID_BLACK1" 			material="27" price="100"/>
+		<rimColorConfiguration name="Satin Green" color="MANTRID_GREEN1" 				material="27" price="100"/>
+		<rimColorConfiguration name="Satin Yellow" color="MANTRID_YELLOW1" 	material="27" price="100"/>
+		<rimColorConfiguration name="Satin Orange" color="MANTRID_ORANGE1" 			material="27" price="100"/>
+		<rimColorConfiguration name="Satin Light Blue" color="MANTRID_LIGHTBLUE1" 	material="27" price="100"/>
+
+		<rimColorConfiguration name="Metallic Pink" color="MANTRID_PINK2" 						material="3" price="100"/>
+		<rimColorConfiguration name="Metallic Purple" color="MANTRID_PURPLE2" 				material="3" price="100"/>
+		<rimColorConfiguration name="Metallic Cyan" color="MANTRID_AQUA2" 						material="3" price="100"/>
+		<rimColorConfiguration name="Metallic Sky Blue" color="MANTRID_SKYBLUE2" 		material="3" price="100"/>
+		<rimColorConfiguration name="Metallic Light Green" color="MANTRID_LIGHTGREEN2" 		material="3" price="100"/>
+		<rimColorConfiguration name="Metallic Grey" color="MANTRID_LIGHTGREY2" 						material="3" price="100"/>
+		<rimColorConfiguration name="Metallic Dark Grey" color="MANTRID_DARKGREY2"	material="3" price="100"/>
+		<rimColorConfiguration name="Metallic Brown" color="MANTRID_BROWN2" 					material="3" price="100"/>
+
+		<rimColorConfiguration name="Chrome Pink" color="MANTRID_PINK2" 						material="2" price="100"/>
+		<rimColorConfiguration name="Chrome Purple" color="MANTRID_PURPLE2" 				material="2" price="100"/>
+		<rimColorConfiguration name="Chrome Cyan" color="MANTRID_AQUA2" 						material="2" price="100"/>
+		<rimColorConfiguration name="Chrome Sky Blue" color="MANTRID_SKYBLUE2"	 	material="2" price="100"/>
+		<rimColorConfiguration name="Chrome Light Green" color="MANTRID_LIGHTGREEN2" 		material="2" price="100"/>
+		<rimColorConfiguration name="Chrome Grey" color="MANTRID_LIGHTGREY2" 						material="2" price="100"/>
+		<rimColorConfiguration name="Chrome Dark Grey" color="MANTRID_DARKGREY2" 	material="2" price="100"/>
+		<rimColorConfiguration name="Chrome Brown" color="MANTRID_BROWN2" 					material="2" price="100"/>
+
+		<rimColorConfiguration name="Satin Pink" color="MANTRID_PINK1" 						material="27" price="100"/>
+		<rimColorConfiguration name="Satin Purple" color="MANTRID_PURPLE1" 				material="27" price="100"/>
+		<rimColorConfiguration name="Satin Cyan" color="MANTRID_AQUA1" 						material="27" price="100"/>
+		<rimColorConfiguration name="Satin Sky Blue" color="MANTRID_SKYBLUE1" 		material="27" price="100"/>
+		<rimColorConfiguration name="Satin Light Green" color="MANTRID_LIGHTGREEN1" 			material="27" price="100"/>
+		<rimColorConfiguration name="Satin Grey" color="MANTRID_LIGHTGREY1"							material="27" price="100"/>
+		<rimColorConfiguration name="Satin Dark Grey" color="MANTRID_DARKGREY1" 	material="27" price="100"/>
+		<rimColorConfiguration name="Satin Brown" color="MANTRID_BROWN1" 				 	material="27" price="100"/>
+
+		<rimColorConfiguration name="Metallic Gold" color="MANTRID_GOLD" 				material="3" price="100"/>
+		<rimColorConfiguration name="Chrome Gold" color="MANTRID_GOLD" 					material="2" price="100"/>
+		<rimColorConfiguration name="Metallic Copper" color="MANTRID_COPPER" 				material="3" price="100"/>
+		<rimColorConfiguration name="Chrome Copper" color="MANTRID_SILVERSTEEL" 					material="2" price="100"/>
+		<rimColorConfiguration name="Silver Steel" color="MANTRID_SILVERSTEEL"	material="8" price="0" isDefault="true"/>
+		<rimColorConfiguration name="Galvanised Steel" color="MANTRID_GALV"		material="4" price="100"/>
+		<rimColorConfiguration name="Black Steel" color="MANTRID_BLACKSTEEL"						material="8" price="100"/>
+	</rimColorConfigurations>
+
+	<wearable wearDuration="480" workMultiplier="5" fieldMultiplier="2"/>
+	<washable dirtDuration="90" washDuration="1" workMultiplier="3" fieldMultiplier="2"/>
+
+    <ai>
+        <allowTurnBackward value="false"/>
+    </ai>
+
+	<powerConsumer ptoRpm="470" neededMaxPtoPower="25"/> <!-- It makes the tractor go Vroom, for the hydraulic pressure that runs the auger! -->
+
+	<lights>
+		<sharedLight linkNode="rearLightLeft" filename="$data/shared/assets/lights/lizard/rearMultipointLight_02_left.xml"/>
+		<sharedLight linkNode="rearLightRight" filename="$data/shared/assets/lights/lizard/rearMultipointLight_02_right.xml"/>
+		<sharedLight linkNode="turnLightSemiLeftFront" filename="lights/turnLightLeft.xml"/>
+		<sharedLight linkNode="turnLightSemiRightFront" filename="lights/turnLightRight.xml"/>
+		<sharedLight linkNode="pipeLight" filename="$data/shared/assets/lights/lizard/workingLightSquare_02.xml" lightTypes="1">
+			<rotationNode name="rotationNode1" rotation="-65 0 0"/>
+		</sharedLight>
+
+		<sharedLight linkNode="0|1|4|0|0" filename="$data/shared/assets/lights/lizard/sideMarker_09Orange.xml" lightTypes="0"/>
+		<sharedLight linkNode="0|1|4|0|1" filename="$data/shared/assets/lights/lizard/sideMarker_09Orange.xml" lightTypes="0"/>
+		<sharedLight linkNode="0|1|4|0|2" filename="$data/shared/assets/lights/lizard/sideMarker_09Orange.xml" lightTypes="0"/>
+		<sharedLight linkNode="0|1|4|0|3" filename="$data/shared/assets/lights/lizard/sideMarker_09Orange.xml" lightTypes="0"/>
+		<sharedLight linkNode="0|1|4|0|4" filename="$data/shared/assets/lights/lizard/sideMarker_09Orange.xml" lightTypes="0"/>
+		<sharedLight linkNode="0|1|4|0|5" filename="$data/shared/assets/lights/lizard/sideMarker_09Orange.xml" lightTypes="0"/>
+		<sharedLight linkNode="0|1|4|0|6" filename="$data/shared/assets/lights/lizard/sideMarker_09Orange.xml" lightTypes="0"/>
+		<sharedLight linkNode="0|1|4|0|7" filename="$data/shared/assets/lights/lizard/sideMarker_09Orange.xml" lightTypes="0"/>
+		<sharedLight linkNode="0|1|4|0|8" filename="$data/shared/assets/lights/lizard/sideMarker_09Orange.xml" lightTypes="0"/>
+		<sharedLight linkNode="0|1|4|0|9" filename="$data/shared/assets/lights/lizard/sideMarker_09Orange.xml" lightTypes="0"/>
+		<sharedLight linkNode="0|1|4|0|10" filename="$data/shared/assets/lights/lizard/sideMarker_09Orange.xml" lightTypes="0"/>
+		<sharedLight linkNode="0|1|4|0|11" filename="$data/shared/assets/lights/lizard/sideMarker_09Orange.xml" lightTypes="0"/>
+		<sharedLight linkNode="0|1|4|0|12" filename="$data/shared/assets/lights/lizard/sideMarker_09Orange.xml" lightTypes="0"/>
+		<sharedLight linkNode="0|1|4|0|13" filename="$data/shared/assets/lights/lizard/sideMarker_09Orange.xml" lightTypes="0"/>
+		<sharedLight linkNode="0|1|4|0|14" filename="$data/shared/assets/lights/lizard/sideMarker_09Orange.xml" lightTypes="0"/>
+		<sharedLight linkNode="0|1|4|1|0" filename="$data/shared/assets/lights/lizard/sideMarker_09Orange.xml" lightTypes="0"/>
+		<sharedLight linkNode="0|1|4|1|1" filename="$data/shared/assets/lights/lizard/sideMarker_09Orange.xml" lightTypes="0"/>
+		<sharedLight linkNode="0|1|4|1|2" filename="$data/shared/assets/lights/lizard/sideMarker_09Orange.xml" lightTypes="0"/>
+		<sharedLight linkNode="0|1|4|1|3" filename="$data/shared/assets/lights/lizard/sideMarker_09Orange.xml" lightTypes="0"/>
+		<sharedLight linkNode="0|1|4|1|4" filename="$data/shared/assets/lights/lizard/sideMarker_09Orange.xml" lightTypes="0"/>
+		<sharedLight linkNode="0|1|4|1|5" filename="$data/shared/assets/lights/lizard/sideMarker_09Orange.xml" lightTypes="0"/>
+		<sharedLight linkNode="0|1|4|1|6" filename="$data/shared/assets/lights/lizard/sideMarker_09Orange.xml" lightTypes="0"/>
+		<sharedLight linkNode="0|1|4|1|7" filename="$data/shared/assets/lights/lizard/sideMarker_09Orange.xml" lightTypes="0"/>
+		<sharedLight linkNode="0|1|4|1|8" filename="$data/shared/assets/lights/lizard/sideMarker_09Orange.xml" lightTypes="0"/>
+		<sharedLight linkNode="0|1|4|1|9" filename="$data/shared/assets/lights/lizard/sideMarker_09Orange.xml" lightTypes="0"/>
+		<sharedLight linkNode="0|1|4|1|10" filename="$data/shared/assets/lights/lizard/sideMarker_09Orange.xml" lightTypes="0"/>
+		<sharedLight linkNode="0|1|4|1|11" filename="$data/shared/assets/lights/lizard/sideMarker_09Orange.xml" lightTypes="0"/>
+		<sharedLight linkNode="0|1|4|1|12" filename="$data/shared/assets/lights/lizard/sideMarker_09Orange.xml" lightTypes="0"/>
+		<sharedLight linkNode="0|1|4|1|13" filename="$data/shared/assets/lights/lizard/sideMarker_09Orange.xml" lightTypes="0"/>
+		<sharedLight linkNode="0|1|4|1|14" filename="$data/shared/assets/lights/lizard/sideMarker_09Orange.xml" lightTypes="0"/>
+
+		<realLights>
+			<high>
+				<light node="backLightsHigh" lightTypes="0"/>
+				<light node="pipeLightReal" lightTypes="1"/>
+				<turnLightLeft node="turnLightLeftBack"/>
+				<turnLightRight node="turnLightRightBack"/>
+				<brakeLight node="backLightsHigh"/>
+				<reverseLight node="reverseLightsHigh"/>
+			</high>
+		</realLights>
+		<defaultLights>
+			<defaultLight shaderNode="positionLightsStatic" lightTypes="0"/>
+		</defaultLights>
+		<beaconLights>
+			<beaconLight node="beaconLight" filename="$data/shared/assets/beaconLights/lizard/beaconLight03.xml"/>
+		</beaconLights>
+	</lights>
+
+	<dynamicallyLoadedParts>
+		<dynamicallyLoadedPart node="0" linkNode="extinguisher1" filename="$data/shared/assets/extinguisher.i3d"/>
+		<dynamicallyLoadedPart node="0" linkNode="extinguisher2" filename="$data/shared/assets/extinguisher.i3d"/>
+		<dynamicallyLoadedPart node="0" linkNode="extinguisher3" filename="$data/shared/assets/extinguisher.i3d"/>
+	</dynamicallyLoadedParts>
+
+	<animations>
+		<animation name="folding">
+			<part node="fillLightUnfolded" startTime="0" endTime="0.01" visibility="false"/>
+			<part node="fillLightFolded" startTime="0" endTime="0.01" visibility="true"/>
+			<part node="fillLightUnfolded" startTime="0.01" endTime="0.02" visibility="true"/>
+			<part node="fillLightFolded" startTime="0.01" endTime="0.02" visibility="false"/>
+			<part node="fillLightClear" startTime="0.01" endTime="0.02" visibility="true"/> <!-- This line is just so the clear light is visible when empty, after loading game or resetting vehicle -->
+		</animation>
+
+		<animation name="pipeAnimation">
+			<part node="pipe" startTime="0" endTime="6" startRot="0 0 0" endRot="0 0 0"/>
+			<part node="pipePart" startTime="0" endTime="6" startRot="0 0 0" endRot="0 0 175"/>
+			<part node="pipeEnd" startTime="0" endTime="6" startRot="0 0 0" endRot="0 0 -95"/>
+			<part node="pipeEndPartRef" startTime="0" endTime="6" startTrans="0 0 0" endTrans="0.73 0 0"/>
+			<part node="grainDoorLeft" startTime="5" endTime="6" startRot="0 0 0" endRot="0 0 -50"/>
+			<part node="grainDoorRight" startTime="5" endTime="6" startRot="0 0 0" endRot="0 0 50"/>
+			<part node="raycastNode" startTime="0" endTime="6" startRot="180 0 25" endRot="180 0 65"/>
+			
+			<part node="fillLightUnfolded" startTime="0" endTime="5.9" visibility="false"/>
+			<part node="fillLightFolded" startTime="0" endTime="5.9" visibility="true"/>
+			<part node="fillLightUnfolded" startTime="5.9" endTime="6" visibility="true"/>
+			<part node="fillLightFolded" startTime="5.9" endTime="6" visibility="false"/>
+		</animation>
+		<animation name="laserBeam">
+			<part node="frickin" startTime="0" endTime="1" startRot="0 0 40" endRot="90 90 90"/>
+		</animation>
+		<animation name="pipeEndAnimation">
+			<part node="pipeEnd" startTime="0" endTime="6" startRot="0 0 0" endRot="0 0 -95"/>
+			<part node="pipeEndPartRef" startTime="0" endTime="6" startTrans="0 0 0" endTrans="0.73 0 0"/>
+			<part node="raycastNode" startTime="0" endTime="6" startRot="180 0 25" endRot="180 0 65"/>
+			<part node="shark" startTime="0" endTime="6" startRot="0 0 15" endRot="0 0 55"/>
+		</animation>
+		<animation name="moveSupport">
+			<part node="supportLeg" startTime="0.5" endTime="1.5" startTrans="0 -0.579 0" endTrans="0 -1.048 0"/>
+			<part node="supportArm" startTime="0" endTime="0.5" startRot="90 0 0" endRot="0 0 0"/>
+		</animation>
+		<animation name="toggleCover">
+			<part node="cover_open" startTime="0" endTime="0.02" visibility="false"/>
+			<part node="cover_open" startTime="0.02" endTime="0.04" visibility="true"/>
+			<part node="cover_closed" startTime="0" endTime="0.02" visibility="true"/>
+			<part node="cover_closed" startTime="0.02" endTime="0.04" visibility="false"/>
+		</animation>
+	</animations>
+
+	<cylindered>
+		<movingTools>
+			<movingTool node="pipe" freezingPipeStates="0 1">
+				<controls axis="AXIS_DOOR_3" invertAxis="false" mouseSpeedFactor="0.6" iconName="PIPE_END_ROTATE"/>
+				<rotation rotSpeed="15" rotAcceleration="80" rotMax="35" rotMin="0" rotationAxis="3" startRot="0"/>
+				<animation animName="laserBeam" animMinTime="0" animMaxTime="1"  animSpeed="1"/>
+				<dependentPart node="hydraulicPipeMain"/>
+			</movingTool>
+			<movingTool node="pipeEnd" freezingPipeStates="0 1">
+				<controls axis="AXIS_PIPE" invertAxis="false" mouseSpeedFactor="0.6" iconName="PIPE_END_ROTATE"/>
+				<animation animName="pipeEndAnimation" animAcceleration="2" animSpeed="0.4" animMinTime="0.3"/>
+				<dependentPart node="hydraulicPipeEnd"/>
+			</movingTool>
+			<movingTool node="pipeEndPartRef">
+				<dependentPart node="pipeEndPart"/>
+			</movingTool>
+			<movingTool node="pipePart">
+				<dependentPart node="pipeMover"/>
+			</movingTool>
+			<movingTool node="grainDoorLeft">
+				<dependentPart node="grainDoorArm"/>
+				<dependentPart node="hydraulicGrainDoorLeft"/>
+				<dependentPart node="hydraulicGrainDoorRight"/>
+			</movingTool>
+		</movingTools>
+		<movingParts>
+			<movingPart node="pipeMover" referencePoint="pipeMoverRef" localReferencePoint="pipeMoverPart" referenceFrame="pipeMoverRef" playSound="true">
+				<dependentPart node="pipeMoverPart"/>
+				<dependentPart node="hydaulicPipe"/>
+			</movingPart>
+			<movingPart node="pipeMoverPart" referencePoint="pipeMoverRef" referenceFrame="hydraulicPipeRefFrame" scaleZ="true"/>
+			<movingPart node="hydaulicPipe" referencePoint="pipeMoverPart" referenceFrame="hydraulicPipeRefFrame" playSound="true">
+				<translatingPart node="hydaulicPipePunch"/>
+			</movingPart>
+			<movingPart node="hydraulicPipeEnd" referencePoint="hydraulicPipeEndRef" referenceFrame="hydraulicPipeEndRefFrame" playSound="true">
+				<translatingPart node="hydraulicPipeEndPunch"/>
+			</movingPart>
+			<movingPart node="pipeEndPart" referencePoint="pipeEndPartRef" referenceFrame="pipeEndPartRef" scaleZ="true"/>
+
+			<movingPart node="hydraulicPipeMain" referencePoint="hydraulicPipeMainPunch" referenceFrame="lizardAugerMaster_main_component1" playSound="true">
+				<dependentPart node="hydraulicPipeMainPunch"/>
+			</movingPart>
+			<movingPart node="hydraulicPipeMainPunch" referencePoint="hydraulicPipeMain" referenceFrame="lizardAugerMaster_main_component1" playSound="true">
+			</movingPart>
+
+			<movingPart node="hydraulicGrainDoorLeft" referencePoint="hydraulicGrainDoorLeftRef" referenceFrame="lizardAugerMaster_main_component1" playSound="true">
+				<translatingPart node="hydraulicGrainDoorLeftPunch"/>
+			</movingPart>
+			<movingPart node="hydraulicGrainDoorRight" referencePoint="hydraulicGrainDoorRef" referenceFrame="lizardAugerMaster_main_component1" playSound="true">
+				<translatingPart node="hydraulicGrainDoorRightPunch"/>
+			</movingPart>
+			<movingPart node="grainDoorArm" referencePoint="grainDoorArmRef" referenceFrame="lizardAugerMaster_main_component1"/>
+			<movingPart node="steeringBarFrontLeft" referencePoint="steeringBarFrontLeftRef" referenceFrame="lizardAugerMaster_main_component1" isActiveDirty="true" scaleZ="true"/>
+			<movingPart node="steeringBarFrontRight" referencePoint="steeringBarFrontRightRef" referenceFrame="lizardAugerMaster_main_component1" isActiveDirty="true" scaleZ="true"/>
+			<movingPart node="steeringBarBackLeft" referencePoint="steeringBarBackLeftRef" referenceFrame="lizardAugerMaster_main_component1" isActiveDirty="true" scaleZ="true"/>
+			<movingPart node="steeringBarBackRight" referencePoint="steeringBarBackRightRef" referenceFrame="lizardAugerMaster_main_component1" isActiveDirty="true" scaleZ="true"/>
+			<movingPart node="steeringBar" referencePoint="steeringBarRef" localReferencePoint="steeringBarPart" referenceFrame="steeringBarRefFrame">
+				<dependentPart node="steeringBarPart"/>
+			</movingPart>
+			<movingPart node="steeringBarPart" referencePoint="steeringBarRef" referenceFrame="steeringBarRef"/>
+		</movingParts>
+		<sounds>
+			<hydraulic template="DEFAULT_HYDRAULIC_SOUND" linkNode="lizardAugerMaster_main_component1"/>
+		</sounds>
+	</cylindered>
+
+	<configurationSets title="$l10n_configuration_inputAttacherJoint">
+		<configurationSet name="$l10n_config_attach_trailerLow">
+			<configuration name="fillUnit" index="1"/>
+			<configuration name="inputAttacherJoint" index="1"/>
+		</configurationSet>
+		<configurationSet name="$l10n_config_attach_trailerHigh">
+			<configuration name="fillUnit" index="1"/>
+			<configuration name="inputAttacherJoint" index="2"/>
+		</configurationSet>
+		<configurationSet name="$l10n_config_attach_trailerSemi">
+			<configuration name="fillUnit" index="2"/>
+			<configuration name="inputAttacherJoint" index="3"/>
+		</configurationSet>
+	</configurationSets>	
+
+	<i3dMappings>
+		<i3dMapping id="lizardAugerMaster_main_component1" node="0>"/>
+		<i3dMapping id="lizardAugerMaster_main_component2" node="1>"/>
+		<i3dMapping id="augerMaster_main_vis" node="0>0"/>
+		<i3dMapping id="bodyStretch" node="0>0|1"/>
+		<i3dMapping id="wheelFrontLeftAxis" node="0>0|0|0|0"/>
+		<i3dMapping id="wheelFrontLeft" node="0>0|0|0|0|0"/>
+		<i3dMapping id="wheelFrontLeftHub" node="0>0|0|0|0|0|0"/>
+		<i3dMapping id="steeringBarFrontLeft" node="0>0|0|0|0|1"/>
+		<i3dMapping id="wheelFrontRightAxis" node="0>0|0|1|0"/>
+		<i3dMapping id="wheelFrontRight" node="0>0|0|1|0|0"/>
+		<i3dMapping id="wheelFrontRightHub" node="0>0|0|1|0|0|0"/>
+		<i3dMapping id="steeringBarFrontRight" node="0>0|0|1|0|1"/>
+		<i3dMapping id="wheelMiddleLeft" node="0>0|0|2"/>
+		<i3dMapping id="wheelMiddleLeftHub" node="0>0|0|2|0"/>
+		<i3dMapping id="wheelMiddleRight" node="0>0|0|3"/>
+		<i3dMapping id="wheelMiddleRightHub" node="0>0|0|3|0"/>
+		<i3dMapping id="wheelBackLeftAxis" node="0>0|0|4|0"/>
+		<i3dMapping id="wheelBackLeft" node="0>0|0|4|0|0"/>
+		<i3dMapping id="wheelBackLeftHub" node="0>0|0|4|0|0|0"/>
+		<i3dMapping id="steeringBarBackLeft" node="0>0|0|4|0|1"/>
+		<i3dMapping id="wheelBackRightAxis" node="0>0|0|5|0"/>
+		<i3dMapping id="wheelBackRight" node="0>0|0|5|0|0"/>
+		<i3dMapping id="wheelBackRightHub" node="0>0|0|5|0|0|0"/>
+		<i3dMapping id="steeringBarBackRight" node="0>0|0|5|0|1"/>
+		<i3dMapping id="attacherRootTrailerLow" node="0>0|2|0"/>
+		<i3dMapping id="attacherRootTrailerHigh" node="0>0|2|1"/>
+		<i3dMapping id="attacherRootTrailerSemi" node="0>0|2|2"/>
+		<i3dMapping id="attacherTrailerLow" node="0>0|2|0|0|2"/>
+		<i3dMapping id="trailerHighDrawbar" node="1>0"/>
+		<i3dMapping id="trailerHighDrawbar.mount" node="0>0|2|1|0"/>
+		<i3dMapping id="attacherTrailerHigh" node="1>0|0"/>
+		<i3dMapping id="comp2Attach" node="0>0|2|1|1"/>
+		<i3dMapping id="attacherTrailerSemi" node="0>0|2|2|0"/>
+		<i3dMapping id="attacherColTrailerLow" node="0>0|2|0|0|3"/>
+		<i3dMapping id="attacherColTrailerHigh" node="1>0|1"/>
+		<i3dMapping id="attacherColTrailerSemi" node="0>0|2|2|1"/>
+		<i3dMapping id="supportArm" node="0>0|3|0"/>
+		<i3dMapping id="supportLeg" node="0>0|3|0|0"/>
+		<i3dMapping id="trailerArmHydraulicsPunches" node="0>0|2|4"/>
+		<i3dMapping id="positionLightsStatic" node="0>0|4|0"/>
+		<i3dMapping id="backLightsHigh" node="0>0|4|1|0"/>
+		<i3dMapping id="reverseLightsHigh" node="0>0|4|1|1"/>
+		<i3dMapping id="turnLightLeftBack" node="0>0|4|2|0"/>
+		<i3dMapping id="turnLightRightBack" node="0>0|4|2|1"/>
+		<i3dMapping id="rearLightRight" node="0>0|4|3|0"/>
+		<i3dMapping id="rearLightLeft" node="0>0|4|3|1"/>
+		<i3dMapping id="turnLightSemiLeftFront" node="0>0|4|2|2"/>
+		<i3dMapping id="turnLightSemiRightFront" node="0>0|4|2|3"/>
+		<i3dMapping id="pipeLight" node="0>0|5|0|5"/>
+		<i3dMapping id="beaconLight" node="0>0|5|5"/>
+		<i3dMapping id="pipeLightReal" node="0>0|5|0|5|0"/>
+		<i3dMapping id="pipe" node="0>0|5"/>
+		<i3dMapping id="pipePart" node="0>0|5|0"/>
+		<i3dMapping id="pipePartAuger" node="0>0|5|0|6"/>
+		<i3dMapping id="pipeEnd" node="0>0|5|0|0"/>
+		<i3dMapping id="hydraulicPipeEndRef" node="0>0|5|0|0|0"/>
+		<i3dMapping id="raycastNode" node="0>0|5|0|0|1"/>
+		<i3dMapping id="pipeEndPartRef" node="0>0|5|0|0|2|0"/>
+		<i3dMapping id="dischargeInfo" node="0>0|5|0|0|3"/>
+		<i3dMapping id="pipeEffect" node="0>0|5|0|0|4"/>
+		<i3dMapping id="pipeEndPart" node="0>0|5|0|1"/>
+		<i3dMapping id="hydraulicPipeEnd" node="0>0|5|0|2"/>
+		<i3dMapping id="hydraulicPipeEndPunch" node="0>0|5|0|2|0"/>
+		<i3dMapping id="pipeMoverRef" node="0>0|5|0|3"/>
+		<i3dMapping id="hydraulicPipeEndRefFrame" node="0>0|5|0|4"/>
+		<i3dMapping id="pipeMover" node="0>0|5|2"/>
+		<i3dMapping id="pipeMoverPart" node="0>0|5|2|0"/>
+		<i3dMapping id="hydaulicPipe" node="0>0|5|3"/>
+		<i3dMapping id="hydaulicPipePunch" node="0>0|5|3|0"/>
+		<i3dMapping id="hydraulicPipeRefFrame" node="0>0|5|4"/>
+		<i3dMapping id="steeringBarFront" node="0>0|6|0"/>
+		<i3dMapping id="steeringBarFrontLeftRef" node="0>0|6|0|0"/>
+		<i3dMapping id="steeringBarFrontRightRef" node="0>0|6|0|1"/>
+		<i3dMapping id="steeringBarBack" node="0>0|6|1"/>
+		<i3dMapping id="steeringBarBackLeftRef" node="0>0|6|1|0"/>
+		<i3dMapping id="steeringBarBackRightRef" node="0>0|6|1|1"/>
+		<i3dMapping id="hydraulicPipeMain" node="0>0|6|2"/>
+		<i3dMapping id="hydraulicPipeMainPunch" node="0>0|5|1"/>
+		<i3dMapping id="grainDoorLeft" node="0>0|1|0|0"/>
+		<i3dMapping id="grainDoorArm" node="0>0|1|0|0|0"/>
+		<i3dMapping id="hydraulicGrainDoorLeftRef" node="0>0|1|0|0|1"/>
+		<i3dMapping id="grainDoorRight" node="0>0|1|0|1"/>
+		<i3dMapping id="grainDoorArmRef" node="0>0|1|0|1|0"/>
+		<i3dMapping id="hydraulicGrainDoorRef" node="0>0|1|0|1|1"/>
+		<i3dMapping id="hydraulicGrainDoorLeft" node="0>0|1|0|2"/>
+		<i3dMapping id="hydraulicGrainDoorLeftPunch" node="0>0|1|0|2|0"/>
+		<i3dMapping id="hydraulicGrainDoorRight" node="0>0|1|0|3"/>
+		<i3dMapping id="hydraulicGrainDoorRightPunch" node="0>0|1|0|3|0"/>
+		<i3dMapping id="steeringBar" node="0>0|2|0|0|0"/>
+		<i3dMapping id="steeringBarPart" node="0>0|2|0|0|0|0"/>
+		<i3dMapping id="steeringBarRef" node="0>0|2|0|0|0|0|0"/>
+		<i3dMapping id="steeringBarRefFrame" node="0>0|2|0|0|1"/>
+		<i3dMapping id="fillVolume" node="0>0|1|2|0"/>
+		<i3dMapping id="unloadInfoFront" node="0>0|1|2|1"/>
+		<i3dMapping id="unloadInfoBack" node="0>0|1|2|2"/>
+		<i3dMapping id="exactFillRootNodeNormal" node="0>0|7|0"/>
+		<i3dMapping id="exactFillRootNodeStretched" node="0>0|7|1"/>
+		<i3dMapping id="fillAutoAimTargetNode" node="0>0|7|2"/>
+		<i3dMapping id="fillLightSystem" node="0>0|5|0|8"/>
+		<i3dMapping id="fillLightFolded" node="0>0|5|0|8|0"/>
+		<i3dMapping id="fillLightUnfolded" node="0>0|5|0|8|2"/>
+		<i3dMapping id="fillLightClear" node="0>0|5|0|8|2|0"/>
+		<i3dMapping id="fillLightGreen" node="0>0|5|0|8|2|1"/>
+		<i3dMapping id="fillLightYellow" node="0>0|5|0|8|2|2"/>
+		<i3dMapping id="fillLightOrange" node="0>0|5|0|8|2|3"/>
+		<i3dMapping id="fillLightRed" node="0>0|5|0|8|2|4"/>
+		<i3dMapping id="cover_open" node="0>0|1|1|0"/>
+		<i3dMapping id="cover_closed" node="0>0|1|1|1"/>
+		<i3dMapping id="trailerTrigger" node="0>0|8"/>
+		<i3dMapping id="colPart1" node="0>0|10|0|0"/>
+		<i3dMapping id="colPart2" node="0>0|10|0|1"/>
+		<i3dMapping id="colPart3" node="0>0|10|0|2"/>
+		<i3dMapping id="colPart1.stretched" node="0>0|10|0|3"/>
+		<i3dMapping id="colPart2.stretched" node="0>0|10|0|4"/>
+		<i3dMapping id="colPart3.stretched" node="0>0|10|0|5"/>
+		<i3dMapping id="shark" node="0>0|5|0|0|5"/>
+		<i3dMapping id="frickin" node="0>0|5|0|0|5|0"/>
+		<i3dMapping id="airRedFrontRef" node="0>0|1|5|0|0"/>
+		<i3dMapping id="airRedFrontCab" node="0>0|1|5|0|1"/>
+		<i3dMapping id="airRedFrontConnector" node="0>0|1|5|0|2"/>
+		<i3dMapping id="airYellowFrontRef" node="0>0|1|5|1|0"/>
+		<i3dMapping id="airYellowFrontCab" node="0>0|1|5|1|1"/>
+		<i3dMapping id="airYellowFrontConnector" node="0>0|1|5|1|2"/>
+		<i3dMapping id="electricFrontRef" node="0>0|1|5|2|0"/>
+		<i3dMapping id="electricFrontCab" node="0>0|1|5|2|1"/>
+		<i3dMapping id="electricFrontConnector" node="0>0|1|5|2|2"/>
+		<i3dMapping id="hydraulicInFrontRef" node="0>0|1|5|3|0"/>
+		<i3dMapping id="hydraulicInFrontCab" node="0>0|1|5|3|1"/>
+		<i3dMapping id="hydraulicInFrontConnector" node="0>0|1|5|3|2"/>
+		<i3dMapping id="hydraulicOutFrontRef" node="0>0|1|5|4|0"/>
+		<i3dMapping id="hydraulicOutFrontCab" node="0>0|1|5|4|1"/>
+		<i3dMapping id="hydraulicOutFrontConnector" node="0>0|1|5|4|2"/>
+
+		<i3dMapping id="extinguisher1" node="0>0|11|0"/>
+		<i3dMapping id="extinguisher2" node="0>0|11|1"/>
+		<i3dMapping id="extinguisher3" node="0>0|1|6|0"/>
+
+
+	</i3dMappings>
+
+</vehicle>

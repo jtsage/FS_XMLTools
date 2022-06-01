@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<vehicle type="plow">
+    <annotation>Copyright (C) GIANTS Software GmbH, All Rights Reserved.</annotation>
+
+    <storeData>
+        <name>B-125</name>
+        <specs>
+            <neededPower>80</neededPower>
+            <workingWidth>1.5</workingWidth>
+        </specs>
+        <functions>
+            <function>$l10n_function_plow</function>
+        </functions>
+        <image>store_B125.png</image>
+        <price>9000</price>
+        <dailyUpkeep>10</dailyUpkeep>
+        <lifetime>600</lifetime>
+        <rotation>0</rotation>
+        <brand>FORTSCHRITT</brand>
+        <category>plows</category>
+        <vertexBufferMemoryUsage>292476</vertexBufferMemoryUsage>
+        <indexBufferMemoryUsage>48462</indexBufferMemoryUsage>
+        <textureMemoryUsage>6641128</textureMemoryUsage>
+        <instanceVertexBufferMemoryUsage>0</instanceVertexBufferMemoryUsage>
+        <instanceIndexBufferMemoryUsage>0</instanceIndexBufferMemoryUsage>
+    </storeData>
+
+    <base>
+        <typeDesc>$l10n_typeDesc_plow</typeDesc>
+        <filename>B125.i3d</filename>
+         <size width="2.5" length="4.5" />
+         <speedLimit value="15" />
+        
+       <components>
+            <component centerOfMass="0 0.3 0" solverIterationCount="20" mass="925" />
+        </components>
+        <schemaOverlay attacherJointPosition="0 0">
+            <default name="DEFAULT_IMPLEMENT"/>
+            <selected name="DEFAULT_IMPLEMENT_SELECTED"/>
+        </schemaOverlay>
+    </base>
+
+    <wheels>
+        <wheelConfigurations>
+            <wheelConfiguration name="$l10n_configuration_valueDefault" price="0">
+                <wheels>
+                    <wheel>
+                        <physics rotSpeed="0" restLoad="0.9" repr="wheelDummy"  forcePointRatio="0.3"  initialCompression="50" suspTravel="0.05" spring="35" damper="50" radius="0.12" width="0.12" mass="0.01" isSynchronized="true" />    
+                    </wheel>
+                </wheels>
+            </wheelConfiguration>
+        </wheelConfigurations>
+
+    </wheels>
+    <attachable>
+        <inputAttacherJoints>
+            <inputAttacherJoint node="attacherJoint" jointType="implement" topReferenceNode="topArmRef"  upperRotationOffset="19" lowerRotationOffset="19"   >
+                <distanceToGround lower="0.38" upper="1" />
+            </inputAttacherJoint>
+        </inputAttacherJoints>
+        <support animationName="moveSupport" />
+        <brakeForce>0.1</brakeForce>
+    </attachable>
+   
+    <groundReferenceNodes>
+        <groundReferenceNode node="groundReferenceNode" threshold="0.272" depthNode="depthNode"/>
+    </groundReferenceNodes>
+   
+    <workAreas>
+        <workArea type="plow" functionName="processPlowArea" >
+            <area startNode="workAreaStart" widthIndex="workAreaWidth" heightNode="workAreaHeight" />
+            <groundReferenceNode index="1" />
+        </workArea>
+    </workAreas>
+ 
+    <plow>
+        <rotateLeftToMax value="true" />
+        <sounds>
+            <work template="DEFAULT_PLOW_WORK" linkNode="B125" />
+        </sounds>
+    </plow>
+ 
+    <speedRotatingParts>
+        <speedRotatingPart node="wheel"   radius="0.28" wheelIndex="1" groundReferenceNodeIndex="1" />
+    </speedRotatingParts>
+
+    <animations>
+        <animation name="moveSupport">
+          <part node="support" startTime="0" endTime="0.8" startRot="-5 0 0" endRot="-24.639 0 0" />
+          <part node="supportHandle" startTime="0" endTime="0.8" startRot="0 0 0" endRot="0 0 850" />
+          <part node="supportCol" startTime="0" endTime="0.4" startTrans="0 0.450 0" endTrans="0 0 0" />
+        </animation>
+    </animations>
+ 
+    <cylindered>
+        <movingTools>
+           <movingTool node="support" >
+            <dependentPart node="SupportPart" />
+           </movingTool>
+        </movingTools>
+  
+        <movingParts isActiveDirtyTimeOffset="3">
+         <movingPart node="SupportPart" referencePoint="SupportRef" referenceFrame="SupportRef" lockAxis="1" >
+            <translatingPart node="Tpart" />
+         </movingPart>
+         <movingPart node="Movingpart" referencePoint="MovingPartRef4" referenceFrame="MovingPartRefFrame" isActiveDirty="true" />
+         <movingPart node="MovingPart2" referencePoint="MovingPartRef2" referenceFrame="MovingPartRef2" isActiveDirty="true" scaleZ="true" />
+        </movingParts>  
+   
+       <sounds>
+           <hydraulic template="DEFAULT_HYDRAULIC_SOUND" linkNode="B125"/>
+       </sounds>
+   
+    </cylindered>
+ 
+    <powerConsumer neededMinPtoPower="0" neededMaxPtoPower="0" forceNode="B125" maxForce="10" />
+ 
+    <workParticles>
+        <particleAnimation>
+           <node node="soilAnimation6" materialType="SOIL" refNodeIndex="1" maxDepth="-0.05"/>
+        </particleAnimation>
+
+        <particle>
+           <node node="dustEmitShape1" particleType="SOIL_SMOKE" refNodeIndex="1" />
+           <node node="soilEmitShape1" particleType="SOIL" refNodeIndex="1" emitCountScale="1.5"/>
+           <node node="soilEmitShape2" particleType="SOIL_CHUNKS" refNodeIndex="1" worldSpace="false"/>
+        </particle>
+    </workParticles>
+
+    <ai>
+        <needsLowering value="true" />
+        <areaMarkers leftIndex="aiMarkerLeft" rightNode="aiMarkerRight" backNode="aiMarkerBack" />
+        <hasNoFullCoverageArea value="true" />
+    </ai>
+
+    <foliageBending>
+        <bendingNode minX="-0.75" maxX="0.75"  minZ="-3.0" maxZ="3.0" yOffset="-0.1" node="foliageBendingNode" />
+    </foliageBending>
+
+    <baseMaterial>
+        <material name="B125_mat" baseNode="B125_vis2">
+            <shaderParameter name="colorMat0" value="0.0 0.35 1.0" />
+        </material>
+    </baseMaterial>
+ 
+    <baseMaterialConfigurations useDefaultColors="true" defaultColorIndex="0">
+        <baseMaterialConfiguration material="16" color="0.0 0.21 0.5" price="200"/>
+        <baseMaterialConfiguration material="16" color="0.2 0.2 0.1" price="200"/>
+        <baseMaterialConfiguration material="16" color="0.25 0.35 0.08" price="200"/>
+        <material name="B125_mat" shaderParameter="colorMat0"/>
+    </baseMaterialConfigurations>
+  
+    <designConfigurations>
+        <designConfiguration name="$l10n_configuration_valueDefault" price="0">
+            <objectChange node="Decals" visibilityActive="true" />
+            <objectChange node="Decals1" visibilityActive="false" />
+            <objectChange node="Decals2" visibilityActive="false" />
+        </designConfiguration>
+        <designConfiguration name="$l10n_Brown" price="0">
+            <objectChange node="Decals" visibilityActive="false" />
+            <objectChange node="Decals1" visibilityActive="true" />
+            <objectChange node="Decals2" visibilityActive="false" />
+        </designConfiguration>
+        <designConfiguration name="$l10n_Green" price="0">
+            <objectChange node="Decals" visibilityActive="false" />
+            <objectChange node="Decals1" visibilityActive="false" />
+            <objectChange node="Decals2" visibilityActive="true" />
+        </designConfiguration>
+    </designConfigurations>
+  
+    <configurationSets>
+        <configurationSet name="$l10n_configuration_valueDefault" params="60">
+            <configuration name="design" index="1" />
+            <configuration name="baseMaterial" index="1" />
+        </configurationSet>
+        <configurationSet name="$l10n_Brown" params="360">
+            <configuration name="design" index="2" />
+            <configuration name="baseMaterial" index="2" />
+        </configurationSet>
+        <configurationSet name="$l10n_Green" params="560">
+            <configuration name="design" index="3" />
+            <configuration name="baseMaterial" index="3" />
+        </configurationSet> 
+    </configurationSets>
+  
+    <wearable wearDuration="480" workMultiplier="5" fieldMultiplier="2"/>
+    <washable dirtDuration="90" washDuration="1" workMultiplier="3" fieldMultiplier="2"/>
+
+    <i3dMappings>
+        <i3dMapping id="B125" node="0>" />
+        <i3dMapping id="B125_vis" node="0>0" />
+        <i3dMapping id="attacherJoint" node="0>0|0" />
+        <i3dMapping id="topArmRef" node="0>0|1" />
+        <i3dMapping id="supportRoot" node="0>0|2" />
+        <i3dMapping id="support" node="0>0|2|0" />
+        <i3dMapping id="SupportRef" node="0>0|2|0|0" />
+        <i3dMapping id="wheel" node="0>0|2|0|1" />
+        <i3dMapping id="SupportRoot" node="0>0|2|1" />
+        <i3dMapping id="SupportPart" node="0>0|2|1|0" />
+        <i3dMapping id="Tpart" node="0>0|2|1|0|0" />
+        <i3dMapping id="supportHandle" node="0>0|2|1|0|1" />
+        <i3dMapping id="supportCol" node="0>0|2|2" />
+        <i3dMapping id="drums" node="0>0|3" />
+        <i3dMapping id="x" node="0>0|3|0" />
+        <i3dMapping id="MovingPartRefFrame" node="0>0|3|1" />
+        <i3dMapping id="wheelDummy" node="0>0|3|2" />
+        <i3dMapping id="MovingPartRef4" node="0>0|3|2|0" />
+        <i3dMapping id="speedRotatingPart" node="0>0|3|2|1" />
+        <i3dMapping id="workAreas" node="0>0|4" />
+        <i3dMapping id="workAreaStart" node="0>0|4|0" />
+        <i3dMapping id="workAreaWidth" node="0>0|4|1" />
+        <i3dMapping id="workAreaHeight" node="0>0|4|2" />
+        <i3dMapping id="groundReferenceNode" node="0>0|4|3" />
+        <i3dMapping id="ai" node="0>0|5" />
+        <i3dMapping id="aiMarker" node="0>0|5|0" />
+        <i3dMapping id="aiMarkerLeft" node="0>0|5|0|0" />
+        <i3dMapping id="aiMarkerRight" node="0>0|5|0|1" />
+        <i3dMapping id="aiMarkerBack" node="0>0|5|0|2" />
+        <i3dMapping id="effect" node="0>0|6" />
+        <i3dMapping id="effectNode" node="0>0|6|0" />
+        <i3dMapping id="soilAnimation6" node="0>0|6|0|0" />
+        <i3dMapping id="dustEmitShape1" node="0>0|6|0|1" />
+        <i3dMapping id="soilEmitShape1" node="0>0|6|0|2" />
+        <i3dMapping id="soilEmitShape2" node="0>0|6|0|3" />
+        <i3dMapping id="depthNode" node="0>0|6|1" />
+        <i3dMapping id="Config" node="0>0|7" />
+        <i3dMapping id="Decals" node="0>0|7|0" />
+        <i3dMapping id="Decals1" node="0>0|7|1" />
+        <i3dMapping id="Decals2" node="0>0|7|2" />
+        <i3dMapping id="B125_vis2" node="0>0|8" />
+        <i3dMapping id="MovngParts" node="0>0|9" />
+        <i3dMapping id="Movingpart" node="0>0|9|0" />
+        <i3dMapping id="MovingPartRef2" node="0>0|9|0|0" />
+        <i3dMapping id="MovingPart2" node="0>0|9|1" />
+        <i3dMapping id="foliageBendingNode" node="0>0|10" />
+    </i3dMappings>
+</vehicle>

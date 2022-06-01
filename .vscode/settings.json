@@ -1,10 +1,15 @@
 {
 	"cSpell.words": [
 		"comparei",
+		"depre",
 		"fromstring",
 		"frontloader",
+		"handtool",
+		"LXML",
 		"mrplow",
-		"renderable"
+		"renderable",
+		"savegame",
+		"steamapps"
 	],
 	"python.linting.mypyEnabled": false,
 	"python.linting.enabled": true,
