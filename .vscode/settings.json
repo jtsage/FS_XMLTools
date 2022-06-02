@@ -4,12 +4,16 @@
 		"depre",
 		"fromstring",
 		"frontloader",
+		"gameinstallationpath",
 		"handtool",
+		"lightname",
+		"localappdata",
 		"LXML",
 		"mrplow",
 		"renderable",
 		"savegame",
-		"steamapps"
+		"steamapps",
+		"xmlschema"
 	],
 	"python.linting.mypyEnabled": false,
 	"python.linting.enabled": true,

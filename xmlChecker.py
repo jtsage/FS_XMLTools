@@ -15,8 +15,11 @@ Version History:
 import argparse
 import os
 import sys
+import urllib.request
+import posixpath
 import json
 import re
+import glob
 import xml.etree.ElementTree as ET
 
 hasLXML = True
@@ -25,6 +28,8 @@ try:
     from lxml import etree
 except ImportError:
     hasLXML = False
+
+giantsWebsite = "https://validation.gdn.giants-software.com/xml/fs22/"
 
 installLocations = [
     "C:\Program Files (x86)\Farming Simulator 2022\data",
@@ -156,6 +161,60 @@ lightMap = {
 }
 
 
+def findInstalledEditor():
+    localAppData  = os.getenv('localappdata')
+    editorFolders = glob.glob(localAppData + "/GIANTS Editor*")
+    editorVersion = 0
+    editorFolder  = False
+
+    try:
+        if len(editorFolders):
+            for thisFolder in editorFolders:
+                versionInt = int(thisFolder[-5:].replace(".", ""))
+                if editorVersion < versionInt:
+                    editorFolder = thisFolder
+                    editorVersion = versionInt
+
+        if editorFolder is not False:
+            if os.path.isfile(editorFolder + "/editor.xml"):
+                editorTree = ET.parse(editorFolder + '/editor.xml')
+                editorRoot = editorTree.getroot()
+                for thisTag in editorRoot.findall(".//gameinstallationpath"):
+                    return thisTag.text + "data/"
+    except BaseException:
+        return False
+    return False
+
+
+def check_new_light(filename):
+    filename = filename[5:]
+
+    lightname = os.path.splitext(os.path.basename(filename))[0]
+
+    if lightname in lightMap.keys():
+        return lightMap[lightname]
+    else:
+        return False
+
+
+def check_file_cache(filename):
+    """ check if a data file exists, cache results to lessen IO """
+    global dataFilesPath, cachedFiles
+
+    filename = filename[5:]
+
+    if filename in cachedFiles:
+        return True
+
+    fullpath = dataFilesPath.replace(os.sep, posixpath.sep) + filename
+
+    if os.path.isfile(fullpath):
+        cachedFiles.append(filename)
+        return True
+
+    return False
+
+
 def print_dep_notice(current, new):
     if current.startswith("."):
         current = current[1:]
@@ -163,9 +222,9 @@ def print_dep_notice(current, new):
             new = new[1:]
 
     if new is False:
-        print("  Depreciated usage found: '" + current + "' has been removed")
+        print("    Depreciated usage found: '" + current + "' has been removed")
     else:
-        print("  Depreciated usage found: '" + current + "' is now '" + new + "'")
+        print("    Depreciated usage found: '" + current + "' is now '" + new + "'")
 
 
 def giants_to_xpath(type, path):
@@ -173,11 +232,13 @@ def giants_to_xpath(type, path):
     newPath = path
     if (path.startswith(type)):
         newPath = re.sub("\(0\)", "", newPath)
+        newPath = re.sub("\(\?\)", "", newPath)
         newPath = re.sub("\.", "/", newPath)
         newPath = re.sub("^" + type + "/", "./", newPath)
         newPath = re.sub("^(.+)#(.+)$", '\g<1>[@\g<2>]', newPath)
     elif (path.startswith(".")):
-        newPath = re.sub("\.","/",newPath)
+        newPath = re.sub("\(0\)", "", newPath)
+        newPath = re.sub("\.", "/", newPath)
         newPath = re.sub("^(.+)#(.+)$", '\g<1>[@\g<2>]', newPath)
         newPath = "./" + newPath
     elif (path.startswith("#")):
@@ -203,13 +264,13 @@ parser.add_argument(
 parser.add_argument(
     '--no-depre-check',
     help="Disable checking depreciated xml tags and attributes",
-    dest="noShadow",
+    dest="noDepre",
     action='store_true'
 )
 parser.add_argument(
-    '--no-light-check',
-    help="Disable checking linked lights",
-    dest="noLights",
+    '--no-file-check',
+    help="Disable checking linked files",
+    dest="noFiles",
     action='store_true'
 )
 parser.add_argument(
@@ -238,6 +299,7 @@ except BaseException:
     enter_key_exit()
 
 dataFilesPath = ""
+cachedFiles   = []
 
 if args.installPath is not False:
     if (
@@ -251,9 +313,13 @@ if args.installPath is not False:
     else:
         dataFilesPath = args.installPath
 else:
-    for testPath in installLocations:
-        if os.path.isdir(testPath) and dataFilesPath == "":
-            dataFilesPath = testPath
+    editPath = findInstalledEditor()
+    if editPath:
+        dataFilesPath = editPath
+    else:
+        for testPath in installLocations:
+            if os.path.isdir(testPath) and dataFilesPath == "":
+                dataFilesPath = testPath
 
 if dataFilesPath == "":
     print("WARNING: DATA FILES NOT FOUND: checking linked $data entries disabled.")
@@ -263,7 +329,7 @@ if not hasLXML:
 
 file_list = args.files
 
-print("Files Found: " + str(len(file_list)))
+print("\nFiles Found: " + str(len(file_list)))
 
 for file in file_list:
     thisName   = os.path.basename(file.name)
@@ -275,7 +341,8 @@ for file in file_list:
     print("\nTesting: " + thisName)
 
     try:
-        thisXML    = ET.fromstring(file.read())
+        thisFileC  = file.read().encode()
+        thisXML    = ET.fromstring(thisFileC)
     except BaseException:
         print("ERROR: Unable to read / parse file '" + thisName + "'")
         enter_key_exit()
@@ -286,110 +353,80 @@ for file in file_list:
             print("  PROCESSING: xml file is of type '" + xmlType + "'")
 
     if goodFile is not False:
-        thisDepTree = depreMap[thisXML.tag]
+        if not args.noDepre:
+            keepGoing = True
+            print("  PROCESSING: depreciated tags / attributes:")
+            thisDepTree = depreMap[thisXML.tag]
 
-        if len(thisDepTree):
-            for thisDepTest in thisDepTree.keys():
-                thisDepXPath = giants_to_xpath(goodFile, thisDepTest)
-                foundIt = False
-                if thisXML.findall(thisDepXPath):
-                    print_dep_notice(thisDepTest, thisDepTree[thisDepTest])
-                else:
-                    print("  OK: " + thisDepXPath + " | " + thisDepTest)
+            if len(thisDepTree):
+                for thisDepTest in thisDepTree.keys():
+                    thisDepXPath = giants_to_xpath(goodFile, thisDepTest)
+                    foundIt = False
+                    if thisXML.findall(thisDepXPath):
+                        keepGoing = False
+                        print_dep_notice(thisDepTest, thisDepTree[thisDepTest])
 
+            if keepGoing:
+                print("    NOTICE: no depreciated tags detected.")
 
+        if not args.noFiles:
+            keepGoing = True
+            print("  PROCESSING: checking file links")
 
+            badCache = []
+            for file_key in filename_attributes:
+                for thisTag in thisXML.findall(".//*[@" + file_key + "]"):
+                    thisKeyValue = thisTag.attrib[file_key]
+                    if thisKeyValue.startswith("$data/"):
+                        if thisKeyValue not in badCache:
+                            if not check_file_cache(thisKeyValue):
+                                badCache.append(thisKeyValue)
+                                keepGoing = False
+                                if check_new_light(thisKeyValue):
+                                    print(
+                                        "    FILE NOT FOUND: " + thisKeyValue +
+                                        " (new name:" + check_new_light(thisKeyValue) + ")"
+                                    )
+                                else:
+                                    print("    FILE NOT FOUND: " + thisKeyValue)
+            if keepGoing:
+                print("    NOTICE: no missing linked file detected.")
 
-    # foundLights = False
-    # for thisTag in thisXML.findall(".//Light"):
-    #     foundLights = True
-    #     lightsInfo.append("  Node Name: " + na_attrib(thisTag, "name"))
-    #     thisLine  = "   Type: " + na_attrib(thisTag, "type")
-    #     thisLine += ", Color: " + sRGB_string_to_hex(none_attrib(thisTag, "color"))
-    #     thisLine += ", Shadows: " + yn_attrib(thisTag, "castShadowMap")
-    #     thisLine += ", Range: " + na_attrib(thisTag, "range") + " m"
-    #     thisLine += ", Cone Angle: " + na_attrib(thisTag, "coneAngle") + " °"
-    #     thisLine += ", Drop Off: " + na_attrib(thisTag, "dropOff") + " m"
-    #     lightsInfo.append(thisLine)
+        if not args.noSchema and hasLXML:
+            print("  PROCESSING: Checking against XSD Schema")
+            keepGoing = True
 
-    # if not foundLights:
-    #     lightsInfo.append("  no lights found.")
+            try:
+                data = urllib.request.urlopen(giantsWebsite + xsdMap[goodFile])
+            except BaseException:
+                keepGoing = False
+                print("    WARNING: Loading XSD from giants validation server failed")
 
-    # foundBadShadows = False
-    # for thisTag in thisXML.findall(".//Shape"):
-    #     thisTagNonRender = none_attrib(thisTag, "nonRenderable")
-    #     thisTagCasts     = none_attrib(thisTag, "castsShadows")
-    #     thisTagReceives  = none_attrib(thisTag, "receiveShadows")
+            if keepGoing:
+                try:
+                    xmlschema_doc = etree.parse(data)
+                    xmlschema     = etree.XMLSchema(xmlschema_doc)
 
-    #     if (not is_xml_true(thisTagReceives) or not is_xml_true(thisTagCasts)):
-    #         # Either missing cast or receive, check visible...
-    #         if (not is_xml_true(thisTagNonRender)):
-    #             foundBadShadows = True
-    #             shadows.append("  Node Name: " + na_attrib(thisTag, "name"))
-    #             shadows.append(
-    #                 "   Casts Shadow Map: " + yn_attrib(thisTag, "castsShadows") +
-    #                 " | Receives Shadow Map: " + yn_attrib(thisTag, "receiveShadows")
-    #             )
+                    lxml_doc = etree.fromstring(thisFileC)
+                except BaseException as ecc:
+                    keepGoing = False
+                    print(ecc)
+                    print("    WARNING: failed to parse XSD or XML")
 
-    # if not foundBadShadows:
-    #     shadows.append("  none found.")
+            if keepGoing:
+                try:
+                    xmlschema.assertValid(lxml_doc)
+                except BaseException as schema:
+                    keepGoing = False
+                    print("    NOTICE: Validation failed:")
+                    for error in schema.error_log:
+                        print("    Line {}: {}".format(error.line, error.message))
 
-    # foundBadLight = False
-    # for thisTag in thisXML.findall(".//File"):
-    #     thisFileName = none_attrib(thisTag, "filename")
-    #     if thisFileName is not None:
-    #         for thisTestName in lightMap.keys():
-    #             if thisTestName + "." in thisFileName:
-    #                 foundBadLight = True
-    #                 linkLight.append(
-    #                     "  Linked Light with fileId '" + na_attrib(thisTag, "fileId") +
-    #                     "' is '" + thisTestName + "', should be '" +
-    #                     lightMap[thisTestName] + "'"
-    #                 )
-    # if not foundBadLight:
-    #     linkLight.append("  none found.")
-
-    # foundBadCol = False
-
-    # for thisTag in thisXML.findall(".//*[@collisionMask]"):
-    #     thisColMaskDec = none_attrib(thisTag, "collisionMask")
-    #     thisColMaskHex = mask_string_to_hex(thisColMaskDec)
-    #     thisName       = na_attrib(thisTag, "name")
-    #     if thisColMaskDec not in commonMasks:
-    #         foundBadCol = True
-    #         if thisColMaskDec in unusualMasks:
-    #             colInfo.append(
-    #                 "  collisionMask for '" + thisName + "' (" + thisColMaskDec + ")/(" +
-    #                 thisColMaskHex + ") is unusual, but does exist in some giants files"
-    #             )
-    #         else:
-    #             if mask_uses_old_bits(thisColMaskDec):
-    #                 colInfo.append(
-    #                     "  collisionMask for '" + thisName + "' (" + thisColMaskDec + ")/(" +
-    #                     thisColMaskHex + ") uses depreciated bits and needs corrected"
-    #                 )
-    #             else:
-    #                 colInfo.append(
-    #                     "  collisionMask for '" + thisName + "' (" + thisColMaskDec + ")/(" +
-    #                     thisColMaskHex + ") is unknown, and should be checked"
-    #                 )
-
-    # if not foundBadCol:
-    #     colInfo.append("  none found.")
-
-    # if not args.noLightInfo:
-    #     print("\n".join(lightsInfo))
-    # if not args.noLights:
-    #     print("\n".join(linkLight))
-    # if not args.noShadow:
-    #     print("\n".join(shadows))
-    # if not args.noColInfo:
-    #     print("\n".join(colInfo))
+            if keepGoing:
+                print("    NOTICE: XML Passed Validation")
 
 print('\ndone.')
 
 if sys.stdout.isatty():
     # Don't pause on finish if we re-directed to a file.
     enter_key_exit()
-
-

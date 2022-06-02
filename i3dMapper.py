@@ -6,11 +6,12 @@
       /    /         \     / |/  |  /   ) /   /   /   /   /   /   ) /   )
 _(___/____/______(____/___/__/___|_(___/_(___/___(___/___/___/___/_(___/_
                                                                       /
-    i3dMApper.py - v1.0.0                                         (_ /
+    i3dMApper.py - v1.0.1                                         (_ /
 
 Version History:
  v0.0.9 - Initial Release
  v1.0.0 - Polished up Release
+ v1.0.1 - Added clipboard copy batch (and prepped for)
 """
 
 import argparse
@@ -19,7 +20,7 @@ import os
 import sys
 
 
-def enter_to_exit():
+def enter_key_exit():
     """ Exit when enter key pressed """
     print("Press ENTER to close terminal.")
     input()
@@ -154,4 +155,4 @@ print("\n".join(outputQueue))
 
 if sys.stdout.isatty():
     # Don't pause on finish if we re-directed to a file.
-    enter_to_exit()
+    enter_key_exit()
