@@ -81,7 +81,7 @@ def print_tag(thisMap):
 parser = argparse.ArgumentParser(description='Export i3d Mapping')
 parser.add_argument('file', metavar='file', nargs=1, type=argparse.FileType('r', encoding='utf-8'))
 parser.add_argument(
-    '--no_pretty_print',
+    '--no-pretty-print',
     help="Disable pretty printing",
     dest="noPretty",
     default=False,

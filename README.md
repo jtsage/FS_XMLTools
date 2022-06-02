@@ -107,7 +107,7 @@ $ python .\i3dMapper.py .\testFiles\i3d\mrplow.i3d
 
 __Options:__
 
-* `--no_pretty_print` Do not line up the "node" entries on output.  Pretty print is on by default.
+* `--no-pretty-print` Do not line up the "node" entries on output.  Pretty print is on by default.
 
 ### Batch File: i3dMapper_toClipboard.bat
 
@@ -121,6 +121,22 @@ Dropping an i3d file on this batch file will generate the mappings and store the
   <i3dMapping id="mrplow_vis"                 node="0>0" />
   <i3dMapping id="ai"                         node="0>0|0" />
 </i3dMappings>
+```
+
+---
+
+## i3dMapper_toXML.py
+
+This is a wrapper for i3dMapper that takes the XML store item file and writes (or re-writes) the i3dMappings section to match what is in the linked I3D file.
+
+Note: your I3D file must be set up properly.
+
+Big Note: because the default ETree in python is terrible, this will have *also* remove all of the comments you might have in your XML - if that matters to you, use the standalone mapper, or the clipboard wrapper batch file.
+
+__Usage:__
+
+```shell
+$ python .\i3dMapper_toXML.py .\testFiles\FS22_LizardBaleSpike\BaleSpike.xml
 ```
 
 ---
@@ -168,7 +184,6 @@ __Options:__
 * __--no-col-info__      Disable checking collision info
 * __--install-path__ _INSTALLPATH_ Installation path to FS data files (.../data/)
 
-
 ### Sample Output - Shadow Maps
 
 ```text
@@ -214,7 +229,6 @@ Unknown, uncommon, or depreciated collisionMasks:
 Unknown, uncommon, or depreciated collisionMasks:
   collisionMask for 'torion1914_main_component1' (6303746)/(0x603002) uses depreciated bits and needs corrected
 ```
-
 
 ## xmlChecker.py
 
