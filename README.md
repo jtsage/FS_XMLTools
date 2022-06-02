@@ -162,9 +162,11 @@ $ python .\i3dChecker.py .\testFiles\i3d\mrplow.i3d
 __Options:__
 
 * __--no-shadow-check__  Disable checking visible shapes for shadow maps
+* __--no-link-check__    Disable checking linked files for existence
 * __--no-light-check__   Disable checking linked lights
 * __--no-light-info__    Disable output of light info
 * __--no-col-info__      Disable checking collision info
+* __--install-path__ _INSTALLPATH_ Installation path to FS data files (.../data/)
 
 
 ### Sample Output - Shadow Maps
@@ -233,6 +235,7 @@ __Options:__
 * __--no-depre-check__      Disable checking depreciated xml tags and attributes
 * __--no-file-check__       Disable checking linked files
 * __--no-schema__           Disable checking schema
+* __--install-path__ _INSTALLPATH_ Installation path to FS data files (.../data/)
 
 ### Sample Output - Depreciations
 

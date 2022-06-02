@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<light>
+    <filename>$data/shared/assets/lights/lizard/turnLight_01.i3d</filename>
+    <rootNode node="0" />
+    <turnLightLeft node="0|1" lightTypes="0" />	
+</light>

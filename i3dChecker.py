@@ -16,7 +16,15 @@ import argparse
 import os
 import sys
 import math
+import glob
 import xml.etree.ElementTree as ET
+from pathlib import Path
+
+installLocations = [
+    "C:\Program Files (x86)\Farming Simulator 2022\data",
+    "C:\Program Files (x86)\Steam\steamapps\common\Farming Simulator 22\data",
+    "C:\Program Files\Epic Games\FarmingSimulator22\data",
+]
 
 commonMasks = [
     "0", "223", "8194", "262367", "524288", "1048576", "2097152", "2105410", "2109442", "3145728",
@@ -124,11 +132,147 @@ lightMap = {
 }
 
 
+def getDataFilesPath(override):
+    """ Try and find the data files """
+    installLocations = [
+        "C:\Program Files (x86)\Farming Simulator 2022\data",
+        "C:\Program Files (x86)\Steam\steamapps\common\Farming Simulator 22\data",
+        "C:\Program Files\Epic Games\FarmingSimulator22\data",
+    ]
+
+    if override is not False:
+        if (
+            not override.endswith("data/")
+            and not override.endswith("data")
+            and not override.endswith("data/")
+        ):
+            print("WARNING: DATA FILES NOT FOUND: supplied path should end with \"data\\\"")
+        elif not os.path.isdir(override):
+            print("WARNING: DATA FILES NOT FOUND: Invalid Path Supplied")
+        else:
+            return override
+    else:
+        editPath = findInstalledEditor()
+        if editPath:
+            return editPath
+        else:
+            for testPath in installLocations:
+                if os.path.isdir(testPath):
+                    return testPath
+
+    print("WARNING: DATA FILES NOT FOUND: checking linked $data entries disabled.")
+    return ""
+
+
+def findInstalledEditor():
+    """ Find a locally installed Giants Editor"""
+    localAppData  = os.getenv('localappdata')
+    editorFolders = glob.glob(localAppData + "/GIANTS Editor*")
+    editorVersion = 0
+    editorFolder  = False
+
+    try:
+        if len(editorFolders):
+            for thisFolder in editorFolders:
+                versionInt = int(thisFolder[-5:].replace(".", ""))
+                if editorVersion < versionInt:
+                    editorFolder = thisFolder
+                    editorVersion = versionInt
+
+        if editorFolder is not False:
+            if os.path.isfile(editorFolder + "/editor.xml"):
+                editorTree = ET.parse(editorFolder + '/editor.xml')
+                editorRoot = editorTree.getroot()
+                for thisTag in editorRoot.findall(".//gameinstallationpath"):
+                    return thisTag.text + "data/"
+    except BaseException:
+        return False
+    return False
+
+
 def enter_key_exit():
     """ Exit when enter key pressed """
     print("Press ENTER to close terminal.")
-    input()
+    try:
+        input()
+    except BaseException:
+        pass
     exit()
+
+
+def check_local_file_cache(filename, baseFolder):
+    """ check if a local file exists, cache results to lessen IO """
+    global dataFilesPath, cachedLocalFiles
+
+    if filename in cachedLocalFiles:
+        return False
+
+    if os.path.isabs(filename):
+        return(
+            "    FILE ERROR: " + filename +
+            " appears to be an absolute path.  This is probably wrong."
+        )
+
+    baseDrive = os.path.splitdrive(baseFolder)
+    absFile   = os.path.normpath(os.path.join(baseDrive[0], baseDrive[1], filename))
+    absFolder = os.path.normpath(baseFolder)
+
+    if not os.path.exists(absFile):
+        if absFile.endswith(".png"):
+            absFile = absFile[:-3] + "dds"
+            if not os.path.exists(absFile):
+                return("    FILE NOT FOUND: " + filename)
+        else:
+            return("    FILE NOT FOUND: " + filename)
+
+    casedFile = str(Path(absFile).resolve())
+
+    if casedFile != absFile:
+        return(
+            "    FILE CASE MISMATCH: " + absFile.replace(absFolder, '') +
+            " vs detected:" + casedFile.replace(absFolder, '')
+        )
+
+    return False
+
+
+def check_data_file_cache(filename):
+    """ check if a data file exists, cache results to lessen IO """
+    global dataFilesPath, cachedDataFiles
+
+    origName = filename
+    filename = filename[6:]
+
+    if filename in cachedDataFiles:
+        return False
+
+    if dataFilesPath == "":
+        """ Data files not found, don't do this."""
+        cachedDataFiles.append(filename)
+        return False
+
+    baseDrive = os.path.splitdrive(dataFilesPath)
+    absFile   = os.path.normpath(os.path.join(baseDrive[0], baseDrive[1], filename))
+    absFolder = os.path.normpath(dataFilesPath)
+
+    if not os.path.isfile(absFile):
+        if absFile.endswith(".png"):
+            absFile = absFile[:-3] + "dds"
+            if not os.path.exists(absFile):
+                return("    FILE NOT FOUND: " + origName)
+        else:
+            return("    FILE NOT FOUND: " + origName)
+    else:
+        casedFile = str(Path(absFile).resolve())
+
+        if casedFile == absFile:
+            cachedDataFiles.append(filename)
+            return False
+        else:
+            return(
+                "    FILE CASE MISMATCH: " + absFile.replace(absFolder, '') +
+                " vs detected:" + casedFile.replace(absFolder, '')
+            )
 
 
 def none_attrib(element, key):
@@ -203,6 +347,12 @@ parser.add_argument(
     action='store_true'
 )
 parser.add_argument(
+    '--no-link-check',
+    help="Disable checking linked files for existence",
+    dest="noLinks",
+    action='store_true'
+)
+parser.add_argument(
     '--no-light-check',
     help="Disable checking linked lights",
     dest="noLights",
@@ -220,6 +370,12 @@ parser.add_argument(
     dest="noColInfo",
     action='store_true'
 )
+parser.add_argument(
+    '--install-path',
+    help="Installation path to FS data files (.../data/)",
+    dest="installPath",
+    default=False
+)
 
 try:
     args = parser.parse_args()
@@ -227,15 +383,20 @@ except BaseException:
     enter_key_exit()
 
 
-file_list = args.files
+file_list        = args.files
+cachedDataFiles  = []
+cachedLocalFiles = []
+dataFilesPath    = getDataFilesPath(args.installPath)
 
 print("Files Found: " + str(len(file_list)))
 
 for file in file_list:
     thisName   = os.path.basename(file.name)
+    thisFolder = os.path.dirname(os.path.abspath(file.name))
     lightsInfo = ["\nRealLights Information:"]
     colInfo    = ["\nUnknown, uncommon, or depreciated collisionMasks:"]
     linkLight  = ["\nLinks to old lights in i3d:"]
+    linkPath   = ["\nCheck path of linked files:"]
     shadows    = ["\nhasShadowMap | castsShadowMap on renderable shapes:"]
 
     print("\nTesting: " + thisName)
@@ -244,6 +405,24 @@ for file in file_list:
     except BaseException:
         print("ERROR: Unable to read / parse file '" + thisName + "'")
         enter_key_exit()
+
+    foundBadLink = False
+    badCache     = []
+    for thisTag in thisXML.findall(".//File"):
+        thisFileName = none_attrib(thisTag, "filename")
+        if thisFileName is not None and thisFileName not in badCache:
+            if thisFileName.startswith("$data/"):
+                fileStatus = check_data_file_cache(thisFileName)
+            else:
+                fileStatus = check_local_file_cache(thisFileName, thisFolder)
+
+            if fileStatus is not False:
+                foundBadLink = True
+                linkPath.append(fileStatus)
+                badCache.append(thisFileName)
+
+    if not foundBadLink:
+        linkPath.append("  all good.")
 
     foundLights = False
     for thisTag in thisXML.findall(".//Light"):
@@ -330,6 +509,8 @@ for file in file_list:
         print("\n".join(shadows))
     if not args.noColInfo:
         print("\n".join(colInfo))
+    if not args.noLinks:
+        print("\n".join(linkPath))
 
 print('\ndone.')
 

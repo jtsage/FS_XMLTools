@@ -1,0 +1,1717 @@
+GIANTS Engine Runtime 9.0.0 (27079) 64bit Steam (Build Date: Mar  9 2022)
+Copyright (c) 2008-2021, GIANTS Software GmbH (giants-software.com), All Rights Reserved.
+Copyright (c) 2003-2021, Christian Ammann and Stefan Geiger, All Rights Reserved.
+Application: FarmingSimulator2022
+Main System
+  CPU: AMD Ryzen 5 2600 Six-Core Processor            
+  Memory: 16331 MB
+  OS: Windows NT 10.0 64-bit
+Physics System
+  Version: 5.9.5
+  Thread(s): 2
+Audio System
+  Driver: SoftMixer WASAPI Stereo Headphones
+  Version: 2018.11
+  Frequency: 48000
+  Max. active sources: 256
+Render System
+  Driver: Direct 3D 12
+  Card Vendor: NVIDIA Corporation
+  Renderer: NVIDIA GeForce RTX 2060
+  Version: 30.0.15.1215 (17.3.2022)
+  Revision: 161
+  Hardware Feature Level : 12_1
+  Windowed Mode               : off
+  V-Sync                      : on
+  Allow Tearing               : off
+  Validation Layer            : off
+  Effective Window Size       : 1920 x 1080px
+  Effective Swap Chain Size   : 1920 x 1080px
+Started 3 threads for threadpool 'Render threadpool'
+Hardware Profile
+  Level: Custom Very High
+  View Distance Factor: 1.650000
+  Shadow Quality: 2.000000 Base-Size: 2048 Filter-Size: 16
+  Shadow Focus Box: true
+  Foliage Shadows: true
+  Shader Quality: 3
+  Skip Mipmaps: 0
+  LOD Distance Factor: 1.700000
+  Terrain LOD Distance Factor: 1.750000
+  Terrain Quality: 3
+  Foliage View Distance Factor: 1.500000
+  Volume Mesh Tessellation Factor: 0.750000
+  Tyre Tracks Segments Factor: 4.000000
+  Max. Number of Shadow Lights: 10
+  Max. Number of Lights: 256
+  Max. Number of Dir Lights: 4
+  Max. Number of Lights Per Cluster: 32
+  MSAA: 8
+  Post Process AA: TAA
+  DLSS Quality: Off
+  AMD FidelityFx SR Quality: Ultra Quality
+  Recommended Window Size: 1920 x 1080px
+  Bloom Quality: 5
+  SSAO Quality: 19
+  SSAO Resolution Scaling: 0.500000
+  DOF: Enabled
+  Half Resolution DOF: Disabled
+  Cloud Quality: 4
+  Texture Streaming: Enabled
+  EnvMap Blending: Enabled
+  Dynamic Specular EnvMap: Disabled
+  Shading Rate Quality: 3
+Input System
+  Keyboard enabled
+  Mouse enabled
+  Gamepad/Joystick enabled
+  Force Feedback disabled
+  Devices:
+    USB Game Controllers (VID: 07B5 PID: 0317 VER: 0101 Cat: UNKNOWN)
+    G29 Driving Force Racing Wheel (VID: 046D PID: C24F VER: 8900 Cat: WHEEL)
+Started 1 threads for threadpool 'TerrainPatchOccluderManager unique worker'
+Platform: loading defaults
+ Used Start Parameters:
+    exe D:\PUBG\steamapps\common\Farming Simulator 22\x64\FarmingSimulator2022Game.exe 
+  Setting 'Master Volume': 1.000
+  Setting 'Is Train Tabbable': true
+  Setting 'Radio Vehicle Only': true
+  Setting 'Radio Active': false
+  Setting 'Use Colorblind Mode': false
+  Setting 'Easy Arm Control': true
+  Setting 'Show Trigger Marker': true
+  Setting 'Show Help Trigger': true
+  Setting 'Show Field-Info': true
+  Setting 'Invert Y-Look': false
+  Setting 'Show Help Icons': true
+  Setting 'Radio Volume': 0.500
+  Setting 'Vehicle Volume': 1.000
+  Setting 'Environment Volume': 1.000
+  Setting 'GUI Volume': 0.400
+  Setting 'Master Volume': 1.000
+  Setting 'Music Volume': 0.000
+Farming Simulator 22 (Steam)
+  Version: 1.3.1.0 b15975
+  Available Languages: en de jp pl cz fr es ru it pt hu nl cs ct br tr ro kr ea da fi no sv fc
+  Language: de
+  Time: 2022-04-17 14:12:52
+  ModDesc Version: 64
+  Mod Directory: C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/
+dataS/character/humans/player/animations.i3d (631.36 ms)
+dataS/character/humans/player/vehicleCharacterAnimations.i3d (2.55 ms)
+dataS/character/humans/npc/animations.i3d (55.73 ms)
+Available dlc: (Hash: 49bfa385ca90594408a7f75db8783578) (Version: 1.1.0.0) pdlc_claasSaddleTracPack
+Available mod: (Hash: a6bd073ab1d915cdb295cf2396c3c122) (Version: 1.0.0.0) Erlengrat
+Available mod: (Hash: fe19f7444adbe26c49041d811f99bf75) (Version: 1.0.0.0) FS22_7RSeries
+Available mod: (Hash: ab3cf294392f61318df41ff91171114e) (Version: 1.0.1.0) FS22_additionalFieldInfo
+Available mod: (Hash: d03a1495313c225f4540864cb9182df9) (Version: 1.0.0.0) FS22_airHoseConnectSound
+Available mod: (Hash: d45f0347ce655ac1eba9289b6234e586) (Version: 1.0.0.0) FS22_amazoneCatros6002
+Available mod: (Hash: 3829b46923769e78844ef11ced909772) (Version: 1.0.0.0) FS22_Amazone_ZGTS_10001
+Available mod: (Hash: ba6f1114fb5d8b70c1236ab464ab3577) (Version: 1.0.0.0) FS22_BenzNWM
+Available mod: (Hash: 3c2cf4565d49e8d1241c209a8af8295b) (Version: 1.0.0.0) FS22_BergmannTSW7340S
+Available mod: (Hash: 1f132dd17218e4ce6d3439e1775996ee) (Version: 1.0.0.0) FS22_bresselUndLadeShovelPack
+Available mod: (Hash: 2ab49761118d1531960efe054c098c5b) (Version: 1.0.0.0) FS22_Bressel_Lade_B11
+Available mod: (Hash: 55e14aadbd98ec17a3e3472375e5c157) (Version: 1.1.0.0) FS22_Calmsden
+Available mod: (Hash: 944c6b8c3e3b9f55f5677634690884c6) (Version: 1.0.0.1) FS22_caseIHMagnum7240Pro
+Available mod: (Hash: 0f39c4a24c0d7258a11ed39a83982379) (Version: 1.0.0.1) FS22_claasDiscoPack
+Available mod: (Hash: 1654b99a2070f0c87be1f44284091d0b) (Version: 1.0.0.0) FS22_claasDominator108SL
+Available mod: (Hash: 6606d59076f5ac8b45341debe31cd3fa) (Version: 1.0.0.0) FS22_CutterFix
+Available mod: (Hash: 201d35fd2016fcff6d7ea05568167d15) (Version: 1.0.0.1) FS22_DeutzSeries7_8
+Available mod: (Hash: b838da70503501ccae2b7d15278549b1) (Version: 1.0.0.1) FS22_DeutzSeries9
+Available mod: (Hash: fbb3049943497ea7939864abe756cfb7) (Version: 1.0.0.0) FS22_Fendt1250KG
+Available mod: (Hash: c923c1438fe683b1287ae7bb215eb864) (Version: 1.0.0.0) FS22_Fendt500Vario
+Available mod: (Hash: b6c9f66efc0519dceb66b43020023bf5) (Version: 1.0.0.1) FS22_Fendt900Vario_OldGen
+Available mod: (Hash: 4603fd94119b4955499ff92f4d9b753b) (Version: 1.0.0.0) FS22_FendtVarioPack
+Available mod: (Hash: 95759c20e79a6b27039d5e838f04b6ae) (Version: 1.0.0.0) FS22_FendtVario_500
+Available mod: (Hash: 2deafc2f007ea7fa9c61170027e3bcc5) (Version: 1.1.0.0) FS22_FendtVario_900Gen7
+Available mod: (Hash: 03a1701f854933f0a443e9c78d377329) (Version: 1.0.0.0) FS22_Filllevelwarning
+Available mod: (Hash: cbf9b9000816994ad0d24eb54cff9625) (Version: 1.0.0.0) FS22_FlieglPFW18000MaxxLine
+Available mod: (Hash: ad8eb56a25ee1557d95a51c2eae4df5b) (Version: 1.0.0.0) FS22_Fortschritt_ZT30x
+Available mod: (Hash: 06001c204ae8140c31b00b5e21566df9) (Version: 1.0.0.0) FS22_Goma25
+Available mod: (Hash: dde8ac6eeaccce798e4ca484f0dcb6f4) (Version: 1.0.0.0) FS22_Guellekauf
+Available mod: (Hash: 261aec50607040f73f1d81f15f47808c) (Version: 1.0.0.0) FS22_guettlerPW640ASLMaster
+Available mod: (Hash: 15adafce7038589ebfdd9d004d49b728) (Version: 2.1.6.0) FS22_guidanceSteering
+Available mod: (Hash: c7862469b82bb6c63bf181622099f65f) (Version: 1.2.0.0) FS22_hudToggle
+Available mod: (Hash: b6ba146f7f4f0f060812ce9dea11833b) (Version: 1.0.0.0) FS22_Hw80_pack
+Available mod: (Hash: f58942efa48018c3b5bb6f74d1aacc0a) (Version: 1.0.0.0) FS22_InsideCameraZoom
+Available mod: (Hash: dd78c35b5750cae4fe8121df2b8de5da) (Version: 1.0.0.0) FS22_ITS_DriveLaner
+Available mod: (Hash: 6a6116eae100c3d67404c28c1b23f9df) (Version: 1.0.0.0) FS22_JCB_320S
+Available mod: (Hash: 0cd96f3a3c80678b2795a4a9e1356c80) (Version: 1.0.0.0) FS22_JCB_Telehandler_Attachments
+Available mod: (Hash: 96ec13ec7047190d134e9fca1091201e) (Version: 1.0.0.0) FS22_johnDeere7020
+Available mod: (Hash: c0a32ff38ae26a33d733e32e3337c63b) (Version: 1.0.0.0) FS22_JohnDeereTSeriesPack
+Available mod: (Hash: 3cfe51eca76c0e8a0a3c1f7e0b07eacf) (Version: 1.0.0.0) FS22_JohnDeere_6300_6405
+Available mod: (Hash: 4de9338d3270062dde85fff7679bcf9d) (Version: 1.0.0.0) FS22_John_Deere_600_700FD
+Available mod: (Hash: c9b0a1a84c151b456d89171c814318e4) (Version: 1.0.0.0) FS22_joskinspace8000
+Available mod: (Hash: cdb87d548acd7c5160c4aafd9f6f3a13) (Version: 1.0.0.0) FS22_koeckerlingVector
+Available mod: (Hash: 4b9f4eeb02f2e0b42fc9fe0a53180ebb) (Version: 1.0.0.0) FS22_krogerPWO24
+Available mod: (Hash: df463dd1b9774d4adcdad32e96f615fb) (Version: 1.0.0.0) FS22_lommaZDK1802Pack
+Available mod: (Hash: 954e7e07c51051f34af74944745a5c36) (Version: 2.0.0.0) FS22_manualAttach
+Available mod: (Hash: a0ad6dcf1f54b724fe4d5d75588a79c0) (Version: 1.0.1.0) FS22_MF8700S
+Available mod: (Hash: 99c1f1d5834844d2eca60cd6f32262e5) (Version: 1.0.0.0) FS22_MMS_Gewichte
+Available mod: (Hash: 8a333c0d2035e653499dcdaec8aea0b6) (Version: 3.2.2.1) FS22_MoneyToolV3
+Available mod: (Hash: 898b4e02a01525430f7fb1552e31a6e0) (Version: 1.0.0.0) FS22_Newholland_Cr1090
+Available mod: (Hash: 63019fcbe2516f511effba0523b325e8) (Version: 1.0.0.0) FS22_PerardPack
+Available mod: (Hash: dd8465878d948ed70023a6e8b3dd5cc2) (Version: 1.0.0.0) FS22_playerActionCamera
+Available mod: (Hash: f1fe7a09875a6a899ac5cbd9ffbef7a8) (Version: 1.0.0.1) FS22_poettingerTerrasemC6F
+Available mod: (Hash: ef7787fed2a74f46452de94e8c4e0b6f) (Version: 2.0.0.0) FS22_proSeed
+Available mod:  (Version: 3.0.1.0) FS22_Rade
+Warning: Only zip mods are supported in multiplayer. You need to zip the mod FS22_Rade to use it in multiplayer.
+Available mod: (Hash: 44dfa8ea69deae00cae3914cdd70b725) (Version: 1.0.0.0) FS22_REAcog
+Available mod: (Hash: f7f133e550117736de1ab90642a51bae) (Version: 1.0.0.0) FS22_REAimplements
+Available mod: (Hash: 6bacc9d464bb9d51b397dbf2d6e2461f) (Version: 1.1.0.1) FS22_REAwheels
+Available mod: (Hash: 625e90662344c988b183a39320a1b2f7) (Version: 1.1.0.0) FS22_reischAgriMaxxPack
+Available mod: (Hash: ac32d4247d26a5a79662fe2c1b7287a0) (Version: 1.1.0.0) FS22_reischPack
+Available mod: (Hash: 8a6b59d79f29f13b76e80eb699b9417c) (Version: 1.0.0.0) FS22_RM_Subsidy
+Available mod: (Hash: 12f21ee5c41bd528c0161d1497f4f793) (Version: 1.0.0.0) FS22_Rope
+Available mod: (Hash: 54e27d30ffecbf4ad35b43a08d6cb285) (Version: 1.0.0.0) FS22_samsonAgroPGII25m
+Available mod: (Hash: eb79eb6ec10c6e117465e919880c3ecb) (Version: 1.0) FS22_SlurryTrader
+Available mod: (Hash: 8453bff2209453dcdd6967106aa4b989) (Version: 1.0.0.0) FS22_storeDeliveries
+Available mod: (Hash: 8983e2826e416cd03e53fcdea585f926) (Version: 1.0.0.1) FS22_tatraPhoenix
+Available mod: (Hash: 36a73cdacf37180914785060f0524101) (Version: 1.1.0.0) FS22_TLX2020_Series
+Available mod: (Hash: 37807602aee9f65a37cf2cf72ed783bb) (Version: 1.0.0.0) FS22_TrefflerTG615
+Available mod: (Hash: a074a6760042a62d728a9c8b69344ed4) (Version: 1.0.0.0) FS22_Vaderstad_Carrier_XL_825
+NVIDIA DLSS Minimum driver version was reported as : 445.0
+2022-04-17 14:13   Loaded 'vehicle' specializations
+2022-04-17 14:13   Loaded 'placeable' specializations
+2022-04-17 14:13   Loaded vehicle types
+2022-04-17 14:13   Loaded placeable types
+2022-04-17 14:13   Info:   Loaded construction brush types
+2022-04-17 14:13 Started network game (10823)
+2022-04-17 14:13 Error: Startup with port while already running
+2022-04-17 14:13  STARTING MP Game
+2022-04-17 14:13      adding mod Claas DISCO Pack;1.0.0.1;GIANTS Software;FS22_claasDiscoPack 0f39c4a24c0d7258a11ed39a83982379
+2022-04-17 14:13      adding mod Samson Agro PG II 25;1.0.0.0;GIANTS Software;FS22_samsonAgroPGII25m 54e27d30ffecbf4ad35b43a08d6cb285
+2022-04-17 14:13      adding mod Gülle Kauf Station;1.0;OscarZulu;FS22_SlurryTrader eb79eb6ec10c6e117465e919880c3ecb
+2022-04-17 14:13      adding mod Massey-Ferguson 8700S;1.0.1.0;blauea;FS22_MF8700S a0ad6dcf1f54b724fe4d5d75588a79c0
+2022-04-17 14:13      adding mod Lomma ZDK 1802;1.0.0.0;VertexDezign;FS22_lommaZDK1802Pack df463dd1b9774d4adcdad32e96f615fb
+2022-04-17 14:13      adding mod Fendt Vario Package;1.0.0.0;Bayern-Agrar;FS22_FendtVarioPack 4603fd94119b4955499ff92f4d9b753b
+2022-04-17 14:13      adding mod TATRA PHOENIX 6x6 Agro-Truck;1.0.0.1;GIANTS Software;FS22_tatraPhoenix 8983e2826e416cd03e53fcdea585f926
+2022-04-17 14:13      adding mod Bressel Und Lade Ballengabel;1.0.0.0;Rick Black Labele TWD Modding;FS22_Bressel_Lade_B11 2ab49761118d1531960efe054c098c5b
+2022-04-17 14:13      adding mod Benz Nordwestmecklenburg;1.0.0.0;fuqser, Try, AxeDiamend, Colore, Mo6R;FS22_BenzNWM ba6f1114fb5d8b70c1236ab464ab3577
+2022-04-17 14:13      adding mod Manuelles Ankuppeln;2.0.0.0;Wopster;FS22_manualAttach 954e7e07c51051f34af74944745a5c36
+2022-04-17 14:13      adding mod Füllstandswarnung;1.0.0.0;LSM/SachsenFarmer;FS22_Filllevelwarning 03a1701f854933f0a443e9c78d377329
+2022-04-17 14:13      adding mod Kroger Agroliner PWO 24;1.0.0.0;Kasztan18;FS22_krogerPWO24 4b9f4eeb02f2e0b42fc9fe0a53180ebb
+2022-04-17 14:13      adding mod Guidance Steering;2.1.6.0;Wopster;FS22_guidanceSteering 15adafce7038589ebfdd9d004d49b728
+2022-04-17 14:13      adding mod REA22 Wheels;1.1.0.1;900Hasse;FS22_REAwheels 6bacc9d464bb9d51b397dbf2d6e2461f
+2022-04-17 14:13      adding mod Vaderstad Carrier XL 825;1.0.0.0;Bandi1016;FS22_Vaderstad_Carrier_XL_825 a074a6760042a62d728a9c8b69344ed4
+2022-04-17 14:13      adding mod Bergmann TSW 7340s;1.0.0.0;NicoPix's;FS22_BergmannTSW7340S 3c2cf4565d49e8d1241c209a8af8295b
+2022-04-17 14:13      adding mod Bressel Und Lade Shovel Pack;1.0.0.0;VertexDezign;FS22_bresselUndLadeShovelPack 1f132dd17218e4ce6d3439e1775996ee
+2022-04-17 14:13      adding mod Amazone ZG-TS;1.0.0.0;PolishAgro;FS22_Amazone_ZGTS_10001 3829b46923769e78844ef11ced909772
+2022-04-17 14:13      adding mod Schneidwerk-Fix;1.0.0.0;VertexFloat;FS22_CutterFix 6606d59076f5ac8b45341debe31cd3fa
+2022-04-17 14:13      adding mod New Holland CR 10.90 Revelation;1.0.0.0;Tarczi007;FS22_Newholland_Cr1090 898b4e02a01525430f7fb1552e31a6e0
+2022-04-17 14:13      adding mod Goma GG 25;1.0.0.0;Ls_Agrar_Ole;FS22_Goma25 06001c204ae8140c31b00b5e21566df9
+2022-04-17 14:13      adding mod Fendt 500 Vario Gen3;1.0.0.0;MoosAgrar;FS22_Fendt500Vario c923c1438fe683b1287ae7bb215eb864
+2022-04-17 14:13      adding mod PlayerActionCamera;1.0.0.0;Wopster;FS22_playerActionCamera dd8465878d948ed70023a6e8b3dd5cc2
+2022-04-17 14:13      adding mod Perard Pack;1.0.0.0;Univers Simu Modding;FS22_PerardPack 63019fcbe2516f511effba0523b325e8
+2022-04-17 14:13      adding mod Güttler PW640 ASL MASTER;1.0.0.0;ErikFS;FS22_guettlerPW640ASLMaster 261aec50607040f73f1d81f15f47808c
+2022-04-17 14:13      adding mod JCB Teleskoplader-Anbaugeräte;1.0.0.0;RossN Mods;FS22_JCB_Telehandler_Attachments 0cd96f3a3c80678b2795a4a9e1356c80
+2022-04-17 14:13      adding mod Money Tool;3.2.2.1;RedeX01;FS22_MoneyToolV3 8a333c0d2035e653499dcdaec8aea0b6
+2022-04-17 14:13      adding mod ProSeed;2.0.0.0;Wopster;FS22_proSeed ef7787fed2a74f46452de94e8c4e0b6f
+2022-04-17 14:13      adding mod Innenkamerazoom;1.0.0.0;Paint-a-Farm | Kim Brandwijk;FS22_InsideCameraZoom f58942efa48018c3b5bb6f74d1aacc0a
+2022-04-17 14:13      adding mod PFW 18000 MaxxLine;1.0.0.0;PolyDesign;FS22_FlieglPFW18000MaxxLine cbf9b9000816994ad0d24eb54cff9625
+2022-04-17 14:13      adding mod REA22 Center Of Gravity;1.0.0.0;900Hasse;FS22_REAcog 44dfa8ea69deae00cae3914cdd70b725
+2022-04-17 14:13      adding mod Köckerling Vector 460/620;1.0.0.0;VertexDezign;FS22_koeckerlingVector cdb87d548acd7c5160c4aafd9f6f3a13
+2022-04-17 14:13      adding mod Amazone Catros 6002;1.0.0.0;STv-Modding;FS22_amazoneCatros6002 d45f0347ce655ac1eba9289b6234e586
+2022-04-17 14:13      adding mod REA22 Implements;1.0.0.0;900Hasse;FS22_REAimplements f7f133e550117736de1ab90642a51bae
+2022-04-17 14:13      adding mod Filiallieferungen;1.0.0.0;ViperGTS96;FS22_storeDeliveries 8453bff2209453dcdd6967106aa4b989
+2022-04-17 14:13      adding mod Reisch Pack;1.1.0.0;VertexDezign;FS22_reischPack ac32d4247d26a5a79662fe2c1b7287a0
+2022-04-17 14:13      adding mod Druckluftschlauch-Anschluss-Sound;1.0.0.0;PeterAH (Modding-Welt);FS22_airHoseConnectSound d03a1495313c225f4540864cb9182df9
+2022-04-17 14:13      adding mod Fendt Gewicht 1250-2500kg;1.0.0.0;STv-Modding;FS22_Fendt1250KG fbb3049943497ea7939864abe756cfb7
+2022-04-17 14:13      adding mod Treffler TG 615;1.0.0.0;Nico Du 55;FS22_TrefflerTG615 37807602aee9f65a37cf2cf72ed783bb
+2022-04-17 14:13      adding mod Reisch Agrimaxx 1060 + RSDY-14;1.1.0.0;VertexDezign;FS22_reischAgriMaxxPack 625e90662344c988b183a39320a1b2f7
+2022-04-17 14:13      adding mod HUD Umschalten;1.2.0.0;ViperGTS96;FS22_hudToggle c7862469b82bb6c63bf181622099f65f
+2022-04-17 14:13      adding mod HW80 Anhänger Pack;1.0.0.0;Aaa modding;FS22_Hw80_pack b6ba146f7f4f0f060812ce9dea11833b
+2022-04-17 14:13      adding mod John Deere 7R;1.0.0.0;Pfote;FS22_7RSeries fe19f7444adbe26c49041d811f99bf75
+2022-04-17 14:13      adding mod JCB TM 320S;1.0.0.0;RossN Mods;FS22_JCB_320S 6a6116eae100c3d67404c28c1b23f9df
+2022-04-17 14:13      adding mod CASE IH Magnum 7200 Pro Series;1.0.0.1;GIANTS Software;FS22_caseIHMagnum7240Pro 944c6b8c3e3b9f55f5677634690884c6
+2022-04-17 14:13      adding mod Regierungssubventionierung;1.0.0.0;Realismus Modding;FS22_RM_Subsidy 8a6b59d79f29f13b76e80eb699b9417c
+2022-04-17 14:13      adding mod Platzierbarer Güllekauf;1.0.0.0;Agrario;FS22_Guellekauf dde8ac6eeaccce798e4ca484f0dcb6f4
+2022-04-17 14:13      adding mod Pöttinger Terrasem C6F;1.0.0.1;VertexDezign;FS22_poettingerTerrasemC6F f1fe7a09875a6a899ac5cbd9ffbef7a8
+2022-04-17 14:13      adding mod Zusätzliche Feldinfo;1.0.1.0;yumi;FS22_additionalFieldInfo ab3cf294392f61318df41ff91171114e
+2022-04-17 14:13      adding mod Fendt Vario 900Gen6/900Gen7;1.1.0.0;Schnibbl Modding;FS22_FendtVario_900Gen7 2deafc2f007ea7fa9c61170027e3bcc5
+2022-04-17 14:13   Load mod: FS22_7RSeries
+2022-04-17 14:13   Load mod: FS22_additionalFieldInfo
+2022-04-17 14:13   Load mod: FS22_airHoseConnectSound
+2022-04-17 14:13   Load mod: FS22_Amazone_ZGTS_10001
+2022-04-17 14:13   Load mod: FS22_amazoneCatros6002
+2022-04-17 14:13   Load mod: FS22_BenzNWM
+2022-04-17 14:13   Load mod: FS22_BergmannTSW7340S
+2022-04-17 14:13   Load mod: FS22_Bressel_Lade_B11
+2022-04-17 14:13   Load mod: FS22_bresselUndLadeShovelPack
+2022-04-17 14:13   Load mod: FS22_caseIHMagnum7240Pro
+2022-04-17 14:13   Load mod: FS22_claasDiscoPack
+2022-04-17 14:13   Load mod: FS22_CutterFix
+2022-04-17 14:13   Load mod: FS22_Fendt1250KG
+2022-04-17 14:13   Load mod: FS22_Fendt500Vario
+2022-04-17 14:13   Load mod: FS22_FendtVario_900Gen7
+2022-04-17 14:13   Load mod: FS22_FendtVarioPack
+2022-04-17 14:13   Load mod: FS22_Filllevelwarning
+2022-04-17 14:13   Load mod: FS22_FlieglPFW18000MaxxLine
+2022-04-17 14:13   Load mod: FS22_Goma25
+2022-04-17 14:13   Load mod: FS22_Guellekauf
+2022-04-17 14:13   Load mod: FS22_guettlerPW640ASLMaster
+2022-04-17 14:13   Load mod: FS22_guidanceSteering
+2022-04-17 14:13   Load mod: FS22_hudToggle
+2022-04-17 14:13   Load mod: FS22_Hw80_pack
+2022-04-17 14:13   Load mod: FS22_InsideCameraZoom
+2022-04-17 14:13   Load mod: FS22_JCB_320S
+2022-04-17 14:13   Load mod: FS22_JCB_Telehandler_Attachments
+2022-04-17 14:13   Load mod: FS22_koeckerlingVector
+2022-04-17 14:13   Load mod: FS22_krogerPWO24
+2022-04-17 14:13   Load mod: FS22_lommaZDK1802Pack
+2022-04-17 14:13   Load mod: FS22_manualAttach
+2022-04-17 14:13   Load mod: FS22_MF8700S
+2022-04-17 14:13   Load mod: FS22_MoneyToolV3
+2022-04-17 14:13   Load mod: FS22_Newholland_Cr1090
+2022-04-17 14:13   Load mod: FS22_PerardPack
+2022-04-17 14:13   Load mod: FS22_playerActionCamera
+2022-04-17 14:13   Load mod: FS22_poettingerTerrasemC6F
+2022-04-17 14:13   Load mod: FS22_proSeed
+2022-04-17 14:13   Load mod: FS22_REAcog
+2022-04-17 14:13 ---------------------------
+2022-04-17 14:13 ----- REA by 900Hasse -----
+2022-04-17 14:13 ---------------------------
+2022-04-17 14:13 mod activated
+2022-04-17 14:13 New REA functions loaded
+2022-04-17 14:13   Load mod: FS22_REAimplements
+2022-04-17 14:13 ---------------------------
+2022-04-17 14:13 ----- REA by 900Hasse -----
+2022-04-17 14:13 ---------------------------
+2022-04-17 14:13 mod activated
+2022-04-17 14:13   Load mod: FS22_REAwheels
+2022-04-17 14:13 ----------------------------------
+2022-04-17 14:13 ----- REA wheels by 900Hasse -----
+2022-04-17 14:13 ----------------------------------
+2022-04-17 14:13 mod activated
+2022-04-17 14:13 New REA functions loaded
+2022-04-17 14:13   Load mod: FS22_reischAgriMaxxPack
+2022-04-17 14:13   Load mod: FS22_reischPack
+2022-04-17 14:13   Load mod: FS22_RM_Subsidy
+2022-04-17 14:13   Load mod: FS22_samsonAgroPGII25m
+2022-04-17 14:13   Load mod: FS22_SlurryTrader
+2022-04-17 14:13   Load mod: FS22_storeDeliveries
+2022-04-17 14:13   Load mod: FS22_tatraPhoenix
+2022-04-17 14:13   Load mod: FS22_TrefflerTG615
+2022-04-17 14:13   Load mod: FS22_Vaderstad_Carrier_XL_825
+2022-04-17 14:13   Register configuration 'baseColor'
+2022-04-17 14:13   Register configuration 'design'
+2022-04-17 14:13   Register configuration 'designColor'
+2022-04-17 14:13   Register configuration 'vehicleType'
+2022-04-17 14:13   Register configuration 'design2'
+2022-04-17 14:13   Register configuration 'design3'
+2022-04-17 14:13   Register configuration 'design4'
+2022-04-17 14:13   Register configuration 'design5'
+2022-04-17 14:13   Register configuration 'design6'
+2022-04-17 14:13   Register configuration 'design7'
+2022-04-17 14:13   Register configuration 'design8'
+2022-04-17 14:13   Register configuration 'ai'
+2022-04-17 14:13   Register configuration 'inputAttacherJoint'
+2022-04-17 14:13   Register configuration 'attacherJoint'
+2022-04-17 14:13   Register workAreaType 'BALER'
+2022-04-17 14:13   Register configuration 'wrappingColor'
+2022-04-17 14:13   Register configuration 'wrappingAnimation'
+2022-04-17 14:13   Register configuration 'baseMaterial'
+2022-04-17 14:13   Register configuration 'designMaterial'
+2022-04-17 14:13   Register configuration 'designMaterial2'
+2022-04-17 14:13   Register configuration 'designMaterial3'
+2022-04-17 14:13   Register configuration 'multipleItemPurchaseAmount'
+2022-04-17 14:13   Register workAreaType 'COMBINECHOPPER'
+2022-04-17 14:13   Register workAreaType 'COMBINESWATH'
+2022-04-17 14:13   Register configuration 'cover'
+2022-04-17 14:13   Register workAreaType 'CULTIVATOR'
+2022-04-17 14:13   Register workAreaType 'CUTTER'
+2022-04-17 14:13   Register configuration 'dischargeable'
+2022-04-17 14:13 data/shared/ai/trafficCollision.i3d (47.98 ms)
+2022-04-17 14:13   Register configuration 'fillUnit'
+2022-04-17 14:13   Register configuration 'fillVolume'
+2022-04-17 14:13   Register configuration 'folding'
+2022-04-17 14:13   Register workAreaType 'FORAGEWAGON'
+2022-04-17 14:13   Register configuration 'frontloader'
+2022-04-17 14:13   Register workAreaType 'FRUITPREPARER'
+2022-04-17 14:13   Register configuration 'motor'
+2022-04-17 14:13   Register workAreaType 'MULCHER'
+2022-04-17 14:13   Register workAreaType 'MOWER'
+2022-04-17 14:13   Register configuration 'pipe'
+2022-04-17 14:13   Register configuration 'plow'
+2022-04-17 14:13   Register workAreaType 'PLOW'
+2022-04-17 14:13   Register configuration 'powerConsumer'
+2022-04-17 14:13   Register workAreaType 'RIDGEMARKER'
+2022-04-17 14:13   Register configuration 'roller'
+2022-04-17 14:13   Register workAreaType 'ROLLER'
+2022-04-17 14:13   Register workAreaType 'SALTSPREADER'
+2022-04-17 14:13   Register workAreaType 'SOWINGMACHINE'
+2022-04-17 14:13   Register workAreaType 'SPRAYER'
+2022-04-17 14:13   Register workAreaType 'STONEPICKER'
+2022-04-17 14:13   Register workAreaType 'STUMPCUTTER'
+2022-04-17 14:13   Register workAreaType 'TEDDER'
+2022-04-17 14:13   Register configuration 'tensionBelts'
+2022-04-17 14:13   Register configuration 'trailer'
+2022-04-17 14:13   Register configuration 'treeSaplingType'
+2022-04-17 14:13   Register configuration 'variableWorkWidth'
+2022-04-17 14:13   Register workAreaType 'WEEDER'
+2022-04-17 14:13   Register configuration 'wheel'
+2022-04-17 14:13   Register configuration 'rimColor'
+2022-04-17 14:13   Register workAreaType 'WINDROWER'
+2022-04-17 14:13   Register workAreaType 'DEFAULT'
+2022-04-17 14:13   Register workAreaType 'AUXILIARY'
+2022-04-17 14:13   Register configuration 'workArea'
+2022-04-17 14:13   Register configuration 'workMode'
+2022-04-17 14:13   Register configuration 'globalPositioningSystem'
+2022-04-17 14:13   Warning: Eigenbau' is an unknown brand! Using Lizard instead!
+2022-04-17 14:13   Warning: Eigenbau' is an unknown brand! Using Lizard instead!
+2022-04-17 14:13   Warning: Eigenbau' is an unknown brand! Using Lizard instead!
+2022-04-17 14:13   Info: Loading ConnectionHoses from 'data/shared/connectionHoses/connectionHoses.xml'
+2022-04-17 14:13 data/shared/connectionHoses/hoses.i3d (504.21 ms)
+2022-04-17 14:14 data/shared/connectionHoses/connectors.i3d (617.39 ms)
+2022-04-17 14:14 data/shared/connectionHoses/hoseMaterialHolder.i3d (287.41 ms)
+2022-04-17 14:14 data/objects/roundbales/roundbale125/roundbale125.i3d (292.75 ms)
+2022-04-17 14:14 data/objects/roundbales/roundbale150/roundbale150.i3d (181.70 ms)
+2022-04-17 14:14 data/objects/roundbales/roundbale180/roundbale180.i3d (147.52 ms)
+2022-04-17 14:14 data/objects/squarebales/squarebale240/squarebale240.i3d (255.26 ms)
+2022-04-17 14:14 data/objects/squarebales/squarebale220/squarebale220.i3d (157.46 ms)
+2022-04-17 14:14 data/objects/squarebales/squarebale180/squarebale180.i3d (130.49 ms)
+2022-04-17 14:14 data/objects/squarebales/squarebale120/squarebale120.i3d (147.09 ms)
+2022-04-17 14:14 dataS/character/animals/wild/crow/crow.i3d (46.06 ms)
+2022-04-17 14:14 data/objects/squarebales/squarebale120/packedSquareBale120.i3d (44.35 ms)
+2022-04-17 14:14   Info: resetSplitShapes()
+2022-04-17 14:14 data/objects/cottonModules/cottonRoundbale238.i3d (334.42 ms)
+2022-04-17 14:14 data/objects/cottonModules/cottonSquarebale488.i3d (42.26 ms)
+2022-04-17 14:14 data/objects/roundbales/biomass/biomassBale125.i3d (165.11 ms)
+2022-04-17 14:14 data/shared/aiMarker.i3d (78.25 ms)
+2022-04-17 14:14 data/shared/alphabet/fontMaterialHolder.i3d (619.25 ms)
+2022-04-17 14:14 C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/licensePlates/licensePlatesDE.i3d (154.84 ms)
+2022-04-17 14:14 data/maps/mapAlpine/licensePlates/licensePlatesDE.i3d (572.83 ms)
+2022-04-17 14:14 data/effects/cutter/maize/maize_harvestReadyDry.i3d (789.74 ms)
+2022-04-17 14:14 data/sky/sky.i3d (63.54 ms)
+2022-04-17 14:14 data/effects/cutter/sunflower/sunflower_harvestReady.i3d (411.54 ms)
+2022-04-17 14:14 data/effects/cutter/maize/maize_harvestReadyGreen.i3d (403.09 ms)
+2022-04-17 14:14 data/effects/cutter/grass/grass_greenBig.i3d (343.64 ms)
+2022-04-17 14:14 data/effects/cutter/grass/grass_harvestReady.i3d (170.09 ms)
+2022-04-17 14:14 data/effects/cutter/sunflower/sunflower_greenBig.i3d (367.25 ms)
+2022-04-17 14:14 data/effects/cutter/wheat/wheat_greenBig.i3d (249.36 ms)
+2022-04-17 14:14 data/effects/cutter/wheat/wheat_harvestReady.i3d (358.81 ms)
+2022-04-17 14:14 data/effects/cutter/barley/barley_greenBig.i3d (340.25 ms)
+2022-04-17 14:14 data/effects/cutter/barley/barley_harvestReady.i3d (320.97 ms)
+2022-04-17 14:14 data/effects/cutter/oat/oat_greenBig.i3d (357.47 ms)
+2022-04-17 14:14 data/effects/cutter/oat/oat_harvestReady.i3d (186.91 ms)
+2022-04-17 14:14 data/effects/cutter/canola/canola_greenBig.i3d (383.69 ms)
+2022-04-17 14:14 data/effects/cutter/canola/canola_harvestReady.i3d (360.03 ms)
+2022-04-17 14:14 data/effects/cutter/soybean/soybean_greenBig.i3d (502.09 ms)
+2022-04-17 14:14 data/effects/cutter/soybean/soybean_harvestReady.i3d (315.63 ms)
+2022-04-17 14:14 data/effects/cutter/sorghum/sorghum_greenBig.i3d (450.93 ms)
+2022-04-17 14:14 data/effects/cutter/sorghum/sorghum_harvestReady.i3d (411.75 ms)
+2022-04-17 14:14 data/effects/cutter/maize/maize_fruits.i3d (230.51 ms)
+2022-04-17 14:14 data/effects/cutter/sunflower/sunflower_fruits.i3d (140.56 ms)
+2022-04-17 14:14 data/effects/cutter/maize/maize_threshing.i3d (316.77 ms)
+2022-04-17 14:14 data/effects/cutter/sunflower/sunflower_threshing.i3d (202.15 ms)
+2022-04-17 14:14 data/effects/fertilizer/fertilizer.i3d (673.77 ms)
+2022-04-17 14:14 data/effects/chopper/strawChopper.i3d (3504.86 ms)
+2022-04-17 14:14 data/effects/tedder/tedder.i3d (208.61 ms)
+2022-04-17 14:14 data/effects/windrower/windrower.i3d (230.07 ms)
+2022-04-17 14:14 data/effects/cultivator/cultivator.i3d (223.34 ms)
+2022-04-17 14:14 data/effects/plow/plow.i3d (157.54 ms)
+2022-04-17 14:14 data/effects/pickup/pickupIN.i3d (169.90 ms)
+2022-04-17 14:14 data/effects/pickup/pickupOUT.i3d (49.72 ms)
+2022-04-17 14:14 data/effects/mower/mower.i3d (130.40 ms)
+2022-04-17 14:14 data/effects/mixerWagon/mixerWagon.i3d (45.90 ms)
+2022-04-17 14:14 data/effects/grape/grape_fruitsLeaves.i3d (221.98 ms)
+2022-04-17 14:14 data/effects/grape/grape_fruitsClean.i3d (49.46 ms)
+2022-04-17 14:14 data/effects/grape/grape_fruitsHarvested.i3d (24.03 ms)
+2022-04-17 14:14 data/effects/grape/grape_threshing.i3d (66.36 ms)
+2022-04-17 14:14 data/effects/grape/grape_prePruner.i3d (45.30 ms)
+2022-04-17 14:14 data/effects/olive/olive_fruitsLeaves.i3d (175.97 ms)
+2022-04-17 14:14 data/effects/olive/olive_fruitsClean.i3d (88.92 ms)
+2022-04-17 14:14 data/effects/olive/olive_threshing.i3d (73.06 ms)
+2022-04-17 14:14 data/effects/manure/manure.i3d (180.79 ms)
+2022-04-17 14:14 data/effects/stone/small/stone.i3d (209.38 ms)
+2022-04-17 14:14 data/effects/stone/medium/stone.i3d (53.33 ms)
+2022-04-17 14:14 data/effects/stone/big/stone.i3d (33.59 ms)
+2022-04-17 14:14 data/effects/wood/wood_cutter.i3d (161.69 ms)
+2022-04-17 14:14 data/effects/sugarcane/sugarcane_prepareFruit.i3d (111.11 ms)
+2022-04-17 14:14 data/effects/sugarcane/sugarcane_chopper.i3d (154.70 ms)
+2022-04-17 14:14 data/effects/sugarcane/sugarcane_chaffer.i3d (89.18 ms)
+2022-04-17 14:14 data/effects/sugarcane/sugarcane_cutter.i3d (134.05 ms)
+2022-04-17 14:14 data/effects/snow/snowPieces.i3d (148.49 ms)
+2022-04-17 14:14 data/effects/snow/snowDust.i3d (78.82 ms)
+2022-04-17 14:14 data/sky/rain.i3d (95.91 ms)
+2022-04-17 14:14 data/sky/snow.i3d (33.08 ms)
+2022-04-17 14:14 The texture streaming needs <UvUsage> to work efficiently, custom shader: data/fs19support/shaders/buildingShader.xml
+2022-04-17 14:14 C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/map01.i3d (25989.02 ms)
+2022-04-17 14:14 C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/sounds.i3d (618.96 ms)
+2022-04-17 14:14 data/foliage/decoFoliage/decoFoliageUS.i3d (3188.47 ms)
+2022-04-17 14:14 data/foliage/groundFoliage/groundFoliage.i3d (2851.42 ms)
+2022-04-17 14:14 data/foliage/decoBush/decoBush.i3d (897.89 ms)
+2022-04-17 14:14 data/foliage/meadow/meadowUS.i3d (227.07 ms)
+2022-04-17 14:14 Warning (performance): Foliage lod 1 mesh 'meadow' 'cut' 'cut' is much larger than lod 0 mesh (min/maxY (-0.175/0.082 vs -0.125/0.103).
+2022-04-17 14:14 C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/foliage/grass/grass.i3d (328.19 ms)
+2022-04-17 14:14 C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/foliage/wheat/wheat.i3d (975.34 ms)
+2022-04-17 14:14 C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/foliage/canola/canola.i3d (726.96 ms)
+2022-04-17 14:14 C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/foliage/barley/barley.i3d (854.58 ms)
+2022-04-17 14:14 Warning (performance): Foliage lod 1 mesh 'barley' 'harvested' 'cut' is much larger than lod 0 mesh (min/maxY (-0.023/0.127 vs -0.018/0.078).
+2022-04-17 14:15 data/foliage/maize/maize.i3d (1040.41 ms)
+2022-04-17 14:15 data/foliage/potato/potato.i3d (1239.37 ms)
+2022-04-17 14:15 data/foliage/potato/potatoHaulm.i3d (92.83 ms)
+2022-04-17 14:15 data/foliage/sugarbeet/sugarbeet.i3d (864.10 ms)
+2022-04-17 14:15 data/foliage/sugarbeet/sugarbeetHaulm.i3d (51.32 ms)
+2022-04-17 14:15 data/foliage/sunflower/sunflower.i3d (675.89 ms)
+2022-04-17 14:15 data/foliage/soybean/soybean.i3d (919.99 ms)
+2022-04-17 14:15 data/foliage/oilseedRadish/oilseedRadish.i3d (144.15 ms)
+2022-04-17 14:15 data/foliage/poplar/poplar.i3d (326.97 ms)
+2022-04-17 14:15 data/foliage/oat/oat.i3d (355.01 ms)
+2022-04-17 14:15 data/foliage/sugarcane/sugarcane.i3d (523.90 ms)
+2022-04-17 14:15 data/foliage/sugarcane/sugarCaneHaulm.i3d (76.75 ms)
+2022-04-17 14:15 data/foliage/cotton/cotton.i3d (551.50 ms)
+2022-04-17 14:15 data/foliage/sorghum/sorghum.i3d (805.79 ms)
+2022-04-17 14:15 data/foliage/olive/olive.i3d (573.39 ms)
+2022-04-17 14:15 data/foliage/grape/grape.i3d (60.38 ms)
+2022-04-17 14:15 Info: transform group 'C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/savegame10/densityMap_fruits.gdm' has elements very far out from the cell edge (59.65% expansion)
+2022-04-17 14:15 C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/foliage/weed/weed.i3d (60.56 ms)
+2022-04-17 14:15 data/foliage/stone/stone.i3d (118.37 ms)
+2022-04-17 14:15 FoliageTransformGroup 'C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/savegame10/densityMap_fruits.gdm' may need space for up to 6223392 instances (2592 per cell x 2401 cells)
+2022-04-17 14:15 FoliageTransformGroup 'C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/savegame10/densityMap_weed.gdm' may need space for up to 591872 instances (512 per cell x 1156 cells)
+2022-04-17 14:15 FoliageTransformGroup 'C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/savegame10/densityMap_stones.gdm' may need space for up to 591872 instances (512 per cell x 1156 cells)
+2022-04-17 14:15 HUD Toggle : v1.2.0.0 by ViperGTS96 activated
+2022-04-17 14:15 Load mod: Store Deliveries : v1.0.0.0 by ViperGTS96 : Custom 'Store Location' loaded
+2022-04-17 14:15   Info: Loaded navigation cost map from savegame
+2022-04-17 14:15 ------------------------------------
+2022-04-17 14:15 REA Wheels
+2022-04-17 14:15 loaded water wetness factor XML
+2022-04-17 14:15 File: C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/savegame10/REAWheels.xml
+2022-04-17 14:15 Value: 0.16993500292301
+2022-04-17 14:15 ------------------------------------
+2022-04-17 14:15 data/effects/cultivator/particle/soilParticle.i3d (314.80 ms)
+2022-04-17 14:15 data/effects/cultivator/cultivatorMeshes_materialHolder.i3d (138.15 ms)
+2022-04-17 14:15 data/effects/slurry/slurryEffects_materialHolder.i3d (328.33 ms)
+2022-04-17 14:15 data/effects/unload/unloadMeshes_materialHolder.i3d (237.38 ms)
+2022-04-17 14:15 data/effects/unload/unloadParticles_materialHolder.i3d (45.46 ms)
+2022-04-17 14:15 data/effects/unload/unloadParticles.i3d (46.05 ms)
+2022-04-17 14:15 data/effects/smoke/smokeParticles.i3d (17.97 ms)
+2022-04-17 14:15 data/effects/smoke/smokeParticles_materialHolder.i3d (16.44 ms)
+2022-04-17 14:15 data/effects/wheel/wheelParticles.i3d (47.27 ms)
+2022-04-17 14:15 data/effects/bees/beesParticles.i3d (40.05 ms)
+2022-04-17 14:15 data/effects/horse/horseStepParticleSystem.i3d (18.05 ms)
+2022-04-17 14:15 data/effects/sprayer/particle/washer.i3d (22.43 ms)
+2022-04-17 14:15 data/effects/sprayer/sprayerMeshes_materialHolder.i3d (101.76 ms)
+2022-04-17 14:15 data/effects/leveler/levelerMeshes_materialHolder.i3d (119.90 ms)
+2022-04-17 14:15 data/effects/wood/particle/forestry.i3d (157.77 ms)
+2022-04-17 14:15 data/effects/belt/beltMeshes_materialHolder.i3d (234.64 ms)
+2022-04-17 14:15 data/effects/potato/particle/potato.i3d (172.59 ms)
+2022-04-17 14:15 data/effects/sugarBeet/particle/sugarBeet.i3d (14.93 ms)
+2022-04-17 14:15 data/effects/cotton/particle/cotton.i3d (70.42 ms)
+2022-04-17 14:15 data/shared/materialHolders/tensionBeltMaterialHolder.i3d (238.29 ms)
+2022-04-17 14:15 data/shared/materialHolders/tireTrackMaterialHolder.i3d (187.05 ms)
+2022-04-17 14:15 data/shared/mapTargetMarker.i3d (40.44 ms)
+2022-04-17 14:15 data/fillPlanes/fillPlane_materialHolder.i3d (79.08 ms)
+2022-04-17 14:15 Warning: Farmland-Ids not set for all pixel in farmland-infoLayer!
+2022-04-17 14:15 C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/placeables/Getreidehalle/Getreidehalle.i3d (138.50 ms)
+2022-04-17 14:15   Warning (C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/placeables/Getreidehalle/Getreidehalle.xml): Missing clear areas
+2022-04-17 14:15   Warning (C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/placeables/Getreidehalle/Getreidehalle.xml): Missing indoor areas
+2022-04-17 14:15   Warning (C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/placeables/Getreidehalle/Getreidehalle.xml): Missing ai update areas
+2022-04-17 14:15   Warning (C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/placeables/Getreidehalle/Getreidehalle.xml): Missing leveling areas
+2022-04-17 14:15 Warning (physics): Non-cpu collision mesh for 'lever01' is being cooked at runtime - this will not work on consoles.
+2022-04-17 14:15 data/store/ui/shop.i3d (573.03 ms)
+2022-04-17 14:15 dataS/menu/licensePlate/creationBox.i3d (0.18 ms)
+2022-04-17 14:15 data/store/ui/wardrobe.i3d (1906.89 ms)
+2022-04-17 14:15 C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/placeables/MaschinenhalleOLD/MaschinenhalleOLD.i3d (186.15 ms)
+2022-04-17 14:15   Warning (C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/placeables/MaschinenhalleOLD/MaschinenhalleOLD.xml): Missing clear areas
+2022-04-17 14:15   Warning (C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/placeables/MaschinenhalleOLD/MaschinenhalleOLD.xml): Missing indoor areas
+2022-04-17 14:15   Warning (C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/placeables/MaschinenhalleOLD/MaschinenhalleOLD.xml): Missing ai update areas
+2022-04-17 14:15   Warning (C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/placeables/MaschinenhalleOLD/MaschinenhalleOLD.xml): Missing leveling areas
+2022-04-17 14:15 C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/placeables/Milchviehanlage/MVA.i3d (2046.23 ms)
+2022-04-17 14:15   Warning (C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/placeables/Milchviehanlage/Milchviehanlage.xml): Missing ai update areas
+2022-04-17 14:15 data/shared/assets/marker/markerIcons.i3d (71.51 ms)
+2022-04-17 14:15 C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/placeables/Milchviehanlage/navigationMesh.i3d (0.34 ms)
+2022-04-17 14:15 Warning: Feeding place "foodPlace1" is outside of navmesh for type dataS/character/animals/domesticated/cow/holstein/cattleHolstein.i3d with head offset 0.800000.
+2022-04-17 14:15 Warning: Feeding place "foodPlace1" is outside of navmesh for type dataS/character/animals/domesticated/cow/holstein/cattleHolstein.i3d with head offset 0.800000.
+2022-04-17 14:15 Warning: Feeding place "foodPlace1" is outside of navmesh for type dataS/character/animals/domesticated/cow/angus/cattleAngus.i3d with head offset 0.800000.
+2022-04-17 14:15 Warning: Feeding place "foodPlace1" is outside of navmesh for type dataS/character/animals/domesticated/cow/angus/cattleAngus.i3d with head offset 0.800000.
+2022-04-17 14:15 Warning: Feeding place "foodPlace2" is outside of navmesh for type dataS/character/animals/domesticated/cow/holstein/cattleHolstein.i3d with head offset 0.800000.
+2022-04-17 14:15 Warning: Feeding place "foodPlace2" is outside of navmesh for type dataS/character/animals/domesticated/cow/holstein/cattleHolstein.i3d with head offset 0.800000.
+2022-04-17 14:15 Warning: Feeding place "foodPlace2" is outside of navmesh for type dataS/character/animals/domesticated/cow/angus/cattleAngus.i3d with head offset 0.800000.
+2022-04-17 14:15 Warning: Feeding place "foodPlace2" is outside of navmesh for type dataS/character/animals/domesticated/cow/angus/cattleAngus.i3d with head offset 0.800000.
+2022-04-17 14:15 Warning: Feeding place "foodPlace7" is outside of navmesh for type dataS/character/animals/domesticated/cow/holstein/cattleHolstein.i3d with head offset 0.800000.
+2022-04-17 14:15 Warning: Feeding place "foodPlace7" is outside of navmesh for type dataS/character/animals/domesticated/cow/holstein/cattleHolstein.i3d with head offset 0.800000.
+2022-04-17 14:15 Warning: Feeding place "foodPlace7" is outside of navmesh for type dataS/character/animals/domesticated/cow/angus/cattleAngus.i3d with head offset 0.800000.
+2022-04-17 14:15 Warning: Feeding place "foodPlace7" is outside of navmesh for type dataS/character/animals/domesticated/cow/angus/cattleAngus.i3d with head offset 0.800000.
+2022-04-17 14:15 Warning: Feeding place "foodPlace8" is outside of navmesh for type dataS/character/animals/domesticated/cow/holstein/cattleHolstein.i3d with head offset 0.800000.
+2022-04-17 14:15 Warning: Feeding place "foodPlace8" is outside of navmesh for type dataS/character/animals/domesticated/cow/holstein/cattleHolstein.i3d with head offset 0.800000.
+2022-04-17 14:15 Warning: Feeding place "foodPlace8" is outside of navmesh for type dataS/character/animals/domesticated/cow/angus/cattleAngus.i3d with head offset 0.800000.
+2022-04-17 14:15 Warning: Feeding place "foodPlace8" is outside of navmesh for type dataS/character/animals/domesticated/cow/angus/cattleAngus.i3d with head offset 0.800000.
+2022-04-17 14:15 C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/placeables/BGA/bga.i3d (0.58 ms)
+2022-04-17 14:15 C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/placeables/Getreidesilo/Getreidesilo.i3d (0.90 ms)
+2022-04-17 14:15 C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/placeables/Getreidesilo/sellingStationGenericNoCover.i3d (123.08 ms)
+2022-04-17 14:15 data/placeables/sellingStationGeneric/sellingStationGeneric.i3d (107.39 ms)
+2022-04-17 14:15   Warning (C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/placeables/sellingStation/sellingStationGeneric.xml): Missing ai update areas
+2022-04-17 14:15   Error: Index not found: unloadMarker
+2022-04-17 14:15   Error: Index not found: teleportNode
+2022-04-17 14:15 C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/placeables/sellingStationCeravis/sellingStationGeneric.i3d (2.67 ms)
+2022-04-17 14:15   Warning (C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/placeables/sellingStationCeravis/sellingStationGeneric.xml): Missing ai update areas
+2022-04-17 14:15   Error: Index not found: unloadMarker
+2022-04-17 14:15   Error: Index not found: teleportNode
+2022-04-17 14:15 C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/placeables/sellingStationBales/sellingStationBales.i3d (0.33 ms)
+2022-04-17 14:15 data/placeables/mapUS/sellingStationBowlingCenter/sellingStationBowlingCenter.i3d (107.82 ms)
+2022-04-17 14:15   Error: Index not found: aiNodeLeft
+2022-04-17 14:15 C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/placeables/Bunkersilo/bgaBunkerSilo.i3d (0.24 ms)
+2022-04-17 14:15 C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/placeables/Durchfahrsilo/durchfahrsilo.i3d (0.38 ms)
+2022-04-17 14:15 data/placeables/mapUS/gasStation/gasStation.i3d (94.18 ms)
+2022-04-17 14:15 data/placeables/mapUS/sellingStationVehicles/sellingStationVehicles.i3d (72.36 ms)
+2022-04-17 14:15 data/placeables/lizard/dieselTanks/level03/dieselTanksLevel03.i3d (175.04 ms)
+2022-04-17 14:15 C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/placeables/Milchverkauf/MilkSell.i3d (25.36 ms)
+2022-04-17 14:15 C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/placeables/windrad/WKA.i3d (15.87 ms)
+2022-04-17 14:15 data/placeables/kaercher/hds9184M/hds9184M.i3d (157.96 ms)
+2022-04-17 14:15 data/placeables/lizard/liquidManureTank/baseTank/baseTank.i3d (288.57 ms)
+2022-04-17 14:15 data/vehicles/rudolphSohn/dk280RL/dk280RL.i3d (462.33 ms)
+2022-04-17 14:15 data/shared/assets/wheelChocks/wheelChockSupport01.i3d (240.24 ms)
+2022-04-17 14:15 data/shared/wheels/hubs/hubs.i3d (1498.86 ms)
+2022-04-17 14:15 data/effects/wheel/wheelEmitterShape.i3d (29.25 ms)
+2022-04-17 14:15 data/shared/wheels/tires/vredestein/flotationPro/R22_5_flotationPro.i3d (119.80 ms)
+2022-04-17 14:15 data/shared/wheels/rims/rim001.i3d (101.65 ms)
+2022-04-17 14:15 data/shared/assets/wheelChocks/wheelChock01.i3d (141.82 ms)
+2022-04-17 14:15 data/shared/assets/reflectors/lizard/yellowRound_02.i3d (81.17 ms)
+2022-04-17 14:15 data/shared/assets/lights/lizard/rearLight29.i3d (123.26 ms)
+2022-04-17 14:15 data/shared/assets/lights/lizard/sideMarker03.i3d (102.50 ms)
+2022-04-17 14:15 data/shared/assets/lights/lizard/plateNumberLight02.i3d (120.54 ms)
+2022-04-17 14:15 data/shared/wheels/tires/bkt/ridemaxFL693M/R22_5_ridemaxFL693M.i3d (163.86 ms)
+2022-04-17 14:15 data/vehicles/brantner/z18051/z18051.i3d (241.46 ms)
+2022-04-17 14:15 data/shared/wheels/tires/continental/contiCrossTracHS3/R22_5_contiCrossTracHS3.i3d (126.93 ms)
+2022-04-17 14:15 data/shared/assets/reflectors/lizard/whiteRound_03.i3d (40.34 ms)
+2022-04-17 14:15 data/shared/assets/lights/lizard/rearLight31.i3d (177.45 ms)
+2022-04-17 14:15 data/shared/assets/lights/lizard/sideMarker06Orange.i3d (105.34 ms)
+2022-04-17 14:15 data/vehicles/dalbo/powerRoll1230/powerRoll1230.i3d (380.14 ms)
+2022-04-17 14:15 data/shared/wheels/tires/trelleborg/AW309/R17_AW309.i3d (164.04 ms)
+2022-04-17 14:15 data/shared/assets/lights/lizard/rearLight05.i3d (237.42 ms)
+2022-04-17 14:15 data/shared/assets/lights/lizard/sideMarker04.i3d (99.68 ms)
+2022-04-17 14:15 data/shared/assets/reflectors/lizard/bigTriangle.i3d (140.61 ms)
+2022-04-17 14:15 data/shared/assets/reflectors/lizard/redTriangle_01.i3d (55.07 ms)
+2022-04-17 14:15 data/vehicles/bergmann/gtw330/gtw330.i3d (484.88 ms)
+2022-04-17 14:15 data/shared/wheels/tires/vredestein/flotationTrac/R30_5_flotationTrac.i3d (315.09 ms)
+2022-04-17 14:15 data/shared/assets/lights/lizard/workingLight01.i3d (104.19 ms)
+2022-04-17 14:15 data/shared/assets/lights/lizard/rearLight13.i3d (223.14 ms)
+2022-04-17 14:15 data/shared/assets/lights/lizard/sideMarker05Orange.i3d (72.68 ms)
+2022-04-17 14:15 data/shared/assets/powerTakeOffs/walterscheidW.i3d (182.09 ms)
+2022-04-17 14:15 data/vehicles/johnDeere/series6R/series6R.i3d (1134.86 ms)
+2022-04-17 14:15 data/shared/assets/starfire.i3d (144.40 ms)
+2022-04-17 14:15 Warning (script): 'getXMLFloat': Argument 1 has wrong type. Expected: Int. Actual: Table 
+2022-04-17 14:15   D:\auto_builder\cache\svn\3e7613655f548b9eea177e6a8510a10e\src\base\scripting\lua\LuaScriptSystem.cpp (838): expectedType == Value::VoidType || expectedType == Value::ObjectType || expectedType == Value::IntArrayType || expectedType == Value::FloatArrayType || expectedType == Value::ArrayType
+2022-04-17 14:15 LUA call stack:
+  =C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_InsideCameraZoom/main.lua (11) : getXMLFloat
+  dataS/scripts/vehicles/specializations/Enterable.lua (583) : loadFromXML
+  dataS/scripts/vehicles/specializations/Enterable.lua (244) : loadCamerasFromXML
+  dataS/scripts/specialization/SpecializationUtil.lua (19)
+  dataS/scripts/vehicles/Vehicle.lua (972) : raiseEvent
+  dataS/scripts/i3d/I3DManager.lua (134) : asyncCallbackFunction
+2022-04-17 14:15 Warning (script): 'getXMLFloat': Argument 1 has wrong type. Expected: Int. Actual: Table 
+2022-04-17 14:15   D:\auto_builder\cache\svn\3e7613655f548b9eea177e6a8510a10e\src\base\scripting\lua\LuaScriptSystem.cpp (838): expectedType == Value::VoidType || expectedType == Value::ObjectType || expectedType == Value::IntArrayType || expectedType == Value::FloatArrayType || expectedType == Value::ArrayType
+2022-04-17 14:15 LUA call stack:
+  =C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_InsideCameraZoom/main.lua (12) : getXMLFloat
+  dataS/scripts/vehicles/specializations/Enterable.lua (583) : loadFromXML
+  dataS/scripts/vehicles/specializations/Enterable.lua (244) : loadCamerasFromXML
+  dataS/scripts/specialization/SpecializationUtil.lua (19)
+  dataS/scripts/vehicles/Vehicle.lua (972) : raiseEvent
+  dataS/scripts/i3d/I3DManager.lua (134) : asyncCallbackFunction
+2022-04-17 14:15 data/shared/wheels/tires/vredestein/traxionXXL/R30_traxionXXL.i3d (166.90 ms)
+2022-04-17 14:15 data/vehicles/johnDeere/series6R/sounds/series6R_loop.gls version 14 (0.30 ms)
+2022-04-17 14:15 data/shared/wheels/tires/vredestein/traxionXXL/R38_traxionXXL.i3d (148.24 ms)
+2022-04-17 14:15 data/shared/wheels/weights/weight003.i3d (294.33 ms)
+2022-04-17 14:15 data/effects/exhaust/exhaust.i3d (71.30 ms)
+2022-04-17 14:15 data/shared/assets/beaconLights/lizard/beaconLight07.i3d (225.91 ms)
+2022-04-17 14:15 data/shared/assets/upperLinks/walterscheid03.i3d (214.96 ms)
+2022-04-17 14:15 data/shared/assets/toolbar.i3d (91.63 ms)
+2022-04-17 14:15 data/shared/assets/upperLinks/johnDeereUpperlink.i3d (84.80 ms)
+2022-04-17 14:15 data/vehicles/claas/axion960TT/axion960TT.i3d (782.03 ms)
+2022-04-17 14:15 data/shared/wheels/hubs/claas_n12x02.i3d (144.76 ms)
+2022-04-17 14:15 Warning (script): 'getXMLFloat': Argument 1 has wrong type. Expected: Int. Actual: Table 
+2022-04-17 14:15   D:\auto_builder\cache\svn\3e7613655f548b9eea177e6a8510a10e\src\base\scripting\lua\LuaScriptSystem.cpp (838): expectedType == Value::VoidType || expectedType == Value::ObjectType || expectedType == Value::IntArrayType || expectedType == Value::FloatArrayType || expectedType == Value::ArrayType
+2022-04-17 14:15 LUA call stack:
+  =C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_InsideCameraZoom/main.lua (11) : getXMLFloat
+  dataS/scripts/vehicles/specializations/Enterable.lua (583) : loadFromXML
+  dataS/scripts/vehicles/specializations/Enterable.lua (244) : loadCamerasFromXML
+  dataS/scripts/specialization/SpecializationUtil.lua (19)
+  dataS/scripts/vehicles/Vehicle.lua (972) : raiseEvent
+  dataS/scripts/i3d/I3DManager.lua (134) : asyncCallbackFunction
+2022-04-17 14:15 Warning (script): 'getXMLFloat': Argument 1 has wrong type. Expected: Int. Actual: Table 
+2022-04-17 14:15   D:\auto_builder\cache\svn\3e7613655f548b9eea177e6a8510a10e\src\base\scripting\lua\LuaScriptSystem.cpp (838): expectedType == Value::VoidType || expectedType == Value::ObjectType || expectedType == Value::IntArrayType || expectedType == Value::FloatArrayType || expectedType == Value::ArrayType
+2022-04-17 14:15 LUA call stack:
+  =C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_InsideCameraZoom/main.lua (12) : getXMLFloat
+  dataS/scripts/vehicles/specializations/Enterable.lua (583) : loadFromXML
+  dataS/scripts/vehicles/specializations/Enterable.lua (244) : loadCamerasFromXML
+  dataS/scripts/specialization/SpecializationUtil.lua (19)
+  dataS/scripts/vehicles/Vehicle.lua (972) : raiseEvent
+  dataS/scripts/i3d/I3DManager.lua (134) : asyncCallbackFunction
+2022-04-17 14:15 data/shared/wheels/tires/michelin/axioBib/R34_axioBib.i3d (242.91 ms)
+2022-04-17 14:15 data/vehicles/claas/axion900/sounds/axion900_loop.gls version 14 (0.27 ms)
+2022-04-17 14:15 data/shared/crawlers/claas/axion960Crawler/axion960Crawler.i3d (283.47 ms)
+2022-04-17 14:15 data/shared/assets/upperLinks/walterscheid01.i3d (27.47 ms)
+2022-04-17 14:15 data/vehicles/claas/jaguar960TT/jaguar960TT.i3d (1043.09 ms)
+2022-04-17 14:15 data/shared/assets/extinguisher.i3d (208.31 ms)
+2022-04-17 14:15 Warning (script): 'getXMLFloat': Argument 1 has wrong type. Expected: Int. Actual: Table 
+2022-04-17 14:15   D:\auto_builder\cache\svn\3e7613655f548b9eea177e6a8510a10e\src\base\scripting\lua\LuaScriptSystem.cpp (838): expectedType == Value::VoidType || expectedType == Value::ObjectType || expectedType == Value::IntArrayType || expectedType == Value::FloatArrayType || expectedType == Value::ArrayType
+2022-04-17 14:15 LUA call stack:
+  =C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_InsideCameraZoom/main.lua (11) : getXMLFloat
+  dataS/scripts/vehicles/specializations/Enterable.lua (583) : loadFromXML
+  dataS/scripts/vehicles/specializations/Enterable.lua (244) : loadCamerasFromXML
+  dataS/scripts/specialization/SpecializationUtil.lua (19)
+  dataS/scripts/vehicles/Vehicle.lua (972) : raiseEvent
+  dataS/scripts/i3d/I3DManager.lua (134) : asyncCallbackFunction
+2022-04-17 14:15 Warning (script): 'getXMLFloat': Argument 1 has wrong type. Expected: Int. Actual: Table 
+2022-04-17 14:15   D:\auto_builder\cache\svn\3e7613655f548b9eea177e6a8510a10e\src\base\scripting\lua\LuaScriptSystem.cpp (838): expectedType == Value::VoidType || expectedType == Value::ObjectType || expectedType == Value::IntArrayType || expectedType == Value::FloatArrayType || expectedType == Value::ArrayType
+2022-04-17 14:15 LUA call stack:
+  =C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_InsideCameraZoom/main.lua (12) : getXMLFloat
+  dataS/scripts/vehicles/specializations/Enterable.lua (583) : loadFromXML
+  dataS/scripts/vehicles/specializations/Enterable.lua (244) : loadCamerasFromXML
+  dataS/scripts/specialization/SpecializationUtil.lua (19)
+  dataS/scripts/vehicles/Vehicle.lua (972) : raiseEvent
+  dataS/scripts/i3d/I3DManager.lua (134) : asyncCallbackFunction
+2022-04-17 14:15 data/shared/wheels/tires/michelin/machXbib/R28_machXbib.i3d (150.45 ms)
+2022-04-17 14:15 data/vehicles/claas/jaguar960TT/sounds/jaguar960TT_loop.gls version 14 (0.16 ms)
+2022-04-17 14:15 data/shared/crawlers/claas/terraTracJaguar/terraTracJaguar.i3d (474.10 ms)
+2022-04-17 14:15 data/shared/assets/lights/lizard/sideMarker11Red.i3d (183.71 ms)
+2022-04-17 14:15 data/shared/assets/lights/lizard/sideMarker11Orange.i3d (62.88 ms)
+2022-04-17 14:15 data/shared/assets/lights/lizard/workingLight02.i3d (105.94 ms)
+2022-04-17 14:15 data/shared/assets/reflectors/lizard/redRound_01.i3d (55.41 ms)
+2022-04-17 14:15 data/shared/assets/reflectors/lizard/yellowRound_01.i3d (21.91 ms)
+2022-04-17 14:15 data/vehicles/claas/orbis900/orbis900.i3d (330.20 ms)
+2022-04-17 14:15 data/shared/wheels/hubs/hubSmall01.i3d (108.79 ms)
+2022-04-17 14:15 data/shared/wheels/tires/trelleborg/T510/R08_T510.i3d (277.45 ms)
+2022-04-17 14:15 data/vehicles/claas/trion750/trion750.i3d (693.77 ms)
+2022-04-17 14:15 data/shared/wheels/tires/trelleborg/TM800/R28_TM800.i3d (159.79 ms)
+2022-04-17 14:15 Warning (script): 'getXMLFloat': Argument 1 has wrong type. Expected: Int. Actual: Table 
+2022-04-17 14:15   D:\auto_builder\cache\svn\3e7613655f548b9eea177e6a8510a10e\src\base\scripting\lua\LuaScriptSystem.cpp (838): expectedType == Value::VoidType || expectedType == Value::ObjectType || expectedType == Value::IntArrayType || expectedType == Value::FloatArrayType || expectedType == Value::ArrayType
+2022-04-17 14:15 LUA call stack:
+  =C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_InsideCameraZoom/main.lua (11) : getXMLFloat
+  dataS/scripts/vehicles/specializations/Enterable.lua (583) : loadFromXML
+  dataS/scripts/vehicles/specializations/Enterable.lua (244) : loadCamerasFromXML
+  dataS/scripts/specialization/SpecializationUtil.lua (19)
+  dataS/scripts/vehicles/Vehicle.lua (972) : raiseEvent
+  dataS/scripts/i3d/I3DManager.lua (134) : asyncCallbackFunction
+2022-04-17 14:15 Warning (script): 'getXMLFloat': Argument 1 has wrong type. Expected: Int. Actual: Table 
+2022-04-17 14:15   D:\auto_builder\cache\svn\3e7613655f548b9eea177e6a8510a10e\src\base\scripting\lua\LuaScriptSystem.cpp (838): expectedType == Value::VoidType || expectedType == Value::ObjectType || expectedType == Value::IntArrayType || expectedType == Value::FloatArrayType || expectedType == Value::ArrayType
+2022-04-17 14:15 LUA call stack:
+  =C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_InsideCameraZoom/main.lua (12) : getXMLFloat
+  dataS/scripts/vehicles/specializations/Enterable.lua (583) : loadFromXML
+  dataS/scripts/vehicles/specializations/Enterable.lua (244) : loadCamerasFromXML
+  dataS/scripts/specialization/SpecializationUtil.lua (19)
+  dataS/scripts/vehicles/Vehicle.lua (972) : raiseEvent
+  dataS/scripts/i3d/I3DManager.lua (134) : asyncCallbackFunction
+2022-04-17 14:15 data/vehicles/claas/lexion8000/sounds/lexion8000_loop.gls version 14 (0.18 ms)
+2022-04-17 14:15 data/shared/crawlers/claas/terraTracLexion/terraTracLexion.i3d (333.79 ms)
+2022-04-17 14:15 data/shared/assets/reflectors/lizard/yellowRound_03.i3d (90.85 ms)
+2022-04-17 14:15 data/shared/assets/reflectors/lizard/redRound_02.i3d (41.31 ms)
+2022-04-17 14:15 data/shared/assets/lights/lizard/rearLight22Red.i3d (198.25 ms)
+2022-04-17 14:15 data/shared/assets/lights/lizard/rearLight54.i3d (143.07 ms)
+2022-04-17 14:15 data/vehicles/claas/convioFlex1080/convioFlex1080.i3d (564.98 ms)
+2022-04-17 14:15 data/shared/wheels/tires/trelleborg/T510/R15_T510.i3d (65.78 ms)
+2022-04-17 14:15 data/vehicles/claas/torion1914/torion1914.i3d (572.36 ms)
+2022-04-17 14:15 data/shared/assets/wheelChocks/wheelChock02.i3d (71.32 ms)
+2022-04-17 14:15 data/shared/wheels/hubs/zf_n16x01.i3d (175.65 ms)
+2022-04-17 14:15 Warning (script): 'getXMLFloat': Argument 1 has wrong type. Expected: Int. Actual: Table 
+2022-04-17 14:15   D:\auto_builder\cache\svn\3e7613655f548b9eea177e6a8510a10e\src\base\scripting\lua\LuaScriptSystem.cpp (838): expectedType == Value::VoidType || expectedType == Value::ObjectType || expectedType == Value::IntArrayType || expectedType == Value::FloatArrayType || expectedType == Value::ArrayType
+2022-04-17 14:15 LUA call stack:
+  =C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_InsideCameraZoom/main.lua (11) : getXMLFloat
+  dataS/scripts/vehicles/specializations/Enterable.lua (583) : loadFromXML
+  dataS/scripts/vehicles/specializations/Enterable.lua (244) : loadCamerasFromXML
+  dataS/scripts/specialization/SpecializationUtil.lua (19)
+  dataS/scripts/vehicles/Vehicle.lua (972) : raiseEvent
+  dataS/scripts/i3d/I3DManager.lua (134) : asyncCallbackFunction
+2022-04-17 14:15 Warning (script): 'getXMLFloat': Argument 1 has wrong type. Expected: Int. Actual: Table 
+2022-04-17 14:15   D:\auto_builder\cache\svn\3e7613655f548b9eea177e6a8510a10e\src\base\scripting\lua\LuaScriptSystem.cpp (838): expectedType == Value::VoidType || expectedType == Value::ObjectType || expectedType == Value::IntArrayType || expectedType == Value::FloatArrayType || expectedType == Value::ArrayType
+2022-04-17 14:15 LUA call stack:
+  =C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_InsideCameraZoom/main.lua (12) : getXMLFloat
+  dataS/scripts/vehicles/specializations/Enterable.lua (583) : loadFromXML
+  dataS/scripts/vehicles/specializations/Enterable.lua (244) : loadCamerasFromXML
+  dataS/scripts/specialization/SpecializationUtil.lua (19)
+  dataS/scripts/vehicles/Vehicle.lua (972) : raiseEvent
+  dataS/scripts/i3d/I3DManager.lua (134) : asyncCallbackFunction
+2022-04-17 14:15 data/shared/wheels/tires/trelleborg/TM1000/R34_TM1000.i3d (150.52 ms)
+2022-04-17 14:15 data/vehicles/claas/torion1914/sounds/torion1914_loop.gls version 14 (0.22 ms)
+2022-04-17 14:15 data/shared/assets/lights/hella/hellaWorkingLightSquare_02.i3d (148.83 ms)
+2022-04-17 14:15 data/shared/assets/lights/lizard/rearLight26White.i3d (147.55 ms)
+2022-04-17 14:15 data/shared/assets/lights/lizard/sideMarker05Red.i3d (24.10 ms)
+2022-04-17 14:15 data/vehicles/claas/arion600/arion600.i3d (839.15 ms)
+2022-04-17 14:15 Warning (script): 'getXMLFloat': Argument 1 has wrong type. Expected: Int. Actual: Table 
+2022-04-17 14:15   D:\auto_builder\cache\svn\3e7613655f548b9eea177e6a8510a10e\src\base\scripting\lua\LuaScriptSystem.cpp (838): expectedType == Value::VoidType || expectedType == Value::ObjectType || expectedType == Value::IntArrayType || expectedType == Value::FloatArrayType || expectedType == Value::ArrayType
+2022-04-17 14:15 LUA call stack:
+  =C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_InsideCameraZoom/main.lua (11) : getXMLFloat
+  dataS/scripts/vehicles/specializations/Enterable.lua (583) : loadFromXML
+  dataS/scripts/vehicles/specializations/Enterable.lua (244) : loadCamerasFromXML
+  dataS/scripts/specialization/SpecializationUtil.lua (19)
+  dataS/scripts/vehicles/Vehicle.lua (972) : raiseEvent
+  dataS/scripts/i3d/I3DManager.lua (134) : asyncCallbackFunction
+2022-04-17 14:15 Warning (script): 'getXMLFloat': Argument 1 has wrong type. Expected: Int. Actual: Table 
+2022-04-17 14:15   D:\auto_builder\cache\svn\3e7613655f548b9eea177e6a8510a10e\src\base\scripting\lua\LuaScriptSystem.cpp (838): expectedType == Value::VoidType || expectedType == Value::ObjectType || expectedType == Value::IntArrayType || expectedType == Value::FloatArrayType || expectedType == Value::ArrayType
+2022-04-17 14:15 LUA call stack:
+  =C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_InsideCameraZoom/main.lua (12) : getXMLFloat
+  dataS/scripts/vehicles/specializations/Enterable.lua (583) : loadFromXML
+  dataS/scripts/vehicles/specializations/Enterable.lua (244) : loadCamerasFromXML
+  dataS/scripts/specialization/SpecializationUtil.lua (19)
+  dataS/scripts/vehicles/Vehicle.lua (972) : raiseEvent
+  dataS/scripts/i3d/I3DManager.lua (134) : asyncCallbackFunction
+2022-04-17 14:15 data/shared/wheels/tires/nokian/groundKing/R30_groundKing.i3d (188.89 ms)
+2022-04-17 14:15 data/vehicles/claas/arion600/sounds/arion600_loop.gls version 14 (0.29 ms)
+2022-04-17 14:15 data/shared/wheels/tires/nokian/groundKing/R42_groundKing.i3d (107.69 ms)
+2022-04-17 14:15 data/shared/assets/reflectors/lizard/redRound_03.i3d (36.12 ms)
+2022-04-17 14:15 data/vehicles/andersonGroup/proChop150/proChop150.i3d (375.86 ms)
+2022-04-17 14:15 data/shared/assets/lights/lizard/rearLight10.i3d (120.68 ms)
+2022-04-17 14:15 data/vehicles/johnDeere/series7810/series7810.i3d (694.19 ms)
+2022-04-17 14:15 Warning (script): 'getXMLFloat': Argument 1 has wrong type. Expected: Int. Actual: Table 
+2022-04-17 14:15   D:\auto_builder\cache\svn\3e7613655f548b9eea177e6a8510a10e\src\base\scripting\lua\LuaScriptSystem.cpp (838): expectedType == Value::VoidType || expectedType == Value::ObjectType || expectedType == Value::IntArrayType || expectedType == Value::FloatArrayType || expectedType == Value::ArrayType
+2022-04-17 14:15 LUA call stack:
+  =C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_InsideCameraZoom/main.lua (11) : getXMLFloat
+  dataS/scripts/vehicles/specializations/Enterable.lua (583) : loadFromXML
+  dataS/scripts/vehicles/specializations/Enterable.lua (244) : loadCamerasFromXML
+  dataS/scripts/specialization/SpecializationUtil.lua (19)
+  dataS/scripts/vehicles/Vehicle.lua (972) : raiseEvent
+  dataS/scripts/i3d/I3DManager.lua (134) : asyncCallbackFunction
+2022-04-17 14:15 Warning (script): 'getXMLFloat': Argument 1 has wrong type. Expected: Int. Actual: Table 
+2022-04-17 14:15   D:\auto_builder\cache\svn\3e7613655f548b9eea177e6a8510a10e\src\base\scripting\lua\LuaScriptSystem.cpp (838): expectedType == Value::VoidType || expectedType == Value::ObjectType || expectedType == Value::IntArrayType || expectedType == Value::FloatArrayType || expectedType == Value::ArrayType
+2022-04-17 14:15 LUA call stack:
+  =C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_InsideCameraZoom/main.lua (12) : getXMLFloat
+  dataS/scripts/vehicles/specializations/Enterable.lua (583) : loadFromXML
+  dataS/scripts/vehicles/specializations/Enterable.lua (244) : loadCamerasFromXML
+  dataS/scripts/specialization/SpecializationUtil.lua (19)
+  dataS/scripts/vehicles/Vehicle.lua (972) : raiseEvent
+  dataS/scripts/i3d/I3DManager.lua (134) : asyncCallbackFunction
+2022-04-17 14:15 data/shared/wheels/tires/continental/tractor85/R30_tractor85.i3d (197.92 ms)
+2022-04-17 14:15 data/shared/wheels/tires/continental/tractor85/R46_tractor85.i3d (93.77 ms)
+2022-04-17 14:15 data/vehicles/johnDeere/series7810/sounds/series7810_loop.gls version 14 (0.28 ms)
+2022-04-17 14:15 data/shared/assets/lights/lizard/plateNumberLight01.i3d (149.06 ms)
+2022-04-17 14:15 data/shared/assets/beaconLights/lizard/beaconLight02.i3d (100.12 ms)
+2022-04-17 14:15 data/shared/assets/upperLinks/walterscheid04.i3d (33.22 ms)
+2022-04-17 14:15 data/vehicles/lemken/karat12/karat12.i3d (464.73 ms)
+2022-04-17 14:15 data/shared/wheels/tires/trelleborg/T404/R22_5_T404.i3d (224.75 ms)
+2022-04-17 14:15 data/shared/wheels/tires/trelleborg/AW305/R16_AW305.i3d (227.63 ms)
+2022-04-17 14:15 data/shared/assets/reflectors/lizard/redTriangle_02.i3d (78.66 ms)
+2022-04-17 14:15 data/shared/assets/lights/lizard/frontLight02.i3d (183.60 ms)
+2022-04-17 14:15 data/vehicles/lemken/karat12/lemkenLight01.i3d (67.67 ms)
+2022-04-17 14:15 data/vehicles/koeckerling/vector570/vector570.i3d (325.92 ms)
+2022-04-17 14:15 data/vehicles/lemken/koralin9840/koralin9840.i3d (370.67 ms)
+2022-04-17 14:15 data/shared/wheels/tires/trelleborg/AW305/R15_3_AW305.i3d (62.41 ms)
+2022-04-17 14:16 data/vehicles/claas/axion900/axion900.i3d (574.52 ms)
+2022-04-17 14:16 Warning (script): 'getXMLFloat': Argument 1 has wrong type. Expected: Int. Actual: Table 
+2022-04-17 14:16   D:\auto_builder\cache\svn\3e7613655f548b9eea177e6a8510a10e\src\base\scripting\lua\LuaScriptSystem.cpp (838): expectedType == Value::VoidType || expectedType == Value::ObjectType || expectedType == Value::IntArrayType || expectedType == Value::FloatArrayType || expectedType == Value::ArrayType
+2022-04-17 14:16 LUA call stack:
+  =C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_InsideCameraZoom/main.lua (11) : getXMLFloat
+  dataS/scripts/vehicles/specializations/Enterable.lua (583) : loadFromXML
+  dataS/scripts/vehicles/specializations/Enterable.lua (244) : loadCamerasFromXML
+  dataS/scripts/specialization/SpecializationUtil.lua (19)
+  dataS/scripts/vehicles/Vehicle.lua (972) : raiseEvent
+  dataS/scripts/i3d/I3DManager.lua (134) : asyncCallbackFunction
+2022-04-17 14:16 Warning (script): 'getXMLFloat': Argument 1 has wrong type. Expected: Int. Actual: Table 
+2022-04-17 14:16   D:\auto_builder\cache\svn\3e7613655f548b9eea177e6a8510a10e\src\base\scripting\lua\LuaScriptSystem.cpp (838): expectedType == Value::VoidType || expectedType == Value::ObjectType || expectedType == Value::IntArrayType || expectedType == Value::FloatArrayType || expectedType == Value::ArrayType
+2022-04-17 14:16 LUA call stack:
+  =C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_InsideCameraZoom/main.lua (12) : getXMLFloat
+  dataS/scripts/vehicles/specializations/Enterable.lua (583) : loadFromXML
+  dataS/scripts/vehicles/specializations/Enterable.lua (244) : loadCamerasFromXML
+  dataS/scripts/specialization/SpecializationUtil.lua (19)
+  dataS/scripts/vehicles/Vehicle.lua (972) : raiseEvent
+  dataS/scripts/i3d/I3DManager.lua (134) : asyncCallbackFunction
+2022-04-17 14:16 data/shared/wheels/tires/trelleborg/TM1000/R46_TM1000.i3d (56.24 ms)
+2022-04-17 14:16 data/vehicles/kuhn/spwIntense/spwIntense.i3d (663.15 ms)
+2022-04-17 14:16 data/shared/wheels/tires/vredestein/flotationTrac/R22_5_flotationTrac.i3d (42.39 ms)
+2022-04-17 14:16 Warning (script): 'getXMLFloat': Argument 1 has wrong type. Expected: Int. Actual: Table 
+2022-04-17 14:16   D:\auto_builder\cache\svn\3e7613655f548b9eea177e6a8510a10e\src\base\scripting\lua\LuaScriptSystem.cpp (838): expectedType == Value::VoidType || expectedType == Value::ObjectType || expectedType == Value::IntArrayType || expectedType == Value::FloatArrayType || expectedType == Value::ArrayType
+2022-04-17 14:16 LUA call stack:
+  =C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_InsideCameraZoom/main.lua (11) : getXMLFloat
+  dataS/scripts/vehicles/specializations/Enterable.lua (583) : loadFromXML
+  dataS/scripts/vehicles/specializations/Enterable.lua (244) : loadCamerasFromXML
+  dataS/scripts/specialization/SpecializationUtil.lua (19)
+  dataS/scripts/vehicles/Vehicle.lua (972) : raiseEvent
+  dataS/scripts/i3d/I3DManager.lua (134) : asyncCallbackFunction
+2022-04-17 14:16 Warning (script): 'getXMLFloat': Argument 1 has wrong type. Expected: Int. Actual: Table 
+2022-04-17 14:16   D:\auto_builder\cache\svn\3e7613655f548b9eea177e6a8510a10e\src\base\scripting\lua\LuaScriptSystem.cpp (838): expectedType == Value::VoidType || expectedType == Value::ObjectType || expectedType == Value::IntArrayType || expectedType == Value::FloatArrayType || expectedType == Value::ArrayType
+2022-04-17 14:16 LUA call stack:
+  =C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_InsideCameraZoom/main.lua (12) : getXMLFloat
+  dataS/scripts/vehicles/specializations/Enterable.lua (583) : loadFromXML
+  dataS/scripts/vehicles/specializations/Enterable.lua (244) : loadCamerasFromXML
+  dataS/scripts/specialization/SpecializationUtil.lua (19)
+  dataS/scripts/vehicles/Vehicle.lua (972) : raiseEvent
+  dataS/scripts/i3d/I3DManager.lua (134) : asyncCallbackFunction
+2022-04-17 14:16 data/vehicles/claas/scorpion1033/sounds/scorpion1033_loop.gls version 14 (0.25 ms)
+2022-04-17 14:16 data/shared/assets/lights/lizard/frontLight08.i3d (173.51 ms)
+2022-04-17 14:16 data/shared/assets/lights/lizard/rearLight37.i3d (128.73 ms)
+2022-04-17 14:16 data/shared/assets/lights/lizard/sideMarker05.i3d (112.10 ms)
+2022-04-17 14:16 data/shared/assets/lights/lizard/sideMarker16Orange.i3d (227.64 ms)
+2022-04-17 14:16 data/shared/assets/beaconLights/lizard/beaconLight06.i3d (34.43 ms)
+2022-04-17 14:16 data/vehicles/schaeffer/loader2630/loader2630.i3d (375.39 ms)
+2022-04-17 14:16 Warning (script): 'getXMLFloat': Argument 1 has wrong type. Expected: Int. Actual: Table 
+2022-04-17 14:16   D:\auto_builder\cache\svn\3e7613655f548b9eea177e6a8510a10e\src\base\scripting\lua\LuaScriptSystem.cpp (838): expectedType == Value::VoidType || expectedType == Value::ObjectType || expectedType == Value::IntArrayType || expectedType == Value::FloatArrayType || expectedType == Value::ArrayType
+2022-04-17 14:16 LUA call stack:
+  =C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_InsideCameraZoom/main.lua (11) : getXMLFloat
+  dataS/scripts/vehicles/specializations/Enterable.lua (583) : loadFromXML
+  dataS/scripts/vehicles/specializations/Enterable.lua (244) : loadCamerasFromXML
+  dataS/scripts/specialization/SpecializationUtil.lua (19)
+  dataS/scripts/vehicles/Vehicle.lua (972) : raiseEvent
+  dataS/scripts/i3d/I3DManager.lua (134) : asyncCallbackFunction
+2022-04-17 14:16 Warning (script): 'getXMLFloat': Argument 1 has wrong type. Expected: Int. Actual: Table 
+2022-04-17 14:16   D:\auto_builder\cache\svn\3e7613655f548b9eea177e6a8510a10e\src\base\scripting\lua\LuaScriptSystem.cpp (838): expectedType == Value::VoidType || expectedType == Value::ObjectType || expectedType == Value::IntArrayType || expectedType == Value::FloatArrayType || expectedType == Value::ArrayType
+2022-04-17 14:16 LUA call stack:
+  =C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_InsideCameraZoom/main.lua (12) : getXMLFloat
+  dataS/scripts/vehicles/specializations/Enterable.lua (583) : loadFromXML
+  dataS/scripts/vehicles/specializations/Enterable.lua (244) : loadCamerasFromXML
+  dataS/scripts/specialization/SpecializationUtil.lua (19)
+  dataS/scripts/vehicles/Vehicle.lua (972) : raiseEvent
+  dataS/scripts/i3d/I3DManager.lua (134) : asyncCallbackFunction
+2022-04-17 14:16 data/shared/wheels/tires/trelleborg/T421/R15_T421.i3d (147.57 ms)
+2022-04-17 14:16 data/vehicles/landini/seriesREX4/sounds/seriesREX4_loop.gls version 14 (0.23 ms)
+2022-04-17 14:16 data/vehicles/claas/torion639/torion639.i3d (649.90 ms)
+2022-04-17 14:16 Warning (script): 'getXMLFloat': Argument 1 has wrong type. Expected: Int. Actual: Table 
+2022-04-17 14:16   D:\auto_builder\cache\svn\3e7613655f548b9eea177e6a8510a10e\src\base\scripting\lua\LuaScriptSystem.cpp (838): expectedType == Value::VoidType || expectedType == Value::ObjectType || expectedType == Value::IntArrayType || expectedType == Value::FloatArrayType || expectedType == Value::ArrayType
+2022-04-17 14:16 LUA call stack:
+  =C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_InsideCameraZoom/main.lua (11) : getXMLFloat
+  dataS/scripts/vehicles/specializations/Enterable.lua (583) : loadFromXML
+  dataS/scripts/vehicles/specializations/Enterable.lua (244) : loadCamerasFromXML
+  dataS/scripts/specialization/SpecializationUtil.lua (19)
+  dataS/scripts/vehicles/Vehicle.lua (972) : raiseEvent
+  dataS/scripts/i3d/I3DManager.lua (134) : asyncCallbackFunction
+2022-04-17 14:16 Warning (script): 'getXMLFloat': Argument 1 has wrong type. Expected: Int. Actual: Table 
+2022-04-17 14:16   D:\auto_builder\cache\svn\3e7613655f548b9eea177e6a8510a10e\src\base\scripting\lua\LuaScriptSystem.cpp (838): expectedType == Value::VoidType || expectedType == Value::ObjectType || expectedType == Value::IntArrayType || expectedType == Value::FloatArrayType || expectedType == Value::ArrayType
+2022-04-17 14:16 LUA call stack:
+  =C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_InsideCameraZoom/main.lua (12) : getXMLFloat
+  dataS/scripts/vehicles/specializations/Enterable.lua (583) : loadFromXML
+  dataS/scripts/vehicles/specializations/Enterable.lua (244) : loadCamerasFromXML
+  dataS/scripts/specialization/SpecializationUtil.lua (19)
+  dataS/scripts/vehicles/Vehicle.lua (972) : raiseEvent
+  dataS/scripts/i3d/I3DManager.lua (134) : asyncCallbackFunction
+2022-04-17 14:16 data/shared/wheels/tires/trelleborg/TH400/R20_TH400.i3d (187.47 ms)
+2022-04-17 14:16 data/vehicles/claas/torion639/sounds/torion639_loop.gls version 14 (0.19 ms)
+2022-04-17 14:16 data/shared/assets/reflectors/lizard/redRectangle_01.i3d (25.09 ms)
+2022-04-17 14:16 data/vehicles/hawe/ulw4000/ulw4000.i3d (372.26 ms)
+2022-04-17 14:16 data/shared/wheels/tires/trelleborg/T404/R30_5_T404.i3d (62.14 ms)
+2022-04-17 14:16 data/shared/assets/lights/lizard/sideMarker18.i3d (237.16 ms)
+2022-04-17 14:16 data/shared/assets/lights/lizard/rearLight44.i3d (126.94 ms)
+2022-04-17 14:16 data/shared/assets/lights/lizard/workingLight14.i3d (103.44 ms)
+2022-04-17 14:16 data/vehicles/vaderstad/tempoL16/tempoL16.i3d (907.36 ms)
+2022-04-17 14:16 data/shared/wheels/tires/trelleborg/TM800/R34_TM800.i3d (66.01 ms)
+2022-04-17 14:16 data/shared/wheels/tires/trelleborg/T421/R12_T421.i3d (83.80 ms)
+2022-04-17 14:16 data/shared/assets/lights/lizard/frontLight06White.i3d (186.29 ms)
+2022-04-17 14:16 data/shared/assets/lights/lizard/rearLight03.i3d (107.90 ms)
+2022-04-17 14:16 data/shared/assets/lights/lizard/rearLight23Orange.i3d (239.36 ms)
+2022-04-17 14:16 data/vehicles/claas/cargos9500/cargos9500.i3d (545.65 ms)
+2022-04-17 14:16 data/shared/wheels/tires/trelleborg/TwinRadial/R26_5_TwinRadial.i3d (130.00 ms)
+2022-04-17 14:16 data/shared/assets/lights/lizard/rearLight42.i3d (124.79 ms)
+2022-04-17 14:16 data/shared/assets/powerTakeOffs/walterscheidWWZ.i3d (132.00 ms)
+2022-04-17 14:16 data/vehicles/johnDeere/series8RT/series8RT.i3d (923.26 ms)
+2022-04-17 14:16 Warning (script): 'getXMLFloat': Argument 1 has wrong type. Expected: Int. Actual: Table 
+2022-04-17 14:16   D:\auto_builder\cache\svn\3e7613655f548b9eea177e6a8510a10e\src\base\scripting\lua\LuaScriptSystem.cpp (838): expectedType == Value::VoidType || expectedType == Value::ObjectType || expectedType == Value::IntArrayType || expectedType == Value::FloatArrayType || expectedType == Value::ArrayType
+2022-04-17 14:16 LUA call stack:
+  =C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_InsideCameraZoom/main.lua (11) : getXMLFloat
+  dataS/scripts/vehicles/specializations/Enterable.lua (583) : loadFromXML
+  dataS/scripts/vehicles/specializations/Enterable.lua (244) : loadCamerasFromXML
+  dataS/scripts/specialization/SpecializationUtil.lua (19)
+  dataS/scripts/vehicles/Vehicle.lua (972) : raiseEvent
+  dataS/scripts/i3d/I3DManager.lua (134) : asyncCallbackFunction
+2022-04-17 14:16 Warning (script): 'getXMLFloat': Argument 1 has wrong type. Expected: Int. Actual: Table 
+2022-04-17 14:16   D:\auto_builder\cache\svn\3e7613655f548b9eea177e6a8510a10e\src\base\scripting\lua\LuaScriptSystem.cpp (838): expectedType == Value::VoidType || expectedType == Value::ObjectType || expectedType == Value::IntArrayType || expectedType == Value::FloatArrayType || expectedType == Value::ArrayType
+2022-04-17 14:16 LUA call stack:
+  =C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_InsideCameraZoom/main.lua (12) : getXMLFloat
+  dataS/scripts/vehicles/specializations/Enterable.lua (583) : loadFromXML
+  dataS/scripts/vehicles/specializations/Enterable.lua (244) : loadCamerasFromXML
+  dataS/scripts/specialization/SpecializationUtil.lua (19)
+  dataS/scripts/vehicles/Vehicle.lua (972) : raiseEvent
+  dataS/scripts/i3d/I3DManager.lua (134) : asyncCallbackFunction
+2022-04-17 14:16 data/vehicles/johnDeere/series8R/sounds/series8R_loop.gls version 14 (0.23 ms)
+2022-04-17 14:16 data/shared/crawlers/johnDeere/series8RTCrawler/series8RTCrawler.i3d (324.26 ms)
+2022-04-17 14:16 data/shared/assets/lights/lizard/workingLight16.i3d (138.44 ms)
+2022-04-17 14:16 data/vehicles/johnDeere/series8RX/series8RX.i3d (257.87 ms)
+2022-04-17 14:16 Warning (script): 'getXMLFloat': Argument 1 has wrong type. Expected: Int. Actual: Table 
+2022-04-17 14:16   D:\auto_builder\cache\svn\3e7613655f548b9eea177e6a8510a10e\src\base\scripting\lua\LuaScriptSystem.cpp (838): expectedType == Value::VoidType || expectedType == Value::ObjectType || expectedType == Value::IntArrayType || expectedType == Value::FloatArrayType || expectedType == Value::ArrayType
+2022-04-17 14:16 LUA call stack:
+  =C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_InsideCameraZoom/main.lua (11) : getXMLFloat
+  dataS/scripts/vehicles/specializations/Enterable.lua (583) : loadFromXML
+  dataS/scripts/vehicles/specializations/Enterable.lua (244) : loadCamerasFromXML
+  dataS/scripts/specialization/SpecializationUtil.lua (19)
+  dataS/scripts/vehicles/Vehicle.lua (972) : raiseEvent
+  dataS/scripts/i3d/I3DManager.lua (134) : asyncCallbackFunction
+2022-04-17 14:16 Warning (script): 'getXMLFloat': Argument 1 has wrong type. Expected: Int. Actual: Table 
+2022-04-17 14:16   D:\auto_builder\cache\svn\3e7613655f548b9eea177e6a8510a10e\src\base\scripting\lua\LuaScriptSystem.cpp (838): expectedType == Value::VoidType || expectedType == Value::ObjectType || expectedType == Value::IntArrayType || expectedType == Value::FloatArrayType || expectedType == Value::ArrayType
+2022-04-17 14:16 LUA call stack:
+  =C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_InsideCameraZoom/main.lua (12) : getXMLFloat
+  dataS/scripts/vehicles/specializations/Enterable.lua (583) : loadFromXML
+  dataS/scripts/vehicles/specializations/Enterable.lua (244) : loadCamerasFromXML
+  dataS/scripts/specialization/SpecializationUtil.lua (19)
+  dataS/scripts/vehicles/Vehicle.lua (972) : raiseEvent
+  dataS/scripts/i3d/I3DManager.lua (134) : asyncCallbackFunction
+2022-04-17 14:16 data/shared/crawlers/johnDeere/series8RXCrawler/series8RXCrawler_EU_front.i3d (342.73 ms)
+2022-04-17 14:16 data/shared/crawlers/johnDeere/series8RXCrawler/series8RXCrawler_EU_back.i3d (72.64 ms)
+2022-04-17 14:16 data/vehicles/vaderstad/rapidA800S/rapidA800S.i3d (756.39 ms)
+2022-04-17 14:16 data/shared/wheels/tires/bkt/AS504/_16_AS504.i3d (162.98 ms)
+2022-04-17 14:16 data/shared/assets/lights/lizard/sideMarker05White.i3d (22.01 ms)
+2022-04-17 14:16 data/shared/assets/lights/hella/hellaWorkingLightRound_01.i3d (150.30 ms)
+2022-04-17 14:16 data/vehicles/jcb/series547/series547.i3d (531.43 ms)
+2022-04-17 14:16 Warning (script): 'getXMLFloat': Argument 1 has wrong type. Expected: Int. Actual: Table 
+2022-04-17 14:16   D:\auto_builder\cache\svn\3e7613655f548b9eea177e6a8510a10e\src\base\scripting\lua\LuaScriptSystem.cpp (838): expectedType == Value::VoidType || expectedType == Value::ObjectType || expectedType == Value::IntArrayType || expectedType == Value::FloatArrayType || expectedType == Value::ArrayType
+2022-04-17 14:16 LUA call stack:
+  =C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_InsideCameraZoom/main.lua (11) : getXMLFloat
+  dataS/scripts/vehicles/specializations/Enterable.lua (583) : loadFromXML
+  dataS/scripts/vehicles/specializations/Enterable.lua (244) : loadCamerasFromXML
+  dataS/scripts/specialization/SpecializationUtil.lua (19)
+  dataS/scripts/vehicles/Vehicle.lua (972) : raiseEvent
+  dataS/scripts/i3d/I3DManager.lua (134) : asyncCallbackFunction
+2022-04-17 14:16 Warning (script): 'getXMLFloat': Argument 1 has wrong type. Expected: Int. Actual: Table 
+2022-04-17 14:16   D:\auto_builder\cache\svn\3e7613655f548b9eea177e6a8510a10e\src\base\scripting\lua\LuaScriptSystem.cpp (838): expectedType == Value::VoidType || expectedType == Value::ObjectType || expectedType == Value::IntArrayType || expectedType == Value::FloatArrayType || expectedType == Value::ArrayType
+2022-04-17 14:16 LUA call stack:
+  =C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_InsideCameraZoom/main.lua (12) : getXMLFloat
+  dataS/scripts/vehicles/specializations/Enterable.lua (583) : loadFromXML
+  dataS/scripts/vehicles/specializations/Enterable.lua (244) : loadCamerasFromXML
+  dataS/scripts/specialization/SpecializationUtil.lua (19)
+  dataS/scripts/vehicles/Vehicle.lua (972) : raiseEvent
+  dataS/scripts/i3d/I3DManager.lua (134) : asyncCallbackFunction
+2022-04-17 14:16 data/shared/wheels/tires/michelin/multibib/R24_multibib.i3d (180.29 ms)
+2022-04-17 14:16 data/vehicles/jcb/series547/sounds/series547_loop.gls version 14 (0.28 ms)
+2022-04-17 14:16 data/shared/assets/beaconLights/lizard/beaconLight01.i3d (115.06 ms)
+2022-04-17 14:16 data/vehicles/magsi/telehandlerManureFork/telehandlerManureFork.i3d (134.19 ms)
+2022-04-17 14:16 data/vehicles/nardi/n70_40/n70_40.i3d (224.50 ms)
+2022-04-17 14:16 data/shared/assets/beaconLights/lizard/beaconLight03.i3d (23.43 ms)
+2022-04-17 14:16 C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_Fendt1250KG/weight.i3d (11.02 ms)
+2022-04-17 14:16 data/vehicles/fendt/ideal/ideal.i3d (893.90 ms)
+2022-04-17 14:16 data/shared/wheels/tires/michelin/cereXBib/R26_cereXBib.i3d (103.96 ms)
+2022-04-17 14:16 Warning (script): 'getXMLFloat': Argument 1 has wrong type. Expected: Int. Actual: Table 
+2022-04-17 14:16   D:\auto_builder\cache\svn\3e7613655f548b9eea177e6a8510a10e\src\base\scripting\lua\LuaScriptSystem.cpp (838): expectedType == Value::VoidType || expectedType == Value::ObjectType || expectedType == Value::IntArrayType || expectedType == Value::FloatArrayType || expectedType == Value::ArrayType
+2022-04-17 14:16 LUA call stack:
+  =C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_InsideCameraZoom/main.lua (11) : getXMLFloat
+  dataS/scripts/vehicles/specializations/Enterable.lua (583) : loadFromXML
+  dataS/scripts/vehicles/specializations/Enterable.lua (244) : loadCamerasFromXML
+  dataS/scripts/specialization/SpecializationUtil.lua (19)
+  dataS/scripts/vehicles/Vehicle.lua (972) : raiseEvent
+  dataS/scripts/i3d/I3DManager.lua (134) : asyncCallbackFunction
+2022-04-17 14:16 Warning (script): 'getXMLFloat': Argument 1 has wrong type. Expected: Int. Actual: Table 
+2022-04-17 14:16   D:\auto_builder\cache\svn\3e7613655f548b9eea177e6a8510a10e\src\base\scripting\lua\LuaScriptSystem.cpp (838): expectedType == Value::VoidType || expectedType == Value::ObjectType || expectedType == Value::IntArrayType || expectedType == Value::FloatArrayType || expectedType == Value::ArrayType
+2022-04-17 14:16 LUA call stack:
+  =C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_InsideCameraZoom/main.lua (12) : getXMLFloat
+  dataS/scripts/vehicles/specializations/Enterable.lua (583) : loadFromXML
+  dataS/scripts/vehicles/specializations/Enterable.lua (244) : loadCamerasFromXML
+  dataS/scripts/specialization/SpecializationUtil.lua (19)
+  dataS/scripts/vehicles/Vehicle.lua (972) : raiseEvent
+  dataS/scripts/i3d/I3DManager.lua (134) : asyncCallbackFunction
+2022-04-17 14:16 data/vehicles/fendt/ideal/sounds/ideal_loop.gls version 14 (0.23 ms)
+2022-04-17 14:16 data/shared/crawlers/fendt/idealCrawler/idealCrawler.i3d (317.37 ms)
+2022-04-17 14:16 data/shared/assets/lights/lizard/workingLight04.i3d (192.77 ms)
+2022-04-17 14:16 data/vehicles/fendt/dynaFlex9255/dynaFlex9255.i3d (410.84 ms)
+2022-04-17 14:16 data/vehicles/samsonAgro/sd700/sd700.i3d (501.23 ms)
+2022-04-17 14:16 C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_Fendt500Vario/vario500.i3d (942.48 ms)
+2022-04-17 14:16 C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_Fendt500Vario/wheels/hubs.i3d (0.86 ms)
+2022-04-17 14:16 Warning (script): 'getXMLFloat': Argument 1 has wrong type. Expected: Int. Actual: Table 
+2022-04-17 14:16   D:\auto_builder\cache\svn\3e7613655f548b9eea177e6a8510a10e\src\base\scripting\lua\LuaScriptSystem.cpp (838): expectedType == Value::VoidType || expectedType == Value::ObjectType || expectedType == Value::IntArrayType || expectedType == Value::FloatArrayType || expectedType == Value::ArrayType
+2022-04-17 14:16 LUA call stack:
+  =C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_InsideCameraZoom/main.lua (11) : getXMLFloat
+  dataS/scripts/vehicles/specializations/Enterable.lua (583) : loadFromXML
+  dataS/scripts/vehicles/specializations/Enterable.lua (244) : loadCamerasFromXML
+  dataS/scripts/specialization/SpecializationUtil.lua (19)
+  dataS/scripts/vehicles/Vehicle.lua (972) : raiseEvent
+  dataS/scripts/i3d/I3DManager.lua (134) : asyncCallbackFunction
+2022-04-17 14:16 Warning (script): 'getXMLFloat': Argument 1 has wrong type. Expected: Int. Actual: Table 
+2022-04-17 14:16   D:\auto_builder\cache\svn\3e7613655f548b9eea177e6a8510a10e\src\base\scripting\lua\LuaScriptSystem.cpp (838): expectedType == Value::VoidType || expectedType == Value::ObjectType || expectedType == Value::IntArrayType || expectedType == Value::FloatArrayType || expectedType == Value::ArrayType
+2022-04-17 14:16 LUA call stack:
+  =C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_InsideCameraZoom/main.lua (12) : getXMLFloat
+  dataS/scripts/vehicles/specializations/Enterable.lua (583) : loadFromXML
+  dataS/scripts/vehicles/specializations/Enterable.lua (244) : loadCamerasFromXML
+  dataS/scripts/specialization/SpecializationUtil.lua (19)
+  dataS/scripts/vehicles/Vehicle.lua (972) : raiseEvent
+  dataS/scripts/i3d/I3DManager.lua (134) : asyncCallbackFunction
+2022-04-17 14:16 data/shared/wheels/tires/michelin/multibib/R28_multibib.i3d (41.93 ms)
+2022-04-17 14:16 data/vehicles/fendt/vario700/sounds/vario700_loop.gls version 14 (0.25 ms)
+2022-04-17 14:16 data/shared/wheels/tires/michelin/multibib/R38_multibib.i3d (92.53 ms)
+2022-04-17 14:16 C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_Fendt500Vario/wheels/rims/newrims.i3d (7.68 ms)
+2022-04-17 14:16 C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_claasDiscoPack/claasDisco3600FC/disco3600FC.i3d (69.18 ms)
+2022-04-17 14:16 C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_claasDiscoPack/claasDisco1100C/disco1100C.i3d (166.10 ms)
+2022-04-17 14:16 C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_7RSeries/Series7R/series7R.i3d (786.51 ms)
+2022-04-17 14:16 Warning (script): 'getXMLFloat': Argument 1 has wrong type. Expected: Int. Actual: Table 
+2022-04-17 14:16   D:\auto_builder\cache\svn\3e7613655f548b9eea177e6a8510a10e\src\base\scripting\lua\LuaScriptSystem.cpp (838): expectedType == Value::VoidType || expectedType == Value::ObjectType || expectedType == Value::IntArrayType || expectedType == Value::FloatArrayType || expectedType == Value::ArrayType
+2022-04-17 14:16 LUA call stack:
+  =C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_InsideCameraZoom/main.lua (11) : getXMLFloat
+  dataS/scripts/vehicles/specializations/Enterable.lua (583) : loadFromXML
+  dataS/scripts/vehicles/specializations/Enterable.lua (244) : loadCamerasFromXML
+  dataS/scripts/specialization/SpecializationUtil.lua (19)
+  dataS/scripts/vehicles/Vehicle.lua (972) : raiseEvent
+  dataS/scripts/i3d/I3DManager.lua (134) : asyncCallbackFunction
+2022-04-17 14:16 Warning (script): 'getXMLFloat': Argument 1 has wrong type. Expected: Int. Actual: Table 
+2022-04-17 14:16   D:\auto_builder\cache\svn\3e7613655f548b9eea177e6a8510a10e\src\base\scripting\lua\LuaScriptSystem.cpp (838): expectedType == Value::VoidType || expectedType == Value::ObjectType || expectedType == Value::IntArrayType || expectedType == Value::FloatArrayType || expectedType == Value::ArrayType
+2022-04-17 14:16 LUA call stack:
+  =C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_InsideCameraZoom/main.lua (12) : getXMLFloat
+  dataS/scripts/vehicles/specializations/Enterable.lua (583) : loadFromXML
+  dataS/scripts/vehicles/specializations/Enterable.lua (244) : loadCamerasFromXML
+  dataS/scripts/specialization/SpecializationUtil.lua (19)
+  dataS/scripts/vehicles/Vehicle.lua (972) : raiseEvent
+  dataS/scripts/i3d/I3DManager.lua (134) : asyncCallbackFunction
+2022-04-17 14:16 data/vehicles/johnDeere/series7R/sounds/series7R_loop.gls version 14 (0.27 ms)
+2022-04-17 14:16 data/shared/wheels/rims/rim006.i3d (191.60 ms)
+2022-04-17 14:16 data/shared/wheels/tires/michelin/axioBib/R42_axioBib.i3d (49.71 ms)
+2022-04-17 14:16 data/shared/wheels/rims/rim008.i3d (109.18 ms)
+2022-04-17 14:16 data/shared/wheels/weights/weight005.i3d (171.45 ms)
+2022-04-17 14:16 C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_bresselUndLadeShovelPack/vehicles/bresselUndLade/l17/l17.i3d (63.77 ms)
+2022-04-17 14:16 C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_JCB_Telehandler_Attachments/grab/grab.i3d (15.77 ms)
+2022-04-17 14:16 data/vehicles/johnDeere/pickUp1150/pickUp1150.i3d (131.00 ms)
+2022-04-17 14:16 data/vehicles/brantner/dd24073/dd24073.i3d (254.09 ms)
+2022-04-17 14:16 C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_JCB_320S/JCB_TM320S.i3d (153.27 ms)
+2022-04-17 14:16 data/shared/wheels/tires/trelleborg/TH400/R24_TH400.i3d (70.46 ms)
+2022-04-17 14:16 Warning (script): 'getXMLFloat': Argument 1 has wrong type. Expected: Int. Actual: Table 
+2022-04-17 14:16   D:\auto_builder\cache\svn\3e7613655f548b9eea177e6a8510a10e\src\base\scripting\lua\LuaScriptSystem.cpp (838): expectedType == Value::VoidType || expectedType == Value::ObjectType || expectedType == Value::IntArrayType || expectedType == Value::FloatArrayType || expectedType == Value::ArrayType
+2022-04-17 14:16 LUA call stack:
+  =C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_InsideCameraZoom/main.lua (11) : getXMLFloat
+  dataS/scripts/vehicles/specializations/Enterable.lua (583) : loadFromXML
+  dataS/scripts/vehicles/specializations/Enterable.lua (244) : loadCamerasFromXML
+  dataS/scripts/specialization/SpecializationUtil.lua (19)
+  dataS/scripts/vehicles/Vehicle.lua (972) : raiseEvent
+  dataS/scripts/i3d/I3DManager.lua (134) : asyncCallbackFunction
+2022-04-17 14:16 Warning (script): 'getXMLFloat': Argument 1 has wrong type. Expected: Int. Actual: Table 
+2022-04-17 14:16   D:\auto_builder\cache\svn\3e7613655f548b9eea177e6a8510a10e\src\base\scripting\lua\LuaScriptSystem.cpp (838): expectedType == Value::VoidType || expectedType == Value::ObjectType || expectedType == Value::IntArrayType || expectedType == Value::FloatArrayType || expectedType == Value::ArrayType
+2022-04-17 14:16 LUA call stack:
+  =C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_InsideCameraZoom/main.lua (12) : getXMLFloat
+  dataS/scripts/vehicles/specializations/Enterable.lua (583) : loadFromXML
+  dataS/scripts/vehicles/specializations/Enterable.lua (244) : loadCamerasFromXML
+  dataS/scripts/specialization/SpecializationUtil.lua (19)
+  dataS/scripts/vehicles/Vehicle.lua (972) : raiseEvent
+  dataS/scripts/i3d/I3DManager.lua (134) : asyncCallbackFunction
+2022-04-17 14:16 data/shared/assets/lights/lizard/frontLight05.i3d (123.16 ms)
+2022-04-17 14:16 data/shared/assets/lights/hella/hellaWorkingLightSquare_01.i3d (98.18 ms)
+2022-04-17 14:16 data/vehicles/agco/weight2300/weight2300.i3d (141.48 ms)
+2022-04-17 14:16 data/vehicles/magsi/telehandlerBaleFork/telehandlerBaleFork.i3d (72.50 ms)
+2022-04-17 14:16 data/vehicles/siloking/sf4Premium/sf4Premium.i3d (555.36 ms)
+2022-04-17 14:16 data/shared/assets/camera_01.i3d (108.89 ms)
+2022-04-17 14:16 Warning (script): 'getXMLFloat': Argument 1 has wrong type. Expected: Int. Actual: Table 
+2022-04-17 14:16   D:\auto_builder\cache\svn\3e7613655f548b9eea177e6a8510a10e\src\base\scripting\lua\LuaScriptSystem.cpp (838): expectedType == Value::VoidType || expectedType == Value::ObjectType || expectedType == Value::IntArrayType || expectedType == Value::FloatArrayType || expectedType == Value::ArrayType
+2022-04-17 14:16 LUA call stack:
+  =C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_InsideCameraZoom/main.lua (11) : getXMLFloat
+  dataS/scripts/vehicles/specializations/Enterable.lua (583) : loadFromXML
+  dataS/scripts/vehicles/specializations/Enterable.lua (244) : loadCamerasFromXML
+  dataS/scripts/specialization/SpecializationUtil.lua (19)
+  dataS/scripts/vehicles/Vehicle.lua (972) : raiseEvent
+  dataS/scripts/i3d/I3DManager.lua (134) : asyncCallbackFunction
+2022-04-17 14:16 Warning (script): 'getXMLFloat': Argument 1 has wrong type. Expected: Int. Actual: Table 
+2022-04-17 14:16   D:\auto_builder\cache\svn\3e7613655f548b9eea177e6a8510a10e\src\base\scripting\lua\LuaScriptSystem.cpp (838): expectedType == Value::VoidType || expectedType == Value::ObjectType || expectedType == Value::IntArrayType || expectedType == Value::FloatArrayType || expectedType == Value::ArrayType
+2022-04-17 14:16 LUA call stack:
+  =C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_InsideCameraZoom/main.lua (12) : getXMLFloat
+  dataS/scripts/vehicles/specializations/Enterable.lua (583) : loadFromXML
+  dataS/scripts/vehicles/specializations/Enterable.lua (244) : loadCamerasFromXML
+  dataS/scripts/specialization/SpecializationUtil.lua (19)
+  dataS/scripts/vehicles/Vehicle.lua (972) : raiseEvent
+  dataS/scripts/i3d/I3DManager.lua (134) : asyncCallbackFunction
+2022-04-17 14:16 data/shared/wheels/tires/continental/contiUrbanHA3/R19_5_contiUrbanHA3.i3d (105.08 ms)
+2022-04-17 14:16 C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_Goma25/GOMAGG25.i3d (304.88 ms)
+2022-04-17 14:16 data/shared/wheels/tires/mitas/SFT/R25_SFT.i3d (164.46 ms)
+2022-04-17 14:16 data/shared/assets/lights/lizard/workingLight08.i3d (173.37 ms)
+2022-04-17 14:16 data/shared/assets/lights/lizard/rearLight21Orange.i3d (109.92 ms)
+2022-04-17 14:16 data/shared/assets/lights/lizard/rearLight21Red.i3d (25.92 ms)
+2022-04-17 14:16 data/vehicles/bomech/multiProfi/multiProfi.i3d (323.68 ms)
+2022-04-17 14:16 data/vehicles/kotte/tsa/tsa.i3d (367.66 ms)
+2022-04-17 14:16 data/shared/assets/lights/lizard/rearLight22White.i3d (23.23 ms)
+2022-04-17 14:16 data/shared/assets/lights/lizard/sideMarker01.i3d (145.57 ms)
+2022-04-17 14:16 data/shared/assets/lights/lizard/workingLight15.i3d (92.04 ms)
+2022-04-17 14:16 C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_reischAgriMaxxPack/vehicles/rsdy14/rsdy14.i3d (77.92 ms)
+2022-04-17 14:16 C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_reischAgriMaxxPack/shared/lights/reisch/ecopoint2/ecopoint2.i3d (19.89 ms)
+2022-04-17 14:16 data/vehicles/kuhn/ga15131/ga15131.i3d (254.43 ms)
+2022-04-17 14:16 data/shared/wheels/tires/trelleborg/TwinRadial/R22_5_TwinRadial.i3d (49.23 ms)
+2022-04-17 14:16 data/shared/assets/lights/lizard/rearLight40.i3d (67.66 ms)
+2022-04-17 14:16 data/vehicles/johnDeere/series8R/series8R.i3d (222.20 ms)
+2022-04-17 14:16 Warning (script): 'getXMLFloat': Argument 1 has wrong type. Expected: Int. Actual: Table 
+2022-04-17 14:16   D:\auto_builder\cache\svn\3e7613655f548b9eea177e6a8510a10e\src\base\scripting\lua\LuaScriptSystem.cpp (838): expectedType == Value::VoidType || expectedType == Value::ObjectType || expectedType == Value::IntArrayType || expectedType == Value::FloatArrayType || expectedType == Value::ArrayType
+2022-04-17 14:16 LUA call stack:
+  =C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_InsideCameraZoom/main.lua (11) : getXMLFloat
+  dataS/scripts/vehicles/specializations/Enterable.lua (583) : loadFromXML
+  dataS/scripts/vehicles/specializations/Enterable.lua (244) : loadCamerasFromXML
+  dataS/scripts/specialization/SpecializationUtil.lua (19)
+  dataS/scripts/vehicles/Vehicle.lua (972) : raiseEvent
+  dataS/scripts/i3d/I3DManager.lua (134) : asyncCallbackFunction
+2022-04-17 14:16 Warning (script): 'getXMLFloat': Argument 1 has wrong type. Expected: Int. Actual: Table 
+2022-04-17 14:16   D:\auto_builder\cache\svn\3e7613655f548b9eea177e6a8510a10e\src\base\scripting\lua\LuaScriptSystem.cpp (838): expectedType == Value::VoidType || expectedType == Value::ObjectType || expectedType == Value::IntArrayType || expectedType == Value::FloatArrayType || expectedType == Value::ArrayType
+2022-04-17 14:16 LUA call stack:
+  =C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_InsideCameraZoom/main.lua (12) : getXMLFloat
+  dataS/scripts/vehicles/specializations/Enterable.lua (583) : loadFromXML
+  dataS/scripts/vehicles/specializations/Enterable.lua (244) : loadCamerasFromXML
+  dataS/scripts/specialization/SpecializationUtil.lua (19)
+  dataS/scripts/vehicles/Vehicle.lua (972) : raiseEvent
+  dataS/scripts/i3d/I3DManager.lua (134) : asyncCallbackFunction
+2022-04-17 14:16 data/shared/wheels/tires/bkt/agrimaxForce/R34_agrimaxForce.i3d (194.79 ms)
+2022-04-17 14:16 data/shared/wheels/tires/bkt/agrimaxForce/R42_agrimaxForce.i3d (91.79 ms)
+2022-04-17 14:16 data/shared/wheels/rims/rim007.i3d (81.69 ms)
+2022-04-17 14:16 data/shared/wheels/weights/weight004.i3d (114.11 ms)
+2022-04-17 14:16 data/vehicles/krone/bigPack1290HDPVC/bigPack1290HDPVC.i3d (355.69 ms)
+2022-04-17 14:16 data/shared/assets/camera_04.i3d (137.77 ms)
+2022-04-17 14:16 data/shared/wheels/tires/trelleborg/T510/R06_T510.i3d (61.31 ms)
+2022-04-17 14:16 data/shared/assets/lights/krone/kroneRearLight01.i3d (260.56 ms)
+2022-04-17 14:16 data/shared/assets/lights/lizard/sideMarker06White.i3d (86.28 ms)
+2022-04-17 14:16 data/shared/assets/beaconLights/lizard/beaconLight08.i3d (58.80 ms)
+2022-04-17 14:16 data/shared/assets/powerTakeOffs/walterscheidWWE.i3d (41.45 ms)
+2022-04-17 14:16 C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_guettlerPW640ASLMaster/pw640.i3d (74.89 ms)
+2022-04-17 14:16 C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_guettlerPW640ASLMaster/wheels/wheels.i3d (5.54 ms)
+2022-04-17 14:16   Setting 'Radio Volume': 0.500
+2022-04-17 14:16   Setting 'Vehicle Volume': 1.000
+2022-04-17 14:16   Setting 'Environment Volume': 1.000
+2022-04-17 14:16   Setting 'GUI Volume': 0.400
+2022-04-17 14:16   Info: Savegame Setting 'dirtInterval': 3
+2022-04-17 14:16   Info: Savegame Setting 'snowEnabled': true
+2022-04-17 14:16   Info: Savegame Setting 'growthMode': 1
+2022-04-17 14:16   Info: Savegame Setting 'fuelUsage': 1
+2022-04-17 14:16   Info: Savegame Setting 'plowingRequiredEnabled': false
+2022-04-17 14:16   Info: Savegame Setting 'weedsEnabled': true
+2022-04-17 14:16   Info: Savegame Setting 'limeRequired': true
+2022-04-17 14:16   Info: Savegame Setting 'stonesEnabled': true
+2022-04-17 14:16   Info: Savegame Setting 'economicDifficulty': 1
+2022-04-17 14:16   Info: Savegame Setting 'fixedSeasonalVisuals': nil
+2022-04-17 14:16   Info: Savegame Setting 'plannedDaysPerPeriod': 3
+2022-04-17 14:16 dataS/character/humans/player/player01.i3d (58.86 ms)
+2022-04-17 14:16 Global REA variables loaded
+2022-04-17 14:16 dataS/character/player01/clothes/bottoms/botCargo.i3d (23.10 ms)
+2022-04-17 14:16 dataS/character/player01/heads/maleHead01.i3d (167.43 ms)
+2022-04-17 14:16 dataS/character/player01/clothes/footwear/footwearWorkboot01.i3d (5.09 ms)
+2022-04-17 14:16 dataS/character/player01/attachments/glassesSports02.i3d (10.93 ms)
+2022-04-17 14:16 dataS/character/player01/hairStyles/hairStyleFringe.i3d (201.54 ms)
+2022-04-17 14:16 dataS/character/player01/brands/brand10/johnDeereHatBlack.i3d (32.89 ms)
+2022-04-17 14:16 dataS/character/player01/brands/brand16/kroneShirt.i3d (39.84 ms)
+2022-04-17 14:16 dataS/character/player01/hairStyles/hairStyleBuzzCut01.i3d (1.24 ms)
+2022-04-17 14:48 Game saved successfully.
+2022-04-17 14:49 Game saved successfully.
+2022-04-17 14:49 Application restart (soft restart)
+2022-04-17 14:49 Platform: loading defaults
+2022-04-17 14:49  Used Start Parameters:
+2022-04-17 14:49     exe D:\PUBG\steamapps\common\Farming Simulator 22\x64\FarmingSimulator2022Game.exe 
+2022-04-17 14:49     restart 
+2022-04-17 14:49   Setting 'Master Volume': 1.000
+2022-04-17 14:49   Setting 'Is Train Tabbable': true
+2022-04-17 14:49   Setting 'Radio Vehicle Only': true
+2022-04-17 14:49   Setting 'Radio Active': false
+2022-04-17 14:49   Setting 'Use Colorblind Mode': false
+2022-04-17 14:49   Setting 'Easy Arm Control': true
+2022-04-17 14:49   Setting 'Show Trigger Marker': true
+2022-04-17 14:49   Setting 'Show Help Trigger': true
+2022-04-17 14:49   Setting 'Show Field-Info': true
+2022-04-17 14:49   Setting 'Invert Y-Look': false
+2022-04-17 14:49   Setting 'Show Help Icons': true
+2022-04-17 14:49   Setting 'Radio Volume': 0.500
+2022-04-17 14:49   Setting 'Vehicle Volume': 1.000
+2022-04-17 14:49   Setting 'Environment Volume': 1.000
+2022-04-17 14:49   Setting 'GUI Volume': 0.400
+2022-04-17 14:49   Setting 'Master Volume': 1.000
+2022-04-17 14:49   Setting 'Music Volume': 0.000
+2022-04-17 14:49 Farming Simulator 22 (Steam)
+2022-04-17 14:49   Version: 1.3.1.0 b15975
+2022-04-17 14:49   Available Languages: en de jp pl cz fr es ru it pt hu nl cs ct br tr ro kr ea da fi no sv fc
+2022-04-17 14:49   Language: de
+2022-04-17 14:49   Time: 2022-04-17 14:49:33
+2022-04-17 14:49   ModDesc Version: 64
+2022-04-17 14:49   Mod Directory: C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/
+2022-04-17 14:49 Available dlc: (Hash: 49bfa385ca90594408a7f75db8783578) (Version: 1.1.0.0) pdlc_claasSaddleTracPack
+2022-04-17 14:49 Available mod: (Hash: a6bd073ab1d915cdb295cf2396c3c122) (Version: 1.0.0.0) Erlengrat
+2022-04-17 14:49 Available mod: (Hash: fe19f7444adbe26c49041d811f99bf75) (Version: 1.0.0.0) FS22_7RSeries
+2022-04-17 14:49 Available mod: (Hash: ab3cf294392f61318df41ff91171114e) (Version: 1.0.1.0) FS22_additionalFieldInfo
+2022-04-17 14:49 Available mod: (Hash: d03a1495313c225f4540864cb9182df9) (Version: 1.0.0.0) FS22_airHoseConnectSound
+2022-04-17 14:49 Available mod: (Hash: d45f0347ce655ac1eba9289b6234e586) (Version: 1.0.0.0) FS22_amazoneCatros6002
+2022-04-17 14:49 Available mod: (Hash: 3829b46923769e78844ef11ced909772) (Version: 1.0.0.0) FS22_Amazone_ZGTS_10001
+2022-04-17 14:49 Available mod: (Hash: ba6f1114fb5d8b70c1236ab464ab3577) (Version: 1.0.0.0) FS22_BenzNWM
+2022-04-17 14:49 Available mod: (Hash: 3c2cf4565d49e8d1241c209a8af8295b) (Version: 1.0.0.0) FS22_BergmannTSW7340S
+2022-04-17 14:49 Available mod: (Hash: 1f132dd17218e4ce6d3439e1775996ee) (Version: 1.0.0.0) FS22_bresselUndLadeShovelPack
+2022-04-17 14:49 Available mod: (Hash: 2ab49761118d1531960efe054c098c5b) (Version: 1.0.0.0) FS22_Bressel_Lade_B11
+2022-04-17 14:49 Available mod: (Hash: 55e14aadbd98ec17a3e3472375e5c157) (Version: 1.1.0.0) FS22_Calmsden
+2022-04-17 14:49 Available mod: (Hash: 944c6b8c3e3b9f55f5677634690884c6) (Version: 1.0.0.1) FS22_caseIHMagnum7240Pro
+2022-04-17 14:49 Available mod: (Hash: 0f39c4a24c0d7258a11ed39a83982379) (Version: 1.0.0.1) FS22_claasDiscoPack
+2022-04-17 14:49 Available mod: (Hash: 1654b99a2070f0c87be1f44284091d0b) (Version: 1.0.0.0) FS22_claasDominator108SL
+2022-04-17 14:49 Available mod: (Hash: 6606d59076f5ac8b45341debe31cd3fa) (Version: 1.0.0.0) FS22_CutterFix
+2022-04-17 14:49 Available mod: (Hash: 201d35fd2016fcff6d7ea05568167d15) (Version: 1.0.0.1) FS22_DeutzSeries7_8
+2022-04-17 14:49 Available mod: (Hash: b838da70503501ccae2b7d15278549b1) (Version: 1.0.0.1) FS22_DeutzSeries9
+2022-04-17 14:49 Available mod: (Hash: fbb3049943497ea7939864abe756cfb7) (Version: 1.0.0.0) FS22_Fendt1250KG
+2022-04-17 14:49 Available mod: (Hash: c923c1438fe683b1287ae7bb215eb864) (Version: 1.0.0.0) FS22_Fendt500Vario
+2022-04-17 14:49 Available mod: (Hash: b6c9f66efc0519dceb66b43020023bf5) (Version: 1.0.0.1) FS22_Fendt900Vario_OldGen
+2022-04-17 14:49 Available mod: (Hash: 4603fd94119b4955499ff92f4d9b753b) (Version: 1.0.0.0) FS22_FendtVarioPack
+2022-04-17 14:49 Available mod: (Hash: 95759c20e79a6b27039d5e838f04b6ae) (Version: 1.0.0.0) FS22_FendtVario_500
+2022-04-17 14:49 Available mod: (Hash: 2deafc2f007ea7fa9c61170027e3bcc5) (Version: 1.1.0.0) FS22_FendtVario_900Gen7
+2022-04-17 14:49 Available mod: (Hash: 03a1701f854933f0a443e9c78d377329) (Version: 1.0.0.0) FS22_Filllevelwarning
+2022-04-17 14:49 Available mod: (Hash: cbf9b9000816994ad0d24eb54cff9625) (Version: 1.0.0.0) FS22_FlieglPFW18000MaxxLine
+2022-04-17 14:49 Available mod: (Hash: ad8eb56a25ee1557d95a51c2eae4df5b) (Version: 1.0.0.0) FS22_Fortschritt_ZT30x
+2022-04-17 14:49 Available mod: (Hash: 06001c204ae8140c31b00b5e21566df9) (Version: 1.0.0.0) FS22_Goma25
+2022-04-17 14:49 Available mod: (Hash: dde8ac6eeaccce798e4ca484f0dcb6f4) (Version: 1.0.0.0) FS22_Guellekauf
+2022-04-17 14:49 Available mod: (Hash: 261aec50607040f73f1d81f15f47808c) (Version: 1.0.0.0) FS22_guettlerPW640ASLMaster
+2022-04-17 14:49 Available mod: (Hash: 15adafce7038589ebfdd9d004d49b728) (Version: 2.1.6.0) FS22_guidanceSteering
+2022-04-17 14:49 Available mod: (Hash: c7862469b82bb6c63bf181622099f65f) (Version: 1.2.0.0) FS22_hudToggle
+2022-04-17 14:49 Available mod: (Hash: b6ba146f7f4f0f060812ce9dea11833b) (Version: 1.0.0.0) FS22_Hw80_pack
+2022-04-17 14:49 Available mod: (Hash: f58942efa48018c3b5bb6f74d1aacc0a) (Version: 1.0.0.0) FS22_InsideCameraZoom
+2022-04-17 14:49 Available mod: (Hash: dd78c35b5750cae4fe8121df2b8de5da) (Version: 1.0.0.0) FS22_ITS_DriveLaner
+2022-04-17 14:49 Available mod: (Hash: 6a6116eae100c3d67404c28c1b23f9df) (Version: 1.0.0.0) FS22_JCB_320S
+2022-04-17 14:49 Available mod: (Hash: 0cd96f3a3c80678b2795a4a9e1356c80) (Version: 1.0.0.0) FS22_JCB_Telehandler_Attachments
+2022-04-17 14:49 Available mod: (Hash: 96ec13ec7047190d134e9fca1091201e) (Version: 1.0.0.0) FS22_johnDeere7020
+2022-04-17 14:49 Available mod: (Hash: c0a32ff38ae26a33d733e32e3337c63b) (Version: 1.0.0.0) FS22_JohnDeereTSeriesPack
+2022-04-17 14:49 Available mod: (Hash: 3cfe51eca76c0e8a0a3c1f7e0b07eacf) (Version: 1.0.0.0) FS22_JohnDeere_6300_6405
+2022-04-17 14:49 Available mod: (Hash: 4de9338d3270062dde85fff7679bcf9d) (Version: 1.0.0.0) FS22_John_Deere_600_700FD
+2022-04-17 14:49 Available mod: (Hash: c9b0a1a84c151b456d89171c814318e4) (Version: 1.0.0.0) FS22_joskinspace8000
+2022-04-17 14:49 Available mod: (Hash: cdb87d548acd7c5160c4aafd9f6f3a13) (Version: 1.0.0.0) FS22_koeckerlingVector
+2022-04-17 14:49 Available mod: (Hash: 4b9f4eeb02f2e0b42fc9fe0a53180ebb) (Version: 1.0.0.0) FS22_krogerPWO24
+2022-04-17 14:49 Available mod: (Hash: df463dd1b9774d4adcdad32e96f615fb) (Version: 1.0.0.0) FS22_lommaZDK1802Pack
+2022-04-17 14:49 Available mod: (Hash: 954e7e07c51051f34af74944745a5c36) (Version: 2.0.0.0) FS22_manualAttach
+2022-04-17 14:49 Available mod: (Hash: a0ad6dcf1f54b724fe4d5d75588a79c0) (Version: 1.0.1.0) FS22_MF8700S
+2022-04-17 14:49 Available mod: (Hash: 99c1f1d5834844d2eca60cd6f32262e5) (Version: 1.0.0.0) FS22_MMS_Gewichte
+2022-04-17 14:49 Available mod: (Hash: 8a333c0d2035e653499dcdaec8aea0b6) (Version: 3.2.2.1) FS22_MoneyToolV3
+2022-04-17 14:49 Available mod: (Hash: 898b4e02a01525430f7fb1552e31a6e0) (Version: 1.0.0.0) FS22_Newholland_Cr1090
+2022-04-17 14:49 Available mod: (Hash: 63019fcbe2516f511effba0523b325e8) (Version: 1.0.0.0) FS22_PerardPack
+2022-04-17 14:49 Available mod: (Hash: dd8465878d948ed70023a6e8b3dd5cc2) (Version: 1.0.0.0) FS22_playerActionCamera
+2022-04-17 14:49 Available mod: (Hash: f1fe7a09875a6a899ac5cbd9ffbef7a8) (Version: 1.0.0.1) FS22_poettingerTerrasemC6F
+2022-04-17 14:49 Available mod: (Hash: ef7787fed2a74f46452de94e8c4e0b6f) (Version: 2.0.0.0) FS22_proSeed
+2022-04-17 14:49 Available mod:  (Version: 3.0.1.0) FS22_Rade
+2022-04-17 14:49 Warning: Only zip mods are supported in multiplayer. You need to zip the mod FS22_Rade to use it in multiplayer.
+2022-04-17 14:49 Available mod: (Hash: 44dfa8ea69deae00cae3914cdd70b725) (Version: 1.0.0.0) FS22_REAcog
+2022-04-17 14:49 Available mod: (Hash: f7f133e550117736de1ab90642a51bae) (Version: 1.0.0.0) FS22_REAimplements
+2022-04-17 14:49 Available mod: (Hash: 6bacc9d464bb9d51b397dbf2d6e2461f) (Version: 1.1.0.1) FS22_REAwheels
+2022-04-17 14:49 Available mod: (Hash: 625e90662344c988b183a39320a1b2f7) (Version: 1.1.0.0) FS22_reischAgriMaxxPack
+2022-04-17 14:49 Available mod: (Hash: ac32d4247d26a5a79662fe2c1b7287a0) (Version: 1.1.0.0) FS22_reischPack
+2022-04-17 14:49 Available mod: (Hash: 8a6b59d79f29f13b76e80eb699b9417c) (Version: 1.0.0.0) FS22_RM_Subsidy
+2022-04-17 14:49 Available mod: (Hash: 12f21ee5c41bd528c0161d1497f4f793) (Version: 1.0.0.0) FS22_Rope
+2022-04-17 14:49 Available mod: (Hash: 54e27d30ffecbf4ad35b43a08d6cb285) (Version: 1.0.0.0) FS22_samsonAgroPGII25m
+2022-04-17 14:49 Available mod: (Hash: eb79eb6ec10c6e117465e919880c3ecb) (Version: 1.0) FS22_SlurryTrader
+2022-04-17 14:49 Available mod: (Hash: 8453bff2209453dcdd6967106aa4b989) (Version: 1.0.0.0) FS22_storeDeliveries
+2022-04-17 14:49 Available mod: (Hash: 8983e2826e416cd03e53fcdea585f926) (Version: 1.0.0.1) FS22_tatraPhoenix
+2022-04-17 14:49 Available mod: (Hash: 36a73cdacf37180914785060f0524101) (Version: 1.1.0.0) FS22_TLX2020_Series
+2022-04-17 14:49 Available mod: (Hash: 37807602aee9f65a37cf2cf72ed783bb) (Version: 1.0.0.0) FS22_TrefflerTG615
+2022-04-17 14:49 Available mod: (Hash: a074a6760042a62d728a9c8b69344ed4) (Version: 1.0.0.0) FS22_Vaderstad_Carrier_XL_825
+2022-04-17 14:49 dataS/character/humans/player/animations.i3d (574.29 ms)
+2022-04-17 14:49 dataS/character/humans/player/vehicleCharacterAnimations.i3d (2.50 ms)
+2022-04-17 14:49 dataS/character/humans/npc/animations.i3d (79.40 ms)
+2022-04-17 14:50   Loaded 'vehicle' specializations
+2022-04-17 14:50   Loaded 'placeable' specializations
+2022-04-17 14:50   Loaded vehicle types
+2022-04-17 14:50   Loaded placeable types
+2022-04-17 14:50   Info:   Loaded construction brush types
+2022-04-17 14:50 Started network game (10823)
+2022-04-17 14:50 Error: Startup with port while already running
+2022-04-17 14:50  STARTING MP Game
+2022-04-17 14:50      adding mod Benz Nordwestmecklenburg;1.0.0.0;fuqser, Try, AxeDiamend, Colore, Mo6R;FS22_BenzNWM ba6f1114fb5d8b70c1236ab464ab3577
+2022-04-17 14:50   Load mod: FS22_BenzNWM
+2022-04-17 14:50   Register configuration 'baseColor'
+2022-04-17 14:50   Register configuration 'design'
+2022-04-17 14:50   Register configuration 'designColor'
+2022-04-17 14:50   Register configuration 'vehicleType'
+2022-04-17 14:50   Register configuration 'design2'
+2022-04-17 14:50   Register configuration 'design3'
+2022-04-17 14:50   Register configuration 'design4'
+2022-04-17 14:50   Register configuration 'design5'
+2022-04-17 14:50   Register configuration 'design6'
+2022-04-17 14:50   Register configuration 'design7'
+2022-04-17 14:50   Register configuration 'design8'
+2022-04-17 14:50   Register configuration 'ai'
+2022-04-17 14:50   Register configuration 'inputAttacherJoint'
+2022-04-17 14:50   Register configuration 'attacherJoint'
+2022-04-17 14:50   Register workAreaType 'BALER'
+2022-04-17 14:50   Register configuration 'wrappingColor'
+2022-04-17 14:50   Register configuration 'wrappingAnimation'
+2022-04-17 14:50   Register configuration 'baseMaterial'
+2022-04-17 14:50   Register configuration 'designMaterial'
+2022-04-17 14:50   Register configuration 'designMaterial2'
+2022-04-17 14:50   Register configuration 'designMaterial3'
+2022-04-17 14:50   Register configuration 'multipleItemPurchaseAmount'
+2022-04-17 14:50   Register workAreaType 'COMBINECHOPPER'
+2022-04-17 14:50   Register workAreaType 'COMBINESWATH'
+2022-04-17 14:50   Register configuration 'cover'
+2022-04-17 14:50   Register workAreaType 'CULTIVATOR'
+2022-04-17 14:50 data/shared/ai/trafficCollision.i3d (23.81 ms)
+2022-04-17 14:50   Register workAreaType 'CUTTER'
+2022-04-17 14:50   Register configuration 'dischargeable'
+2022-04-17 14:50   Register configuration 'fillUnit'
+2022-04-17 14:50   Register configuration 'fillVolume'
+2022-04-17 14:50   Register configuration 'folding'
+2022-04-17 14:50   Register workAreaType 'FORAGEWAGON'
+2022-04-17 14:50   Register configuration 'frontloader'
+2022-04-17 14:50   Register workAreaType 'FRUITPREPARER'
+2022-04-17 14:50   Register configuration 'motor'
+2022-04-17 14:50   Register workAreaType 'MULCHER'
+2022-04-17 14:50   Register workAreaType 'MOWER'
+2022-04-17 14:50   Register configuration 'pipe'
+2022-04-17 14:50   Register configuration 'plow'
+2022-04-17 14:50   Register workAreaType 'PLOW'
+2022-04-17 14:50   Register configuration 'powerConsumer'
+2022-04-17 14:50   Register workAreaType 'RIDGEMARKER'
+2022-04-17 14:50   Register configuration 'roller'
+2022-04-17 14:50   Register workAreaType 'ROLLER'
+2022-04-17 14:50   Register workAreaType 'SALTSPREADER'
+2022-04-17 14:50   Register workAreaType 'SOWINGMACHINE'
+2022-04-17 14:50   Register workAreaType 'SPRAYER'
+2022-04-17 14:50   Register workAreaType 'STONEPICKER'
+2022-04-17 14:50   Register workAreaType 'STUMPCUTTER'
+2022-04-17 14:50   Register workAreaType 'TEDDER'
+2022-04-17 14:50   Register configuration 'tensionBelts'
+2022-04-17 14:50   Register configuration 'trailer'
+2022-04-17 14:50   Register configuration 'treeSaplingType'
+2022-04-17 14:50   Register configuration 'variableWorkWidth'
+2022-04-17 14:50   Register workAreaType 'WEEDER'
+2022-04-17 14:50   Register configuration 'wheel'
+2022-04-17 14:50   Register configuration 'rimColor'
+2022-04-17 14:50   Register workAreaType 'WINDROWER'
+2022-04-17 14:50   Register workAreaType 'DEFAULT'
+2022-04-17 14:50   Register workAreaType 'AUXILIARY'
+2022-04-17 14:50   Register configuration 'workArea'
+2022-04-17 14:50   Register configuration 'workMode'
+2022-04-17 14:50   Warning: Eigenbau' is an unknown brand! Using Lizard instead!
+2022-04-17 14:50   Warning: Eigenbau' is an unknown brand! Using Lizard instead!
+2022-04-17 14:50   Warning: Eigenbau' is an unknown brand! Using Lizard instead!
+2022-04-17 14:50   Info: Loading ConnectionHoses from 'data/shared/connectionHoses/connectionHoses.xml'
+2022-04-17 14:50 data/shared/connectionHoses/hoses.i3d (295.59 ms)
+2022-04-17 14:50 data/shared/connectionHoses/connectors.i3d (207.22 ms)
+2022-04-17 14:50 data/shared/connectionHoses/hoseMaterialHolder.i3d (65.17 ms)
+2022-04-17 14:50 data/objects/roundbales/roundbale125/roundbale125.i3d (13.31 ms)
+2022-04-17 14:50 data/objects/roundbales/roundbale150/roundbale150.i3d (2.86 ms)
+2022-04-17 14:50 data/objects/roundbales/roundbale180/roundbale180.i3d (25.07 ms)
+2022-04-17 14:50 data/objects/squarebales/squarebale240/squarebale240.i3d (5.00 ms)
+2022-04-17 14:50 data/objects/squarebales/squarebale220/squarebale220.i3d (3.41 ms)
+2022-04-17 14:50 dataS/character/animals/wild/crow/crow.i3d (11.30 ms)
+2022-04-17 14:50 data/objects/squarebales/squarebale180/squarebale180.i3d (9.43 ms)
+2022-04-17 14:50   Info: resetSplitShapes()
+2022-04-17 14:50 data/objects/squarebales/squarebale120/squarebale120.i3d (2.99 ms)
+2022-04-17 14:50 data/objects/squarebales/squarebale120/packedSquareBale120.i3d (6.33 ms)
+2022-04-17 14:50 data/objects/cottonModules/cottonRoundbale238.i3d (2.54 ms)
+2022-04-17 14:50 data/objects/cottonModules/cottonSquarebale488.i3d (2.66 ms)
+2022-04-17 14:50 data/objects/roundbales/biomass/biomassBale125.i3d (3.55 ms)
+2022-04-17 14:50 data/shared/aiMarker.i3d (0.87 ms)
+2022-04-17 14:50 data/shared/alphabet/fontMaterialHolder.i3d (24.64 ms)
+2022-04-17 14:50 C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/licensePlates/licensePlatesDE.i3d (3.87 ms)
+2022-04-17 14:50 data/maps/mapAlpine/licensePlates/licensePlatesDE.i3d (3.76 ms)
+2022-04-17 14:50 data/effects/cutter/maize/maize_harvestReadyDry.i3d (21.27 ms)
+2022-04-17 14:50 data/sky/sky.i3d (0.62 ms)
+2022-04-17 14:50 data/effects/cutter/sunflower/sunflower_harvestReady.i3d (14.39 ms)
+2022-04-17 14:50 data/effects/cutter/maize/maize_harvestReadyGreen.i3d (12.64 ms)
+2022-04-17 14:50 data/effects/cutter/grass/grass_greenBig.i3d (27.58 ms)
+2022-04-17 14:50 data/effects/cutter/grass/grass_harvestReady.i3d (13.52 ms)
+2022-04-17 14:50 data/effects/cutter/sunflower/sunflower_greenBig.i3d (31.46 ms)
+2022-04-17 14:50 data/effects/cutter/wheat/wheat_greenBig.i3d (28.21 ms)
+2022-04-17 14:50 data/effects/cutter/wheat/wheat_harvestReady.i3d (14.77 ms)
+2022-04-17 14:50 data/effects/cutter/barley/barley_greenBig.i3d (22.28 ms)
+2022-04-17 14:50 data/effects/cutter/barley/barley_harvestReady.i3d (25.89 ms)
+2022-04-17 14:50 data/effects/cutter/oat/oat_greenBig.i3d (18.68 ms)
+2022-04-17 14:50 data/effects/cutter/oat/oat_harvestReady.i3d (17.62 ms)
+2022-04-17 14:50 data/effects/cutter/canola/canola_greenBig.i3d (27.45 ms)
+2022-04-17 14:50 data/effects/cutter/canola/canola_harvestReady.i3d (27.86 ms)
+2022-04-17 14:50 data/effects/cutter/soybean/soybean_greenBig.i3d (44.40 ms)
+2022-04-17 14:50 data/effects/cutter/soybean/soybean_harvestReady.i3d (37.12 ms)
+2022-04-17 14:50 data/effects/cutter/sorghum/sorghum_greenBig.i3d (16.16 ms)
+2022-04-17 14:50 data/effects/cutter/sorghum/sorghum_harvestReady.i3d (37.71 ms)
+2022-04-17 14:50 data/effects/cutter/maize/maize_fruits.i3d (10.15 ms)
+2022-04-17 14:50 data/effects/cutter/sunflower/sunflower_fruits.i3d (6.14 ms)
+2022-04-17 14:50 data/effects/cutter/maize/maize_threshing.i3d (16.25 ms)
+2022-04-17 14:50 data/effects/cutter/sunflower/sunflower_threshing.i3d (10.49 ms)
+2022-04-17 14:50 data/effects/fertilizer/fertilizer.i3d (75.46 ms)
+2022-04-17 14:50 data/effects/chopper/strawChopper.i3d (26.07 ms)
+2022-04-17 14:50 data/effects/tedder/tedder.i3d (8.98 ms)
+2022-04-17 14:50 data/effects/windrower/windrower.i3d (12.40 ms)
+2022-04-17 14:50 data/effects/cultivator/cultivator.i3d (34.29 ms)
+2022-04-17 14:50 data/effects/plow/plow.i3d (18.85 ms)
+2022-04-17 14:50 data/effects/pickup/pickupIN.i3d (12.97 ms)
+2022-04-17 14:50 data/effects/pickup/pickupOUT.i3d (1.67 ms)
+2022-04-17 14:50 data/effects/mower/mower.i3d (21.39 ms)
+2022-04-17 14:50 data/effects/mixerWagon/mixerWagon.i3d (4.36 ms)
+2022-04-17 14:50 data/effects/grape/grape_fruitsLeaves.i3d (2.97 ms)
+2022-04-17 14:50 data/effects/grape/grape_fruitsClean.i3d (0.97 ms)
+2022-04-17 14:50 data/effects/grape/grape_fruitsHarvested.i3d (1.21 ms)
+2022-04-17 14:50 data/effects/grape/grape_threshing.i3d (0.88 ms)
+2022-04-17 14:50 data/effects/grape/grape_prePruner.i3d (1.02 ms)
+2022-04-17 14:50 data/effects/olive/olive_fruitsLeaves.i3d (4.57 ms)
+2022-04-17 14:50 data/effects/olive/olive_fruitsClean.i3d (4.66 ms)
+2022-04-17 14:50 data/effects/olive/olive_threshing.i3d (2.62 ms)
+2022-04-17 14:50 data/effects/manure/manure.i3d (11.74 ms)
+2022-04-17 14:50 data/effects/stone/small/stone.i3d (4.55 ms)
+2022-04-17 14:50 data/effects/stone/medium/stone.i3d (2.97 ms)
+2022-04-17 14:50 data/effects/stone/big/stone.i3d (3.37 ms)
+2022-04-17 14:50 data/effects/wood/wood_cutter.i3d (2.38 ms)
+2022-04-17 14:50 data/effects/sugarcane/sugarcane_prepareFruit.i3d (2.93 ms)
+2022-04-17 14:50 data/effects/sugarcane/sugarcane_chopper.i3d (4.13 ms)
+2022-04-17 14:50 data/effects/sugarcane/sugarcane_chaffer.i3d (1.61 ms)
+2022-04-17 14:50 data/effects/sugarcane/sugarcane_cutter.i3d (2.31 ms)
+2022-04-17 14:50 data/effects/snow/snowPieces.i3d (12.59 ms)
+2022-04-17 14:50 data/effects/snow/snowDust.i3d (4.86 ms)
+2022-04-17 14:50 data/sky/rain.i3d (1.33 ms)
+2022-04-17 14:50 data/sky/snow.i3d (1.02 ms)
+2022-04-17 14:50 The texture streaming needs <UvUsage> to work efficiently, custom shader: data/fs19support/shaders/buildingShader.xml
+2022-04-17 14:50 C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/map01.i3d (12908.55 ms)
+2022-04-17 14:50 C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/sounds.i3d (66.29 ms)
+2022-04-17 14:50 data/foliage/decoFoliage/decoFoliageUS.i3d (55.51 ms)
+2022-04-17 14:50 data/foliage/groundFoliage/groundFoliage.i3d (54.34 ms)
+2022-04-17 14:50 data/foliage/decoBush/decoBush.i3d (20.47 ms)
+2022-04-17 14:50 data/foliage/meadow/meadowUS.i3d (6.37 ms)
+2022-04-17 14:50 Warning (performance): Foliage lod 1 mesh 'meadow' 'cut' 'cut' is much larger than lod 0 mesh (min/maxY (-0.175/0.082 vs -0.125/0.103).
+2022-04-17 14:50 C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/foliage/grass/grass.i3d (32.66 ms)
+2022-04-17 14:50 C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/foliage/wheat/wheat.i3d (17.68 ms)
+2022-04-17 14:50 C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/foliage/canola/canola.i3d (18.45 ms)
+2022-04-17 14:50 C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/foliage/barley/barley.i3d (18.26 ms)
+2022-04-17 14:50 Warning (performance): Foliage lod 1 mesh 'barley' 'harvested' 'cut' is much larger than lod 0 mesh (min/maxY (-0.023/0.127 vs -0.018/0.078).
+2022-04-17 14:50 data/foliage/maize/maize.i3d (24.81 ms)
+2022-04-17 14:50 data/foliage/potato/potato.i3d (18.99 ms)
+2022-04-17 14:50 data/foliage/potato/potatoHaulm.i3d (2.74 ms)
+2022-04-17 14:50 data/foliage/sugarbeet/sugarbeet.i3d (18.98 ms)
+2022-04-17 14:50 data/foliage/sugarbeet/sugarbeetHaulm.i3d (1.54 ms)
+2022-04-17 14:50 data/foliage/sunflower/sunflower.i3d (11.54 ms)
+2022-04-17 14:50 data/foliage/soybean/soybean.i3d (17.07 ms)
+2022-04-17 14:50 data/foliage/oilseedRadish/oilseedRadish.i3d (4.49 ms)
+2022-04-17 14:50 data/foliage/poplar/poplar.i3d (6.56 ms)
+2022-04-17 14:50 data/foliage/oat/oat.i3d (7.23 ms)
+2022-04-17 14:50 data/foliage/sugarcane/sugarcane.i3d (8.93 ms)
+2022-04-17 14:50 data/foliage/sugarcane/sugarCaneHaulm.i3d (1.28 ms)
+2022-04-17 14:50 data/foliage/cotton/cotton.i3d (10.61 ms)
+2022-04-17 14:50 data/foliage/sorghum/sorghum.i3d (20.02 ms)
+2022-04-17 14:50 data/foliage/olive/olive.i3d (10.71 ms)
+2022-04-17 14:50 data/foliage/grape/grape.i3d (0.96 ms)
+2022-04-17 14:50 Info: transform group 'C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/data/densityMap_fruits.png' has elements very far out from the cell edge (59.65% expansion)
+2022-04-17 14:50 C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/foliage/weed/weed.i3d (63.22 ms)
+2022-04-17 14:50 data/foliage/stone/stone.i3d (2.41 ms)
+2022-04-17 14:50 FoliageTransformGroup 'C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/data/densityMap_fruits.png' may need space for up to 6223392 instances (2592 per cell x 2401 cells)
+2022-04-17 14:50 FoliageTransformGroup 'C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/data/densityMap_weed.png' may need space for up to 591872 instances (512 per cell x 1156 cells)
+2022-04-17 14:50 FoliageTransformGroup 'C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/data/densityMap_stones.png' may need space for up to 591872 instances (512 per cell x 1156 cells)
+2022-04-17 14:50 data/effects/cultivator/particle/soilParticle.i3d (7.60 ms)
+2022-04-17 14:50 data/effects/cultivator/cultivatorMeshes_materialHolder.i3d (1.90 ms)
+2022-04-17 14:50 data/effects/slurry/slurryEffects_materialHolder.i3d (3.41 ms)
+2022-04-17 14:50 data/effects/unload/unloadMeshes_materialHolder.i3d (11.86 ms)
+2022-04-17 14:50 data/effects/unload/unloadParticles_materialHolder.i3d (1.17 ms)
+2022-04-17 14:50 data/effects/unload/unloadParticles.i3d (0.42 ms)
+2022-04-17 14:50 data/effects/smoke/smokeParticles.i3d (0.37 ms)
+2022-04-17 14:50 data/effects/smoke/smokeParticles_materialHolder.i3d (0.32 ms)
+2022-04-17 14:50 data/effects/wheel/wheelParticles.i3d (1.76 ms)
+2022-04-17 14:50 data/effects/bees/beesParticles.i3d (1.01 ms)
+2022-04-17 14:50 data/effects/horse/horseStepParticleSystem.i3d (0.43 ms)
+2022-04-17 14:50 data/effects/sprayer/particle/washer.i3d (0.42 ms)
+2022-04-17 14:50 data/effects/sprayer/sprayerMeshes_materialHolder.i3d (3.84 ms)
+2022-04-17 14:50 data/effects/leveler/levelerMeshes_materialHolder.i3d (4.27 ms)
+2022-04-17 14:50 data/effects/wood/particle/forestry.i3d (3.60 ms)
+2022-04-17 14:50 data/effects/belt/beltMeshes_materialHolder.i3d (9.10 ms)
+2022-04-17 14:50 data/effects/potato/particle/potato.i3d (2.93 ms)
+2022-04-17 14:50 data/effects/sugarBeet/particle/sugarBeet.i3d (0.56 ms)
+2022-04-17 14:50 data/effects/cotton/particle/cotton.i3d (1.78 ms)
+2022-04-17 14:50 data/shared/materialHolders/tensionBeltMaterialHolder.i3d (6.50 ms)
+2022-04-17 14:50 data/shared/materialHolders/tireTrackMaterialHolder.i3d (2.44 ms)
+2022-04-17 14:50 data/shared/mapTargetMarker.i3d (0.72 ms)
+2022-04-17 14:50 data/fillPlanes/fillPlane_materialHolder.i3d (1.15 ms)
+2022-04-17 14:50 Warning: Farmland-Ids not set for all pixel in farmland-infoLayer!
+2022-04-17 14:51   Info (C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/placeables.xml): Placeable '$mapdir$/maps/placeables/Getreidehalle/Getreidehalle.xml' is not allowed to be loaded
+2022-04-17 14:51   Info (C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/placeables.xml): Placeable '$mapdir$/maps/placeables/MaschinenhalleOLD/MaschinenhalleOLD.xml' is not allowed to be loaded
+2022-04-17 14:51   Info (C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/placeables.xml): Placeable '$mapdir$/maps/placeables/Milchviehanlage/Milchviehanlage.xml' is not allowed to be loaded
+2022-04-17 14:51   Info (C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/placeables.xml): Placeable '$mapdir$/maps/placeables/BGA/bga250kw.xml' is not allowed to be loaded
+2022-04-17 14:51   Info (C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/placeables.xml): Placeable '$mapdir$/maps/placeables/Getreidesilo/Getreidesilo.xml' is not allowed to be loaded
+2022-04-17 14:51 data/placeables/sellingStationGeneric/sellingStationGeneric.i3d (210.89 ms)
+2022-04-17 14:51 data/store/ui/shop.i3d (544.64 ms)
+2022-04-17 14:51 dataS/menu/licensePlate/creationBox.i3d (0.21 ms)
+2022-04-17 14:51   Warning (C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/placeables/sellingStation/sellingStationGeneric.xml): Missing ai update areas
+2022-04-17 14:51   Error: Index not found: unloadMarker
+2022-04-17 14:51   Error: Index not found: teleportNode
+2022-04-17 14:51 data/store/ui/wardrobe.i3d (534.36 ms)
+2022-04-17 14:51 C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/placeables/sellingStationCeravis/sellingStationGeneric.i3d (3.12 ms)
+2022-04-17 14:51   Warning (C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/placeables/sellingStationCeravis/sellingStationGeneric.xml): Missing ai update areas
+2022-04-17 14:51   Error: Index not found: unloadMarker
+2022-04-17 14:51   Error: Index not found: teleportNode
+2022-04-17 14:51 C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/placeables/sellingStationBales/sellingStationBales.i3d (0.36 ms)
+2022-04-17 14:51 data/shared/assets/marker/markerIcons.i3d (15.55 ms)
+2022-04-17 14:51 data/placeables/mapUS/sellingStationBowlingCenter/sellingStationBowlingCenter.i3d (9.38 ms)
+2022-04-17 14:51   Error: Index not found: aiNodeLeft
+2022-04-17 14:51 C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/placeables/Bunkersilo/bgaBunkerSilo.i3d (0.25 ms)
+2022-04-17 14:51 C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/placeables/Durchfahrsilo/durchfahrsilo.i3d (0.29 ms)
+2022-04-17 14:51 data/placeables/mapUS/gasStation/gasStation.i3d (18.84 ms)
+2022-04-17 14:51 data/placeables/mapUS/sellingStationVehicles/sellingStationVehicles.i3d (20.89 ms)
+2022-04-17 14:51 data/placeables/lizard/dieselTanks/level03/dieselTanksLevel03.i3d (77.63 ms)
+2022-04-17 14:51 C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/placeables/Milchverkauf/MilkSell.i3d (26.60 ms)
+2022-04-17 14:51 C:/Users/valen/OneDrive/Documents/My Games/FarmingSimulator2022/mods/FS22_BenzNWM/maps/placeables/windrad/WKA.i3d (20.06 ms)
+2022-04-17 14:51 Warning (script): 'setWorldRotation': Argument 2 has wrong type. Expected: Float. Actual: Nil 
+2022-04-17 14:51   D:\auto_builder\cache\svn\3e7613655f548b9eea177e6a8510a10e\src\base\scripting\lua\LuaScriptSystem.cpp (903): expectedType == Value::VoidType || expectedType == Value::ClassType
+2022-04-17 14:51 LUA call stack:
+  dataS/scripts/placeables/specializations/PlaceableWindTurbine.lua (173) : setWorldRotation
+  dataS/scripts/placeables/specializations/PlaceableWindTurbine.lua (155) : updateHeadRotation
+  dataS/scripts/placeables/Placeable.lua (383) : loadFromXMLFile
+  dataS/scripts/placeables/Placeable.lua (363) : onFinishedLoading
+  dataS/scripts/i3d/I3DManager.lua (134) : asyncCallbackFunction
+2022-04-17 14:51 Warning (script): 'setWorldRotation': Argument 2 has wrong type. Expected: Float. Actual: Nil 
+2022-04-17 14:51   D:\auto_builder\cache\svn\3e7613655f548b9eea177e6a8510a10e\src\base\scripting\lua\LuaScriptSystem.cpp (903): expectedType == Value::VoidType || expectedType == Value::ClassType
+2022-04-17 14:51 LUA call stack:
+  dataS/scripts/placeables/specializations/PlaceableWindTurbine.lua (173) : setWorldRotation
+  dataS/scripts/placeables/specializations/PlaceableWindTurbine.lua (155) : updateHeadRotation
+  dataS/scripts/placeables/Placeable.lua (383) : loadFromXMLFile
+  dataS/scripts/placeables/Placeable.lua (363) : onFinishedLoading
+  dataS/scripts/i3d/I3DManager.lua (134) : asyncCallbackFunction
+2022-04-17 14:51 Warning (script): 'setWorldRotation': Argument 2 has wrong type. Expected: Float. Actual: Nil 
+2022-04-17 14:51   D:\auto_builder\cache\svn\3e7613655f548b9eea177e6a8510a10e\src\base\scripting\lua\LuaScriptSystem.cpp (903): expectedType == Value::VoidType || expectedType == Value::ClassType
+2022-04-17 14:51 LUA call stack:
+  dataS/scripts/placeables/specializations/PlaceableWindTurbine.lua (173) : setWorldRotation
+  dataS/scripts/placeables/specializations/PlaceableWindTurbine.lua (155) : updateHeadRotation
+  dataS/scripts/placeables/Placeable.lua (383) : loadFromXMLFile
+  dataS/scripts/placeables/Placeable.lua (363) : onFinishedLoading
+  dataS/scripts/i3d/I3DManager.lua (134) : asyncCallbackFunction
+2022-04-17 14:51 data/vehicles/johnDeere/series4755/series4755.i3d (604.88 ms)
+2022-04-17 14:51 data/vehicles/johnDeere/series4755/sounds/series4755_loop.gls version 14 (0.25 ms)
+2022-04-17 14:51 data/shared/wheels/hubs/hubs.i3d (815.36 ms)
+2022-04-17 14:51 data/effects/wheel/wheelEmitterShape.i3d (0.57 ms)
+2022-04-17 14:51 data/shared/wheels/tires/michelin/multibib/R30_multibib.i3d (35.83 ms)
+2022-04-17 14:51 data/shared/wheels/rims/rim001.i3d (18.97 ms)
+2022-04-17 14:51 data/shared/wheels/rims/rim003.i3d (92.22 ms)
+2022-04-17 14:51 data/shared/wheels/tires/michelin/machXbib/R38_machXbib.i3d (68.36 ms)
+2022-04-17 14:51 data/shared/wheels/rims/rim008.i3d (4.44 ms)
+2022-04-17 14:51 data/effects/exhaust/exhaust.i3d (15.07 ms)
+2022-04-17 14:51 data/shared/assets/lights/lizard/workingLight22.i3d (75.60 ms)
+2022-04-17 14:51 data/shared/assets/upperLinks/walterscheid02.i3d (62.38 ms)
+2022-04-17 14:51 data/shared/assets/toolbar.i3d (39.30 ms)
+2022-04-17 14:51 data/shared/assets/upperLinks/walterscheid01.i3d (0.79 ms)
+2022-04-17 14:51 data/vehicles/johnDeere/series7810/series7810.i3d (112.89 ms)
+2022-04-17 14:51 data/vehicles/johnDeere/series7810/sounds/series7810_loop.gls version 14 (0.20 ms)
+2022-04-17 14:51 data/shared/wheels/tires/michelin/axioBib2/R30_axioBib2.i3d (110.86 ms)
+2022-04-17 14:51 data/shared/wheels/rims/rim006.i3d (4.16 ms)
+2022-04-17 14:51 data/shared/wheels/tires/michelin/machXbib/R42_machXbib.i3d (44.74 ms)
+2022-04-17 14:51 data/shared/assets/lights/lizard/plateNumberLight01.i3d (9.44 ms)
+2022-04-17 14:51 data/shared/assets/reflectors/lizard/redRound_01.i3d (0.48 ms)
+2022-04-17 14:51 data/shared/assets/beaconLights/lizard/beaconLight02.i3d (9.15 ms)
+2022-04-17 14:51 data/shared/assets/upperLinks/walterscheid04.i3d (11.36 ms)
+2022-04-17 14:51 data/vehicles/claas/axion900/axion900.i3d (77.53 ms)
+2022-04-17 14:51 data/shared/wheels/hubs/claas_n12x02.i3d (21.86 ms)
+2022-04-17 14:51 data/shared/wheels/tires/michelin/axioBib/R34_axioBib.i3d (47.75 ms)
+2022-04-17 14:51 data/vehicles/claas/axion900/sounds/axion900_loop.gls version 14 (0.30 ms)
+2022-04-17 14:51 data/shared/wheels/tires/michelin/axioBib/R46_axioBib.i3d (47.86 ms)
+2022-04-17 14:51 data/shared/assets/beaconLights/lizard/beaconLight07.i3d (43.54 ms)
+2022-04-17 14:51 data/shared/assets/upperLinks/walterscheid03.i3d (15.55 ms)
+2022-04-17 14:51 data/vehicles/rudolphSohn/dk280RL/dk280RL.i3d (167.47 ms)
+2022-04-17 14:51 data/shared/assets/wheelChocks/wheelChockSupport01.i3d (62.07 ms)
+2022-04-17 14:51 data/shared/wheels/tires/vredestein/flotationPro/R22_5_flotationPro.i3d (37.91 ms)
+2022-04-17 14:51 data/shared/assets/wheelChocks/wheelChock01.i3d (39.27 ms)
+2022-04-17 14:51 data/shared/assets/reflectors/lizard/yellowRound_02.i3d (13.09 ms)
+2022-04-17 14:51 data/shared/assets/lights/lizard/rearLight29.i3d (40.57 ms)
+2022-04-17 14:51 data/shared/assets/lights/lizard/sideMarker03.i3d (42.43 ms)
+2022-04-17 14:51 data/shared/assets/lights/lizard/plateNumberLight02.i3d (28.40 ms)
+2022-04-17 14:51 data/shared/wheels/tires/bkt/ridemaxFL693M/R22_5_ridemaxFL693M.i3d (43.64 ms)
+2022-04-17 14:51 data/vehicles/brantner/z18051/z18051.i3d (130.21 ms)
+2022-04-17 14:51 data/shared/wheels/tires/continental/contiCrossTracHS3/R22_5_contiCrossTracHS3.i3d (47.50 ms)
+2022-04-17 14:51 data/shared/assets/reflectors/lizard/whiteRound_03.i3d (17.60 ms)
+2022-04-17 14:51 data/shared/assets/lights/lizard/rearLight31.i3d (43.44 ms)
+2022-04-17 14:51 data/shared/assets/lights/lizard/sideMarker06Orange.i3d (38.54 ms)
+2022-04-17 14:51 data/vehicles/lemken/karat12/karat12.i3d (39.03 ms)
+2022-04-17 14:51 data/shared/assets/wheelChocks/wheelChock02.i3d (2.17 ms)
+2022-04-17 14:51 data/shared/wheels/tires/trelleborg/T404/R22_5_T404.i3d (6.12 ms)
+2022-04-17 14:51 data/shared/wheels/tires/trelleborg/AW305/R16_AW305.i3d (3.25 ms)
+2022-04-17 14:51 data/shared/assets/reflectors/lizard/redTriangle_02.i3d (0.39 ms)
+2022-04-17 14:51 data/shared/assets/reflectors/lizard/yellowRound_03.i3d (0.36 ms)
+2022-04-17 14:51 data/shared/assets/lights/lizard/frontLight02.i3d (2.50 ms)
+2022-04-17 14:51 data/vehicles/lemken/karat12/lemkenLight01.i3d (1.47 ms)
+2022-04-17 14:51 data/vehicles/claas/w1800/w1800.i3d (130.30 ms)
+2022-04-17 14:51 data/vehicles/bredal/k105/k105.i3d (406.91 ms)
+2022-04-17 14:51 data/shared/wheels/tires/vredestein/flotationTrac/R30_5_flotationTrac.i3d (214.64 ms)
+2022-04-17 14:51 data/shared/assets/lights/lizard/rearLight10.i3d (56.33 ms)
+2022-04-17 14:51 data/shared/assets/reflectors/lizard/yellowRectangle_01.i3d (44.08 ms)
+2022-04-17 14:51 data/shared/assets/reflectors/lizard/bigTriangle.i3d (49.46 ms)
+2022-04-17 14:51 data/shared/assets/reflectors/lizard/redTriangle_01.i3d (12.83 ms)
+2022-04-17 14:51 data/shared/assets/lights/lizard/rearLight26Orange.i3d (37.18 ms)
+2022-04-17 14:51 data/shared/assets/lights/lizard/rearLight26White.i3d (0.71 ms)
+2022-04-17 14:51 data/shared/assets/powerTakeOffs/walterscheidW.i3d (57.29 ms)
+2022-04-17 14:51 data/vehicles/hardi/aeon5200/aeon5200.i3d (544.78 ms)
+2022-04-17 14:51 data/shared/wheels/tires/vredestein/traxion85/R42_traxion85.i3d (140.78 ms)
+2022-04-17 14:51 data/shared/assets/lights/lizard/sideMarker16Orange.i3d (2.08 ms)
+2022-04-17 14:51 data/shared/assets/lights/lizard/workingLight02.i3d (2.55 ms)
+2022-04-17 14:51 data/vehicles/dalbo/powerRoll1230/powerRoll1230.i3d (119.44 ms)
+2022-04-17 14:51 data/shared/wheels/tires/trelleborg/AW309/R17_AW309.i3d (96.35 ms)
+2022-04-17 14:51 data/shared/assets/lights/lizard/rearLight05.i3d (38.85 ms)
+2022-04-17 14:51 data/shared/assets/lights/lizard/sideMarker04.i3d (40.79 ms)
+2022-04-17 14:51 data/vehicles/newHolland/chSeries/chSeries.i3d (818.70 ms)
+2022-04-17 14:51 data/shared/assets/extinguisher.i3d (2.46 ms)
+2022-04-17 14:51 data/shared/wheels/tires/vredestein/traxionHarvest/R32_traxionHarvest.i3d (166.26 ms)
+2022-04-17 14:51 data/vehicles/newHolland/chSeries/sounds/chSeries_loop.gls version 14 (0.20 ms)
+2022-04-17 14:51 data/shared/wheels/tires/vredestein/traxion65/R28_traxion65.i3d (136.81 ms)
+2022-04-17 14:51 data/shared/assets/reflectors/lizard/redRound_03.i3d (0.49 ms)
+2022-04-17 14:51 data/shared/assets/beaconLights/lizard/beaconLight03.i3d (0.48 ms)
+2022-04-17 14:51 data/vehicles/caseIH/terraFlex3050_28/terraFlex3050_28.i3d (558.08 ms)
+2022-04-17 14:51 data/vehicles/nardi/n70_30/n70_30.i3d (151.17 ms)
+2022-04-17 14:51 data/shared/wheels/tires/trelleborg/AW305/R15_3_AW305.i3d (0.87 ms)
+2022-04-17 14:51 data/vehicles/bergmann/gtw330/gtw330.i3d (208.38 ms)
+2022-04-17 14:51 data/shared/assets/lights/lizard/workingLight01.i3d (38.21 ms)
+2022-04-17 14:51 data/shared/assets/lights/lizard/rearLight13.i3d (38.03 ms)
+2022-04-17 14:51 data/shared/assets/lights/lizard/sideMarker05Orange.i3d (38.14 ms)
+2022-04-17 14:51 data/vehicles/johnDeere/series6R/series6R.i3d (439.39 ms)
+2022-04-17 14:51 data/vehicles/johnDeere/series6R/sounds/series6R_loop.gls version 14 (0.25 ms)
+2022-04-17 14:51 data/shared/assets/starfire.i3d (82.40 ms)
+2022-04-17 14:51 data/shared/wheels/tires/vredestein/traxionXXL/R30_traxionXXL.i3d (48.86 ms)
+2022-04-17 14:51 data/shared/wheels/tires/vredestein/traxionXXL/R38_traxionXXL.i3d (27.39 ms)
+2022-04-17 14:51 data/shared/wheels/weights/weight003.i3d (48.87 ms)
+2022-04-17 14:51 data/shared/assets/upperLinks/johnDeereUpperlink.i3d (38.77 ms)
+2022-04-17 14:51 data/vehicles/kuhn/espro6000RC/espro6000RC.i3d (510.57 ms)
+2022-04-17 14:51 data/shared/wheels/tires/trelleborg/TM600/R18_TM600.i3d (169.06 ms)
+2022-04-17 14:51 data/shared/wheels/rims/kuhn/rim001.i3d (269.89 ms)
+2022-04-17 14:51 data/shared/wheels/tires/trelleborg/IM110/R12_IM110.i3d (121.61 ms)
+2022-04-17 14:51 data/shared/assets/lights/lizard/rearLight40.i3d (14.59 ms)
+2022-04-17 14:51 data/shared/assets/reflectors/lizard/redRectangle_01.i3d (10.86 ms)
+2022-04-17 14:51 data/vehicles/claas/axion960TT/axion960TT.i3d (230.23 ms)
+2022-04-17 14:51 data/shared/crawlers/claas/axion960Crawler/axion960Crawler.i3d (10.75 ms)
+2022-04-17 14:51 data/vehicles/claas/jaguar960TT/jaguar960TT.i3d (60.10 ms)
+2022-04-17 14:51 data/shared/wheels/tires/michelin/machXbib/R28_machXbib.i3d (1.09 ms)
+2022-04-17 14:51 data/vehicles/claas/jaguar960TT/sounds/jaguar960TT_loop.gls version 14 (0.17 ms)
+2022-04-17 14:51 data/shared/crawlers/claas/terraTracJaguar/terraTracJaguar.i3d (12.22 ms)
+2022-04-17 14:51 data/shared/assets/lights/lizard/sideMarker11Red.i3d (2.39 ms)
+2022-04-17 14:51 data/shared/assets/lights/lizard/sideMarker11Orange.i3d (0.64 ms)
+2022-04-17 14:51 data/shared/assets/reflectors/lizard/yellowRound_01.i3d (0.36 ms)
+2022-04-17 14:51 data/vehicles/claas/orbis900/orbis900.i3d (22.89 ms)
+2022-04-17 14:51 data/shared/wheels/hubs/hubSmall01.i3d (1.50 ms)
+2022-04-17 14:51 data/shared/wheels/tires/trelleborg/T510/R08_T510.i3d (3.19 ms)
+2022-04-17 14:51 data/vehicles/claas/trion750/trion750.i3d (61.24 ms)
+2022-04-17 14:51 data/shared/wheels/tires/trelleborg/TM800/R28_TM800.i3d (3.77 ms)
+2022-04-17 14:51 data/vehicles/claas/lexion8000/sounds/lexion8000_loop.gls version 14 (0.15 ms)
+2022-04-17 14:51 data/shared/crawlers/claas/terraTracLexion/terraTracLexion.i3d (13.83 ms)
+2022-04-17 14:51 data/shared/assets/reflectors/lizard/redRound_02.i3d (0.65 ms)
+2022-04-17 14:51 data/shared/assets/lights/lizard/rearLight22Red.i3d (2.45 ms)
+2022-04-17 14:51 data/shared/assets/lights/lizard/rearLight54.i3d (2.09 ms)
+2022-04-17 14:51 data/vehicles/claas/convioFlex1080/convioFlex1080.i3d (41.84 ms)
+2022-04-17 14:51 data/shared/wheels/tires/trelleborg/T510/R15_T510.i3d (0.52 ms)
+2022-04-17 14:51 data/vehicles/claas/torion1914/torion1914.i3d (40.36 ms)
+2022-04-17 14:51 data/shared/wheels/hubs/zf_n16x01.i3d (2.81 ms)
+2022-04-17 14:51 data/shared/wheels/tires/trelleborg/TM1000/R34_TM1000.i3d (4.29 ms)
+2022-04-17 14:51 data/vehicles/claas/torion1914/sounds/torion1914_loop.gls version 14 (0.23 ms)
+2022-04-17 14:51 data/shared/assets/lights/hella/hellaWorkingLightSquare_02.i3d (2.16 ms)
+2022-04-17 14:51 data/shared/assets/lights/lizard/sideMarker05Red.i3d (0.55 ms)
+2022-04-17 14:51 data/vehicles/claas/arion600/arion600.i3d (54.97 ms)
+2022-04-17 14:51 data/shared/wheels/tires/nokian/groundKing/R30_groundKing.i3d (4.10 ms)
+2022-04-17 14:51 data/shared/wheels/tires/nokian/groundKing/R42_groundKing.i3d (3.00 ms)
+2022-04-17 14:51 data/vehicles/claas/arion600/sounds/arion600_loop.gls version 14 (0.28 ms)
+2022-04-17 14:51 data/vehicles/andersonGroup/proChop150/proChop150.i3d (14.07 ms)
+2022-04-17 14:51 data/shared/wheels/tires/continental/tractor85/R30_tractor85.i3d (3.45 ms)
+2022-04-17 14:51 data/shared/wheels/tires/continental/tractor85/R46_tractor85.i3d (1.14 ms)
+2022-04-17 14:51 data/vehicles/koeckerling/vector570/vector570.i3d (35.43 ms)
+2022-04-17 14:51 data/vehicles/lemken/koralin9840/koralin9840.i3d (51.08 ms)
+2022-04-17 14:51 data/shared/wheels/tires/trelleborg/TM1000/R46_TM1000.i3d (1.40 ms)
+2022-04-17 14:51 data/vehicles/kuhn/spwIntense/spwIntense.i3d (52.43 ms)
+2022-04-17 14:51 data/shared/wheels/tires/vredestein/flotationTrac/R22_5_flotationTrac.i3d (3.90 ms)
+2022-04-17 14:51 data/vehicles/claas/scorpion1033/sounds/scorpion1033_loop.gls version 14 (0.15 ms)
+2022-04-17 14:51 data/shared/assets/lights/lizard/frontLight08.i3d (2.58 ms)
+2022-04-17 14:51 data/shared/assets/lights/lizard/rearLight37.i3d (1.90 ms)
+2022-04-17 14:51 data/shared/assets/lights/lizard/sideMarker05.i3d (1.66 ms)
+2022-04-17 14:51 data/shared/assets/beaconLights/lizard/beaconLight06.i3d (3.42 ms)
+2022-04-17 14:51 data/vehicles/schaeffer/loader2630/loader2630.i3d (17.48 ms)
+2022-04-17 14:51 data/shared/wheels/tires/trelleborg/T421/R15_T421.i3d (2.82 ms)
+2022-04-17 14:51 data/vehicles/landini/seriesREX4/sounds/seriesREX4_loop.gls version 14 (0.18 ms)
+2022-04-17 14:51 data/vehicles/claas/torion639/torion639.i3d (30.32 ms)
+2022-04-17 14:51 data/shared/wheels/tires/trelleborg/TH400/R20_TH400.i3d (2.56 ms)
+2022-04-17 14:51 data/vehicles/claas/torion639/sounds/torion639_loop.gls version 14 (0.15 ms)
+2022-04-17 14:51 data/vehicles/hawe/ulw4000/ulw4000.i3d (30.18 ms)
+2022-04-17 14:51 data/shared/wheels/tires/trelleborg/T404/R30_5_T404.i3d (2.68 ms)
+2022-04-17 14:51 data/shared/assets/lights/lizard/sideMarker18.i3d (2.81 ms)
+2022-04-17 14:51 data/shared/assets/lights/lizard/rearLight44.i3d (2.28 ms)
+2022-04-17 14:51 data/shared/assets/lights/lizard/workingLight14.i3d (1.63 ms)
+2022-04-17 14:51 data/vehicles/vaderstad/tempoL16/tempoL16.i3d (73.37 ms)
+2022-04-17 14:51 data/shared/wheels/tires/trelleborg/TM800/R34_TM800.i3d (2.17 ms)
+2022-04-17 14:51 data/shared/wheels/tires/trelleborg/T421/R12_T421.i3d (0.69 ms)
+2022-04-17 14:51 data/shared/assets/lights/lizard/frontLight06White.i3d (2.18 ms)
+2022-04-17 14:51 data/shared/assets/lights/lizard/rearLight03.i3d (2.46 ms)
+2022-04-17 14:51 data/shared/assets/lights/lizard/rearLight23Orange.i3d (2.25 ms)
+2022-04-17 14:51 data/vehicles/claas/cargos9500/cargos9500.i3d (36.95 ms)
+2022-04-17 14:51 data/shared/wheels/tires/trelleborg/TwinRadial/R26_5_TwinRadial.i3d (3.94 ms)
+2022-04-17 14:51 data/shared/assets/lights/lizard/rearLight42.i3d (2.53 ms)
+2022-04-17 14:51 data/shared/assets/powerTakeOffs/walterscheidWWZ.i3d (2.17 ms)
+2022-04-17 14:51   Setting 'Radio Volume': 0.500
+2022-04-17 14:51   Setting 'Vehicle Volume': 1.000
+2022-04-17 14:51   Setting 'Environment Volume': 1.000
+2022-04-17 14:51   Setting 'GUI Volume': 0.400
+2022-04-17 14:51   Info: Savegame Setting 'dirtInterval': 3
+2022-04-17 14:51   Info: Savegame Setting 'snowEnabled': true
+2022-04-17 14:51   Info: Savegame Setting 'growthMode': 1
+2022-04-17 14:51   Info: Savegame Setting 'fuelUsage': 2
+2022-04-17 14:51   Info: Savegame Setting 'plowingRequiredEnabled': true
+2022-04-17 14:51   Info: Savegame Setting 'weedsEnabled': true
+2022-04-17 14:51   Info: Savegame Setting 'limeRequired': true
+2022-04-17 14:51   Info: Savegame Setting 'stonesEnabled': true
+2022-04-17 14:51   Info: Savegame Setting 'economicDifficulty': 2
+2022-04-17 14:51   Info: Savegame Setting 'fixedSeasonalVisuals': nil
+2022-04-17 14:51   Info: Savegame Setting 'plannedDaysPerPeriod': 1
+2022-04-17 14:51 dataS/character/humans/player/player01.i3d (59.76 ms)
+2022-04-17 14:51   Info: No vehicle navigation cost map found. Start scanning map...
+2022-04-17 14:51 dataS/character/player01/clothes/bottoms/botJeans.i3d (193.98 ms)
+2022-04-17 14:51 dataS/character/player01/heads/maleHead01.i3d (129.11 ms)
+2022-04-17 14:51 dataS/character/player01/clothes/footwear/footwearWorkboot02.i3d (100.15 ms)
+2022-04-17 14:51 dataS/character/player01/hairStyles/hairStyle3070.i3d (174.83 ms)
+2022-04-17 14:51 dataS/character/player01/clothes/tops/topDenimJacket.i3d (108.61 ms)
+2022-04-17 14:51 dataS/character/player01/clothes/bottoms/botCargo.i3d (27.51 ms)
+2022-04-17 14:51 dataS/character/player01/clothes/footwear/footwearWorkboot01.i3d (5.42 ms)
+2022-04-17 14:51 dataS/character/player01/attachments/glassesSports02.i3d (10.88 ms)
+2022-04-17 14:51 dataS/character/player01/hairStyles/hairStyleFringe.i3d (38.44 ms)
+2022-04-17 14:51 dataS/character/player01/brands/brand10/johnDeereHatBlack.i3d (38.95 ms)
+2022-04-17 14:51 dataS/character/player01/brands/brand16/kroneShirt.i3d (37.95 ms)
+2022-04-17 14:51 dataS/character/player01/hairStyles/hairStyleBuzzCut01.i3d (1.75 ms)

@@ -6,21 +6,22 @@
       /    /         \     / |/  |  /   ) /   /   /   /   /   /   ) /   )
 _(___/____/______(____/___/__/___|_(___/_(___/___(___/___/___/___/_(___/_
                                                                       /
-    xmlChecker.py - v1.0.0                                        (_ /
+    xmlChecker.py - v1.0.1                                        (_ /
 
 Version History:
  v1.0.0 - Initial Release
+ v1.0.1 - Check local files, and path case.
 """
 
 import argparse
 import os
 import sys
 import urllib.request
-import posixpath
 import json
 import re
 import glob
 import xml.etree.ElementTree as ET
+from pathlib import Path
 
 hasLXML = True
 
@@ -30,12 +31,6 @@ except ImportError:
     hasLXML = False
 
 giantsWebsite = "https://validation.gdn.giants-software.com/xml/fs22/"
-
-installLocations = [
-    "C:\Program Files (x86)\Farming Simulator 2022\data",
-    "C:\Program Files (x86)\Steam\steamapps\common\Farming Simulator 22\data",
-    "C:\Program Files\Epic Games\FarmingSimulator22\data",
-]
 
 xsdMap = {
     "bale": "bale.xsd",
@@ -161,7 +156,40 @@ lightMap = {
 }
 
 
+def getDataFilesPath(override):
+    """ Try and find the data files """
+    installLocations = [
+        "C:\Program Files (x86)\Farming Simulator 2022\data",
+        "C:\Program Files (x86)\Steam\steamapps\common\Farming Simulator 22\data",
+        "C:\Program Files\Epic Games\FarmingSimulator22\data",
+    ]
+
+    if override is not False:
+        if (
+            not override.endswith("data/")
+            and not override.endswith("data")
+            and not override.endswith("data/")
+        ):
+            print("WARNING: DATA FILES NOT FOUND: supplied path should end with \"data\\\"")
+        elif not os.path.isdir(override):
+            print("WARNING: DATA FILES NOT FOUND: Invalid Path Supplied")
+        else:
+            return override
+    else:
+        editPath = findInstalledEditor()
+        if editPath:
+            return editPath
+        else:
+            for testPath in installLocations:
+                if os.path.isdir(testPath):
+                    return testPath
+
+    print("WARNING: DATA FILES NOT FOUND: checking linked $data entries disabled.")
+    return ""
+
+
 def findInstalledEditor():
+    """ Find a locally installed Giants Editor"""
     localAppData  = os.getenv('localappdata')
     editorFolders = glob.glob(localAppData + "/GIANTS Editor*")
     editorVersion = 0
@@ -197,20 +225,65 @@ def check_new_light(filename):
         return False
 
 
-def check_file_cache(filename):
+def check_local_file_cache(filename, baseFolder):
+    """ check if a local file exists, cache results to lessen IO """
+    global dataFilesPath, cachedLocalFiles
+
+    if filename in cachedLocalFiles:
+        return True
+
+    if os.path.isabs(filename):
+        print(
+            "    FILE ERROR: " + filename +
+            " appears to be an absolute path.  This is probably wrong."
+        )
+        return False
+
+    baseDrive = os.path.splitdrive(baseFolder)
+    absFile   = os.path.normpath(os.path.join(baseDrive[0], baseDrive[1], filename))
+    absFolder = os.path.normpath(baseFolder)
+
+    if not os.path.exists(absFile):
+        print("    FILE NOT FOUND: " + filename)
+        return False
+
+    casedFile = str(Path(absFile).resolve())
+
+    if casedFile != absFile:
+        print(
+            "    FILE CASE MISMATCH: " + absFile.replace(absFolder, '') +
+            " vs detected:" + casedFile.replace(absFolder, '')
+        )
+        return False
+
+    return True
+
+
+def check_data_file_cache(filename):
     """ check if a data file exists, cache results to lessen IO """
-    global dataFilesPath, cachedFiles
+    global dataFilesPath, cachedDataFiles
 
-    filename = filename[5:]
+    filename = filename[6:]
 
-    if filename in cachedFiles:
+    if filename in cachedDataFiles:
         return True
 
-    fullpath = dataFilesPath.replace(os.sep, posixpath.sep) + filename
-
-    if os.path.isfile(fullpath):
-        cachedFiles.append(filename)
+    if dataFilesPath == "":
+        """ Data files not found, don't do this."""
+        cachedDataFiles.append(filename)
         return True
+
+    baseDrive = os.path.splitdrive(dataFilesPath)
+    absFile   = os.path.normpath(os.path.join(baseDrive[0], baseDrive[1], filename))
+
+    if not os.path.isfile(absFile):
+        return False
+    else:
+        casedFile = str(Path(absFile).resolve())
+
+        if casedFile == absFile:
+            cachedDataFiles.append(filename)
+            return True
 
     return False
 
@@ -253,7 +326,10 @@ def giants_to_xpath(type, path):
 def enter_key_exit():
     """ Exit when enter key pressed """
     print("Press ENTER to close terminal.")
-    input()
+    try:
+        input()
+    except BaseException:
+        pass
     exit()
 
 
@@ -277,6 +353,7 @@ parser.add_argument(
     '--no-schema',
     help="Disable checking schema",
     dest="noSchema",
+    default=True,
     action='store_true'
 )
 parser.add_argument(
@@ -298,31 +375,9 @@ except BaseException:
     print("Failed to load data file - make sure you have the json file too!")
     enter_key_exit()
 
-dataFilesPath = ""
-cachedFiles   = []
-
-if args.installPath is not False:
-    if (
-        not args.installPath.endswith("data/")
-        and not args.installPath.endswith("data")
-        and not args.installPath.endswith("data/")
-    ):
-        print("WARNING: DATA FILES NOT FOUND: supplied path should end with \"data\\\"")
-    elif not os.path.isdir(args.installPath):
-        print("WARNING: DATA FILES NOT FOUND: Invalid Path Supplied")
-    else:
-        dataFilesPath = args.installPath
-else:
-    editPath = findInstalledEditor()
-    if editPath:
-        dataFilesPath = editPath
-    else:
-        for testPath in installLocations:
-            if os.path.isdir(testPath) and dataFilesPath == "":
-                dataFilesPath = testPath
-
-if dataFilesPath == "":
-    print("WARNING: DATA FILES NOT FOUND: checking linked $data entries disabled.")
+cachedDataFiles  = []
+cachedLocalFiles = []
+dataFilesPath    = getDataFilesPath(args.installPath)
 
 if not hasLXML:
     print("WARNING: lxml Module not available, schema checking is disabled.")
@@ -333,12 +388,14 @@ print("\nFiles Found: " + str(len(file_list)))
 
 for file in file_list:
     thisName   = os.path.basename(file.name)
+    thisFolder = os.path.dirname(os.path.abspath(file.name))
     depreInfo  = ["\nUnknown, uncommon, or depreciated collisionMasks:"]
     linkLight  = ["\nLinks to old lights in i3d:"]
     schema     = ["\nhasShadowMap | castsShadowMap on renderable shapes:"]
     goodFile   = False
 
     print("\nTesting: " + thisName)
+    print("     in: " + thisFolder)
 
     try:
         thisFileC  = file.read().encode()
@@ -379,7 +436,7 @@ for file in file_list:
                     thisKeyValue = thisTag.attrib[file_key]
                     if thisKeyValue.startswith("$data/"):
                         if thisKeyValue not in badCache:
-                            if not check_file_cache(thisKeyValue):
+                            if not check_data_file_cache(thisKeyValue):
                                 badCache.append(thisKeyValue)
                                 keepGoing = False
                                 if check_new_light(thisKeyValue):
@@ -389,6 +446,12 @@ for file in file_list:
                                     )
                                 else:
                                     print("    FILE NOT FOUND: " + thisKeyValue)
+                    else:
+                        if thisKeyValue not in badCache:
+                            if not check_local_file_cache(thisKeyValue, thisFolder):
+                                badCache.append(thisKeyValue)
+                                keepGoing = False
+
             if keepGoing:
                 print("    NOTICE: no missing linked file detected.")
 

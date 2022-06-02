@@ -22,7 +22,10 @@ import xml.etree.ElementTree as ET
 def enter_key_exit():
     """ Exit when enter key pressed """
     print("Press ENTER to close terminal.")
-    input()
+    try:
+        input()
+    except BaseException:
+        pass
     exit()
 
 
