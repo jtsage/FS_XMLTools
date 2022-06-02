@@ -6,7 +6,7 @@
       /    /         \     / |/  |  /   ) /   /   /   /   /   /   ) /   )
 _(___/____/______(____/___/__/___|_(___/_(___/___(___/___/___/___/_(___/_
                                                                       /
-    comparei3dMappings.py - v1.0.0                                (_ /
+    comparei3dMappings.py - v1.0.2                                (_ /
 
 Version History:
  v0.0.9 - Initial Release
@@ -28,6 +28,11 @@ def enter_key_exit():
         pass
     exit()
 
+
+print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
+print("  comparei3dMappings v1.0.2")
+print("    by JTSModding")
+print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n")
 
 parser = argparse.ArgumentParser(
     description='Compare i3d Mapping in xml files.',

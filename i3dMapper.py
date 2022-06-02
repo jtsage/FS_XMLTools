@@ -6,7 +6,7 @@
       /    /         \     / |/  |  /   ) /   /   /   /   /   /   ) /   )
 _(___/____/______(____/___/__/___|_(___/_(___/___(___/___/___/___/_(___/_
                                                                       /
-    i3dMApper.py - v1.0.1                                         (_ /
+    i3dMapper.py - v1.0.2                                         (_ /
 
 Version History:
  v0.0.9 - Initial Release
@@ -152,10 +152,13 @@ for thisMap in printNames:
     outputQueue.append(print_tag(thisMap))
 outputQueue.append("</i3dMappings>")
 
-
-print("\n".join(outputQueue))
-
-
 if sys.stdout.isatty():
+    print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
+    print("  i3dMapper v1.0.2")
+    print("    by JTSModding")
+    print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n")
+    print("\n".join(outputQueue))
     # Don't pause on finish if we re-directed to a file.
     enter_key_exit()
+else:
+    print("\n".join(outputQueue))

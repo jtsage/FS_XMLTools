@@ -6,7 +6,7 @@
       /    /         \     / |/  |  /   ) /   /   /   /   /   /   ) /   )
 _(___/____/______(____/___/__/___|_(___/_(___/___(___/___/___/___/_(___/_
                                                                       /
-    i3dChecker.py - v1.0.0                                        (_ /
+    i3dChecker.py - v1.0.2                                        (_ /
 
 Version History:
  v1.0.0 - Initial Release
@@ -273,6 +273,7 @@ def check_data_file_cache(filename):
                 "    FILE CASE MISMATCH: " + absFile.replace(absFolder, '') +
                 " vs detected:" + casedFile.replace(absFolder, '')
             )
+    return False
 
 
 def none_attrib(element, key):
@@ -335,6 +336,11 @@ def sRGB_string_to_hex(color):
         return "#FFFFFF"
     return "#" + "".join(['%02X' % int(math.floor(float(part) * 255)) for part in color.split()])
 
+
+print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
+print("  i3Checker v1.0.2")
+print("    by JTSModding")
+print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n")
 
 parser = argparse.ArgumentParser(description='Sanity check an i3d file.')
 parser.add_argument(

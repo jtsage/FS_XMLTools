@@ -235,7 +235,12 @@ __Options:__
 * __--no-depre-check__      Disable checking depreciated xml tags and attributes
 * __--no-file-check__       Disable checking linked files
 * __--no-schema__           Disable checking schema
+* __--no-l10n-schema__      Disable checking l10n schema entries
 * __--install-path__ _INSTALLPATH_ Installation path to FS data files (.../data/)
+
+__l10n Schema Note:__
+
+You may find false-positives in this output.  It is an expected limitation of any automatic system.  Be sure to review the output, and ignore anything that does not apply to your situation.
 
 ### Sample Output - Depreciations
 

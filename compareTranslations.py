@@ -6,7 +6,7 @@
       /    /         \     / |/  |  /   ) /   /   /   /   /   /   ) /   )
 _(___/____/______(____/___/__/___|_(___/_(___/___(___/___/___/___/_(___/_
                                                                       /
-    compareTranslations.py - v1.0.0                               (_ /
+    compareTranslations.py - v1.0.2                               (_ /
 
 Version History:
  v0.0.9 - Initial Release
@@ -33,6 +33,11 @@ def print_dupe(file, key):
     """ Duplicate found"""
     print("WARNING: '" + file + "' contains a duplicate entry for '" + key + "'")
 
+
+print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
+print("  compareTranslations v1.0.2")
+print("    by JTSModding")
+print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n")
 
 parser = argparse.ArgumentParser(description='Compare translation files.')
 parser.add_argument(

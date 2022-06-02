@@ -6,7 +6,7 @@
       /    /         \     / |/  |  /   ) /   /   /   /   /   /   ) /   )
 _(___/____/______(____/___/__/___|_(___/_(___/___(___/___/___/___/_(___/_
                                                                       /
-    checkLiterals.py - v1.0.0                                     (_ /
+    checkLiterals.py - v1.0.2                                     (_ /
 
 Version History:
  v0.0.9 - Initial Release
@@ -33,6 +33,11 @@ def print_bad(tag, value):
     """ Print tag and value to output device """
     print("  Possible missed translation in tag: " + tag + ", current value is: " + value)
 
+
+print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
+print("  checkLiterals v1.0.2")
+print("    by JTSModding")
+print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n")
 
 parser = argparse.ArgumentParser(
     description='Check vehicle/placable xml(s) for untranslated strings.'

@@ -6,11 +6,11 @@
       /    /         \     / |/  |  /   ) /   /   /   /   /   /   ) /   )
 _(___/____/______(____/___/__/___|_(___/_(___/___(___/___/___/___/_(___/_
                                                                       /
-    xmlChecker.py - v1.0.1                                        (_ /
+    xmlChecker.py - v1.0.2                                        (_ /
 
 Version History:
  v1.0.0 - Initial Release
- v1.0.1 - Check local files, and path case.
+ v1.0.1 - Check local files, and path case, and l10n entries.
 """
 
 import argparse
@@ -333,6 +333,11 @@ def enter_key_exit():
     exit()
 
 
+print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
+print("  xmlChecker v1.0.2")
+print("    by JTSModding")
+print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n")
+
 parser = argparse.ArgumentParser(description='Sanity check an xml shopItem file.')
 parser.add_argument(
     'files', metavar='files', nargs='+', type=argparse.FileType('r', encoding='utf-8')
@@ -353,7 +358,12 @@ parser.add_argument(
     '--no-schema',
     help="Disable checking schema",
     dest="noSchema",
-    default=True,
+    action='store_true'
+)
+parser.add_argument(
+    '--no-l10n-schema',
+    help="Disable checking l10n schema entries",
+    dest="noL10NSchema",
     action='store_true'
 )
 parser.add_argument(
@@ -467,14 +477,33 @@ for file in file_list:
 
             if keepGoing:
                 try:
+                    namespace     = ""
                     xmlschema_doc = etree.parse(data)
-                    xmlschema     = etree.XMLSchema(xmlschema_doc)
 
-                    lxml_doc = etree.fromstring(thisFileC)
+                    if not args.noL10NSchema:
+                        for thisTag in xmlschema_doc.iter('{*}schema'):
+                            namespace = thisTag.nsmap['xs']
+
+                        l10n_pattern = etree.Element("{" + namespace + "}pattern", value="$l10n_.+")
+
+                        for thisTag in xmlschema_doc.iter('{' + namespace + '}simpleType'):
+                            if thisTag.attrib["name"] == "g_l10n_string":
+                                for child in thisTag:
+                                    if child.tag == "{" + namespace + "}restriction":
+                                        child.append(l10n_pattern)
+
+                        for thisTag in xmlschema_doc.iter('{' + namespace + '}attribute'):
+                            if thisTag.attrib["type"] == "g_l10n_string":
+                                thisTag.attrib.pop("default", None)
+
+                    xmlschema     = etree.XMLSchema(xmlschema_doc)
+                    lxml_doc      = etree.fromstring(thisFileC)
                 except BaseException as ecc:
                     keepGoing = False
-                    print(ecc)
                     print("    WARNING: failed to parse XSD or XML")
+                    for error in ecc.error_log:
+                        print("    Line {}: {}".format(error.line, error.message))
+                    exit()
 
             if keepGoing:
                 try:
