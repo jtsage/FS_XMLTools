@@ -6,6 +6,10 @@ To install just download the python script you want (or all of them).  They have
 
 If for some reason drag-and-drop to the python script doesn't work, make sure you have python files set to open with the python interpreter, if that doesn't work, repair your installation / re-install
 
+__NOTE ABOUT PYTHON:__
+
+Your life will be much better, and the use of these is far easier if you __DO__ check the box to add python to your `$PATH` environmental variable when you are installing it.  If you did not do this, you can re-install python, or 'modify' your installation from Add/Remove programs.  Be warned, this is one of the times that an installer tells you to reboot that you actually have to do it.
+
 ---
 
 ## compareTranslations.py
@@ -21,6 +25,7 @@ $ python .\compareTranslations.py .\testFiles\translations\translation_en.xml .\
 ```
 
 ### Translation file format
+
 By default, compareTranslations.py expects a file of the format:
 
 ```xml
@@ -103,6 +108,10 @@ $ python .\i3dMapper.py .\testFiles\i3d\mrplow.i3d
 __Options:__
 
 * `--no_pretty_print` Do not line up the "node" entries on output.  Pretty print is on by default.
+
+### Batch File: i3dMapper_toClipboard.bat
+
+Dropping an i3d file on this batch file will generate the mappings and store them on your clipboard (windows only of course)
 
 ### Sample Output
 
@@ -203,3 +212,74 @@ Unknown, uncommon, or depreciated collisionMasks:
 Unknown, uncommon, or depreciated collisionMasks:
   collisionMask for 'torion1914_main_component1' (6303746)/(0x603002) uses depreciated bits and needs corrected
 ```
+
+
+## xmlChecker.py
+
+This script looks at your vehicle / placeable / etc xml file and tells you if it finds any problems with it.
+
+__Data File Note:__
+
+This is the only script that requires an extra file - make sure you grab the `xmlChecker_data.json` file and keep it in the same folder as the script.
+
+__Usage:__
+
+```shell
+$ python xmlChecker.py .\testFiles\i3dMap\mrplow_heavy_5.xml
+```
+
+__Options:__
+
+* __--no-depre-check__      Disable checking depreciated xml tags and attributes
+* __--no-file-check__       Disable checking linked files
+* __--no-schema__           Disable checking schema
+
+### Sample Output - Depreciations
+
+```text
+Files Found: 1
+
+Testing: polanin.xml
+  PROCESSING: xml file is of type 'vehicle'
+  PROCESSING: depreciated tags / attributes:
+    Depreciated usage found: 'areaMarkers#backIndex' is now 'areaMarkers#backNode'
+    Depreciated usage found: 'areaMarkers#leftIndex' is now 'areaMarkers#leftNode'
+    Depreciated usage found: 'areaMarkers#rightIndex' is now 'areaMarkers#rightNode'
+```
+
+### Sample Output - Missing Files
+
+```text
+Files Found: 1
+
+Testing: lizardAugerMaster.xml
+  PROCESSING: xml file is of type 'vehicle'
+  PROCESSING: checking file links
+    FILE NOT FOUND: $data/shared/wheels/michelin/cargoXBib/750_60R30_5.xml
+    FILE NOT FOUND: $data/shared/wheels/trelleborg/TwinRadial/750_60R30_5.xml
+    FILE NOT FOUND: $data/shared/wheels/trelleborg/TM600/420_85R34.xml
+```
+
+### Sample Output - XSD Schema Validation (lxml required, see below)
+
+```text
+Files Found: 1
+
+Testing: lizardAugerMaster.xml
+  PROCESSING: xml file is of type 'vehicle'
+  PROCESSING: Checking against XSD Schema
+    NOTICE: Validation failed:
+    Line 35: Element 'schemaOverlay': Character content is not allowed, because the content type is empty.
+    Line 35: Element 'schemaOverlay': Element content is not allowed, because the content type is empty.
+    Line 379: Element 'brakeForce': Character content is not allowed, because the content type is empty.
+```
+
+### LXML Requirement (schema only)
+
+Sadly, the native etree implementation in python cannot do schema validation, so you will need to install `lxml` - the simplest method of this is to open a `cmd` or `Windows Terminal` __with administrator privileges__ and run:
+
+```shell
+$ pip install lxml
+```
+
+Note from the initial warning above, python must be installed __with__ the option to add it to your `$PATH` enviromental variable.
