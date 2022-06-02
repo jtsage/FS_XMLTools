@@ -30,11 +30,11 @@ def enter_key_exit():
 
 
 print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
-print("  i3dMap_toXML v1.0.2")
+print("  i3dMapper_toXML v1.0.2")
 print("    by JTSModding")
 print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n")
 
-parser = argparse.ArgumentParser(description='Export i3d Mapping')
+parser = argparse.ArgumentParser(description='Export i3d Mapping direct to XML')
 parser.add_argument('file', metavar='file', nargs=1, type=argparse.FileType('r', encoding='utf-8'))
 
 try:
