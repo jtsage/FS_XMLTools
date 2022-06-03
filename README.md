@@ -86,6 +86,14 @@ This is a *very* simple log parser that tries to pull out the important bits for
 
 ---
 
+## modDescChecker.py
+
+This script checks for common problems in your modDesc.xml file.
+
+[modDescChecker documentation](READMEs/modDescChecker.md)
+
+---
+
 ## xmlChecker.py
 
 This script checks your storeItem xml for broken file links, and against the XSD schema.  It also forces the $l10n strings to validate against a modified pattern for those entries (a super powered version of checkLiterals.py)
