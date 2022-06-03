@@ -6,7 +6,7 @@
       /    /         \     / |/  |  /   ) /   /   /   /   /   /   ) /   )
 _(___/____/______(____/___/__/___|_(___/_(___/___(___/___/___/___/_(___/_
                                                                       /
-    i3dMapperReplacer.py - v1.0.2                                 (_ /
+    i3dMapper_replacer.py - v1.0.2                                 (_ /
 
 Version History:
  v1.0.2 - Initial Release
@@ -18,6 +18,10 @@ import os
 import subprocess
 import sys
 import re
+
+NODE_TYPES         = ["node", "repr", "startNode", "endNode", "linkNode", "jointNode"]
+XPATH_I3D_MAPPING  = ".//i3dMapping"
+XPATH_I3D_MAPPINGS = ".//i3dMappings"
 
 
 def is_numeric_node(value):
@@ -35,6 +39,15 @@ def enter_key_exit():
     exit()
 
 
+def xpath_attrib_find(attrib):
+    return ".//*[@" + attrib + "]"
+
+
+def clean_path(baseFolder, filename):
+    baseFolderTuple = os.path.splitdrive(baseFolder)
+    return os.path.normpath(os.path.join(baseFolderTuple[0], baseFolderTuple[1], filename))
+
+
 print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
 print("  i3dMapperReplacer v1.0.2")
 print("    by JTSModding")
@@ -43,7 +56,16 @@ print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n")
 parser = argparse.ArgumentParser(
     description='Change any index based mapping to named mapping in an XML'
 )
-parser.add_argument('file', metavar='file', nargs=1, type=argparse.FileType('r', encoding='utf-8'))
+parser.add_argument(
+    'file',
+    metavar='file.xml',
+    nargs=1,
+    type=argparse.FileType('r', encoding='utf-8')
+)
+
+if not os.path.isfile('i3dMapper.py'):
+    print("ERROR: i3dMapper.py is not in the script folder. Unable to continue")
+    enter_key_exit()
 
 try:
     args = parser.parse_args()
@@ -51,16 +73,17 @@ except BaseException:
     enter_key_exit()
 
 try:
+    if not args.file[0].name.endswith("xml"):
+        raise BaseException
     thisShopItemXML = ET.fromstring(args.file[0].read())
     args.file[0].close()
 except BaseException:
-    print("ERROR: Unable to read / parse file '" + os.path.basename(args.file[0].name) + "'")
+    print("ERROR: Unable to read / parse xml file '" + os.path.basename(args.file[0].name) + "'")
     enter_key_exit()
 
 thisShopItemFile   = os.path.basename(args.file[0].name)
 thisShopItemFolder = os.path.dirname(os.path.abspath(args.file[0].name))
-baseDrive          = os.path.splitdrive(thisShopItemFolder)
-thisShopItemAbs    = os.path.normpath(os.path.join(baseDrive[0], baseDrive[1], thisShopItemFile))
+thisShopItemAbs    = clean_path(thisShopItemFolder, thisShopItemFile)
 i3dFileAbs         = ""
 mapCache           = {}
 
@@ -69,7 +92,7 @@ try:
     for thisTag in thisShopItemXML.findall(".//base/filename"):
         if thisTag.text is None:
             raise Exception("NOT FOUND: i3d File Not Found in XML")
-        i3dFileAbs = os.path.normpath(os.path.join(baseDrive[0], baseDrive[1], thisTag.text))
+        i3dFileAbs = clean_path(thisShopItemFolder, thisTag.text)
 
     if not os.path.isfile(i3dFileAbs):
         raise Exception("NOT FOUND: i3d File Not Found")
@@ -83,11 +106,11 @@ try:
 
     i3dMapping = ET.fromstring(i3dMap.stdout)
 
-    for thisMap in i3dMapping.findall(".//i3dMapping"):
+    for thisMap in i3dMapping.findall(XPATH_I3D_MAPPING):
         mapCache[thisMap.attrib["node"]] = thisMap.attrib["id"]
 
-    for thisType in ["node", "repr", "startNode", "endNode", "linkNode", "jointNode"]:
-        for thisTag in thisShopItemXML.findall(".//*[@" + thisType + "]"):
+    for thisType in NODE_TYPES:
+        for thisTag in thisShopItemXML.findall(xpath_attrib_find(thisType)):
             if thisTag.tag != "i3dMapping":
                 myNode = thisTag.attrib[thisType]
                 if is_numeric_node(myNode):
@@ -96,17 +119,17 @@ try:
                     else:
                         print("WARNING: numeric node " + myNode + " does not exist in i3d file!")
 
-    thisShopItemI3D = thisShopItemXML.find(".//i3dMappings")
+    thisShopItemI3D = thisShopItemXML.find(XPATH_I3D_MAPPINGS)
 
     if thisShopItemI3D is not None:
-        print("FOUND: i3dMappings Section, re-writing")
+        print("NOTICE: Found i3dMappings Section, re-writing")
         for child in list(thisShopItemI3D):
             thisShopItemI3D.remove(child)
 
-        for thisMap in i3dMapping.findall(".//i3dMapping"):
+        for thisMap in i3dMapping.findall(XPATH_I3D_MAPPING):
             thisShopItemI3D.append(thisMap)
     else:
-        print("NOT FOUND: i3dMappings Section, creating one instead")
+        print("NOTICE: i3dMappings Section missing, creating one instead")
         thisShopItemXML.append(i3dMapping)
 
     ET.indent(thisShopItemXML, space='    ')
@@ -120,8 +143,9 @@ try:
 
     print("SUCCESS: re-wrote xml file!")
 
-except AssertionError as err:
+except BaseException as err:
     print("UNRECOVERABLE ERROR: " + str(err))
+    enter_key_exit()
 
 if sys.stdout.isatty():
     # Don't pause on finish if we re-directed to a file.

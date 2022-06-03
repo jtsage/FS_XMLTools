@@ -17,8 +17,6 @@ import argparse
 import os
 import sys
 import urllib.request
-import json
-import re
 import glob
 import xml.etree.ElementTree as ET
 from pathlib import Path
@@ -30,9 +28,15 @@ try:
 except ImportError:
     hasLXML = False
 
-giantsWebsite = "https://validation.gdn.giants-software.com/xml/fs22/"
+GIANTS_WEBSITE = "https://validation.gdn.giants-software.com/xml/fs22/"
 
-xsdMap = {
+FILE_ERRORS = {
+    "FILE_NOT_FOUND": "    FILE NOT FOUND: {0}",
+    "FILE_NOT_FOUND_NEW": "    FILE NOT FOUND: {0}  (new name: {1})",
+    "ABSOLUTE_PATH": "    PATH ERROR: {0} appears to be an absolute path, this is wrong",
+    "CASE_MISMATCH": "    FILE CASE MISMATCH: {0} vs detected {1}"
+}
+XSD_MAP = {
     "bale": "bale.xsd",
     "beaconLight": "beaconLight.xsd",
     "connectionHoses": "connectionHoses.xsd",
@@ -52,7 +56,7 @@ xsdMap = {
     "wheel": "wheel.xsd",
 }
 
-filename_attributes = [
+FILENAME_ATTRIBUTES = [
     "filename",
     "textureFilename",
     "densityMaskFilename",
@@ -60,7 +64,7 @@ filename_attributes = [
     "i3dFilename",
 ]
 
-lightMap = {
+LIGHT_MAP = {
     "frontLight_01": "frontLight01",
     "frontLightCone_01": "frontLight02",
     "frontLightOval_01": "frontLight03",
@@ -158,7 +162,7 @@ lightMap = {
 
 def getDataFilesPath(override):
     """ Try and find the data files """
-    installLocations = [
+    INSTALL_LOCATIONS = [
         "C:\Program Files (x86)\Farming Simulator 2022\data",
         "C:\Program Files (x86)\Steam\steamapps\common\Farming Simulator 22\data",
         "C:\Program Files\Epic Games\FarmingSimulator22\data",
@@ -180,7 +184,7 @@ def getDataFilesPath(override):
         if editPath:
             return editPath
         else:
-            for testPath in installLocations:
+            for testPath in INSTALL_LOCATIONS:
                 if os.path.isdir(testPath):
                     return testPath
 
@@ -200,7 +204,7 @@ def findInstalledEditor():
             for thisFolder in editorFolders:
                 versionInt = int(thisFolder[-5:].replace(".", ""))
                 if editorVersion < versionInt:
-                    editorFolder = thisFolder
+                    editorFolder  = thisFolder
                     editorVersion = versionInt
 
         if editorFolder is not False:
@@ -219,10 +223,15 @@ def check_new_light(filename):
 
     lightname = os.path.splitext(os.path.basename(filename))[0]
 
-    if lightname in lightMap.keys():
-        return lightMap[lightname]
+    if lightname in LIGHT_MAP.keys():
+        return LIGHT_MAP[lightname]
     else:
         return False
+
+
+def clean_path(baseFolder, filename):
+    baseFolderTuple = os.path.splitdrive(baseFolder)
+    return os.path.normpath(os.path.join(baseFolderTuple[0], baseFolderTuple[1], filename))
 
 
 def check_local_file_cache(filename, baseFolder):
@@ -230,33 +239,26 @@ def check_local_file_cache(filename, baseFolder):
     global dataFilesPath, cachedLocalFiles
 
     if filename in cachedLocalFiles:
-        return True
+        return (True, None, None)
 
     if os.path.isabs(filename):
-        print(
-            "    FILE ERROR: " + filename +
-            " appears to be an absolute path.  This is probably wrong."
-        )
-        return False
+        return(False, FILE_ERRORS["ABSOLUTE_PATH"], [filename])
 
-    baseDrive = os.path.splitdrive(baseFolder)
-    absFile   = os.path.normpath(os.path.join(baseDrive[0], baseDrive[1], filename))
+    absFile   = clean_path(baseFolder, filename)
     absFolder = os.path.normpath(baseFolder)
 
     if not os.path.exists(absFile):
-        print("    FILE NOT FOUND: " + filename)
-        return False
+        return(False, FILE_ERRORS["FILE_NOT_FOUND"], [filename])
 
     casedFile = str(Path(absFile).resolve())
 
     if casedFile != absFile:
-        print(
-            "    FILE CASE MISMATCH: " + absFile.replace(absFolder, '') +
-            " vs detected:" + casedFile.replace(absFolder, '')
-        )
-        return False
+        return(False, FILE_ERRORS["CASE_MISMATCH"], [
+            absFile.replace(absFolder, ''),
+            casedFile.replace(absFolder, '')
+        ])
 
-    return True
+    return (True, None, None)
 
 
 def check_data_file_cache(filename):
@@ -265,62 +267,26 @@ def check_data_file_cache(filename):
 
     filename = filename[6:]
 
-    if filename in cachedDataFiles:
-        return True
+    if filename in cachedDataFiles or dataFilesPath == "":
+        return (True, None, None)
 
-    if dataFilesPath == "":
-        """ Data files not found, don't do this."""
-        cachedDataFiles.append(filename)
-        return True
-
-    baseDrive = os.path.splitdrive(dataFilesPath)
-    absFile   = os.path.normpath(os.path.join(baseDrive[0], baseDrive[1], filename))
+    absFile   = clean_path(dataFilesPath, filename)
+    absFolder = os.path.normpath(dataFilesPath)
 
     if not os.path.isfile(absFile):
-        return False
+        if check_new_light(absFile):
+            return(False, FILE_ERRORS["FILE_NOT_FOUND_NEW"], [filename, check_new_light(filename)])
+        return(False, FILE_ERRORS["FILE_NOT_FOUND"], [filename])
     else:
         casedFile = str(Path(absFile).resolve())
 
-        if casedFile == absFile:
-            cachedDataFiles.append(filename)
-            return True
+        if casedFile != absFile:
+            return(False, FILE_ERRORS["CASE_MISMATCH"], [
+                absFile.replace(absFolder, ''),
+                casedFile.replace(absFolder, '')
+            ])
 
-    return False
-
-
-def print_dep_notice(current, new):
-    if current.startswith("."):
-        current = current[1:]
-        if new is not False:
-            new = new[1:]
-
-    if new is False:
-        print("    Depreciated usage found: '" + current + "' has been removed")
-    else:
-        print("    Depreciated usage found: '" + current + "' is now '" + new + "'")
-
-
-def giants_to_xpath(type, path):
-    """ convert giants xml notation to xpath """
-    newPath = path
-    if (path.startswith(type)):
-        newPath = re.sub("\(0\)", "", newPath)
-        newPath = re.sub("\(\?\)", "", newPath)
-        newPath = re.sub("\.", "/", newPath)
-        newPath = re.sub("^" + type + "/", "./", newPath)
-        newPath = re.sub("^(.+)#(.+)$", '\g<1>[@\g<2>]', newPath)
-    elif (path.startswith(".")):
-        newPath = re.sub("\(0\)", "", newPath)
-        newPath = re.sub("\.", "/", newPath)
-        newPath = re.sub("^(.+)#(.+)$", '\g<1>[@\g<2>]', newPath)
-        newPath = "./" + newPath
-    elif (path.startswith("#")):
-        newPath = re.sub("^#(.+)$", '[@\g<1>]', newPath)
-        newPath = ".//*" + newPath
-    else:
-        print(path + " was not translated")
-
-    return newPath
+    return (True, None, None)
 
 
 def enter_key_exit():
@@ -333,6 +299,81 @@ def enter_key_exit():
     exit()
 
 
+def check_links(xmlTree):
+    textList = ["  PROCESSING: checking file links"]
+    badCache = []
+
+    for file_key in FILENAME_ATTRIBUTES:
+        for thisTag in thisXML.findall(".//*[@" + file_key + "]"):
+            thisKeyValue   = thisTag.attrib[file_key]
+            thisFileStatus = None
+            if thisKeyValue not in badCache:
+                if thisKeyValue.startswith("$data/"):
+                    thisFileStatus = check_data_file_cache(thisKeyValue)
+                else:
+                    thisFileStatus = check_local_file_cache(thisKeyValue, thisFolder)
+
+                if not thisFileStatus[0]:
+                    badCache.append(thisKeyValue)
+                    textList.append(thisFileStatus[1].format(thisFileStatus[2]))
+
+    if (len(textList) == 1):
+        textList.append("    NOTICE: no missing linked file(s) detected.")
+
+    return textList
+
+
+def check_schema(xmlDocument, fileType, check_l10n):
+    textList = ["  PROCESSING: Checking against XSD Schema"]
+
+    try:
+        data = urllib.request.urlopen(GIANTS_WEBSITE + XSD_MAP[fileType])
+    except BaseException:
+        textList.append("    WARNING: Loading XSD from giants validation server failed")
+        return textList
+
+    try:
+        ns     = ""
+        xmlschema_doc = etree.parse(data)
+
+        if check_l10n:
+            for thisTag in xmlschema_doc.iter('{*}schema'):
+                ns = thisTag.nsmap['xs']
+
+            RESTRICT_TAG = "{{{0}}}restriction".format(ns)
+            L10N_PATTERN = etree.Element("{{{0}}}pattern".format(ns), value="$l10n_.+")
+
+            for thisTag in xmlschema_doc.iter("{{{0}}}simpleType".format(ns)):
+                if thisTag.attrib["name"] == "g_l10n_string":
+                    for child in thisTag:
+                        if child.tag == RESTRICT_TAG:
+                            child.append(L10N_PATTERN)
+
+                    for thisTag in xmlschema_doc.iter("{{{0}}}attribute".format(ns)):
+                        if thisTag.attrib["type"] == "g_l10n_string":
+                            thisTag.attrib.pop("default", None)
+
+            xmlschema     = etree.XMLSchema(xmlschema_doc)
+            lxml_doc      = etree.fromstring(xmlDocument)
+    except BaseException as ecc:
+        textList.append("    WARNING: failed to parse XSD or XML")
+        for error in ecc.error_log:
+            textList.append("    Line {}: {}".format(error.line, error.message))
+        return textList
+
+    try:
+        xmlschema.assertValid(lxml_doc)
+    except BaseException as schema:
+        textList.append("    NOTICE: Validation failed:")
+        for error in schema.error_log:
+            textList.append("    Line {}: {}".format(error.line, error.message))
+
+    if len(textList) == 1:
+        textList.append("    NOTICE: XML Passed Validation")
+
+    return textList
+
+
 print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
 print("  xmlChecker v1.0.2")
 print("    by JTSModding")
@@ -342,29 +383,24 @@ parser = argparse.ArgumentParser(description='Sanity check an xml shopItem file.
 parser.add_argument(
     'files', metavar='files', nargs='+', type=argparse.FileType('r', encoding='utf-8')
 )
+
 parser.add_argument(
-    '--no-depre-check',
-    help="Disable checking depreciated xml tags and attributes",
-    dest="noDepre",
-    action='store_true'
+    '--check-links',
+    help="Check linked files for existence",
+    action=argparse.BooleanOptionalAction,
+    default=True
 )
 parser.add_argument(
-    '--no-file-check',
-    help="Disable checking linked files",
-    dest="noFiles",
-    action='store_true'
+    '--check-schema',
+    help="Check XML against XSD Schema",
+    action=argparse.BooleanOptionalAction,
+    default=True
 )
 parser.add_argument(
-    '--no-schema',
-    help="Disable checking schema",
-    dest="noSchema",
-    action='store_true'
-)
-parser.add_argument(
-    '--no-l10n-schema',
-    help="Disable checking l10n schema entries",
-    dest="noL10NSchema",
-    action='store_true'
+    '--check-schema-l10n',
+    help="Check XML against XSD Schema with $l10n type restriction",
+    action=argparse.BooleanOptionalAction,
+    default=True
 )
 parser.add_argument(
     '--install-path',
@@ -378,18 +414,9 @@ try:
 except BaseException:
     enter_key_exit()
 
-try:
-    f = open('xmlChecker_data.json')
-    depreMap = json.load(f)
-except BaseException:
-    print("Failed to load data file - make sure you have the json file too!")
-    enter_key_exit()
-
-cachedDataFiles  = []
-cachedLocalFiles = []
 dataFilesPath    = getDataFilesPath(args.installPath)
 
-if not hasLXML:
+if not hasLXML and args.check_schema:
     print("WARNING: lxml Module not available, schema checking is disabled.")
 
 file_list = args.files
@@ -397,125 +424,36 @@ file_list = args.files
 print("\nFiles Found: " + str(len(file_list)))
 
 for file in file_list:
-    thisName   = os.path.basename(file.name)
-    thisFolder = os.path.dirname(os.path.abspath(file.name))
-    depreInfo  = ["\nUnknown, uncommon, or depreciated collisionMasks:"]
-    linkLight  = ["\nLinks to old lights in i3d:"]
-    schema     = ["\nhasShadowMap | castsShadowMap on renderable shapes:"]
-    goodFile   = False
+    cachedDataFiles  = []
+    cachedLocalFiles = []
+    thisName         = os.path.basename(file.name)
+    thisFolder       = os.path.dirname(os.path.abspath(file.name))
+    thisFileType     = None
 
     print("\nTesting: " + thisName)
     print("     in: " + thisFolder)
 
     try:
-        thisFileC  = file.read().encode()
-        thisXML    = ET.fromstring(thisFileC)
-    except BaseException:
-        print("ERROR: Unable to read / parse file '" + thisName + "'")
+        if not file.name.endswith("xml"):
+            raise BaseException
+        thisFileContents = file.read().encode()
+        thisXML          = ET.fromstring(thisFileContents)
+    except BaseException as err:
+        print(err)
+        print("  ERROR: Unable to read / parse file '{0}'".format(thisName))
         enter_key_exit()
 
-    for xmlType in xsdMap.keys():
-        if thisXML.tag == xmlType:
-            goodFile = xmlType
-            print("  PROCESSING: xml file is of type '" + xmlType + "'")
+    if thisXML.tag in XSD_MAP.keys():
+        thisFileType = thisXML.tag
+        print("  PROCESSING: xml file is of type '{0}'".format(thisXML.tag))
+    else:
+        print("  ERROR: xml file is of unknown type {0}".format(thisXML.tag))
+        enter_key_exit()
 
-    if goodFile is not False:
-        if not args.noDepre:
-            keepGoing = True
-            print("  PROCESSING: depreciated tags / attributes:")
-            thisDepTree = depreMap[thisXML.tag]
-
-            if len(thisDepTree):
-                for thisDepTest in thisDepTree.keys():
-                    thisDepXPath = giants_to_xpath(goodFile, thisDepTest)
-                    foundIt = False
-                    if thisXML.findall(thisDepXPath):
-                        keepGoing = False
-                        print_dep_notice(thisDepTest, thisDepTree[thisDepTest])
-
-            if keepGoing:
-                print("    NOTICE: no depreciated tags detected.")
-
-        if not args.noFiles:
-            keepGoing = True
-            print("  PROCESSING: checking file links")
-
-            badCache = []
-            for file_key in filename_attributes:
-                for thisTag in thisXML.findall(".//*[@" + file_key + "]"):
-                    thisKeyValue = thisTag.attrib[file_key]
-                    if thisKeyValue.startswith("$data/"):
-                        if thisKeyValue not in badCache:
-                            if not check_data_file_cache(thisKeyValue):
-                                badCache.append(thisKeyValue)
-                                keepGoing = False
-                                if check_new_light(thisKeyValue):
-                                    print(
-                                        "    FILE NOT FOUND: " + thisKeyValue +
-                                        " (new name:" + check_new_light(thisKeyValue) + ")"
-                                    )
-                                else:
-                                    print("    FILE NOT FOUND: " + thisKeyValue)
-                    else:
-                        if thisKeyValue not in badCache:
-                            if not check_local_file_cache(thisKeyValue, thisFolder):
-                                badCache.append(thisKeyValue)
-                                keepGoing = False
-
-            if keepGoing:
-                print("    NOTICE: no missing linked file detected.")
-
-        if not args.noSchema and hasLXML:
-            print("  PROCESSING: Checking against XSD Schema")
-            keepGoing = True
-
-            try:
-                data = urllib.request.urlopen(giantsWebsite + xsdMap[goodFile])
-            except BaseException:
-                keepGoing = False
-                print("    WARNING: Loading XSD from giants validation server failed")
-
-            if keepGoing:
-                try:
-                    namespace     = ""
-                    xmlschema_doc = etree.parse(data)
-
-                    if not args.noL10NSchema:
-                        for thisTag in xmlschema_doc.iter('{*}schema'):
-                            namespace = thisTag.nsmap['xs']
-
-                        l10n_pattern = etree.Element("{" + namespace + "}pattern", value="$l10n_.+")
-
-                        for thisTag in xmlschema_doc.iter('{' + namespace + '}simpleType'):
-                            if thisTag.attrib["name"] == "g_l10n_string":
-                                for child in thisTag:
-                                    if child.tag == "{" + namespace + "}restriction":
-                                        child.append(l10n_pattern)
-
-                        for thisTag in xmlschema_doc.iter('{' + namespace + '}attribute'):
-                            if thisTag.attrib["type"] == "g_l10n_string":
-                                thisTag.attrib.pop("default", None)
-
-                    xmlschema     = etree.XMLSchema(xmlschema_doc)
-                    lxml_doc      = etree.fromstring(thisFileC)
-                except BaseException as ecc:
-                    keepGoing = False
-                    print("    WARNING: failed to parse XSD or XML")
-                    for error in ecc.error_log:
-                        print("    Line {}: {}".format(error.line, error.message))
-                    exit()
-
-            if keepGoing:
-                try:
-                    xmlschema.assertValid(lxml_doc)
-                except BaseException as schema:
-                    keepGoing = False
-                    print("    NOTICE: Validation failed:")
-                    for error in schema.error_log:
-                        print("    Line {}: {}".format(error.line, error.message))
-
-            if keepGoing:
-                print("    NOTICE: XML Passed Validation")
+    if args.check_links:
+        print("\n".join(check_links(thisXML)))
+    if args.check_schema and hasLXML:
+        print("\n".join(check_schema(thisFileContents, thisFileType, args.check_schema_l10n)))
 
 print('\ndone.')
 

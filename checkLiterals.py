@@ -18,6 +18,32 @@ import os
 import sys
 import xml.etree.ElementTree as ET
 
+ATTRIBUTES_TO_CHECK = [
+    "abortUnloading", "activateText", "baleDoNotAllowFillTypeMixing", "baleNotSupported",
+    "changeText", "clutchCrackingGearWarning", "clutchCrackingGroupWarning",
+    "clutchNoEngagedWarning", "consumersEmptyWarning", "consumersEmptyWarning", "deactivateText",
+    "detachWarning", "disableText", "enableText", "infoText", "lowering", "lowerPlatform",
+    "middleNegDirectionText", "middlePosDirectionText", "minUnloadingFillLevelWarning",
+    "negDirectionText", "noCutter", "objectText", "onlyOneBaleTypeWarning", "operatingPosition",
+    "posDirectionText", "textNeg", "textPos", "tilting", "title", "transportPosition",
+    "turnOffText", "turnOnNotAllowedWarning", "turnOnStateWarning", "turnOnText", "typeDesc",
+    "unfoldWarning", "unload", "unloadBaleText", "unloadHere"
+]
+TAG_TO_CHECK_NAME_ATTRIB = [
+    "attacherJointConfiguration", "baseMaterialConfiguration", "configurationSet", "controlGroup",
+    "coverConfiguration", "design8Configuration", "design7Configuration", "design6Configuration",
+    "design5Configuration", "design4Configuration", "design3Configuration", "design2Configuration",
+    "designConfiguration", "designMaterialConfiguration", "designMaterial2Configuration",
+    "designMaterial3Configuration", "dischargeableConfiguration", "fillUnitConfiguration",
+    "fillVolumeConfiguration", "foldingConfiguration", "frontloaderConfiguration",
+    "inputAttacherJointConfiguration", "motorConfiguration", "pipeConfiguration",
+    "powerConsumerConfiguration", "rimColorConfiguration", "steeringMode", "tipSide",
+    "trailerConfiguration", "transmission", "variableWorkWidthConfiguration",
+    "vehicleTypeConfiguration", "wheelConfiguration", "workAreaConfiguration", "workMode",
+    "wrappingAnimationConfiguration", "wrappingColorConfiguration",
+]
+TAG_TO_CHECK_TEXT = ["function", "typeDesc", "name"]
+
 
 def enter_key_exit():
     """ Exit when enter key pressed """
@@ -34,6 +60,10 @@ def print_bad(tag, value):
     print("  Possible missed translation in tag: " + tag + ", current value is: " + value)
 
 
+def is_l10n(value):
+    return value.startswith("$l10n")
+
+
 print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
 print("  checkLiterals v1.0.2")
 print("    by JTSModding")
@@ -43,7 +73,7 @@ parser = argparse.ArgumentParser(
     description='Check vehicle/placable xml(s) for untranslated strings.'
 )
 parser.add_argument(
-    'files', metavar='files', nargs="+", type=argparse.FileType('r', encoding='utf-8')
+    'files', metavar='files.xml', nargs="+", type=argparse.FileType('r', encoding='utf-8')
 )
 
 try:
@@ -51,46 +81,15 @@ try:
 except BaseException:
     enter_key_exit()
 
-file_list = args.files
+print("Files Found: " + str(len(args.files)))
 
-
-attributes_to_check = {
-    "abortUnloading", "activateText", "baleDoNotAllowFillTypeMixing", "baleNotSupported",
-    "changeText", "clutchCrackingGearWarning", "clutchCrackingGroupWarning",
-    "clutchNoEngagedWarning", "consumersEmptyWarning", "consumersEmptyWarning", "deactivateText",
-    "detachWarning", "disableText", "enableText", "infoText", "lowering", "lowerPlatform",
-    "middleNegDirectionText", "middlePosDirectionText", "minUnloadingFillLevelWarning",
-    "negDirectionText", "noCutter", "objectText", "onlyOneBaleTypeWarning", "operatingPosition",
-    "posDirectionText", "textNeg", "textPos", "tilting", "title", "transportPosition",
-    "turnOffText", "turnOnNotAllowedWarning", "turnOnStateWarning", "turnOnText", "typeDesc",
-    "unfoldWarning", "unload", "unloadBaleText", "unloadHere"
-}
-tag_to_check_name_attrib = {
-    "attacherJointConfiguration", "baseMaterialConfiguration", "configurationSet", "controlGroup",
-    "coverConfiguration", "design8Configuration", "design7Configuration", "design6Configuration",
-    "design5Configuration", "design4Configuration", "design3Configuration", "design2Configuration",
-    "designConfiguration", "designMaterialConfiguration", "designMaterial2Configuration",
-    "designMaterial3Configuration", "dischargeableConfiguration", "fillUnitConfiguration",
-    "fillVolumeConfiguration", "foldingConfiguration", "frontloaderConfiguration",
-    "inputAttacherJointConfiguration", "motorConfiguration", "pipeConfiguration",
-    "powerConsumerConfiguration", "rimColorConfiguration", "steeringMode", "tipSide",
-    "trailerConfiguration", "transmission", "variableWorkWidthConfiguration",
-    "vehicleTypeConfiguration", "wheelConfiguration", "workAreaConfiguration", "workMode",
-    "wrappingAnimationConfiguration", "wrappingColorConfiguration",
-}
-tag_to_check_text = {
-    "function", "typeDesc", "name",
-}
-
-
-print("Files Found: " + str(len(file_list)))
-
-
-for file in file_list:
+for file in args.files:
     cleanFile  = True
     thisName   = os.path.basename(file.name)
 
     try:
+        if not file.name.endswith("xml"):
+            raise BaseException
         thisXML    = ET.fromstring(file.read())
     except BaseException:
         print("ERROR: Unable to read / parse file '" + thisName + "'")
@@ -98,34 +97,34 @@ for file in file_list:
 
     print("\nChecking: " + thisName + "...\n")
 
-    for attrib_key in attributes_to_check:
+    for attrib_key in ATTRIBUTES_TO_CHECK:
         for thisTag in thisXML.findall(".//*[@" + attrib_key + "]"):
-            if not thisTag.attrib[attrib_key].startswith('$l10n'):
+            if not is_l10n(thisTag.attrib[attrib_key]):
                 cleanFile = False
                 print_bad(thisTag.tag, thisTag.attrib[attrib_key])
 
-    for tag_name in tag_to_check_text:
+    for tag_name in TAG_TO_CHECK_TEXT:
         for thisTag in thisXML.findall(".//" + tag_name):
             if tag_name == "name":
                 if len(thisTag):
                     cleanFile = False
                     print_bad(thisTag.tag, 'translated with the "old" method')
             if thisTag.text is not None and not thisTag.text.isspace():
-                if not thisTag.text.startswith('$l10n'):
+                if not is_l10n(thisTag.text):
                     cleanFile = False
                     print_bad(thisTag.tag, thisTag.text)
 
-    for tag_name in tag_to_check_name_attrib:
+    for tag_name in TAG_TO_CHECK_NAME_ATTRIB:
         for thisTag in thisXML.findall(".//" + tag_name):
             if "name" in thisTag.attrib:
-                if not thisTag.attrib["name"].startswith('$l10n'):
+                if not is_l10n(thisTag.attrib["name"]):
                     cleanFile = False
                     print_bad(thisTag.tag, thisTag.attrib["name"])
 
-    if cleanFile:
-        print("\nFile: " + thisName + " had no detected missing translations\n")
-    else:
-        print("\nFile: " + thisName + " HAS detected missing translations\n")
+    print(
+        "\nFile: " + thisName + (" HAS", " has no")[cleanFile] + " probable missing translations\n"
+    )
+
 
 print("done.")
 

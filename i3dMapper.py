@@ -56,36 +56,28 @@ def depth_iter(element, tag=None):
 def add_tag(name, node):
     """ Add output tag to stack """
     global maxNameSize
-    thisSize = len(name)
-    if thisSize > maxNameSize:
-        maxNameSize = thisSize
-
+    maxNameSize = len(name) if len(name) > maxNameSize else maxNameSize
     printNames.append([name, node])
 
 
 def print_tag(thisMap):
     """ output tag """
-    global noPretty, maxNameSize
+    global pretty_print, maxNameSize
 
-    thisLine = "\t<i3dMapping id=\"" + thisMap[0] + "\""
-
-    if not noPretty:
-        for i in range(0, maxNameSize - len(thisMap[0])):
-            thisLine += " "
-
-    thisLine += " node=\"" + thisMap[1] + "\" />"
-
-    return thisLine
+    return "\t<i3dMapping id=\"{0}\" {2}node=\"{1}\" />".format(
+        thisMap[0],
+        thisMap[1],
+        ''.ljust((maxNameSize - len(thisMap[0]) if pretty_print else False))
+    )
 
 
 parser = argparse.ArgumentParser(description='Export i3d Mapping')
 parser.add_argument('file', metavar='file', nargs=1, type=argparse.FileType('r', encoding='utf-8'))
 parser.add_argument(
-    '--no-pretty-print',
-    help="Disable pretty printing",
-    dest="noPretty",
-    default=False,
-    action='store_true'
+    '--pretty-print',
+    help="Pretty print output",
+    action=argparse.BooleanOptionalAction,
+    default=True
 )
 
 try:
@@ -94,6 +86,8 @@ except BaseException:
     enter_key_exit()
 
 try:
+    if not args.file[0].name.endswith("i3d"):
+        raise BaseException
     thisXML     = ET.ElementTree(ET.fromstring(args.file[0].read()))
 except BaseException:
     print("ERROR: Unable to read / parse file '" + os.path.basename(args.file[0].name) + "'")
@@ -102,7 +96,7 @@ except BaseException:
 thisScene        = thisXML.find('Scene')
 printNames       = []
 maxNameSize      = 0
-noPretty         = args.noPretty
+pretty_print     = args.pretty_print
 uniqueNames      = {}
 lastDepth        = 0
 countDepth       = []
@@ -115,6 +109,8 @@ for xml_entry, depth in depth_iter(thisScene):
         if thisNodeName in uniqueNames.keys():
             uniqueNames[thisNodeName] += 1
             thisNodeName = thisNodeName + "_" + '{:0>3}'.format(uniqueNames[thisNodeName])
+            if thisNodeName in uniqueNames.keys():
+                raise "Unique Name Error - Unresolved Collision Detected"
         else:
             uniqueNames[thisNodeName] = 1
 

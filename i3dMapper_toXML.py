@@ -29,6 +29,11 @@ def enter_key_exit():
     exit()
 
 
+def clean_path(baseFolder, filename):
+    baseFolderTuple = os.path.splitdrive(baseFolder)
+    return os.path.normpath(os.path.join(baseFolderTuple[0], baseFolderTuple[1], filename))
+
+
 print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
 print("  i3dMapper_toXML v1.0.2")
 print("    by JTSModding")
@@ -37,12 +42,18 @@ print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n")
 parser = argparse.ArgumentParser(description='Export i3d Mapping direct to XML')
 parser.add_argument('file', metavar='file', nargs=1, type=argparse.FileType('r', encoding='utf-8'))
 
+if not os.path.isfile('i3dMapper.py'):
+    print("ERROR: i3dMapper.py is not in the script folder. Unable to continue")
+    enter_key_exit()
+
 try:
     args = parser.parse_args()
 except BaseException:
     enter_key_exit()
 
 try:
+    if not args.file[0].name.endswith("xml"):
+        raise BaseException
     thisShopItemXML = ET.fromstring(args.file[0].read())
     args.file[0].close()
 except BaseException:
@@ -51,8 +62,7 @@ except BaseException:
 
 thisShopItemFile   = os.path.basename(args.file[0].name)
 thisShopItemFolder = os.path.dirname(os.path.abspath(args.file[0].name))
-baseDrive          = os.path.splitdrive(thisShopItemFolder)
-thisShopItemAbs    = os.path.normpath(os.path.join(baseDrive[0], baseDrive[1], thisShopItemFile))
+thisShopItemAbs    = clean_path(thisShopItemFolder, thisShopItemFile)
 i3dFileAbs         = ""
 
 try:
@@ -60,7 +70,7 @@ try:
     for thisTag in thisShopItemXML.findall(".//base/filename"):
         if thisTag.text is None:
             raise Exception("NOT FOUND: i3d File Not Found in XML")
-        i3dFileAbs = os.path.normpath(os.path.join(baseDrive[0], baseDrive[1], thisTag.text))
+        i3dFileAbs = clean_path(thisShopItemFolder, thisTag.text)
 
     if not os.path.isfile(i3dFileAbs):
         raise Exception("NOT FOUND: i3d File Not Found")
@@ -100,6 +110,7 @@ try:
 
 except BaseException as err:
     print("UNRECOVERABLE ERROR: " + str(err))
+    enter_key_exit()
 
 if sys.stdout.isatty():
     # Don't pause on finish if we re-directed to a file.

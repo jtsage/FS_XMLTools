@@ -20,23 +20,17 @@ import glob
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
-installLocations = [
-    "C:\Program Files (x86)\Farming Simulator 2022\data",
-    "C:\Program Files (x86)\Steam\steamapps\common\Farming Simulator 22\data",
-    "C:\Program Files\Epic Games\FarmingSimulator22\data",
-]
-
-commonMasks = [
+COMMON_MASKS = [
     "0", "223", "8194", "262367", "524288", "1048576", "2097152", "2105410", "2109442", "3145728",
     "16777216", "16781314", "16781578", "16791586", "18874368", "134217728", "134225920",
     "134225922", "1073741824"
 ]
-unusualMasks = [
+UNUSUAL_MASKS = [
     "1024", "2048", "8196", "8212", "8450", "12290", "14591", "28704", "30736", "131072", "262399",
     "524255", "2109440", "2109464", "2121728", "3170304", "16777224", "16779264", "16781312",
     "16789506", "19922944", "33554432", "1075838976", "1088421888", "1090521088", "2147483648",
 ]
-lightMap = {
+LIGHT_MAP = {
     "frontLight_01": "frontLight01",
     "frontLightCone_01": "frontLight02",
     "frontLightOval_01": "frontLight03",
@@ -134,7 +128,7 @@ lightMap = {
 
 def getDataFilesPath(override):
     """ Try and find the data files """
-    installLocations = [
+    INSTALL_LOCATIONS = [
         "C:\Program Files (x86)\Farming Simulator 2022\data",
         "C:\Program Files (x86)\Steam\steamapps\common\Farming Simulator 22\data",
         "C:\Program Files\Epic Games\FarmingSimulator22\data",
@@ -156,7 +150,7 @@ def getDataFilesPath(override):
         if editPath:
             return editPath
         else:
-            for testPath in installLocations:
+            for testPath in INSTALL_LOCATIONS:
                 if os.path.isdir(testPath):
                     return testPath
 
@@ -209,27 +203,26 @@ def check_local_file_cache(filename, baseFolder):
 
     if os.path.isabs(filename):
         return(
-            "    FILE ERROR: " + filename +
+            "  FILE ERROR: " + filename +
             " appears to be an absolute path.  This is probably wrong."
         )
 
-    baseDrive = os.path.splitdrive(baseFolder)
-    absFile   = os.path.normpath(os.path.join(baseDrive[0], baseDrive[1], filename))
+    absFile   = clean_path(baseFolder, filename)
     absFolder = os.path.normpath(baseFolder)
 
     if not os.path.exists(absFile):
         if absFile.endswith(".png"):
             absFile = absFile[:-3] + "dds"
             if not os.path.exists(absFile):
-                return("    FILE NOT FOUND: " + filename)
+                return("  FILE NOT FOUND: " + filename)
         else:
-            return("    FILE NOT FOUND: " + filename)
+            return("  FILE NOT FOUND: " + filename)
 
     casedFile = str(Path(absFile).resolve())
 
     if casedFile != absFile:
         return(
-            "    FILE CASE MISMATCH: " + absFile.replace(absFolder, '') +
+            "  FILE CASE MISMATCH: " + absFile.replace(absFolder, '') +
             " vs detected:" + casedFile.replace(absFolder, '')
         )
 
@@ -251,17 +244,16 @@ def check_data_file_cache(filename):
         cachedDataFiles.append(filename)
         return False
 
-    baseDrive = os.path.splitdrive(dataFilesPath)
-    absFile   = os.path.normpath(os.path.join(baseDrive[0], baseDrive[1], filename))
+    absFile   = clean_path(dataFilesPath, filename)
     absFolder = os.path.normpath(dataFilesPath)
 
     if not os.path.isfile(absFile):
         if absFile.endswith(".png"):
             absFile = absFile[:-3] + "dds"
             if not os.path.exists(absFile):
-                return("    FILE NOT FOUND: " + origName)
+                return("  FILE NOT FOUND: " + origName)
         else:
-            return("    FILE NOT FOUND: " + origName)
+            return("  FILE NOT FOUND: " + origName)
     else:
         casedFile = str(Path(absFile).resolve())
 
@@ -270,7 +262,7 @@ def check_data_file_cache(filename):
             return False
         else:
             return(
-                "    FILE CASE MISMATCH: " + absFile.replace(absFolder, '') +
+                "  FILE CASE MISMATCH: " + absFile.replace(absFolder, '') +
                 " vs detected:" + casedFile.replace(absFolder, '')
             )
     return False
@@ -278,38 +270,24 @@ def check_data_file_cache(filename):
 
 def none_attrib(element, key):
     """ Grab an attribute value by key, null safe"""
-    if element.attrib is None:
-        return None
-    if key not in element.attrib:
-        return None
-    return element.attrib[key]
+    return None if element.attrib is None or key not in element.attrib else element.attrib[key]
 
 
 def na_attrib(element, key):
     """ Grab an attribute, use n/a instead of None"""
-    if none_attrib(element, key) is None:
-        return "n/a"
-    return none_attrib(element, key)
+    return "n/a" or none_attrib(element, key)
 
 
 def yn_attrib(element, key):
     """ Grab an attribute, use yes/no for booleans"""
     tmpVal = none_attrib(element, key)
 
-    if tmpVal is None:
-        return "no"
-    if tmpVal is True or tmpVal.lower() == 'true':
-        return "yes"
-    return "no"
+    return ("no", "yes")[tmpVal is not None and (tmpVal is True or tmpVal.lower() == 'true')]
 
 
 def is_xml_true(value):
     """ String convert bool and handle None """
-    if value is None:
-        return False
-    if value is True or value.lower() == 'true':
-        return True
-    return False
+    return value is not None and (value is True or value.lower() == 'true')
 
 
 def mask_uses_old_bits(mask):
@@ -337,6 +315,126 @@ def sRGB_string_to_hex(color):
     return "#" + "".join(['%02X' % int(math.floor(float(part) * 255)) for part in color.split()])
 
 
+def clean_path(baseFolder, filename):
+    baseFolderTuple = os.path.splitdrive(baseFolder)
+    return os.path.normpath(os.path.join(baseFolderTuple[0], baseFolderTuple[1], filename))
+
+
+def check_file_links(xmlTree):
+    textList = ["\nCheck path of linked files:"]
+    badCache = []
+
+    for thisTag in xmlTree.findall(".//File"):
+        thisFileName = none_attrib(thisTag, "filename")
+        if thisFileName is not None and thisFileName not in badCache:
+            if thisFileName.startswith("$data/"):
+                fileStatus = check_data_file_cache(thisFileName)
+            else:
+                fileStatus = check_local_file_cache(thisFileName, thisFolder)
+
+            if fileStatus is not False:
+                textList.append(fileStatus)
+                badCache.append(thisFileName)
+
+    if len(textList) == 1:
+        textList.append("  all good.")
+
+    return textList
+
+
+def check_light_attributes(xmlTree):
+    textList = ["\nRealLights Information:"]
+
+    for thisTag in xmlTree.findall(".//Light"):
+        textList.append("  Node Name: " + na_attrib(thisTag, "name"))
+        thisLine  = "   Type: " + na_attrib(thisTag, "type")
+        thisLine += ", Color: " + sRGB_string_to_hex(none_attrib(thisTag, "color"))
+        thisLine += ", Shadows: " + yn_attrib(thisTag, "castShadowMap")
+        thisLine += ", Range: " + na_attrib(thisTag, "range") + " m"
+        thisLine += ", Cone Angle: " + na_attrib(thisTag, "coneAngle") + " °"
+        thisLine += ", Drop Off: " + na_attrib(thisTag, "dropOff") + " m"
+        textList.append(thisLine)
+
+    if len(textList) == 1:
+        textList.append("  no lights found.")
+
+    return textList
+
+
+def check_shadows(xmlTree):
+    textList = ["\nhasShadowMap | castsShadowMap on renderable shapes:"]
+
+    for thisTag in xmlTree.findall(".//Shape"):
+        thisTagNonRender = none_attrib(thisTag, "nonRenderable")
+        thisTagCasts     = none_attrib(thisTag, "castsShadows")
+        thisTagReceives  = none_attrib(thisTag, "receiveShadows")
+
+        if (not is_xml_true(thisTagReceives) or not is_xml_true(thisTagCasts)):
+            # Either missing cast or receive, check visible...
+            if (not is_xml_true(thisTagNonRender)):
+                textList.append("  Node Name: " + na_attrib(thisTag, "name"))
+                textList.append(
+                    "   Casts Shadow Map: " + yn_attrib(thisTag, "castsShadows") +
+                    " | Receives Shadow Map: " + yn_attrib(thisTag, "receiveShadows")
+                )
+
+    if len(textList) == 1:
+        textList.append("  no lights found.")
+
+    return textList
+
+
+def check_light_links(xmlTree):
+    textList = ["\nLinks to old lights in i3d:"]
+
+    for thisTag in xmlTree.findall(".//File"):
+        thisFileName = none_attrib(thisTag, "filename")
+        if thisFileName is not None:
+            for thisTestName in LIGHT_MAP.keys():
+                if thisTestName + "." in thisFileName:
+                    textList.append(
+                        "  Linked Light with fileId '" + na_attrib(thisTag, "fileId") +
+                        "' is '" + thisTestName + "', should be '" +
+                        LIGHT_MAP[thisTestName] + "'"
+                    )
+
+    if len(textList) == 1:
+        textList.append("  no lights found.")
+
+    return textList
+
+
+def check_collisions(xmlTree):
+    textList = ["\nUnknown, uncommon, or depreciated collisionMasks:"]
+
+    for thisTag in xmlTree.findall(".//*[@collisionMask]"):
+        thisColMaskDec = none_attrib(thisTag, "collisionMask")
+        thisColMaskHex = mask_string_to_hex(thisColMaskDec)
+        thisName       = na_attrib(thisTag, "name")
+        if thisColMaskDec not in COMMON_MASKS:
+            if thisColMaskDec in UNUSUAL_MASKS:
+                textList.append(
+                    "  collisionMask for '" + thisName + "' (" + thisColMaskDec + ")/(" +
+                    thisColMaskHex + ") is unusual, but does exist in some giants files"
+                )
+            else:
+                if mask_uses_old_bits(thisColMaskDec):
+                    textList.append(
+                        "  collisionMask for '" + thisName + "' (" + thisColMaskDec + ")/(" +
+                        thisColMaskHex + ") uses depreciated bits and needs corrected"
+                    )
+                else:
+                    textList.append(
+                        "  collisionMask for '" + thisName + "' (" + thisColMaskDec + ")/(" +
+                        thisColMaskHex + ") is unknown, and should be checked"
+                    )
+
+    if len(textList) == 1:
+        textList.append("  no lights found.")
+
+    return textList
+
+
 print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
 print("  i3Checker v1.0.2")
 print("    by JTSModding")
@@ -347,34 +445,34 @@ parser.add_argument(
     'files', metavar='files', nargs='+', type=argparse.FileType('r', encoding='utf-8')
 )
 parser.add_argument(
-    '--no-shadow-check',
-    help="Disable checking visible shapes for shadow maps",
-    dest="noShadow",
-    action='store_true'
+    '--shadows',
+    help="Check for shadow maps on visible shapes",
+    action=argparse.BooleanOptionalAction,
+    default=True
 )
 parser.add_argument(
-    '--no-link-check',
-    help="Disable checking linked files for existence",
-    dest="noLinks",
-    action='store_true'
+    '--link-check',
+    help="Check that linked files exist",
+    action=argparse.BooleanOptionalAction,
+    default=True
 )
 parser.add_argument(
-    '--no-light-check',
-    help="Disable checking linked lights",
-    dest="noLights",
-    action='store_true'
+    '--light-check',
+    help="Check linked lights",
+    action=argparse.BooleanOptionalAction,
+    default=True
 )
 parser.add_argument(
-    '--no-light-info',
-    help="Disable output of light info",
-    dest="noLightInfo",
-    action='store_true'
+    '--light-info',
+    help="Output realLight attributes",
+    action=argparse.BooleanOptionalAction,
+    default=True
 )
 parser.add_argument(
-    '--no-col-info',
-    help="Disable checking collision info",
-    dest="noColInfo",
-    action='store_true'
+    '--collisions',
+    help="Check for unusual or unknown collision masks",
+    action=argparse.BooleanOptionalAction,
+    default=True
 )
 parser.add_argument(
     '--install-path',
@@ -388,135 +486,36 @@ try:
 except BaseException:
     enter_key_exit()
 
+dataFilesPath = getDataFilesPath(args.installPath)
 
-file_list        = args.files
-cachedDataFiles  = []
-cachedLocalFiles = []
-dataFilesPath    = getDataFilesPath(args.installPath)
+print("Files Found: " + str(len(args.files)))
 
-print("Files Found: " + str(len(file_list)))
-
-for file in file_list:
-    thisName   = os.path.basename(file.name)
-    thisFolder = os.path.dirname(os.path.abspath(file.name))
-    lightsInfo = ["\nRealLights Information:"]
-    colInfo    = ["\nUnknown, uncommon, or depreciated collisionMasks:"]
-    linkLight  = ["\nLinks to old lights in i3d:"]
-    linkPath   = ["\nCheck path of linked files:"]
-    shadows    = ["\nhasShadowMap | castsShadowMap on renderable shapes:"]
+for file in args.files:
+    cachedDataFiles  = []
+    cachedLocalFiles = []
+    thisName         = os.path.basename(file.name)
+    thisFolder       = os.path.dirname(os.path.abspath(file.name))
 
     print("\nTesting: " + thisName)
+
     try:
+        if not file.name.endswith("i3d"):
+            raise BaseException
         thisXML    = ET.fromstring(file.read())
     except BaseException:
         print("ERROR: Unable to read / parse file '" + thisName + "'")
         enter_key_exit()
 
-    foundBadLink = False
-    badCache     = []
-    for thisTag in thisXML.findall(".//File"):
-        thisFileName = none_attrib(thisTag, "filename")
-        if thisFileName is not None and thisFileName not in badCache:
-            if thisFileName.startswith("$data/"):
-                fileStatus = check_data_file_cache(thisFileName)
-            else:
-                fileStatus = check_local_file_cache(thisFileName, thisFolder)
-
-            if fileStatus is not False:
-                foundBadLink = True
-                linkPath.append(fileStatus)
-                badCache.append(thisFileName)
-
-    if not foundBadLink:
-        linkPath.append("  all good.")
-
-    foundLights = False
-    for thisTag in thisXML.findall(".//Light"):
-        foundLights = True
-        lightsInfo.append("  Node Name: " + na_attrib(thisTag, "name"))
-        thisLine  = "   Type: " + na_attrib(thisTag, "type")
-        thisLine += ", Color: " + sRGB_string_to_hex(none_attrib(thisTag, "color"))
-        thisLine += ", Shadows: " + yn_attrib(thisTag, "castShadowMap")
-        thisLine += ", Range: " + na_attrib(thisTag, "range") + " m"
-        thisLine += ", Cone Angle: " + na_attrib(thisTag, "coneAngle") + " °"
-        thisLine += ", Drop Off: " + na_attrib(thisTag, "dropOff") + " m"
-        lightsInfo.append(thisLine)
-
-    if not foundLights:
-        lightsInfo.append("  no lights found.")
-
-    foundBadShadows = False
-    for thisTag in thisXML.findall(".//Shape"):
-        thisTagNonRender = none_attrib(thisTag, "nonRenderable")
-        thisTagCasts     = none_attrib(thisTag, "castsShadows")
-        thisTagReceives  = none_attrib(thisTag, "receiveShadows")
-
-        if (not is_xml_true(thisTagReceives) or not is_xml_true(thisTagCasts)):
-            # Either missing cast or receive, check visible...
-            if (not is_xml_true(thisTagNonRender)):
-                foundBadShadows = True
-                shadows.append("  Node Name: " + na_attrib(thisTag, "name"))
-                shadows.append(
-                    "   Casts Shadow Map: " + yn_attrib(thisTag, "castsShadows") +
-                    " | Receives Shadow Map: " + yn_attrib(thisTag, "receiveShadows")
-                )
-
-    if not foundBadShadows:
-        shadows.append("  none found.")
-
-    foundBadLight = False
-    for thisTag in thisXML.findall(".//File"):
-        thisFileName = none_attrib(thisTag, "filename")
-        if thisFileName is not None:
-            for thisTestName in lightMap.keys():
-                if thisTestName + "." in thisFileName:
-                    foundBadLight = True
-                    linkLight.append(
-                        "  Linked Light with fileId '" + na_attrib(thisTag, "fileId") +
-                        "' is '" + thisTestName + "', should be '" +
-                        lightMap[thisTestName] + "'"
-                    )
-    if not foundBadLight:
-        linkLight.append("  none found.")
-
-    foundBadCol = False
-
-    for thisTag in thisXML.findall(".//*[@collisionMask]"):
-        thisColMaskDec = none_attrib(thisTag, "collisionMask")
-        thisColMaskHex = mask_string_to_hex(thisColMaskDec)
-        thisName       = na_attrib(thisTag, "name")
-        if thisColMaskDec not in commonMasks:
-            foundBadCol = True
-            if thisColMaskDec in unusualMasks:
-                colInfo.append(
-                    "  collisionMask for '" + thisName + "' (" + thisColMaskDec + ")/(" +
-                    thisColMaskHex + ") is unusual, but does exist in some giants files"
-                )
-            else:
-                if mask_uses_old_bits(thisColMaskDec):
-                    colInfo.append(
-                        "  collisionMask for '" + thisName + "' (" + thisColMaskDec + ")/(" +
-                        thisColMaskHex + ") uses depreciated bits and needs corrected"
-                    )
-                else:
-                    colInfo.append(
-                        "  collisionMask for '" + thisName + "' (" + thisColMaskDec + ")/(" +
-                        thisColMaskHex + ") is unknown, and should be checked"
-                    )
-
-    if not foundBadCol:
-        colInfo.append("  none found.")
-
-    if not args.noLightInfo:
-        print("\n".join(lightsInfo))
-    if not args.noLights:
-        print("\n".join(linkLight))
-    if not args.noShadow:
-        print("\n".join(shadows))
-    if not args.noColInfo:
-        print("\n".join(colInfo))
-    if not args.noLinks:
-        print("\n".join(linkPath))
+    if args.light_info:
+        print("\n".join(check_light_attributes(thisXML)))
+    if args.light_check:
+        print("\n".join(check_light_links(thisXML)))
+    if args.shadows:
+        print("\n".join(check_shadows(thisXML)))
+    if args.collisions:
+        print("\n".join(check_collisions(thisXML)))
+    if args.link_check:
+        print("\n".join(check_file_links(thisXML)))
 
 print('\ndone.')
 

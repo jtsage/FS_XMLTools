@@ -2,306 +2,92 @@
 
 This contains some quick python tools to make some aspects of modding a little easier
 
-To install just download the python script you want (or all of them).  They have no dependencies.
+## Installation
+
+To install just download the python script you want (or all of them).
 
 If for some reason drag-and-drop to the python script doesn't work, make sure you have python files set to open with the python interpreter, if that doesn't work, repair your installation / re-install
 
-__NOTE ABOUT PYTHON:__
+### Note About Python
 
 Your life will be much better, and the use of these is far easier if you __DO__ check the box to add python to your `$PATH` environmental variable when you are installing it.  If you did not do this, you can re-install python, or 'modify' your installation from Add/Remove programs.  Be warned, this is one of the times that an installer tells you to reboot that you actually have to do it.
 
----
+### LXML Requirement (xmlChecker only)
 
-## compareTranslations.py
-
-This will compare two (or more) translation files to each other, and tell you if there are translated entities that do not appear in all files.
-
-__Usage:__
-
-```shell
-$ python .\compareTranslations.py --folder ./testFiles/translations
-
-$ python .\compareTranslations.py .\testFiles\translations\translation_en.xml .\testFiles\translations\translation_de.xml
-```
-
-### Translation file format
-
-By default, compareTranslations.py expects a file of the format:
-
-```xml
-<l10n>
-  <translationContributors>JTSage</translationContributors>
-
-  <texts>
-    <text name="title_simpleInspector" text="Simple Inspector" />
-  </texts>
-</l10n>
-```
-
-If you have a file that uses the other format, you can use the `--giants_ekv` command line argument
-
-```xml
-<l10n><elements>
-  <e k="some_tag" v="Some Translated Text" tag="0"/>
-</elements></l10n>
-```
-
-### Sample Output
-
-```text
-Files Found: 2
-WARNING: 'translation_en.xml' contains a duplicate entry for 'input_SimpleInspector_reload_config'
-Mismatch(es) Found:
-
-  Text Name : input_SimpleInspector_reload_config
-   Found In      : ['translation_en.xml']
-   Not Found In  : ['translation_de.xml']
-
-There are mismatched translations
-```
-
----
-
-## comparei3dMappings.py
-
-This will compare the `<i3dMappings>` section in your vehicle / implement / placable XML files and tell you what is different.  Useful when using the same I3D file for multiple store items.
-
-__Usage:__
-
-```shell
-$ python .\comparei3dMappings.py .\testFiles\i3dMap\mrplow_light_5.xml .\testFiles\i3dMap\mrplow_heavy_5.xml
-```
-
-Requires at least 2 files.
-
-### Sample Output
-
-```text
-Files Found: 4
-
-Mismatch(es) Found (missing):
-
-  Text Name : mrplow_component5
-   Found In      : ['mrplow_heavy_5.xml', 'mrplow_light_5.xml']
-   Not Found In  : ['mrplow_light_3.xml', 'mrplow_heavy_3.xml']
-
-Mismatch(es) Found (different):
-
-  ID Name : mrplow_vis
-   Mappings : [{'mrplow_heavy_5.xml': '0>0'}, {'mrplow_light_3.xml': '0>0'}, {'mrplow_light_5.xml': '0>0'}, {'mrplow_heavy_3.xml': '0>40'}]
-
-There are mismatched I3D Mappings
-```
-
----
-
-## i3dMapper.py
-
-This is just an i3d mapper, built to be fast in python
-
-__Usage:__
-
-```shell
-$ python .\i3dMapper.py .\testFiles\i3d\mrplow.i3d
-```
-
-__Options:__
-
-* `--no-pretty-print` Do not line up the "node" entries on output.  Pretty print is on by default.
-
-### Batch File: i3dMapper_toClipboard.bat
-
-Dropping an i3d file on this batch file will generate the mappings and store them on your clipboard (windows only of course)
-
-### Sample Output
-
-```xml
-<i3dMappings>
-  <i3dMapping id="mrplow_component1"          node="0>" />
-  <i3dMapping id="mrplow_vis"                 node="0>0" />
-  <i3dMapping id="ai"                         node="0>0|0" />
-</i3dMappings>
-```
-
----
-
-## i3dMapper_toXML.py
-
-This is a wrapper for i3dMapper that takes the XML store item file and writes (or re-writes) the i3dMappings section to match what is in the linked I3D file.
-
-Note: your I3D file must be set up properly.
-
-Big Note: because the default ETree in python is terrible, this will have *also* remove all of the comments you might have in your XML - if that matters to you, use the standalone mapper, or the clipboard wrapper batch file.
-
-__Usage:__
-
-```shell
-$ python .\i3dMapper_toXML.py .\testFiles\FS22_LizardBaleSpike\BaleSpike.xml
-```
-
----
-
-## checkLiterals.py
-
-Check string literals in vehicles / placable XML files to see if you missed any of the obvious $l10n translations
-
-__Usage:__
-
-```shell
-$ python .\checkLiterals.py .\testFiles\i3dMap\mrplow_light_5.xml .\testFiles\i3dMap\mrplow_heavy_5.xml
-```
-
-### Sample Output
-
-```text
-Files Found: 2
-Possible missed translation in tag: designConfiguration, current value is: Amazone
-Possible missed translation in tag: designConfiguration, current value is: CaseIH
-...
-File: mrplow_heavy_5.xml HAS detected missing translations
-
-done.
-```
-
----
-
-## i3dChecker.py
-
-Check an i3d file for some common mistakes.  Looks at real lights, collisons, linked lights, and shadow maps.
-
-__Usage:__
-
-```shell
-$ python .\i3dChecker.py .\testFiles\i3d\mrplow.i3d
-```
-
-__Options:__
-
-* __--no-shadow-check__  Disable checking visible shapes for shadow maps
-* __--no-link-check__    Disable checking linked files for existence
-* __--no-light-check__   Disable checking linked lights
-* __--no-light-info__    Disable output of light info
-* __--no-col-info__      Disable checking collision info
-* __--install-path__ _INSTALLPATH_ Installation path to FS data files (.../data/)
-
-### Sample Output - Shadow Maps
-
-```text
-hasShadowMap | castsShadowMap on renderable shapes:
-  Node Name: cw_crumble_hanger
-   Casts Shadow Map: no | Receives Shadow Map: no
-  Node Name: decalAmazone_02
-   Casts Shadow Map: no | Receives Shadow Map: yes
-```
-
-### Sample Output - Old Linked Lights
-
-```text
-Links to old lights in i3d:
-  Linked Light with fileId '5' is 'rearLightOvalWhite_01', should be 'rearLight26White'
-```
-
-### Sample Output - RealLights
-
-```text
-RealLights Information:
-  Node Name: frontLightLow
-   Type: spot, Color: #D8D8FF, Shadows: no, Range: 20 m, Cone Angle: 80 °, Drop Off: 3 m
-```
-
-### Sample Output - Unknown collisionMask
-
-```text
-Unknown, uncommon, or depreciated collisionMasks:
-  collisionMask for 'torion1914_main_component1' (1075851266)/(0x40203002) is unknown, and should be checked
-```
-
-### Sample Output - Unusual collisionMask
-
-```text
-Unknown, uncommon, or depreciated collisionMasks:
-  collisionMask for 'mixerWagonHUDTrigger' (3170304)/(0x306000) is unusual, but does exist in some giants files
-```
-
-### Sample Output - Depreciated collisionMask bit
-
-```text
-Unknown, uncommon, or depreciated collisionMasks:
-  collisionMask for 'torion1914_main_component1' (6303746)/(0x603002) uses depreciated bits and needs corrected
-```
-
-## xmlChecker.py
-
-This script looks at your vehicle / placeable / etc xml file and tells you if it finds any problems with it.
-
-__Data File Note:__
-
-This is the only script that requires an extra file - make sure you grab the `xmlChecker_data.json` file and keep it in the same folder as the script.
-
-__Usage:__
-
-```shell
-$ python xmlChecker.py .\testFiles\i3dMap\mrplow_heavy_5.xml
-```
-
-__Options:__
-
-* __--no-depre-check__      Disable checking depreciated xml tags and attributes
-* __--no-file-check__       Disable checking linked files
-* __--no-schema__           Disable checking schema
-* __--no-l10n-schema__      Disable checking l10n schema entries
-* __--install-path__ _INSTALLPATH_ Installation path to FS data files (.../data/)
-
-__l10n Schema Note:__
-
-You may find false-positives in this output.  It is an expected limitation of any automatic system.  Be sure to review the output, and ignore anything that does not apply to your situation.
-
-### Sample Output - Depreciations
-
-```text
-Files Found: 1
-
-Testing: polanin.xml
-  PROCESSING: xml file is of type 'vehicle'
-  PROCESSING: depreciated tags / attributes:
-    Depreciated usage found: 'areaMarkers#backIndex' is now 'areaMarkers#backNode'
-    Depreciated usage found: 'areaMarkers#leftIndex' is now 'areaMarkers#leftNode'
-    Depreciated usage found: 'areaMarkers#rightIndex' is now 'areaMarkers#rightNode'
-```
-
-### Sample Output - Missing Files
-
-```text
-Files Found: 1
-
-Testing: lizardAugerMaster.xml
-  PROCESSING: xml file is of type 'vehicle'
-  PROCESSING: checking file links
-    FILE NOT FOUND: $data/shared/wheels/michelin/cargoXBib/750_60R30_5.xml
-    FILE NOT FOUND: $data/shared/wheels/trelleborg/TwinRadial/750_60R30_5.xml
-    FILE NOT FOUND: $data/shared/wheels/trelleborg/TM600/420_85R34.xml
-```
-
-### Sample Output - XSD Schema Validation (lxml required, see below)
-
-```text
-Files Found: 1
-
-Testing: lizardAugerMaster.xml
-  PROCESSING: xml file is of type 'vehicle'
-  PROCESSING: Checking against XSD Schema
-    NOTICE: Validation failed:
-    Line 35: Element 'schemaOverlay': Character content is not allowed, because the content type is empty.
-    Line 35: Element 'schemaOverlay': Element content is not allowed, because the content type is empty.
-    Line 379: Element 'brakeForce': Character content is not allowed, because the content type is empty.
-```
-
-### LXML Requirement (schema only)
-
-Sadly, the native etree implementation in python cannot do schema validation, so you will need to install `lxml` - the simplest method of this is to open a `cmd` or `Windows Terminal` __with administrator privileges__ and run:
+Sadly, the native ETree implementation in python cannot do schema validation, so you will need to install `lxml` - the simplest method of this is to open a `cmd` or `Windows Terminal` __with administrator privileges__ and run:
 
 ```shell
 $ pip install lxml
 ```
 
-Note from the initial warning above, python must be installed __with__ the option to add it to your `$PATH` enviromental variable.
+Note from the initial warning above, python must be installed __with__ the option to add it to your `$PATH` environmental variable.
+
+---
+
+## checkLiterals.py
+
+This script checks the literal strings in your XML storeItem file to see if there are obvious entries that should be translated using the $l10n system.
+
+[checkLiterals documentation](READMEs/checkLiterals.md)
+
+---
+
+## comparei3dMappings.py
+
+This script is for use with multiple storeItem xml files that share an I3D file.  It will compare the `<i3dMappings>` section of each and let you know what, if any, differences it finds. If you are using a shared I3D between multiple storeItems, this can help keep any changes in sync.
+
+[comparei3dMappings documentation](READMEs/comparei3dMappings.md)
+
+---
+
+## compareTranslations.py
+
+This script compares two or more translation files to make sure the same keys appear in all files, so you do not have un-translated text in one language.
+
+[compareTranslations documentation](READMEs/compareTranslations.md)
+
+---
+
+## i3dChecker.py
+
+This script checks an i3d file and outputs problems it finds with linked files, linked lights, unusual or unknown rigid body collisions, and visible shapes that are missing shadow maps.  It also outputs realLight information in an easy to read format.
+
+[i3dChecker documentation](READMEs/i3dChecker.md)
+
+---
+
+## i3dMapper.py
+
+This script generates i3d Mapping for your XML file, *from* your I3D file.  It does it's best to avoid name collisions.
+
+[i3dMapper documentation](READMEs/i3dMapper.md)
+
+### Variants
+
+#### i3dMapper_toClipboard.bat
+
+This is a simple batch file that dumps the output of the mapper to the windows clipboard.  Takes the I3D file.
+
+#### i3dMapper_toXML.py
+
+This is a wrapper that takes your storeItem XML and writes the new i3dMapping directly to the supplied file.  Please note that due to ETree limitations, this *will* remove any comments in the XML file.
+
+#### i3dMapper_replacer.py
+
+This is a wrapper that takes your storeItem XML and write the new i3dMapping directly to the supplied file.  This will *also* attempt to re-write any numeric nodes in the existing file into the new name mapping.  Please note, that like the _toXML variant, this also *will* remove any comments in the file.
+
+---
+
+## logAnalyzer.py
+
+This is a *very* simple log parser that tries to pull out the important bits for easy viewing.
+
+[logAnalyzer documentation](READMEs/logAnalyzer.md)
+
+---
+
+## xmlChecker.py
+
+This script checks your storeItem xml for broken file links, and against the XSD schema.  It also forces the $l10n strings to validate against a modified pattern for those entries (a super powered version of checkLiterals.py)
+
+[xmlChecker documentation](READMEs/xmlChecker.md)

@@ -91,6 +91,8 @@ for file in file_list:
     fileListShort.append(thisName)
 
     try:
+        if not file.name.endswith("xml"):
+            raise BaseException
         thisXML    = ET.fromstring(file.read())
     except BaseException:
         print("ERROR: Unable to read / parse file '" + thisName + "'")
@@ -117,7 +119,7 @@ foundMismatch = False
 for thisText in nameList:
     if (len(nameList[thisText]) != fileCount):
         if not foundMismatch:
-            print("Mismatch(es) Found:")
+            print("\nMismatch(es) Found:")
             foundMismatch = True
 
         notFoundFiles = [t_file for t_file in fileListShort if t_file not in nameList[thisText]]

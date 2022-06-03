@@ -36,7 +36,7 @@ print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n")
 
 parser = argparse.ArgumentParser(
     description='Compare i3d Mapping in xml files.',
-    usage='%(prog)s [-h] file file [file ...]'
+    usage='%(prog)s [-h] file.xml file.xml [file.xml ...]'
 )
 parser.add_argument(
     'file1',
@@ -60,7 +60,6 @@ except BaseException:
 
 file_list = args.file1 + args.file2
 
-
 print("Files Found: " + str(len(file_list)))
 
 fileCount     = len(file_list)
@@ -73,8 +72,11 @@ for file in file_list:
     fileListShort.append(thisName)
 
     try:
+        if not file.name.endswith("xml"):
+            raise BaseException
         thisXML    = ET.fromstring(file.read())
-    except BaseException:
+    except BaseException as err:
+        print(err)
         print("ERROR: Unable to read / parse file '" + thisName + "'")
         enter_key_exit()
 
@@ -97,7 +99,6 @@ firstMissing   = False
 firstDifferent = False
 textMissing    = []
 textDiff       = []
-
 
 for thisText in nameList:
     if (len(nameList[thisText]) != fileCount):
