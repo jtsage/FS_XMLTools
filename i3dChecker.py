@@ -270,12 +270,12 @@ def check_data_file_cache(filename):
 
 def none_attrib(element, key):
     """ Grab an attribute value by key, null safe"""
-    return None if element.attrib is None or key not in element.attrib else element.attrib[key]
+    return None if (element.attrib is None or key not in element.attrib) else element.attrib[key]
 
 
 def na_attrib(element, key):
     """ Grab an attribute, use n/a instead of None"""
-    return "n/a" or none_attrib(element, key)
+    return "n/a" if none_attrib(element, key) is None else none_attrib(element, key)
 
 
 def yn_attrib(element, key):
@@ -379,7 +379,7 @@ def check_shadows(xmlTree):
                 )
 
     if len(textList) == 1:
-        textList.append("  no lights found.")
+        textList.append("  all good.")
 
     return textList
 
