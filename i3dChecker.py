@@ -399,7 +399,7 @@ def check_light_links(xmlTree):
                     )
 
     if len(textList) == 1:
-        textList.append("  no lights found.")
+        textList.append("  all good.")
 
     return textList
 
@@ -430,7 +430,7 @@ def check_collisions(xmlTree):
                     )
 
     if len(textList) == 1:
-        textList.append("  no lights found.")
+        textList.append("  all good.")
 
     return textList
 
