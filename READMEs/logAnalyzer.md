@@ -7,7 +7,7 @@ This is a *very* simple log parser that tries to pull out the important bits for
 ```shell
 $ python logAnalyzer.py --help
 
-usage: logAnalyzer.py [-h] [-d [version]] [file]
+usage: logAnalyzer.py [-h] [-d [version]] [--startup | --no-startup] [file]
 
 Grab the interesting bits of a log file. Defaults to the log file from your
 FS2022 install
@@ -19,24 +19,17 @@ optional arguments:
   -h, --help            show this help message and exit
   -d [version], --detect [version]
                         Detect log file from Farming Simulator [version]
-Press ENTER to close terminal.
+  --startup, --no-startup
+                        Show startup errors (default: True)
 
-usage: logAnalyzer.py [-h] file
-
-Grab the interesting bits of a log file
-
-positional arguments:
-  file
-
-optional arguments:
-  -h, --help  show this help message and exit
-Press ENTER to close terminal.
 
 ```
 
 ## Options
 
 With the `-d` / `--detect` option, you can specify the Farming Simulator log file to look for.  Version can be either 4 digit `2022` or 2 digit `22`
+
+With `--no-startup`, suppress printing the errors before the first timestamp.  In practice, this is problems with mods not loading, or unzipped, or missing translations.
 
 ## LICENSE
 
