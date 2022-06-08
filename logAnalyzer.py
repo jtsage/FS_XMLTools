@@ -42,6 +42,12 @@ parser.add_argument(
     nargs='?',
     type=argparse.FileType('r', encoding='utf-8')
 )
+parser.add_argument(
+    '-d', '--detect',
+    help='Detect log file from Farming Simulator [version]',
+    metavar='version',
+    nargs='?'
+)
 
 try:
     args = parser.parse_args()
@@ -51,10 +57,25 @@ except BaseException:
 currentFile = None
 
 if args.file is None:
-    currentFile = open(
-        os.getenv("USERPROFILE") + "\Documents\My Games\FarmingSimulator2022\log.txt",
-        "r"
-    )
+    thisVersion = "2022"
+    if args.detect is not None:
+        if len(args.detect) == 4:
+            thisVersion = str(args.detect)
+        if len(args.detect) == 2:
+            thisVersion = "20" + str(args.detect)
+
+    print("Auto-Reading FarmingSimulator{0}\n".format(thisVersion))
+    try:
+        currentFile = open(
+            "{0}\Documents\My Games\FarmingSimulator{1}\log.txt".format(
+                os.getenv("USERPROFILE"),
+                thisVersion
+            ),
+            "r"
+        )
+    except BaseException:
+        print("ERROR: Unable to read log for version '" + thisVersion + "'")
+        enter_key_exit()
 else:
     currentFile = args.file
 
