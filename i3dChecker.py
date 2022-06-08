@@ -435,6 +435,44 @@ def check_collisions(xmlTree):
     return textList
 
 
+def check_rotation_scale(xmlTree):
+    textList = ["\nPossibly suspect rotations:"]
+
+    for thisTag in xmlTree.findall(".//Shape[@rotation]"):
+        if "e" in thisTag.attrib["rotation"]:
+            textList.append(
+                "  Sci Notation on node: " +
+                na_attrib(thisTag, "name") +
+                " set to: " +
+                na_attrib(thisTag, "rotation")
+            )
+        if "-0" in thisTag.attrib["rotation"] and "180" in thisTag.attrib["rotation"]:
+            textList.append(
+                "  Inverse Zero (possible negative scale in blender) on node: " +
+                na_attrib(thisTag, "name") +
+                " set to: " +
+                na_attrib(thisTag, "rotation")
+            )
+
+    if len(textList) == 1:
+        textList.append("  all good.")
+
+    textList.append("\nNon-Applied Scales:")
+
+    for thisTag in xmlTree.findall(".//Shape[@scale]"):
+        textList.append(
+            "  Scale is not applied on: " +
+            na_attrib(thisTag, "name") +
+            " set to: " +
+            na_attrib(thisTag, "scale")
+        )
+
+    if len(textList) == 3:
+        textList.append("  all good.")
+
+    return textList
+
+
 print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
 print("  i3Checker v1.0.2")
 print("    by JTSModding")
@@ -475,6 +513,12 @@ parser.add_argument(
     default=True
 )
 parser.add_argument(
+    '--rotation-scale',
+    help="Check for part rotations that seem odd and find scaled parts",
+    action=argparse.BooleanOptionalAction,
+    default=True
+)
+parser.add_argument(
     '--install-path',
     help="Installation path to FS data files (.../data/)",
     dest="installPath",
@@ -508,6 +552,8 @@ for file in args.files:
 
     if args.light_info:
         print("\n".join(check_light_attributes(thisXML)))
+    if args.rotation_scale:
+        print("\n".join(check_rotation_scale(thisXML)))
     if args.light_check:
         print("\n".join(check_light_links(thisXML)))
     if args.shadows:

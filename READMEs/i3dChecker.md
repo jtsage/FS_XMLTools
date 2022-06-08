@@ -6,12 +6,17 @@ This script checks an i3d file and outputs problems it finds with linked files, 
 
 ```shell
 $ python i3dChecker.py --help
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+  i3Checker v1.0.2
+    by JTSModding
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 usage: i3dChecker.py [-h] [--shadows | --no-shadows]
                      [--link-check | --no-link-check]
                      [--light-check | --no-light-check]
                      [--light-info | --no-light-info]
                      [--collisions | --no-collisions]
+                     [--rotation-scale | --no-rotation-scale]
                      [--install-path INSTALLPATH]
                      files [files ...]
 
@@ -34,8 +39,13 @@ optional arguments:
   --collisions, --no-collisions
                         Check for unusual or unknown collision masks (default:
                         True)
+  --rotation-scale, --no-rotation-scale
+                        Check for part rotations that seem odd and find scaled
+                        parts (default: True)
   --install-path INSTALLPATH
                         Installation path to FS data files (.../data/)
+Press ENTER to close terminal.
+
 ```
 
 This script expects to see .i3d files and will exit with an error if given something else.
@@ -65,6 +75,10 @@ This switch is for outputting all of the real light information in the I3D file.
 ### --collisions / --no-collisions
 
 This switch is for checking collisions against a list of known common and known uncommon bit masks.  It also will produce an error if you are using any of the depreciated bits.
+
+## --rotation-scale / --no-rotation-scale
+
+This switch is for checking unusual rotations that are often due to negative scaling in blender, it will also note which parts have a non-1,1,1 scale.
 
 ## Sample Output
 
