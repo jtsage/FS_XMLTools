@@ -6,7 +6,7 @@
       /    /         \     / |/  |  /   ) /   /   /   /   /   /   ) /   )
 _(___/____/______(____/___/__/___|_(___/_(___/___(___/___/___/___/_(___/_
                                                                       /
-    xmlChecker.py - v1.0.2                                        (_ /
+    xmlChecker.py - v1.0.3                                        (_ /
 
 Version History:
  v1.0.0 - Initial Release
@@ -34,8 +34,13 @@ FILE_ERRORS = {
     "FILE_NOT_FOUND": "    FILE NOT FOUND: {0}",
     "FILE_NOT_FOUND_NEW": "    FILE NOT FOUND: {0}  (new name: {1})",
     "ABSOLUTE_PATH": "    PATH ERROR: {0} appears to be an absolute path, this is wrong",
-    "CASE_MISMATCH": "    FILE CASE MISMATCH: {0} vs detected {1}"
+    "CASE_MISMATCH": "    FILE CASE MISMATCH: {0} vs detected {1}",
+    "CAN_NOT_CHECK": "    FILE IS PART OF A MOD AND CAN'T BE CHECKED: {0}",
+    "FILE_LOCKED": "    FILE IS PART OF LOCKED DATA AND CAN'T BE CHECKED: {0}"
 }
+
+MOD_DIR_PREFIX = "$moddir$"
+
 XSD_MAP = {
     "bale": "bale.xsd",
     "beaconLight": "beaconLight.xsd",
@@ -55,6 +60,14 @@ XSD_MAP = {
     "vehicles": "savegame_vehicles.xsd",
     "wheel": "wheel.xsd",
 }
+
+DATA_DOLLAR_PATH_MAP = [
+    "bale", "beaconLight", "connectionHoses", "crawler", "feedingRobot", "greenhousePlant",
+    "handTool", "inlineBale", "licensePlates", "motionPathEffects", "placeable", "sound",
+    "sounds", "vehicle", "wheel"
+]
+
+UNKNOWN_NO_DATA_DOLLAR = ["placeables"]
 
 FILENAME_ATTRIBUTES = [
     "filename",
@@ -275,8 +288,12 @@ def check_data_file_cache(filename):
 
     if not os.path.isfile(absFile):
         if check_new_light(absFile):
-            return(False, FILE_ERRORS["FILE_NOT_FOUND_NEW"], [filename, check_new_light(filename)])
-        return(False, FILE_ERRORS["FILE_NOT_FOUND"], [filename])
+            return(
+                False,
+                FILE_ERRORS["FILE_NOT_FOUND_NEW"],
+                ["DATA::" + filename, check_new_light(filename)]
+            )
+        return(False, FILE_ERRORS["FILE_NOT_FOUND"], ["DATA::" + filename])
     else:
         casedFile = str(Path(absFile).resolve())
 
@@ -299,17 +316,24 @@ def enter_key_exit():
     exit()
 
 
-def check_links(xmlTree):
-    textList = ["  PROCESSING: checking file links"]
-    badCache = []
+def check_links(xmlTree, useDataDollar):
+    textList      = ["  PROCESSING: checking file links"]
+    badCache      = []
 
     for file_key in FILENAME_ATTRIBUTES:
         for thisTag in thisXML.findall(".//*[@" + file_key + "]"):
             thisKeyValue   = thisTag.attrib[file_key]
             thisFileStatus = None
             if thisKeyValue not in badCache:
-                if thisKeyValue.startswith("$data/"):
-                    thisFileStatus = check_data_file_cache(thisKeyValue)
+                if thisKeyValue.startswith("{0}data/".format(["", "$"][useDataDollar])):
+                    thisFileStatus = check_data_file_cache("{0}{1}".format(
+                        ["", "$"][not useDataDollar],
+                        thisKeyValue
+                    ))
+                elif thisKeyValue.startswith(MOD_DIR_PREFIX):
+                    thisFileStatus = (False, FILE_ERRORS["CAN_NOT_CHECK"], [thisKeyValue])
+                elif thisKeyValue.startswith("$dataS/"):
+                    thisFileStatus = (False, FILE_ERRORS["FILE_LOCKED"], [thisKeyValue])
                 else:
                     thisFileStatus = check_local_file_cache(thisKeyValue, thisFolder)
 
@@ -446,14 +470,20 @@ for file in file_list:
     if thisXML.tag in XSD_MAP.keys():
         thisFileType = thisXML.tag
         print("  PROCESSING: xml file is of type '{0}'".format(thisXML.tag))
+
+        if args.check_links:
+            print("\n".join(check_links(thisXML, thisFileType in DATA_DOLLAR_PATH_MAP)))
+
+        if args.check_schema and hasLXML:
+            print("\n".join(check_schema(thisFileContents, thisFileType, args.check_schema_l10n)))
+
     else:
         print("  ERROR: xml file is of unknown type {0}".format(thisXML.tag))
-        enter_key_exit()
+        print("  ATTEMPT: just checking links...")
 
-    if args.check_links:
-        print("\n".join(check_links(thisXML)))
-    if args.check_schema and hasLXML:
-        print("\n".join(check_schema(thisFileContents, thisFileType, args.check_schema_l10n)))
+        if args.check_links:
+            print("\n".join(check_links(thisXML, thisXML.tag not in UNKNOWN_NO_DATA_DOLLAR)))
+
 
 print('\ndone.')
 
