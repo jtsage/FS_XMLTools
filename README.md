@@ -24,6 +24,14 @@ Note from the initial warning above, python must be installed __with__ the optio
 
 ---
 
+## Giants XML Snippets for VSCode
+
+This is a snippets file that contains some of the most used XML elements from the Giants spec.  It has both modDesc and storeItem snippets.
+
+[Snippets documentation](READMEs/vscodeSnippets.md)
+
+---
+
 ## checkLiterals.py
 
 This script checks the literal strings in your XML storeItem file to see if there are obvious entries that should be translated using the $l10n system.
